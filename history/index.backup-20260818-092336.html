@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JTOCOM — 웹 컨설팅부터 반응형 웹, UIUX 기획·구축까지</title>
+<meta name="description" content="JTOCOM은 생성형 AI로 웹사이트와 콘텐츠를 설계·제작합니다. 기획부터 배포까지 평균 1주, 기존 대비 60% 빠른 속도로 브랜드의 다음 단계를 만듭니다.">
+<meta property="og:title" content="JTOCOM — Web Consulting &amp; Responsive Web Studio">
+<meta property="og:description" content="Web Consulting · Responsive Web · UIUX Planning &amp; Build · Maintenance">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E1F35">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* =====================================================================
+   JTOCOM Brand Site — Design System
+   Deep Navy + Silver Steel  ·  명함 기준 개편 2026-08
+   ===================================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+:root{
+  --bg:#FFFFFF;
+  --bg-soft:#F2F5F8;
+  --bg-ink:#0E1F35;
+  --bg-ink-2:#152843;
+
+  --ink:#0E1F35;
+  --ink-2:#4A5E72;
+  --ink-3:#7A8FA0;
+  --on-ink:#FFFFFF;
+  --on-ink-2:#AABFCC;
+
+  --line:#DDE4EA;
+  --line-2:#C5D0DA;
+  --line-ink:rgba(180,210,230,.13);
+
+  /* Brand — Deep Navy + Silver Steel */
+  --b1:#3A9EC8;          /* 포인트 블루: 회로기판 하이라이트 톤 */
+  --b2:#217DA0;          /* 딥 포인트 블루 */
+  --b3:#6DBFE0;          /* 라이트 블루 */
+  --b-pale:#DDF0FA;
+
+  /* Silver / Metallic */
+  --silver:#C4D2DC;
+  --silver-bright:#E6EEF3;
+  --silver-deep:#8FA5B8;
+  --silver-shine:linear-gradient(125deg,#8FA5B8 0%,#D4E2EB 38%,#F0F6FA 52%,#C8D8E4 68%,#7E9AAE 100%);
+
+  --grad:linear-gradient(120deg,#0D6E96 0%,#1C8DC0 52%,#5BBDE0 100%);
+  --grad-soft:linear-gradient(120deg,rgba(58,158,200,.09),rgba(109,191,224,.11) 52%,rgba(140,165,184,.07));
+  --grad-text:linear-gradient(115deg,#0D6E96 0%,#3A9EC8 45%,#A8D8ED 68%,#3A9EC8 85%,#0D6E96 100%);
+  --grad-btn:linear-gradient(120deg,#0D6E96 0%,#3A9EC8 100%);
+  --grad-navy:linear-gradient(135deg,#0A192E 0%,#0E1F35 50%,#122540 100%);
+
+  --r-sm:10px; --r:16px; --r-lg:24px; --r-xl:32px;
+  --shadow-sm:0 1px 2px rgba(10,20,34,.06), 0 4px 14px rgba(10,20,34,.08);
+  --shadow:0 12px 40px rgba(10,20,34,.14);
+  --shadow-lg:0 30px 70px rgba(10,20,34,.22);
+
+  --pad:clamp(20px, 5vw, 80px);
+  --max:1240px;
+  --nav-h:72px;
+}
+
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  background:var(--bg); color:var(--ink);
+  line-height:1.6; letter-spacing:-.011em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{ display:block; max-width:100%; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:rgba(58,158,200,.22); }
+
+/* ---------- Layout ---------- */
+.wrap{ width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--pad); }
+.sec{ padding-block:clamp(64px,9vw,132px); position:relative; }
+.sec--soft{ background:var(--bg-soft); }
+.sec--ink{ background:var(--bg-ink); color:var(--on-ink); }
+.sec--tight{ padding-block:clamp(40px,5vw,64px); }
+.grid{ display:grid; gap:clamp(16px,2.2vw,28px); }
+.g2{ grid-template-columns:repeat(2,1fr); }
+.g3{ grid-template-columns:repeat(3,1fr); }
+.g4{ grid-template-columns:repeat(4,1fr); }
+
+/* ---------- Type ---------- */
+.eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--b2); margin-bottom:16px; }
+.eyebrow::before{ content:""; width:20px; height:1.5px; background:var(--silver-shine); border-radius:2px; }
+.sec--ink .eyebrow{ color:var(--silver); }
+h1,h2,h3,h4{ line-height:1.22; letter-spacing:-.035em; font-weight:800; }
+.h-xl{ font-size:clamp(36px,6.2vw,70px); line-height:1.09; letter-spacing:-.045em; }
+.h-lg{ font-size:clamp(28px,4.2vw,48px); }
+.h-md{ font-size:clamp(22px,2.6vw,32px); }
+.h-sm{ font-size:clamp(17px,1.5vw,20px); }
+.lead{ font-size:clamp(15px,1.35vw,18px); color:var(--ink-2); line-height:1.75; max-width:62ch; }
+.sec--ink .lead{ color:var(--on-ink-2); }
+.small{ font-size:13.5px; color:var(--ink-2); }
+.tiny{ font-size:12px; color:var(--ink-3); }
+.gtext{ background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.head{ margin-bottom:clamp(36px,5vw,60px); }
+.head--center{ text-align:center; }
+.head--center .lead{ margin-inline:auto; }
+.head--row{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+
+/* ---------- Button ---------- */
+.btn{
+  --bh:52px;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  height:var(--bh); padding-inline:26px; border-radius:999px; border:1px solid transparent;
+  font-size:15px; font-weight:700; letter-spacing:-.02em; cursor:pointer;
+  background:var(--ink); color:#fff; white-space:nowrap;
+  transition:transform .18s cubic-bezier(.2,.8,.3,1), box-shadow .18s, background .18s, opacity .18s;
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(15,29,38,.24); }
+.btn:active{ transform:translateY(0); }
+.btn--grad{ background:var(--grad-btn); background-size:180% 180%; }
+.btn--grad:hover{ box-shadow:0 12px 34px rgba(58,158,200,.34); background-position:100% 0; }
+.btn--line{ background:transparent; color:var(--ink); border-color:var(--line-2); }
+.btn--line:hover{ border-color:var(--ink); box-shadow:none; }
+.sec--ink .btn--line{ color:#fff; border-color:var(--line-ink); }
+.card--ink .btn--line{ color:#fff; border-color:var(--line-ink); }
+.card--ink .btn--line:hover{ border-color:#fff; }
+.sec--ink .btn--line:hover{ border-color:#fff; background:rgba(255,255,255,.06); }
+.btn--sm{ --bh:42px; padding-inline:20px; font-size:14px; }
+.btn--lg{ --bh:58px; padding-inline:32px; font-size:16px; }
+.btn--block{ width:100%; }
+.btn[disabled]{ opacity:.45; pointer-events:none; }
+.btn-row{ display:flex; gap:12px; flex-wrap:wrap; }
+.link-arrow{ display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:14.5px; color:var(--ink); cursor:pointer; background:none; border:0; padding:0; }
+.link-arrow svg{ transition:transform .2s; }
+.link-arrow:hover svg{ transform:translateX(4px); }
+
+/* ---------- Pill ---------- */
+.pill{ display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; padding:6px 13px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--ink-2); }
+.pill--grad{ border-color:transparent; background:var(--grad-soft); color:var(--b2); font-weight:700; }
+.dot{ width:6px; height:6px; border-radius:50%; background:var(--b1); box-shadow:0 0 0 3px rgba(58,158,200,.25); }
+
+/* ---------- Card ---------- */
+.card{ background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(22px,2.4vw,32px); position:relative; overflow:hidden; transition:transform .28s cubic-bezier(.2,.8,.3,1), box-shadow .28s, border-color .28s; }
+.card--hover:hover{ transform:translateY(-5px); box-shadow:var(--shadow); border-color:transparent; }
+.card--hover::before{ content:""; position:absolute; inset:0; border-radius:inherit; padding:1px; background:var(--grad); opacity:0; transition:opacity .28s; -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
+.card--hover:hover::before{ opacity:1; }
+.card--ink{ background:var(--bg-ink-2); border-color:var(--line-ink); color:#fff; }
+.icon-box{ width:52px; height:52px; border-radius:15px; display:grid; place-items:center; background:var(--grad-soft); color:var(--b2); margin-bottom:20px; }
+.icon-box svg{ width:24px; height:24px; stroke-width:1.7; }
+
+/* ---------- Header ---------- */
+.hdr{ position:fixed; inset:0 0 auto 0; z-index:100; height:var(--nav-h); display:flex; align-items:center; background:rgba(255,255,255,.72); backdrop-filter:blur(18px) saturate(1.6); border-bottom:1px solid transparent; transition:border-color .3s, background .3s; }
+.hdr.is-stuck{ border-bottom-color:var(--line); background:rgba(255,255,255,.92); }
+.hdr__in{ display:flex; align-items:center; justify-content:space-between; gap:24px; width:100%; max-width:var(--max); margin-inline:auto; padding-inline:var(--pad); }
+.logo{ display:flex; align-items:center; gap:9px; font-weight:800; font-size:19px; letter-spacing:-.05em; cursor:pointer; background:none; border:0; }
+.logo__img{ height:30px; width:auto; display:block; }
+.logo__mark{ width:26px; height:26px; border-radius:8px; background:var(--grad); position:relative; flex:none; }
+.logo__mark::after{ content:""; position:absolute; inset:7px; border-radius:3px; background:#fff; }
+.nav{ display:flex; gap:4px; }
+.nav button{ background:none; border:0; cursor:pointer; padding:9px 15px; border-radius:999px; font-size:14.5px; font-weight:600; color:var(--ink-2); transition:.18s; }
+.nav button:hover{ color:var(--ink); background:var(--bg-soft); }
+.nav button.is-on{ color:var(--ink); font-weight:700; background:var(--bg-soft); }
+.hdr__cta{ display:flex; align-items:center; gap:10px; }
+.burger{ display:none; width:44px; height:44px; border:0; background:none; cursor:pointer; flex-direction:column; gap:5px; align-items:center; justify-content:center; border-radius:12px; }
+.burger span{ width:19px; height:1.8px; background:var(--ink); border-radius:2px; transition:.25s; }
+.burger.is-on span:nth-child(1){ transform:translateY(6.8px) rotate(45deg); }
+.burger.is-on span:nth-child(2){ opacity:0; }
+.burger.is-on span:nth-child(3){ transform:translateY(-6.8px) rotate(-45deg); }
+.drawer{ position:fixed; inset:var(--nav-h) 0 0 0; z-index:99; background:#fff; padding:32px var(--pad) 40px; display:flex; flex-direction:column; transform:translateY(-8px); opacity:0; pointer-events:none; transition:.25s; }
+.drawer.is-open{ transform:none; opacity:1; pointer-events:auto; }
+.drawer button.dnav{ text-align:left; background:none; border:0; border-bottom:1px solid var(--line); padding:20px 0; font-size:22px; font-weight:800; letter-spacing:-.04em; cursor:pointer; width:100%; display:flex; justify-content:space-between; align-items:center; }
+.drawer__foot{ margin-top:auto; padding-top:28px; display:grid; gap:10px; }
+
+/* ---------- Page ---------- */
+main{ padding-top:var(--nav-h); }
+.page{ display:none; scroll-margin-top:var(--nav-h); animation:pageIn .45s cubic-bezier(.2,.8,.3,1); }
+.page.is-on{ display:block; }
+@keyframes pageIn{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:none;} }
+
+/* ---------- Hero ---------- */
+.hero{ position:relative; padding-block:clamp(40px,7vw,104px) clamp(64px,8vw,120px); overflow:hidden; }
+.hero__grid{ display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(32px,5vw,64px); align-items:center; }
+.hero h1{ margin:6px 0 22px; }
+.hero .lead{ margin-bottom:32px; }
+.orb{ position:absolute; border-radius:50%; filter:blur(72px); opacity:.5; pointer-events:none; z-index:0; }
+.orb--1{ width:min(46vw,540px); aspect-ratio:1; background:radial-gradient(circle at 30% 30%,#3A9EC8,transparent 68%); top:-14%; right:-8%; animation:float 18s ease-in-out infinite; }
+.orb--2{ width:min(38vw,420px); aspect-ratio:1; background:radial-gradient(circle at 60% 40%,#C4D2DC,transparent 66%); top:28%; right:22%; animation:float 22s ease-in-out infinite reverse; }
+.orb--3{ width:min(30vw,340px); aspect-ratio:1; background:radial-gradient(circle at 50% 50%,#1C8DC0,transparent 66%); bottom:-6%; left:-6%; opacity:.34; animation:float 26s ease-in-out infinite; }
+@keyframes float{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(-24px,26px) scale(1.06);} }
+/* Hero flashy motion */
+.hero__lines{ position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.6; }
+.hero__lg{ transform-box:fill-box; transform-origin:center; animation:heroDrift 20s ease-in-out infinite; }
+.hero__lines path{ stroke-dasharray:60 42; animation:heroFlow 6.5s linear infinite; }
+.hero__lines path:nth-child(2n){ animation-duration:8.5s; animation-direction:reverse; }
+.hero__lines path:nth-child(3n){ animation-duration:11s; }
+.hero__lines path:nth-child(4n){ animation-duration:7.5s; }
+@keyframes heroFlow{ to{ stroke-dashoffset:-102; } }
+@keyframes heroDrift{ 0%,100%{ transform:translate(0,0) rotate(0deg);} 33%{ transform:translate(22px,-14px) rotate(-.5deg);} 66%{ transform:translate(-18px,12px) rotate(.5deg);} }
+.hero .gtext{ background:linear-gradient(115deg,#0D6E96 0%,#3A9EC8 28%,#C4D2DC 50%,#3A9EC8 72%,#0D6E96 100%); background-size:230% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:heroShine 5s linear infinite; }
+@keyframes heroShine{ to{ background-position:-230% 0; } }
+@media (prefers-reduced-motion:reduce){ .hero__lines path,.hero__lg,.hero .gtext{ animation:none; } }
+/* History typography panel */
+.htype{ height:100%; border-radius:var(--r-xl); background:linear-gradient(150deg,#0A192E,#0E1F35 55%,#122540); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:clamp(18px,2.4vw,30px); }
+.htype__glow{ position:absolute; border-radius:50%; filter:blur(40px); z-index:0; pointer-events:none; }
+.htype__glow--a{ width:54%; aspect-ratio:1; background:radial-gradient(circle,rgba(58,158,200,.55),transparent 68%); top:-12%; left:-10%; animation:htypeBlob 15s ease-in-out infinite; }
+.htype__glow--b{ width:48%; aspect-ratio:1; background:radial-gradient(circle,rgba(196,210,220,.25),transparent 66%); bottom:-14%; right:-10%; animation:htypeBlob 19s ease-in-out infinite reverse; }
+@keyframes htypeBlob{ 0%,100%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(26px,-22px) scale(1.18);} }
+.htype__lines{ position:absolute; inset:-10%; width:120%; height:120%; z-index:0; pointer-events:none; }
+.htype__lg{ transform-box:fill-box; transform-origin:center; animation:htypeDrift 18s ease-in-out infinite; }
+.htype__lg--b{ animation:htypeDrift2 23s ease-in-out infinite; }
+.htype__lines path{ stroke-dasharray:48 34; animation:htypeFlow 4.5s linear infinite; }
+.htype__lines path:nth-child(2n){ animation-duration:6.5s; animation-direction:reverse; }
+.htype__lines path:nth-child(3n){ animation-duration:8.5s; }
+.htype__lines path:nth-child(4n){ animation-duration:5.5s; }
+@keyframes htypeFlow{ to{ stroke-dashoffset:-82; } }
+@keyframes htypeDrift{ 0%,100%{ transform:translate(0,0) rotate(0deg);} 25%{ transform:translate(-22px,16px) rotate(1.2deg);} 55%{ transform:translate(18px,-14px) rotate(-1deg);} 80%{ transform:translate(-8px,-18px) rotate(.5deg);} }
+@keyframes htypeDrift2{ 0%,100%{ transform:translate(0,0) rotate(0deg);} 40%{ transform:translate(20px,18px) rotate(-1.2deg);} 70%{ transform:translate(-16px,-12px) rotate(1deg);} }
+.htype__inner{ position:relative; z-index:1; flex:none; width:min(86%,400px); min-height:clamp(340px,60%,460px); border-radius:var(--r-lg); background:rgba(14,31,53,.7); -webkit-backdrop-filter:blur(5px) saturate(1.14); backdrop-filter:blur(5px) saturate(1.14); border:1px solid rgba(196,210,220,.18); box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:center; align-items:stretch; padding:clamp(30px,4vw,48px) clamp(22px,3vw,34px); text-align:center; }
+.htype__roll{ position:relative; width:100%; min-height:6.4em; }
+.htype__slide{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(12px,1.6vw,20px); opacity:0; animation:htypeSlide 22.5s ease-in-out infinite; }
+.htype__slide:nth-child(2){ animation-delay:4.5s; } .htype__slide:nth-child(3){ animation-delay:9s; }
+.htype__slide:nth-child(4){ animation-delay:13.5s; } .htype__slide:nth-child(5){ animation-delay:18s; }
+.htype__main{ font-size:clamp(26px,3.4vw,40px); font-weight:800; letter-spacing:-.045em; line-height:1.2; color:#FFFFFF; }
+.htype__main b{ background:linear-gradient(115deg,#7AABCA 0%,#C4D2DC 30%,#EEF4F8 52%,#C4D2DC 74%,#7AABCA 100%); background-size:230% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:htypeShine 4.5s linear infinite; }
+@keyframes htypeShine{ to{ background-position:-230% 0; } }
+.htype__sub{ font-size:clamp(14px,1.5vw,18px); font-weight:600; letter-spacing:-.02em; line-height:1.55; color:var(--on-ink-2); max-width:24ch; }
+@keyframes htypeSlide{ 0%{ opacity:0; transform:translateY(22px) scale(.98);} 3%{ opacity:1; transform:none;} 18%{ opacity:1; transform:none;} 21%{ opacity:0; transform:translateY(-22px) scale(.98);} 100%{ opacity:0; transform:translateY(-22px) scale(.98);} }
+@media (prefers-reduced-motion:reduce){ .htype__lg,.htype__lg--b,.htype__lines path,.htype__glow,.htype__main b{ animation:none; } .htype__slide{ animation:none; opacity:0; } .htype__slide:nth-child(1){ opacity:1; } }
+.hero > .wrap{ position:relative; z-index:1; }
+.mock{ position:relative; border-radius:var(--r-xl); background:#fff; box-shadow:var(--shadow-lg); border:1px solid var(--line); overflow:hidden; transform:perspective(1400px) rotateY(-4deg) rotateX(2deg); transform-origin:left center; }
+.mock__bar{ display:flex; align-items:center; gap:6px; padding:13px 16px; border-bottom:1px solid var(--line); background:var(--bg-soft); }
+.mock__bar i{ width:9px; height:9px; border-radius:50%; background:#D6E2E8; display:block; }
+.mock__bar .url{ margin-left:10px; flex:1; height:22px; border-radius:999px; background:#fff; border:1px solid var(--line); display:flex; align-items:center; padding:0 10px; font-size:10.5px; color:var(--ink-3); }
+.mock__body{ padding:22px; display:grid; gap:14px; }
+.mock__hero{ height:132px; border-radius:14px; background:var(--grad); position:relative; overflow:hidden; }
+.mock__hero::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 78% 22%, rgba(255,255,255,.45), transparent 46%),radial-gradient(circle at 20% 84%, rgba(255,255,255,.28), transparent 44%); }
+.mock__row{ display:grid; grid-template-columns:repeat(3,1fr); gap:11px; }
+.mock__tile{ height:62px; border-radius:11px; background:var(--bg-soft); border:1px solid var(--line); }
+.mock__line{ height:9px; border-radius:99px; background:var(--bg-soft); }
+.mock__line.w70{ width:70%; } .mock__line.w45{ width:45%; }
+.chip-float{ position:absolute; z-index:2; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:11px 15px; display:flex; align-items:center; gap:9px; font-size:13px; font-weight:700; animation:bob 5s ease-in-out infinite; }
+.chip-float small{ display:block; font-size:11px; font-weight:500; color:var(--ink-3); }
+.chip-float--a{ top:12%; left:-6%; }
+.chip-float--b{ bottom:11%; right:-4%; animation-delay:-2.4s; }
+@keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-11px);} }
+
+/* ---------- Marquee ---------- */
+.marq{ overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
+.marq__track{ display:flex; gap:56px; width:max-content; animation:slide 40s linear infinite; }
+.marq:hover .marq__track{ animation-play-state:paused; }
+@keyframes slide{ to{ transform:translateX(-50%); } }
+.marq__item{ font-size:18px; font-weight:800; letter-spacing:-.04em; color:var(--ink-3); opacity:.7; white-space:nowrap; transition:.2s; }
+.marq__item:hover{ opacity:1; color:var(--ink); }
+
+/* ---------- Portfolio image strip (auto-swipe) ---------- */
+.pf-strip{ overflow:hidden; margin-bottom:clamp(30px,4.5vw,52px); -webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); }
+.pf-strip__track{ display:flex; gap:18px; width:max-content; animation:slide 150s linear infinite; }
+.pf-strip:hover .pf-strip__track{ animation-play-state:paused; }
+.pf-strip__item{ flex:none; width:clamp(230px,25vw,330px); aspect-ratio:16/10; border-radius:var(--r-lg); overflow:hidden; background:var(--bg-soft); border:1px solid var(--line); box-shadow:var(--shadow-sm); cursor:pointer; transition:box-shadow .3s, transform .3s; }
+.pf-strip__item:hover{ box-shadow:var(--shadow); transform:translateY(-3px); }
+.pf-strip__item img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* 상단 이미지 확대 모달(라이트박스) */
+.pf-modal{ position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center; padding:clamp(16px,4vw,48px); background:rgba(8,16,28,.82); backdrop-filter:blur(6px); opacity:0; pointer-events:none; transition:opacity .25s; }
+.pf-modal.is-open{ opacity:1; pointer-events:auto; }
+.pf-modal__img{ max-width:min(1100px,100%); max-height:90vh; object-fit:contain; border-radius:var(--r-lg); box-shadow:0 30px 80px rgba(0,0,0,.5); transform:scale(.96); transition:transform .25s; }
+.pf-modal.is-open .pf-modal__img{ transform:scale(1); }
+.pf-modal__close{ position:absolute; top:clamp(14px,2vw,22px); right:clamp(16px,2.5vw,26px); width:46px; height:46px; border:0; border-radius:50%; background:rgba(255,255,255,.15); color:#fff; font-size:26px; line-height:1; cursor:pointer; display:grid; place-items:center; transition:.2s; }
+.pf-modal__close:hover{ background:rgba(255,255,255,.3); transform:rotate(90deg); }
+@media (prefers-reduced-motion: reduce){ .pf-strip__track{ animation:none; } }
+@media (max-width:640px){ .pf-strip__item{ width:220px; } }
+
+/* ---------- Stat ---------- */
+.stat{ text-align:center; padding:clamp(18px,2vw,28px) 8px; }
+.stat b{ display:block; font-size:clamp(34px,4.6vw,54px); font-weight:800; letter-spacing:-.05em; line-height:1; margin-bottom:10px; }
+.stat span{ font-size:13.5px; color:var(--on-ink-2); }
+
+/* ---------- Step ---------- */
+.steps{ counter-reset:s; }
+.step{ position:relative; padding-top:26px; border-top:2px solid var(--line); }
+.sec--ink .step{ border-top-color:var(--line-ink); }
+.step::before{ counter-increment:s; content:"0" counter(s); position:absolute; top:-13px; left:0; background:var(--bg-soft); padding-right:12px; font-size:13px; font-weight:800; letter-spacing:.06em; color:var(--b1); }
+.sec:not(.sec--soft) .step::before{ background:#fff; }
+
+/* ---------- Work card ---------- */
+.work{ display:block; }
+.thumb{
+  /* 실제 포트폴리오 이미지는 기존 16:10 비율 유지 */
+  aspect-ratio:16/10;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#0A192E 0%,#1C3D5A 52%,#2A5878 100%);
+  transition:transform .4s cubic-bezier(.2,.8,.3,1), box-shadow .4s;
+}
+
+/* 이미지가 없는 카드도 준비중 영역을 기존 높이의 2배로 확대 */
+.thumb.is-missing{ aspect-ratio:16/10; }
+.thumb::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 76% 22%,rgba(255,255,255,.52),transparent 42%),
+    radial-gradient(circle at 18% 84%,rgba(5,96,86,.22),transparent 52%);
+}
+.thumb::after{
+  content:"";
+  position:absolute;
+  left:12%; right:12%; bottom:0;
+  height:56%;
+  border-radius:14px 14px 0 0;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 -8px 30px rgba(10,74,68,.13);
+  transition:transform .4s cubic-bezier(.2,.8,.3,1);
+}
+.work:nth-child(3n+2) .thumb{ background:linear-gradient(135deg,#0E2540 0%,#1A4466 55%,#2E6080 100%); }
+.work:nth-child(3n) .thumb{ background:linear-gradient(135deg,#0A192E 0%,#163050 52%,#244A6A 100%); }
+.work:hover .thumb{ transform:translateY(-6px); box-shadow:var(--shadow); }
+.work:hover .thumb::after{ transform:translateY(-8px); }
+.thumb__pending{
+  position:absolute;
+  left:12%; right:12%; bottom:0;
+  height:56%;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  color:#A6B1B3;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:-.02em;
+  text-align:center;
+  z-index:3;
+  pointer-events:none;
+}
+.thumb.has-image .thumb__pending{ display:none; }
+.thumb__img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:4; background:inherit; transition:transform .4s cubic-bezier(.2,.8,.3,1); }
+.work:hover .thumb__img{ transform:scale(1.04); }
+/* 롤링(2장 이상 크로스페이드) */
+.roll--base{ z-index:4; }
+.roll--fade{ z-index:5; animation: rollFade 6s ease-in-out infinite; }
+@keyframes rollFade{ 0%,40%{opacity:0} 50%,90%{opacity:1} 100%{opacity:0} }
+@media (prefers-reduced-motion: reduce){ .roll--fade{ animation:none; opacity:1; } }
+.work-hero__pending{ position:absolute; inset:0; display:grid; place-items:center; padding:24px; color:#A7B1B6; font-size:15px; font-weight:600; letter-spacing:-.02em; text-align:center; z-index:1; pointer-events:none; }
+#wHero.has-image .work-hero__pending{ display:none; }
+.work__meta{ padding-top:18px; }
+.work__meta h3{ margin:11px 0 6px; }
+
+/* 텍스트 전용 카드 (이미지 없이 구분·년도·프로젝트명) */
+.work--text{ background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); padding:22px 22px 24px; display:flex; flex-direction:column; gap:14px; min-height:150px; transition:transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s, border-color .3s, background .3s; }
+.work--text:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:transparent; background:var(--grad-soft); }
+.work--text__top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.work__year{ font-size:13px; font-weight:700; color:var(--b2); letter-spacing:.02em; white-space:nowrap; transition:color .3s; }
+.work--text .pill{ transition:background .3s, color .3s, border-color .3s; }
+.work--text .work__title{ margin:0; font-size:clamp(16px,1.5vw,18.5px); line-height:1.45; letter-spacing:-.02em; transition:color .3s; }
+.work--text:hover .pill{ background:var(--grad-btn); border-color:transparent; color:#fff; }
+.work--text:hover .work__year{ color:#0D6E96; }
+.work--text:hover .work__title{ color:#0D6E96; }
+
+/* ---------- Tabs ---------- */
+.tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+.tab{ border:1px solid var(--line); background:#fff; border-radius:999px; cursor:pointer; padding:10px 18px; font-size:14px; font-weight:600; color:var(--ink-2); transition:.18s; }
+.tab:hover{ border-color:var(--line-2); color:var(--ink); }
+.tab.is-on{ background:var(--ink); border-color:var(--ink); color:#fff; font-weight:700; }
+.tab b{ opacity:.55; font-weight:600; margin-left:5px; }
+.select{ appearance:none; border:1px solid var(--line); background:#fff; border-radius:999px; padding:10px 40px 10px 18px; font-size:14px; font-weight:600; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235E6F78' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 16px center; }
+
+/* ---------- Portfolio search ---------- */
+.search{ position:relative; display:flex; align-items:center; max-width:540px; }
+.search__icon{ position:absolute; left:18px; color:var(--ink-2); pointer-events:none; }
+.search__input{ width:100%; border:1px solid var(--line); background:#fff; border-radius:999px; padding:14px 48px; font-size:15px; font-weight:500; color:var(--ink); font-family:inherit; transition:border-color .18s, box-shadow .18s; }
+.search__input::placeholder{ color:var(--ink-2); font-weight:500; }
+.search__input:focus{ outline:none; border-color:var(--b2); box-shadow:0 0 0 4px rgba(58,158,200,.14); }
+.search__input::-webkit-search-cancel-button{ -webkit-appearance:none; }
+.search__clear{ position:absolute; right:14px; width:26px; height:26px; border:0; border-radius:50%; background:var(--bg-soft); color:var(--ink-2); font-size:19px; line-height:1; cursor:pointer; display:grid; place-items:center; transition:.18s; }
+.search__clear:hover{ background:var(--line); color:var(--ink); }
+
+/* ---------- Track record ---------- */
+.track{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:clamp(16px,2vw,22px); align-items:start; }
+.track__col{ background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; }
+.track__hd{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:17px 20px; background:var(--grad); color:#fff; }
+.track__hd b{ font-size:17px; font-weight:800; letter-spacing:-.03em; }
+.track__hd span{ font-size:11.5px; font-weight:700; background:rgba(255,255,255,.24); padding:3px 10px; border-radius:999px; }
+.track__list{ list-style:none; }
+.track__list li{ padding:11px 20px; border-top:1px solid var(--line); font-size:13.5px; line-height:1.55; display:flex; gap:9px; align-items:flex-start; transition:background .18s; }
+.track__list li:first-child{ border-top:0; }
+.track__list li:hover{ background:var(--bg-soft); }
+.tg{ flex:none; margin-top:6px; width:7px; height:7px; border-radius:2px; }
+.tg--web{ background:#3A9EC8; } .tg--system{ background:#217DA0; }
+.tg--consult{ background:#C4D2DC; } .tg--app{ background:#0E1F35; } .tg--etc{ background:#C5D0DA; }
+.legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top:26px; }
+.legend span{ display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2); }
+.track__empty{ padding:20px; font-size:13px; color:var(--ink-3); }
+
+
+/* ---------- FAQ category tabs ---------- */
+.faq-tabs{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  margin-bottom:24px;
+}
+.faq-tab{
+  min-width:0;
+  width:100%;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:11px 12px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink-2);
+  cursor:pointer;
+  transition:.18s;
+  white-space:nowrap;
+  text-align:center;
+}
+.faq-tab:hover{border-color:var(--b1);color:var(--b2);}
+.faq-tab.is-on{background:var(--b2);border-color:var(--b2);color:#fff;box-shadow:0 8px 20px rgba(36,140,189,.18);}
+.faq-count{opacity:.65;margin-left:4px;font-weight:600;}
+@media(max-width:900px){
+  .faq-tabs{
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    margin-inline:calc(var(--pad) * -1);
+    padding:0 var(--pad) 8px;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+  }
+  .faq-tabs::-webkit-scrollbar{display:none;}
+  .faq-tab{width:auto;min-width:max-content;padding-inline:16px;scroll-snap-align:start;}
+}
+
+/* ---------- Accordion ---------- */
+.acc{ border-top:1px solid var(--line); }
+.acc__i{ border-bottom:1px solid var(--line); }
+.acc__q{ width:100%; text-align:left; background:none; border:0; cursor:pointer; padding:24px 48px 24px 0; font-size:clamp(15px,1.5vw,17.5px); font-weight:700; letter-spacing:-.025em; position:relative; transition:color .2s; }
+.acc__q:hover{ color:var(--b2); }
+.acc__q::after,.acc__q::before{ content:""; position:absolute; right:8px; top:50%; background:var(--ink-2); border-radius:2px; transition:.28s cubic-bezier(.2,.8,.3,1); }
+.acc__q::before{ width:15px; height:1.8px; transform:translateY(-50%); }
+.acc__q::after{ width:1.8px; height:15px; right:14.6px; transform:translateY(-50%); }
+.acc__i.is-on .acc__q::after{ transform:translateY(-50%) rotate(90deg); opacity:0; }
+.acc__i.is-on .acc__q{ color:var(--b2); }
+.acc__a{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .34s cubic-bezier(.2,.8,.3,1); }
+.acc__i.is-on .acc__a{ grid-template-rows:1fr; }
+.acc__a > div{ overflow:hidden; }
+.acc__a p{ padding-bottom:24px; color:var(--ink-2); font-size:15px; line-height:1.75; max-width:72ch; }
+
+/* ---------- Form ---------- */
+.field{ margin-bottom:20px; }
+.field > label{ display:block; font-size:13.5px; font-weight:700; margin-bottom:9px; }
+.field > label i{ color:#D93A3F; font-style:normal; margin-left:2px; }
+.inp{ width:100%; border:1px solid var(--line-2); background:#fff; border-radius:var(--r-sm); padding:14px 16px; font-size:15px; transition:.18s; outline:none; }
+.inp::placeholder{ color:var(--ink-3); opacity:.7; }
+.inp:focus{ border-color:var(--b1); box-shadow:0 0 0 4px rgba(58,158,200,.15); }
+textarea.inp{ min-height:150px; resize:vertical; line-height:1.65; }
+select.inp{ appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235E6F78' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 16px center; padding-right:42px; }
+.inp.is-err{ border-color:#D93A3F; box-shadow:0 0 0 4px rgba(217,58,63,.1); }
+.err{ display:none; font-size:12.5px; color:#D93A3F; margin-top:7px; font-weight:600; }
+.err.is-on{ display:block; }
+.hint{ font-size:12.5px; color:var(--ink-3); margin-top:7px; }
+.check{ display:flex; gap:11px; align-items:flex-start; cursor:pointer; font-size:13.5px; color:var(--ink-2); line-height:1.6; }
+.check input{ width:19px; height:19px; margin-top:2px; accent-color:var(--b1); cursor:pointer; flex:none; }
+.banner{ display:none; background:#FEF3F3; border:1px solid #F5C9CA; color:#A82A2E; border-radius:var(--r-sm); padding:14px 16px; font-size:13.5px; font-weight:600; margin-bottom:22px; }
+.banner.is-on{ display:block; }
+.drop{ border:1.6px dashed var(--line-2); border-radius:var(--r-sm); padding:26px; text-align:center; cursor:pointer; transition:.2s; color:var(--ink-3); font-size:13.5px; background:var(--bg-soft); }
+.drop:hover{ border-color:var(--b1); color:var(--b2); background:rgba(58,158,200,.05); }
+
+/* ---------- Footer ---------- */
+.ft{ background:var(--bg-ink); color:var(--on-ink-2); padding-block:clamp(52px,6vw,84px) 32px; }
+.ft__top{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px; padding-bottom:44px; }
+.ft h4{ font-size:12.5px; font-weight:700; color:#fff; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
+.ft a, .ft button{ display:block; font-size:14px; color:var(--on-ink-2); padding:5px 0; transition:.18s; background:none; border:0; cursor:pointer; text-align:left; }
+.ft a:hover, .ft button:hover{ color:#fff; }
+.ft__bot{ border-top:1px solid var(--line-ink); padding-top:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; }
+.ft__bot b{ color:#fff; }
+.ft .logo{ color:#fff; margin-bottom:18px; }
+
+/* ---------- Mobile bar ---------- */
+.mbar{ display:none; position:fixed; left:0; right:0; bottom:0; z-index:90; padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom)); background:rgba(255,255,255,.92); backdrop-filter:blur(16px); border-top:1px solid var(--line); transform:translateY(110%); transition:transform .3s cubic-bezier(.2,.8,.3,1); }
+.mbar.is-on{ transform:none; }
+.to-top{ position:fixed; right:clamp(16px,3vw,32px); bottom:clamp(20px,3vw,32px); z-index:80; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:rgba(255,255,255,.9); backdrop-filter:blur(10px); color:var(--ink); display:grid; place-items:center; cursor:pointer; box-shadow:var(--shadow); opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .3s, transform .3s, visibility .3s, box-shadow .25s, border-color .25s; }
+.to-top.is-on{ opacity:1; visibility:visible; transform:none; }
+.to-top:hover{ border-color:var(--b2); box-shadow:0 10px 26px rgba(58,158,200,.22); }
+.to-top svg{ width:18px; height:18px; }
+.work__no{ color:var(--b2); font-weight:800; }
+
+/* ---------- Misc ---------- */
+.rv{ opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.8,.3,1), transform .7s cubic-bezier(.2,.8,.3,1); }
+.rv.in{ opacity:1; transform:none; }
+.toast{ position:fixed; left:50%; bottom:32px; transform:translate(-50%,24px); z-index:300; background:var(--bg-ink); color:#fff; padding:15px 22px; border-radius:999px; font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:.3s cubic-bezier(.2,.8,.3,1); box-shadow:var(--shadow); }
+.toast.is-on{ opacity:1; transform:translate(-50%,0); }
+.empty{ display:none; text-align:center; padding:90px 20px; }
+.empty.is-on{ display:block; }
+.skel{ background:linear-gradient(90deg,#EAF1F5 25%,#F5FAFC 50%,#EAF1F5 75%); background-size:200% 100%; animation:sh 1.3s infinite; border-radius:var(--r-lg); }
+@keyframes sh{ to{ background-position:-200% 0; } }
+.divider{ height:1px; background:var(--line); border:0; }
+.quote{ font-size:clamp(17px,2vw,22px); line-height:1.6; font-weight:600; letter-spacing:-.03em; }
+.avatar{ width:42px; height:42px; border-radius:50%; background:var(--grad); display:grid; place-items:center; color:#fff; font-weight:800; font-size:15px; flex:none; }
+.kv{ display:flex; flex-direction:column; gap:4px; }
+.kv span{ font-size:12px; color:var(--ink-3); font-weight:600; }
+.kv b{ font-size:15px; letter-spacing:-.02em; }
+.tl__i{ display:grid; grid-template-columns:96px 1fr; gap:20px; padding:22px 0; border-top:1px solid var(--line); }
+.tl__i b{ font-size:16px; font-weight:800; letter-spacing:-.03em; color:var(--b1); }
+.member__ph{ aspect-ratio:3/4; border-radius:var(--r-lg); background:linear-gradient(160deg,hsl(var(--h) 54% 90%),hsl(calc(var(--h) + 14) 48% 78%)); position:relative; overflow:hidden; margin-bottom:14px; }
+.member__ph::after{ content:""; position:absolute; left:50%; bottom:-14%; width:64%; aspect-ratio:1; border-radius:50% 50% 44% 44%; background:rgba(255,255,255,.62); transform:translateX(-50%); }
+.member__ph::before{ content:""; position:absolute; left:50%; top:20%; width:31%; aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.78); transform:translateX(-50%); }
+
+
+/* ---------- Homepage refresh ---------- */
+.hero{ background:linear-gradient(180deg,#FFFFFF 0%,#FBFEFD 100%); }
+.hero__grid{ min-height:560px; }
+.hero .h-xl{ max-width:10ch; }
+.hero .lead{ max-width:580px; }
+.mock__hero{ display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:22px; }
+.mock__hero::before{ content:"Responsive Web"; position:relative; z-index:1; }
+.service-card{ text-align:center; padding:18px 18px 28px; min-height:100%; border-width:1px; }
+.service-card:nth-child(1){ background:linear-gradient(180deg,#F2F6FA 0%,#E8EFF6 100%); border-color:#C5D4E0; }
+.service-card:nth-child(2){ background:linear-gradient(180deg,#F0F5F9 0%,#E6EDF5 100%); border-color:#BDD0DF; }
+.service-card:nth-child(3){ background:linear-gradient(180deg,#F2F6FA 0%,#E8EFF6 100%); border-color:#C5D4E0; }
+.service-card:nth-child(4){ background:linear-gradient(180deg,#F0F5F9 0%,#E6EDF5 100%); border-color:#BDD0DF; }
+.service-card .service-photo{ width:100%; aspect-ratio:1.42/1; object-fit:cover; border-radius:18px; margin-bottom:24px; box-shadow:0 10px 24px rgba(15,29,38,.10); }
+.service-card h3{ color:var(--bg-ink); }
+.service-card .small{ color:#425866; }
+.service-card .link-arrow{ color:#217DA0; margin:22px auto 0; }
+.service-card:hover{ transform:translateY(-7px); }
+@media (max-width:640px){ .service-card{ padding:16px 16px 26px; } }
+.promise{ border-radius:var(--r-xl); overflow:hidden; display:grid; grid-template-columns:1.02fr .98fr; min-height:360px; background:linear-gradient(135deg,#EEF3F8 0%,#F6F9FC 48%,#EAF0F6 100%); border:1px solid var(--line); }
+.promise__copy{ padding:clamp(34px,5vw,64px); display:flex; flex-direction:column; justify-content:center; }
+.promise__checks{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 24px; margin-top:28px; }
+.promise__checks span{ display:flex; align-items:center; gap:9px; font-size:14px; color:var(--ink-2); font-weight:600; }
+.promise__checks i{ width:18px; height:18px; border-radius:50%; background:var(--b1); color:#fff; display:grid; place-items:center; font-size:11px; font-style:normal; }
+.promise__visual{ position:relative; aspect-ratio:38/25; min-height:320px; background:linear-gradient(145deg,#C8D8E8,#E8F0F8 58%,#C4D4E4); overflow:hidden; }
+.promise__img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+@media (max-width:900px){ .promise{ grid-template-columns:1fr; } .promise__visual{ min-height:0; } }
+@media (max-width:640px){ .hero__grid{ min-height:auto; } .promise__checks{ grid-template-columns:1fr; } }
+
+
+/* ---------- Project type featured / workflow tabs ---------- */
+.ptype--education{
+  grid-column:auto;
+  border-color:rgba(139,124,246,.26);
+  background:linear-gradient(135deg,#F7F4FF 0%,#F1FBF8 100%);
+  padding:clamp(22px,2.4vw,32px);
+  box-shadow:0 10px 30px rgba(117,103,216,.08);
+}
+.ptype--education::after{
+  content:"AI EDUCATION";
+  position:absolute; right:28px; top:24px;
+  font-size:11px; font-weight:800; letter-spacing:.15em;
+  color:#7567D8; opacity:.65;
+}
+.ptype--education .pill{ background:#ECE8FF; color:#6557D8; }
+.ptype--education .gtext{ background:linear-gradient(115deg,#6557D8,#3A9EC8); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+.flow-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+.flow-tab{
+  border:1px solid var(--line); background:#fff; color:var(--ink-2);
+  border-radius:999px; padding:10px 16px; cursor:pointer;
+  font-size:13.5px; font-weight:700; transition:.18s;
+}
+.flow-tab:hover{ border-color:var(--b1); color:var(--b2); transform:translateY(-1px); }
+.flow-tab.is-on{ background:var(--b2); border-color:var(--b2); color:#fff; box-shadow:0 7px 20px rgba(58,158,200,.18); }
+.flow-tab[data-flow="education"].is-on{ background:#7567D8; border-color:#7567D8; box-shadow:0 7px 20px rgba(117,103,216,.18); }
+.flow-panel{ display:none; }
+.flow-panel.is-on{ display:block; animation:pageIn .28s cubic-bezier(.2,.8,.3,1); }
+.flow-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.flow-step{ min-height:150px; background:#fff; border:1px solid var(--line); border-radius:18px; padding:22px; }
+.flow-step b{ display:block; width:30px; height:30px; border-radius:50%; background:var(--grad-soft); color:var(--b2); display:grid; place-items:center; font-size:12px; margin-bottom:16px; }
+.flow-step h3{ font-size:16px; margin-bottom:7px; }
+.flow-step p{ font-size:13px; color:var(--ink-2); line-height:1.65; }
+.flow-note{ margin-top:16px; padding:14px 17px; border-radius:14px; background:rgba(58,158,200,.07); color:var(--ink-2); font-size:13px; }
+.flow-panel[data-panel="education"] .flow-note{ background:rgba(117,103,216,.08); }
+
+@media (max-width:900px){ .flow-steps{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){
+  .ptype--education{ grid-column:auto; }
+  .ptype--education::after{ display:none; }
+  .flow-tabs{ flex-wrap:nowrap; overflow-x:auto; margin-inline:calc(var(--pad) * -1); padding:0 var(--pad) 6px; }
+  .flow-tab{ white-space:nowrap; }
+  .flow-steps{ grid-template-columns:1fr; }
+}
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width:1024px){
+  .hero__grid{ grid-template-columns:1fr; }
+  .mock{ transform:none; }
+  .chip-float--a{ left:2%; } .chip-float--b{ right:2%; }
+  .ft__top{ grid-template-columns:1fr 1fr; gap:32px; }
+  .track{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:900px){
+  :root{ --nav-h:64px; }
+  .nav{ display:none; }
+  .hdr__cta .btn{ display:none; }
+  .burger{ display:flex; }
+  .g3,.g4{ grid-template-columns:repeat(2,1fr); }
+  .zig{ grid-template-columns:1fr !important; }
+  .zig .zig__v{ order:-1; }
+  .split{ grid-template-columns:1fr !important; }
+  .mbar{ display:block; }
+  .to-top{ bottom:calc(72px + env(safe-area-inset-bottom)); }
+}
+@media (max-width:640px){
+  .g2,.g3,.g4{ grid-template-columns:1fr; }
+  .ft__top{ grid-template-columns:1fr; gap:28px; }
+  .track{ grid-template-columns:1fr; }
+  .head--row{ align-items:flex-start; }
+  .tabs{ overflow-x:auto; flex-wrap:nowrap; margin-inline:calc(var(--pad) * -1); padding:0 var(--pad) 6px; }
+  .tab{ white-space:nowrap; }
+  .tl__i{ grid-template-columns:1fr; gap:6px; }
+  .chip-float{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .rv{ opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in">
+    <button class="logo" data-go="home" aria-label="JTOCOM 홈">
+      <img class="logo__img" src="assets/logo.png" alt="JTOCOM">
+    </button>
+    <nav class="nav" id="nav">
+      <button data-go="home" class="is-on">Home</button>
+      <button data-go="about">About</button>
+      <button data-go="projects">Services</button>
+      <button data-go="portfolio">Portfolio</button>
+      <button data-go="contact">Contact</button>
+    </nav>
+    <div class="hdr__cta">
+      <button class="btn btn--grad btn--sm" data-go="contact">프로젝트 문의</button>
+      <button class="burger" id="burger" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <button class="dnav" data-go="home">Home <span>→</span></button>
+  <button class="dnav" data-go="about">About <span>→</span></button>
+  <button class="dnav" data-go="projects">Services <span>→</span></button>
+  <button class="dnav" data-go="portfolio">Portfolio <span>→</span></button>
+  <button class="dnav" data-go="contact">Contact <span>→</span></button>
+  <div class="drawer__foot">
+    <button class="btn btn--grad btn--block" data-go="contact">프로젝트 문의하기</button>
+    <p class="tiny" style="text-align:center">jtocom@jtocom.com · 010-2867-8552</p>
+  </div>
+</div>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<section class="page is-on" id="home">
+  <div class="hero">
+    <div class="orb orb--1"></div><div class="orb orb--2"></div><div class="orb orb--3"></div>
+    <svg class="hero__lines" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="hero-lg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0">
+          <stop offset="0" stop-color="#3A9EC8" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#3A9EC8" stop-opacity=".45"/>
+          <stop offset="1" stop-color="#C4D2DC" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g class="hero__lg" stroke="url(#hero-lg)" stroke-width="1.4" fill="none" stroke-linecap="round">
+        <path d="M-120 120 C 260 30, 620 210, 1320 100"/>
+        <path d="M-120 230 C 300 150, 640 320, 1320 220"/>
+        <path d="M-120 340 C 260 270, 660 430, 1320 330"/>
+        <path d="M-120 450 C 320 380, 640 545, 1320 440"/>
+        <path d="M-120 30  C 320 110, 620 -30, 1320 60"/>
+        <path d="M-120 545 C 300 470, 660 600, 1320 520"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <div class="hero__grid">
+        <div>
+          <span class="pill pill--grad rv"><span class="dot"></span> 2026 신규 프로젝트 접수 중</span>
+          <h1 class="h-xl rv">AI가 만들고,<br>사람이 완성하는<br><span class="gtext">브랜드 경험</span></h1>
+          <p class="lead rv">생성형 AI로 웹사이트와 콘텐츠를 설계·제작합니다.<br>기획부터 배포까지 평균 <b style="color:var(--ink)">1주</b>, 기존 대비 <b style="color:var(--ink)">60% 빠른 속도</b>로 브랜드의 다음 단계를 만듭니다.</p>
+          <div class="btn-row rv">
+            <button class="btn btn--grad btn--lg" data-go="contact">무료 상담 신청</button>
+            <button class="btn btn--line btn--lg" data-go="projects">프로젝트 보기</button>
+          </div>
+        </div>
+        <div style="position:relative" class="rv">
+          <div class="mock">
+            <div class="mock__bar"><i></i><i></i><i></i><span class="url">www.jtocom.com</span></div>
+            <div class="mock__body">
+              <div class="mock__hero"></div>
+              <div class="mock__line w70"></div><div class="mock__line w45"></div>
+              <div class="mock__row"><div class="mock__tile"></div><div class="mock__tile"></div><div class="mock__tile"></div></div>
+            </div>
+          </div>
+          <div class="chip-float chip-float--a"><span class="dot"></span><div>Responsive Web<small>모든 화면에 대응</small></div></div>
+          <div class="chip-float chip-float--b">✦<div>생성형 AI<small>기획부터 배포까지</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--tight" style="padding-block:24px 52px"><div class="wrap" style="background:#fff;border:1px solid var(--line);border-radius:24px;padding-block:26px;box-shadow:var(--shadow-sm)">
+    <p class="tiny" style="text-align:center;margin-bottom:24px">함께한 고객사</p>
+    <div class="marq"><div class="marq__track" id="marq"></div></div>
+  </div></div>
+
+  <div class="sec sec--soft">
+    <div class="wrap">
+      <div class="head head--center rv">
+        <span class="eyebrow">Service</span>
+        <h2 class="h-lg">무엇을 만들어 드릴까요</h2>
+        <p class="lead">기획·설계 컨설팅부터 구축, 그리고 운영까지 한 팀이 이어서 담당합니다.</p>
+      </div>
+      <div class="grid g4">
+        <div class="card card--hover service-card rv">
+          <img class="service-photo" src="assets/images/asset-01.jpg" alt="화이트 노트북 화면에 표시된 민트 컬러 AI 브랜드 웹사이트">
+          <h3 class="h-sm">AI 웹사이트 제작</h3><p class="small" style="margin-top:10px">브랜드에 맞는 반응형 홈페이지를 AI 기반으로 빠르고 정교하게 제작합니다.</p><button class="link-arrow" data-go="projects">자세히 보기 →</button>
+        </div>
+        <div class="card card--hover service-card rv">
+          <img class="service-photo" src="assets/images/asset-02.jpg" alt="화이트 스마트폰에서 실행되는 AI 모바일 애플리케이션">
+          <h3 class="h-sm">모바일 앱 개발</h3><p class="small" style="margin-top:10px">아이디어를 모바일 앱으로 구현하여 사용자 경험과 비즈니스 실행력을 높입니다.</p><button class="link-arrow" data-go="projects">자세히 보기 →</button>
+        </div>
+        <div class="card card--hover service-card rv">
+          <img class="service-photo" src="assets/images/asset-03.jpg" alt="화이트 맥 스타일 모니터에서 제작하는 영상 및 동화 스타일 AI 콘텐츠">
+          <h3 class="h-sm">AI 콘텐츠 제작</h3><p class="small" style="margin-top:10px">생성형 AI로 블로그, 이미지, 영상 등 브랜드 콘텐츠를 제작합니다.</p><button class="link-arrow" data-go="projects">자세히 보기 →</button>
+        </div>
+        <div class="card card--hover service-card rv">
+          <img class="service-photo" src="assets/images/asset-04.jpg" alt="40대 동양인 여성 AI 전문 강사가 민트 컬러 화면으로 진행하는 교육">
+          <h3 class="h-sm">AI 교육 &amp; 강의</h3><p class="small" style="margin-top:10px">기업과 기관을 위한 맞춤형 AI 교육과 실무 중심 전문 강의를 제공합니다.</p><button class="link-arrow" data-go="contact">자세히 보기 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="promise rv">
+        <div class="promise__copy">
+          <span class="eyebrow">JTOCOM'S PROMISE</span>
+          <h2 class="h-md">기획부터 배포까지,<br>처음부터 끝까지 함께합니다.</h2>
+          <div class="promise__checks">
+            <span><i>✓</i>빠른 커뮤니케이션</span><span><i>✓</i>고품질 결과물</span>
+            <span><i>✓</i>명확한 일정 관리</span><span><i>✓</i>지속적인 사후 관리</span>
+          </div>
+        </div>
+        <div class="promise__visual">
+          <img class="promise__img" src="assets/images/promise-visual.svg" alt="기획·디자인·개발·배포 4단계가 순서대로 연결된 AI 프로젝트 파이프라인 대시보드. 평균 1주 완료, 기존 대비 60% 빠른 제작 속도를 보여줍니다." loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft">
+    <div class="wrap">
+      <div class="head head--row rv">
+        <div><span class="eyebrow">Work</span><h2 class="h-lg">최근 작업</h2></div>
+        <button class="link-arrow" data-go="portfolio">전체 포트폴리오 <svg width="15" height="13" viewBox="0 0 15 13" fill="none"><path d="M1 6.5h12M8.5 2l4.5 4.5L8.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div class="grid g3" id="homeWorks"></div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft" style="text-align:center">
+    <div class="wrap rv">
+      <h2 class="h-lg" style="margin-bottom:16px">프로젝트를 준비 중이신가요?</h2>
+      <p class="lead" style="margin:0 auto 32px">영업일 기준 24시간 내 담당자가 연락드립니다. 상담은 무료입니다.</p>
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn btn--grad btn--lg" data-go="contact">프로젝트 문의하기</button>
+        <button class="btn btn--line btn--lg" data-go="projects">프로젝트 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="page" id="about">
+  <div class="sec" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow rv">About us</span>
+      <h1 class="h-xl rv" style="max-width:16ch">오래 쓰는 웹을<br><span class="gtext">만듭니다</span></h1>
+      <p class="lead rv" style="margin-top:24px;font-size:clamp(16px,1.6vw,19px);max-width:none">JTOCOM은 AI를 활용해 웹 컨설팅, 반응형 웹·앱 구축, UIUX 기획, 콘텐츠 제작과 운영·유지보수까지 브랜드의 디지털 자산을 설계하고 만드는 스튜디오입니다. 또한 기업과 기관, 개인이 AI를 실무에 활용할 수 있도록 맞춤형 교육과 전문 강의를 제공합니다. 만들고 끝나는 것이 아니라, 구축부터 교육과 운영까지 함께합니다.</p>
+      <div class="rv" style="margin-top:clamp(40px,5vw,64px);aspect-ratio:16/6;border-radius:var(--r-xl);background:var(--grad);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 74% 26%,rgba(255,255,255,.5),transparent 46%),radial-gradient(circle at 18% 84%,rgba(0,0,0,.22),transparent 52%)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="grid g2" style="gap:clamp(28px,5vw,72px)">
+        <div class="rv"><span class="eyebrow">Mission</span><h2 class="h-md">기술보다<br>사용하는 사람 먼저</h2><p class="lead" style="margin-top:16px">화려한 기술보다 실제로 잘 쓰이는 구조를 먼저 고민합니다. 공공기관부터 대기업까지, 사용자층이 넓을수록 이 원칙이 중요해집니다.</p></div>
+        <div class="rv"><span class="eyebrow">Vision</span><h2 class="h-md">끝까지 남는<br>파트너</h2><p class="lead" style="margin-top:16px">구축 이후에도 오래 이어지는 운영·유지보수처럼, 프로젝트가 끝난 뒤에도 옆에 남는 파트너가 되는 것이 목표입니다.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft">
+    <div class="wrap">
+      <div class="head rv"><span class="eyebrow">Capability</span><h2 class="h-lg">우리가 잘하는 것</h2></div>
+      <div class="grid g4">
+        <div class="card card--hover rv"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h13"/></svg></div><h3 class="h-sm">대규모 시스템 설계</h3><p class="small" style="margin-top:10px">현대자동차 글로벌 시스템, 금융보안원, 중소기업중앙회 등 대규모 조직의 시스템 분석·설계를 수행했습니다.</p></div>
+        <div class="card card--hover rv"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg></div><h3 class="h-sm">공공 · 교육 도메인</h3><p class="small" style="margin-top:10px">서울시, 방위사업청, 에너지관리공단, LH 등 공공 프로젝트와 교육 플랫폼 구축 경험이 축적돼 있습니다.</p></div>
+        <div class="card card--hover rv"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4L12 3z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9L18 15z"/></svg></div><h3 class="h-sm">생성형 AI 실무 활용</h3><p class="small" style="margin-top:10px">기획·디자인·콘텐츠 제작에 생성형 AI를 접목해 속도와 완성도를 동시에 높이고, 실무에 바로 쓰는 워크플로우와 교육까지 설계합니다.</p></div>
+        <div class="card card--hover rv"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 4-7 5 5"/><path d="M3 21h18"/></svg></div><h3 class="h-sm">장기 운영 · 유지보수</h3><p class="small" style="margin-top:10px">단발성 구축이 아니라 다년 계약으로 이어지는 운영 역량을 갖추고 있습니다.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="grid split" style="grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:stretch">
+        <div class="rv"><span class="eyebrow">History</span><h2 class="h-lg" style="margin-bottom:28px">걸어온 길</h2>
+          <div>
+            <div class="tl__i"><b>2025~</b><div><p class="small" style="color:var(--ink)">생성형 AI 접목</p><p class="tiny" style="margin-top:4px">웹·콘텐츠 제작에 생성형 AI 도입, AI 실무 교육·강의 확대</p></div></div>
+            <div class="tl__i"><b>2024~</b><div><p class="small" style="color:var(--ink)">AI · 메타버스 영역 확장</p><p class="tiny" style="margin-top:4px">Group DEMEX AI Chatbot, JOYTOWN 2.0 (with Metaverse)</p></div></div>
+            <div class="tl__i"><b>2022~</b><div><p class="small" style="color:var(--ink)">공공 · 금융 프로젝트 확대</p><p class="tiny" style="margin-top:4px">금융보안원, 방위사업청, 부동산광고시장 감시센터</p></div></div>
+            <div class="tl__i"><b>2021~</b><div><p class="small" style="color:var(--ink)">플랫폼 · 인트라넷 구축 다수</p><p class="tiny" style="margin-top:4px">O2O 펫플랫폼 CRM, AJ대원·엘바라이프·새롬 인트라넷</p></div></div>
+            <div class="tl__i"><b>2018~</b><div><p class="small" style="color:var(--ink)">차세대 컨설팅 · 시스템 구축</p><p class="tiny" style="margin-top:4px">LG화학, 효성 ESS, 온라인투어, GSFRESH</p></div></div>
+          </div>
+        </div>
+        <div class="rv htype">
+          <span class="htype__glow htype__glow--a"></span>
+          <span class="htype__glow htype__glow--b"></span>
+          <svg class="htype__lines" viewBox="0 0 460 580" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="hlg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="460" y2="0">
+                <stop offset="0" stop-color="#3A9EC8" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#C4D2DC" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#3A9EC8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="htype__lg" stroke="url(#hlg)" stroke-width="1.6" fill="none" stroke-linecap="round">
+              <path d="M-60 110 C 110 30, 300 210, 540 90"/>
+              <path d="M-60 220 C 130 150, 320 320, 540 210"/>
+              <path d="M-60 330 C 110 270, 340 430, 540 320"/>
+              <path d="M-60 440 C 150 380, 320 545, 540 430"/>
+              <path d="M-60 540 C 130 470, 350 600, 540 520"/>
+            </g>
+            <g class="htype__lg htype__lg--b" stroke="url(#hlg)" stroke-width="1.3" fill="none" stroke-linecap="round" opacity=".72">
+              <path d="M-60 470 C 130 540, 320 360, 540 470"/>
+              <path d="M-60 360 C 150 420, 320 250, 540 350"/>
+              <path d="M-60 250 C 120 300, 340 150, 540 240"/>
+              <path d="M-60 140 C 150 190, 300 40, 540 130"/>
+            </g>
+          </svg>
+          <div class="htype__inner">
+            <div class="htype__roll">
+              <div class="htype__slide"><p class="htype__main">기술의 흐름을<br><b>앞서</b> 걷습니다</p><p class="htype__sub">변화를 먼저 읽고 나아갈 방향을 제시합니다</p></div>
+              <div class="htype__slide"><p class="htype__main">웹부터 <b>AI</b>까지<br>한 팀이 만듭니다</p><p class="htype__sub">기획·디자인·개발·콘텐츠를 한 흐름으로</p></div>
+              <div class="htype__slide"><p class="htype__main">구축을 넘어<br><b>운영</b>까지 함께합니다</p><p class="htype__sub">만들고 끝나지 않고 오래 함께합니다</p></div>
+              <div class="htype__slide"><p class="htype__main"><b>AI</b>를 실무로<br>연결합니다</p><p class="htype__sub">교육과 자동화로 팀의 역량을 키웁니다</p></div>
+              <div class="htype__slide"><p class="htype__main">변화에 맞춰<br>계속 <b>진화</b>합니다</p><p class="htype__sub">웹·모바일·메타버스·AI, 그리고 그다음</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" style="text-align:center">
+    <div class="wrap rv">
+      <h2 class="h-lg" style="margin-bottom:14px">우리와 맞는 프로젝트인지 궁금하신가요?</h2>
+      <div class="btn-row" style="justify-content:center;margin-top:26px">
+        <button class="btn btn--grad btn--lg" data-go="contact">상담 신청</button>
+        <button class="btn btn--line btn--lg" data-go="projects">프로젝트 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section class="page" id="projects">
+  <div class="sec" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow rv">Projects</span>
+      <h1 class="h-xl rv" style="max-width:14ch">어떤 프로젝트를<br><span class="gtext">하나요</span></h1>
+      <p class="lead rv" style="margin-top:24px">제작·교육·컨설팅·운영 목적에 따라 6가지 전문 서비스로 진행합니다. 서비스별 범위와 주요 산출물을 확인하세요.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap"><div class="grid g2" id="ptypes"></div></div>
+  </div>
+
+  <div class="sec sec--soft">
+    <div class="wrap">
+      <div class="head rv"><span class="eyebrow">How we work</span><h2 class="h-lg">서비스별 진행 방식</h2><p class="lead" style="margin-top:12px">서비스를 선택하면 해당 프로젝트의 핵심 진행 단계를 확인할 수 있습니다.</p></div>
+      <div class="flow-tabs rv" id="flowTabs" role="tablist" aria-label="서비스별 진행 방식"></div>
+      <div id="flowPanels" class="rv"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap" style="max-width:900px">
+      <div class="head rv"><span class="eyebrow">FAQ</span><h2 class="h-lg">자주 묻는 질문</h2><p class="lead" style="margin-top:12px">서비스 카테고리를 선택하면 관련 질문을 확인할 수 있습니다.</p></div>
+      <div class="faq-tabs rv" id="faqTabs" role="tablist" aria-label="FAQ 카테고리"></div>
+      <div class="acc rv" id="faq"></div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft" style="text-align:center">
+    <div class="wrap rv">
+      <h2 class="h-lg" style="margin-bottom:14px">우리 프로젝트는 어디에 해당할까요?</h2>
+      <p class="lead" style="margin:0 auto 28px">무료 상담에서 함께 정리해 드립니다.</p>
+      <button class="btn btn--grad btn--lg" data-go="contact">무료 상담 신청</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section class="page" id="portfolio">
+  <div class="sec" style="padding-bottom:clamp(28px,4vw,44px)">
+    <div class="wrap">
+      <span class="eyebrow rv">Portfolio</span>
+      <h1 class="h-xl rv" style="max-width:12ch">우리가<br><span class="gtext">만든 것들</span></h1>
+      <p class="lead rv" style="margin-top:24px">수행한 프로젝트 중 공개 가능한 대표 작업을 모았습니다.</p>
+    </div>
+  </div>
+
+  <div class="pf-strip" aria-hidden="true">
+    <div class="pf-strip__track" id="pfStrip"></div>
+  </div>
+
+  <div class="wrap" style="margin-bottom:clamp(18px,2.5vw,26px)">
+    <div class="search">
+      <svg class="search__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M12.5 12.5 16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="search" id="search" class="search__input" placeholder="프로젝트명 · 유형으로 검색" aria-label="포트폴리오 검색" autocomplete="off">
+      <button type="button" class="search__clear" id="searchClear" aria-label="검색어 지우기" hidden>&times;</button>
+    </div>
+  </div>
+
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,44px)">
+    <div class="tabs" id="tabs"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <select class="select" id="year" aria-label="연도 선택">
+        <option value="all">전체 연도</option>
+        <option value="2026">2026년</option>
+        <option value="2025">2025년</option>
+        <option value="2024">2024년</option>
+        <option value="2023">2023년</option>
+        <option value="2022">2022년</option>
+        <option value="2021">2021년</option>
+        <option value="2020">2020년</option>
+        <option value="2019">2019년</option>
+        <option value="2018">2018년</option>
+      </select>
+      <select class="select" id="sort">
+        <option value="latest">최신순</option><option value="name">가나다순</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid g3" id="grid"></div>
+      <div class="empty" id="empty">
+        <p class="lead" style="margin:0 auto 20px">해당 조건의 작업물이 없습니다.<br>다른 유형을 확인해 보세요.</p>
+        <button class="btn btn--line" data-reset>전체 보기</button>
+      </div>
+      <div style="display:flex;justify-content:center;margin-top:clamp(36px,5vw,56px)">
+        <button class="btn btn--line btn--lg" id="more">더 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK DETAIL ===================== -->
+<section class="page" id="work">
+  <div class="sec" style="padding-bottom:clamp(28px,4vw,40px)">
+    <div class="wrap">
+      <button class="link-arrow rv" data-go="portfolio" style="margin-bottom:24px;color:var(--ink-2)">
+        <svg width="15" height="13" viewBox="0 0 15 13" fill="none" style="transform:rotate(180deg)"><path d="M1 6.5h12M8.5 2l4.5 4.5L8.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        포트폴리오
+      </button>
+      <span class="pill rv" id="wCat">Responsive Web</span>
+      <h1 class="h-xl rv" id="wTitle" style="margin:16px 0 20px;max-width:20ch">프로젝트</h1>
+      <p class="lead rv" id="wLead"></p>
+      <div class="grid g4 rv" style="margin-top:40px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <div class="kv"><span>유형</span><b id="wType">—</b></div>
+        <div class="kv"><span>수행 시기</span><b id="wYear">—</b></div>
+        <div class="kv"><span>범위</span><b>기획 · 디자인 · 개발</b></div>
+        <div class="kv"><span>상태</span><b class="gtext">완료</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap rv">
+    <div id="wHero" style="aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;position:relative;background:var(--grad)"><span class="work-hero__pending" role="status">이미지 준비중입니다.</span>
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 76% 24%,rgba(255,255,255,.45),transparent 44%),radial-gradient(circle at 22% 82%,rgba(0,0,0,.2),transparent 52%)"></div>
+      <div style="position:absolute;left:10%;right:10%;bottom:0;height:58%;border-radius:20px 20px 0 0;background:#fff;box-shadow:0 -10px 40px rgba(0,0,0,.16)"></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="grid zig" style="grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center">
+        <div class="rv">
+          <span class="eyebrow">Scope</span><h2 class="h-md">수행 범위</h2>
+          <ul class="small" style="list-style:none;display:grid;gap:12px;margin-top:18px">
+            <li style="display:flex;gap:10px"><span style="color:var(--b1);font-weight:800">01</span> 현황 진단 및 정보구조(IA) 재설계</li>
+            <li style="display:flex;gap:10px"><span style="color:var(--b1);font-weight:800">02</span> UIUX 와이어프레임 · 디자인 시안</li>
+            <li style="display:flex;gap:10px"><span style="color:var(--b1);font-weight:800">03</span> 반응형 퍼블리싱 및 개발</li>
+            <li style="display:flex;gap:10px"><span style="color:var(--b1);font-weight:800">04</span> 웹 접근성 · 웹 표준 검수</li>
+            <li style="display:flex;gap:10px"><span style="color:var(--b1);font-weight:800">05</span> 배포 및 운영 인수인계</li>
+          </ul>
+        </div>
+        <div class="rv zig__v" style="aspect-ratio:4/3;border-radius:var(--r-lg);background:linear-gradient(150deg,#E6F2F9,#DCEEF8);border:1px solid var(--line);display:grid;place-items:center">
+          <div style="text-align:center;padding:24px"><p class="tiny" style="letter-spacing:.1em;font-weight:700;color:var(--b2)">PROJECT DETAIL</p><p class="small" style="margin-top:10px">상세 케이스 스터디는 준비 중입니다.<br>필요하시면 문의 시 자료를 보내드립니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft">
+    <div class="wrap">
+      <div class="head head--row rv"><h2 class="h-md">다른 작업 보기</h2><button class="link-arrow" data-go="portfolio">목록으로 <svg width="15" height="13" viewBox="0 0 15 13" fill="none"><path d="M1 6.5h12M8.5 2l4.5 4.5L8.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="grid g3" id="related"></div>
+    </div>
+  </div>
+
+  <div class="sec" style="text-align:center">
+    <div class="wrap rv">
+      <h2 class="h-lg" style="margin-bottom:14px">비슷한 프로젝트를 준비 중이신가요?</h2>
+      <button class="btn btn--grad btn--lg" style="margin-top:24px" data-go="contact">프로젝트 문의하기</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" id="contact">
+  <div class="sec" style="padding-bottom:clamp(32px,4vw,48px)">
+    <div class="wrap">
+      <span class="eyebrow rv">Contact us</span>
+      <h1 class="h-xl rv" style="max-width:14ch">프로젝트를<br><span class="gtext">이야기해 주세요</span></h1>
+      <p class="lead rv" style="margin-top:24px">아직 구체적이지 않아도 괜찮습니다. 영업일 기준 24시간 내에 담당자가 회신드립니다.</p>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid split" style="grid-template-columns:1.3fr .7fr;gap:clamp(32px,5vw,64px);align-items:start">
+
+        <form id="form" class="card rv" novalidate style="padding:clamp(24px,3vw,40px)">
+          <div class="banner" id="banner"></div>
+
+          <div class="field">
+            <label for="f-type">문의 유형 <i>*</i></label>
+            <select class="inp" id="f-type">
+              <option value="">선택해 주세요</option>
+              <option>AI 웹사이트 제작</option><option>모바일 앱 개발</option>
+              <option>AI 콘텐츠 제작</option><option>AI 교육 &amp; 강의</option>
+              <option>UIUX 컨설팅</option><option>운영 · 유지보수</option>
+              <option>제휴 · 채용 · 기타</option>
+            </select>
+            <div class="err"></div>
+          </div>
+
+          <div class="grid g2" style="gap:0 20px">
+            <div class="field"><label for="f-company">회사명 <i>*</i></label><input class="inp" id="f-company" placeholder="(주)브랜드"><div class="err"></div></div>
+            <div class="field"><label for="f-name">담당자명 <i>*</i></label><input class="inp" id="f-name" placeholder="홍길동"><div class="err"></div></div>
+          </div>
+
+          <div class="grid g2" style="gap:0 20px">
+            <div class="field"><label for="f-email">이메일 <i>*</i></label><input class="inp" id="f-email" type="email" placeholder="name@company.com" autocomplete="email"><div class="err"></div></div>
+            <div class="field"><label for="f-tel">연락처</label><input class="inp" id="f-tel" placeholder="010-0000-0000" inputmode="tel"><div class="err"></div><div class="hint">빠른 회신을 원하시면 입력해 주세요</div></div>
+          </div>
+
+          <div class="grid g2" style="gap:0 20px">
+            <div class="field"><label for="f-budget">예상 예산</label><select class="inp" id="f-budget"><option>미정</option><option>1,000만원 미만</option><option>1,000~3,000만원</option><option>3,000만원~1억</option><option>1억 이상</option></select></div>
+            <div class="field"><label for="f-when">희망 일정</label><select class="inp" id="f-when"><option>미정</option><option>1개월 이내</option><option>1~3개월</option><option>3개월 이후</option></select></div>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">프로젝트 내용 <i>*</i></label>
+            <textarea class="inp" id="f-msg" maxlength="1000" placeholder="현재 상황과 원하시는 결과를 자유롭게 적어주세요. 참고 사이트가 있다면 링크도 좋습니다."></textarea>
+            <div class="err"></div>
+            <div class="hint"><span id="cnt">0</span> / 1,000자</div>
+          </div>
+
+          <div class="field">
+            <label>참고 파일</label>
+            <div class="drop" id="drop">파일을 끌어다 놓거나 클릭해서 업로드<br><span class="tiny">PDF · PPT · ZIP · 최대 20MB</span></div>
+          </div>
+
+          <hr class="divider" style="margin:26px 0 22px">
+
+          <div class="field">
+            <label class="check"><input type="checkbox" id="f-agree">
+              <span><b style="color:var(--ink)">[필수]</b> 개인정보 수집·이용에 동의합니다. <u style="cursor:pointer" data-privacy>전문 보기</u><br>
+              <span class="tiny">수집항목: 회사명, 담당자명, 이메일, 연락처 / 목적: 문의 응대 / 보유기간: 3년</span></span></label>
+            <div class="err"></div>
+            <label class="check" style="margin-top:14px"><input type="checkbox" id="f-mkt"><span>[선택] 뉴스레터 및 마케팅 정보 수신에 동의합니다.</span></label>
+          </div>
+
+          <button class="btn btn--grad btn--block btn--lg" id="submit" type="submit">문의 보내기</button>
+          <p class="tiny" style="text-align:center;margin-top:14px">영업일 기준 24시간 내 회신 · 문의 내용은 외부에 공유되지 않습니다.</p>
+        </form>
+
+        <aside style="display:grid;gap:20px">
+          <div class="card rv">
+            <h3 class="h-sm" style="margin-bottom:20px">바로 연락하기</h3>
+            <div style="display:grid;gap:18px">
+              <div class="kv"><span>이메일</span><b>jtocom@jtocom.com</b></div>
+              <div class="kv"><span>전화</span><b>010-2867-8552</b><span>평일 10:00–18:00</span></div>
+              <div class="kv"><span>웹사이트</span><b>www.jtocom.com</b></div>
+              <div class="kv"><span>담당</span><b>대표 김희정</b><span>CEO</span></div>
+            </div>
+            <button class="btn btn--line btn--block btn--sm" style="margin-top:24px" data-dl>회사 소개서 받기 (PDF)</button>
+          </div>
+
+          <div class="card rv">
+            <h3 class="h-sm" style="margin-bottom:16px">오시는 길</h3>
+            <div style="aspect-ratio:4/3;border-radius:var(--r-sm);background:linear-gradient(150deg,#E6F2F9,#DCEEF8);position:relative;overflow:hidden;margin-bottom:16px">
+              <div style="position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-45deg);width:34px;height:34px;border-radius:50% 50% 50% 4px;background:var(--grad);box-shadow:var(--shadow-sm)"></div>
+              <div style="position:absolute;left:0;right:0;top:62%;height:1.5px;background:rgba(15,29,38,.12)"></div>
+              <div style="position:absolute;top:0;bottom:0;left:38%;width:1.5px;background:rgba(15,29,38,.12)"></div>
+            </div>
+            <p class="small">주소 준비 중<br><span class="tiny">방문 상담을 원하시면 미리 연락 주세요.</span></p>
+          </div>
+
+          <div class="card card--ink rv">
+            <h3 class="h-sm">채용 문의</h3>
+            <p class="small" style="color:var(--on-ink-2);margin:10px 0 18px">함께 일할 동료를 찾고 있습니다.</p>
+            <button class="btn btn--line btn--sm" data-toast="채용 문의는 이메일로 보내 주세요.">문의하기</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--soft">
+    <div class="wrap" style="max-width:860px">
+      <div class="head head--center rv"><h2 class="h-md">문의 전 자주 보는 질문</h2></div>
+      <div class="acc rv" id="faq2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DONE ===================== -->
+<section class="page" id="done">
+  <div class="sec" style="text-align:center;padding-block:clamp(72px,10vw,140px)">
+    <div class="wrap">
+      <div style="width:76px;height:76px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin:0 auto 30px">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+      </div>
+      <h1 class="h-lg" style="margin-bottom:16px">문의가 정상적으로 접수되었습니다</h1>
+      <p class="lead" style="margin:0 auto 10px">영업일 기준 24시간 내에 담당자가 회신드립니다.</p>
+      <p class="small">접수번호 <b id="doneNo" style="font-family:ui-monospace,Menlo,monospace;color:var(--ink)">#JTO-00000000-0000</b></p>
+      <p class="tiny" style="margin-top:8px">확인 메일을 <b id="doneMail" style="color:var(--ink-2)">name@company.com</b> 으로 발송했습니다.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:36px">
+        <button class="btn btn--grad btn--lg" data-go="home">홈으로</button>
+        <button class="btn btn--line btn--lg" data-go="projects">프로젝트 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__top">
+      <div>
+        <div class="logo" style="cursor:default"><img class="logo__img" src="assets/logo1.png" alt="JTOCOM"></div>
+        <p style="font-size:13.5px;line-height:1.9;max-width:34ch">
+          JTOCOM · 대표 김희정 (CEO)<br>
+          jtocom@jtocom.com · 010-2867-8552<br>
+          www.jtocom.com
+        </p>
+      </div>
+      <div><h4>회사</h4>
+        <button data-go="about">About</button><button data-go="projects">Services</button>
+        <button data-go="portfolio">Portfolio</button><button data-go="contact">Contact</button></div>
+      <div><h4>서비스</h4>
+        <button data-go="projects">Web Consulting</button><button data-go="projects">Responsive Web</button>
+        <button data-go="projects">UIUX Planning &amp; Build</button><button data-go="projects">Maintenance</button></div>
+      <div><h4>채널</h4>
+        <button data-toast="채널 연결 예정">인스타그램</button><button data-toast="채널 연결 예정">유튜브</button>
+        <button data-toast="채널 연결 예정">링크드인</button><button data-toast="채널 연결 예정">블로그</button></div>
+    </div>
+    <div class="ft__bot">
+      <span>© 2026 JTOCOM. All rights reserved.</span>
+      <span><b style="cursor:pointer" data-privacy>개인정보처리방침</b> · 이용약관</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><button class="btn btn--grad btn--block" data-go="contact">무료 상담 신청</button></div>
+
+<button class="to-top" id="toTop" type="button" aria-label="맨 위로 이동">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+const $  = (s,r=document) => r.querySelector(s);
+const $$ = (s,r=document) => [...r.querySelectorAll(s)];
+
+/* ===================== 수행 실적 데이터 ===================== */
+const TRACK = [
+  ['2026', [
+    'Group DEMEX AI Chatbot System',
+    'SaaS 플랫폼 시스템 구축',
+    '디지털교과서 표준화 작업 컨설팅',
+    '에너지관리공단 에너지바우처 업무 포털 컨설팅'
+  ]],
+  ['2025', [
+    '서울시 2025 부활절 퍼레이드 Responsive Web',
+    'JOYTOWN Responsive Web 2.0 (with Metaverse)',
+    '더리본 온라인 렌탈 시스템 Responsive Web',
+    '국가무형문화재 연등회 Responsive Web'
+  ]],
+  ['2024', [
+    '서울시 2024 부활절 퍼레이드 Responsive Web',
+    '현대자동차 Global WEBCC 3D Excite 시스템 구축',
+    '저출생대책 국민운동 본부 Responsive Web',
+    '서울시 청소년지원 센터 Responsive Web'
+  ]],
+  ['2023', [
+    '다문화 TV Responsive Web',
+    '부동산광고시장 감시센터 - 허위매물탐지시스템',
+    '현대자동차 WWN4.0 글로벌 분석 설계 컨설팅',
+    'CGS Seoul Responsive Web',
+    '방위사업청 교육포털 컨설팅 Responsive Web',
+    'MALHAZA 교육 플랫폼 Responsive Web 2차',
+    '금융보안원 반응형 웹 시스템 구축',
+    '스마트재단 Responsive Web',
+    '서울시 청소년교육센터 Responsive Web',
+    '엑스포츠 뉴스 Responsive Web',
+    'JOYTOWN(CTSTV메타버스) Responsive Web',
+    '서울시 2023 부활절 퍼레이드 Responsive Web'
+  ]],
+  ['2022', [
+    'Metaverse JOYTOWN CI / Brochure',
+    '아파트먼트 경비원 관리 APP/WEB 구축',
+    '아파트먼트 APP/WEB UXUI 컨설팅',
+    '카스코 철강 온라인 경매 사이트 구축',
+    '태룡에스디 회사소개 Responsive Web',
+    '한양파트너스에프에이치 회사소개 Responsive Web',
+    'CTSTV Kids Responsive Web',
+    'TSS 주차관리 APP',
+    '이너트론 불법감시 시스템 구축',
+    'Alamo RAC 해외 렌터카 예약 시스템 구축',
+    'LH교과서 테블릿 구축',
+    '현대자동차 Global WWN4.0 분석 설계 컨설팅'
+  ]],
+  ['2021', [
+    'O2O 펫플랫폼 CRM 시스템 구축',
+    '엘바라이프 인트라넷 구축',
+    'CTS 크리스천 아카데미 Responsive Web',
+    '시니어 말하자 교육 플랫폼 Responsive Web',
+    'AJ 대원 인트라넷 구축',
+    '어바웃펫 비즈니스 정책 및 컨설팅',
+    'CTSTV 디지털 아카이브 UX 컨설팅',
+    '새롬 인트라넷 구축',
+    '그라운드 고척 Responsive Web',
+    'TIMO Education App',
+    '경제사회연구원 Responsive Web'
+  ]],
+  ['2020', [
+    '유니슨이테크 Responsive Web 및 유지보수',
+    '온라인투어 차세대 컨설팅',
+    'ACE LIFE Insurance System',
+    'GSFRESH UXUI 컨설팅 및 차세대 컨설팅',
+    '보스톤사이언티픽 Responsive Web'
+  ]],
+  ['2019', [
+    'LG화학 도면 관리 시스템 구축',
+    '중소기업중앙회 온라인 조사 시스템 구축',
+    'RE100 온라인 경매 시스템 구축',
+    'PRS 온라인 관리 시스템 구축',
+    'CTS 성경필사 Responsive Web'
+  ]],
+  ['2018', [
+    'TREA Study 교육 플랫폼 Responsive Web',
+    '효성 ESS 통합 시스템 구축',
+    'RE100 발전시스템 통합 관리 솔루션',
+    'MALHAZA 교육 플랫폼 Responsive Web 1차'
+  ]]
+];
+
+/* 유형 자동 분류 — 우선순위: 컨설팅 > App > Responsive Web > 시스템 구축 > 기타 */
+const TYPE_LABEL = { web:'Responsive Web', system:'시스템 구축', consult:'컨설팅', app:'App', etc:'기타' };
+function classify(name){
+  if (/컨설팅|UX 컨설팅|UXUI 컨설팅/.test(name)) return 'consult';
+  if (/\bAPP\b|\bApp\b|APP\//.test(name))        return 'app';
+  if (/Responsive Web|반응형 웹/.test(name))      return 'web';
+  if (/시스템|구축|System|솔루션|인트라넷|테블릿/.test(name)) return 'system';
+  return 'etc';
+}
+const ALL = TRACK.flatMap(([period, list]) =>
+  list.map(name => ({ name, period, type: classify(name) })));
+
+/* 포트폴리오 = 실적 중 최신 순 (연도 그룹 순서 유지) */
+const PORTFOLIO_ORDER = ['2026','2025','2024','2023','2022','2021','2020','2019','2018'];
+const HUES = [200,208,193,214,186,205,197,211,190,216,203,188,209,195,212,199,206,191,215,201,187,210,196,204];
+const WORKS = ALL
+  .slice()
+  .sort((a,b) => PORTFOLIO_ORDER.indexOf(a.period) - PORTFOLIO_ORDER.indexOf(b.period))
+  .map((w,i) => ({ ...w, h: HUES[i % HUES.length], no: String(i+1).padStart(2,'0') }));
+/* 추가 실적 — 번호는 기존 매핑 유지를 위해 항상 마지막 번호로 부여 */
+WORKS.push({
+  name: '광화문 읽거리 콘텐츠, 반응형 웹 구축',
+  period: '2021',
+  type: classify('광화문 읽거리 콘텐츠, 반응형 웹 구축'),
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: '숭실대학교 MBA 앱 제작',
+  period: '2021',
+  type: 'app',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: '블록북 UIUX 컨설팅',
+  period: '2024',
+  type: 'consult',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: 'FACEVIEW Brochure',
+  period: '2025',
+  type: 'etc',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: 'iLOTTE.com UIUX 컨설팅',
+  period: '2022',
+  type: 'consult',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: 'GSGHOP UIUX 컨설팅',
+  period: '2022',
+  type: 'consult',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: '올리자 중고등학생 교육용 플랫폼 시스템 구축',
+  period: '2022',
+  type: 'system',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: '전국학교급식 데이터전처리시각화',
+  period: '2026',
+  type: 'consult',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: 'DMEX AI Brochure 제작',
+  period: '2026',
+  type: 'etc',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+WORKS.push({
+  name: 'CTS 뉴욕방송 ONAIR Responsive Web',
+  period: '2021',
+  type: 'web',
+  h: HUES[WORKS.length % HUES.length],
+  no: String(WORKS.length + 1).padStart(2,'0')
+});
+
+/* 36번 항목을 SAMSUNG POP UIUX 컨설팅으로 교체 — 번호 36 유지 */
+const idx36 = WORKS.findIndex(w => w.no === '36');
+if(idx36 > -1) WORKS[idx36] = { ...WORKS[idx36], name: 'SAMSUNG POP UIUX 컨설팅', type: 'consult' };
+
+/* 06번 항목을 Group DEMEX Admin System으로 교체 — 번호 06 유지 */
+const idx06 = WORKS.findIndex(w => w.no === '06');
+if(idx06 > -1) WORKS[idx06] = { ...WORKS[idx06], name: 'Group DEMEX Admin System', type: 'system', period: '2026' };
+
+/* 02번 항목만 제거 — 나머지 번호·이미지 매핑은 그대로 유지 */
+const idx02 = WORKS.findIndex(w => w.no === '02');
+if(idx02 > -1) WORKS.splice(idx02, 1);
+
+const PTYPES = [
+  ['01','AI 웹사이트 제작','브랜드 전략과 비즈니스 목표를 반영해 기획부터 디자인, 개발, 배포까지 완성도 높은 반응형 웹사이트를 제작합니다.','브랜드·콘텐츠 기획 · IA · UI 디자인 · 반응형 개발 · 기본 SEO · 배포','1~8주','website'],
+  ['02','모바일 앱 개발','서비스 아이디어를 사용자 중심의 모바일 경험으로 구체화하고 핵심 기능을 안정적인 앱으로 구현합니다.','요구사항 정의 · 사용자 흐름 · UI 디자인 · 프로토타입 · 앱 개발 · 스토어 배포','8~16주','app'],
+  ['03','AI 콘텐츠 제작','브랜드 메시지에 맞춰 생성형 AI 기반의 이미지, 영상, 스토리, 블로그 콘텐츠를 일관된 톤으로 제작합니다.','콘텐츠 전략 · 스토리보드 · 이미지 · 영상 · 카피 · 채널별 패키지','2~6주','content'],
+  ['04','UIUX 컨설팅','서비스 구조와 사용자 여정을 진단해 정보구조, 화면 흐름, 사용성 개선 방향과 실행 우선순위를 제안합니다.','UX 진단 · 사용자 흐름 · IA · 와이어프레임 · 화면설계서 · 개선 로드맵','3~10주','uiux'],
+  ['05','운영 · 유지보수','서비스 런칭 이후 안정적인 운영을 위해 오류 대응, 콘텐츠 업데이트, 기능 개선과 정기 점검을 지속적으로 지원합니다.','모니터링 · 오류 대응 · 콘텐츠 반영 · 기능 개선 · 정기 점검 · 월간 리포트','월·연 단위 계약','maintenance'],
+  ['06','AI 교육 & 강의','기업·기관·대학의 교육 목적과 참여자 수준에 맞춰 생성형 AI 실무 중심의 맞춤형 프로그램을 설계하고 진행합니다.','교육 요구 분석 · 커리큘럼 · 교안 · 실습 자료 · 강의·워크숍 · 결과 리포트','1일~8주','education']
+];
+
+const FLOWS = {
+  website:{label:'AI 웹사이트 제작',steps:[['목표 정리','브랜드·고객·핵심 전환 목표를 정리합니다.'],['구조·디자인','IA와 화면 구조를 설계하고 디자인합니다.'],['AI 기반 제작','콘텐츠와 반응형 화면을 빠르게 구현합니다.'],['검수·배포','기기별 QA와 기본 SEO 점검 후 배포합니다.']],note:'평균 1~8주 · 기획부터 배포까지 한 팀이 진행합니다.'},
+  app:{label:'모바일 앱 개발',steps:[['요구사항 정의','핵심 사용자와 기능 우선순위를 확정합니다.'],['UX·프로토타입','사용자 흐름과 주요 화면을 검증합니다.'],['개발·연동','앱 기능과 필요한 외부 시스템을 구현합니다.'],['테스트·출시','기기 테스트 후 스토어 배포를 지원합니다.']],note:'MVP부터 단계적으로 개발 범위를 확장할 수 있습니다.'},
+  content:{label:'AI 콘텐츠 제작',steps:[['콘텐츠 전략','목표 채널과 메시지, 톤앤매너를 정합니다.'],['기획·스토리보드','이미지·영상·블로그의 구성안을 만듭니다.'],['AI 제작','브랜드 기준에 맞춰 콘텐츠를 생성·편집합니다.'],['검수·납품','채널별 규격으로 정리해 전달합니다.']],note:'이미지, 영상, 스토리, 블로그 콘텐츠를 패키지로 제작합니다.'},
+  uiux:{label:'UIUX 컨설팅',steps:[['현황 진단','서비스 구조와 사용자 이슈를 분석합니다.'],['사용자 흐름','핵심 여정과 정보구조를 재설계합니다.'],['화면 설계','와이어프레임과 주요 화면 기준을 만듭니다.'],['개선 로드맵','우선순위와 실행 계획을 제안합니다.']],note:'기존 서비스 개선과 신규 서비스 기획 모두 가능합니다.'},
+  maintenance:{label:'운영 · 유지보수',steps:[['운영 진단','현재 시스템과 운영 요청 체계를 확인합니다.'],['정기 점검','오류·보안·콘텐츠 상태를 주기적으로 점검합니다.'],['개선 반영','콘텐츠 수정과 기능 개선을 순차 반영합니다.'],['월간 공유','처리 내역과 다음 개선 항목을 보고합니다.']],note:'월 단위 또는 연 단위 운영 계약으로 진행합니다.'},
+  education:{label:'AI 교육 & 강의',steps:[['교육 요구 분석','기관 목적과 참여자 수준을 파악합니다.'],['커리큘럼 설계','업무 사례 중심의 실습 과정을 구성합니다.'],['강의·워크숍','도구 실습과 결과물 제작을 함께 진행합니다.'],['결과 정리','만족도와 학습 결과를 정리해 공유합니다.']],note:'특강, 반일·종일 워크숍, 다회차 과정으로 구성할 수 있습니다.'}
+};
+
+const FAQ_GROUPS = {
+  website:{label:'AI 웹사이트 제작',items:[
+    ['웹사이트 제작 기간은 얼마나 걸리나요?','일반적인 브랜드 홈페이지는 범위에 따라 약 1~8주가 소요됩니다. 페이지 수, 콘텐츠 준비 상태, 기능 복잡도에 따라 일정이 달라질 수 있습니다.'],
+    ['기획안이나 디자인이 없어도 진행할 수 있나요?','가능합니다. 브랜드 목표와 고객을 함께 정리한 뒤 IA, 화면 구조, 디자인 방향부터 제안합니다.'],
+    ['기존 홈페이지를 AI 기반으로 리뉴얼할 수 있나요?','가능합니다. 기존 콘텐츠와 기능을 진단해 유지할 부분과 개선할 부분을 구분하고 단계적으로 리뉴얼합니다.'],
+    ['반응형과 기본 SEO도 포함되나요?','PC·태블릿·모바일 반응형 제작과 기본 메타 태그, 검색 노출을 위한 구조 점검을 기본 범위에 포함할 수 있습니다.'],
+    ['도메인과 호스팅도 지원하나요?','도메인 연결, 호스팅 선택, SSL 적용, 배포까지 지원하며 기존 서버 환경이 있다면 해당 환경에 맞춰 진행합니다.']
+  ]},
+  app:{label:'모바일 앱 개발',items:[
+    ['아이디어만 있어도 앱 개발 상담이 가능한가요?','가능합니다. 아이디어를 핵심 사용자, 문제, 기능 우선순위로 정리해 MVP 범위를 함께 설계합니다.'],
+    ['iOS와 Android를 모두 개발할 수 있나요?','프로젝트 목적에 따라 크로스플랫폼 또는 네이티브 방식을 제안하며 양대 스토어 배포까지 지원할 수 있습니다.'],
+    ['앱 개발 기간은 얼마나 걸리나요?','MVP 기준으로 보통 8~16주이며 기능 수, 외부 연동, 관리자 시스템 여부에 따라 달라집니다.'],
+    ['기존 웹서비스와 앱을 연동할 수 있나요?','API와 데이터 구조를 확인한 뒤 회원, 결제, 콘텐츠, 알림 등 필요한 기능을 연동할 수 있습니다.'],
+    ['스토어 등록도 해주나요?','앱 심사 준비, 스크린샷과 설명 작성, 테스트 및 제출 절차를 지원합니다. 계정 소유와 심사 결과는 각 스토어 정책을 따릅니다.']
+  ]},
+  content:{label:'AI 콘텐츠 제작',items:[
+    ['어떤 종류의 AI 콘텐츠를 만들 수 있나요?','브랜드 이미지, 카드뉴스, 블로그 글, 짧은 영상, 스토리·동화형 콘텐츠, 교육 자료 등을 제작할 수 있습니다.'],
+    ['브랜드 톤앤매너를 맞출 수 있나요?','기존 브랜드 가이드와 레퍼런스를 분석해 색상, 문체, 이미지 스타일, 금지 표현을 기준으로 제작합니다.'],
+    ['AI가 만든 결과물을 그대로 사용하나요?','초안 생성 후 사람이 기획, 편집, 검수해 브랜드와 채널에 맞는 최종 결과물로 완성합니다.'],
+    ['콘텐츠 저작권과 사용 범위는 어떻게 되나요?','사용 도구와 소스의 라이선스를 확인하고 계약 시 납품물의 사용 범위와 유의사항을 명확히 안내합니다.'],
+    ['정기 콘텐츠 운영도 가능한가요?','월 단위로 주제 기획, 제작, 검수, 채널별 규격 변환을 묶은 운영형 패키지로 진행할 수 있습니다.']
+  ]},
+  uiux:{label:'UIUX 컨설팅',items:[
+    ['개발 없이 UIUX 컨설팅만 받을 수 있나요?','가능합니다. 현황 진단, 사용자 흐름, IA, 와이어프레임, 개선 로드맵만 별도 산출물로 제공할 수 있습니다.'],
+    ['기존 서비스의 문제를 어떻게 진단하나요?','비즈니스 목표, 사용자 동선, 화면 구조, 주요 이탈 구간과 운영 이슈를 함께 분석합니다.'],
+    ['사용자 조사가 꼭 필요한가요?','예산과 일정에 따라 인터뷰, 설문, 사용성 테스트를 선택적으로 적용하며 기존 데이터만으로도 1차 진단이 가능합니다.'],
+    ['컨설팅 결과를 개발팀이 바로 활용할 수 있나요?','화면설계서, 와이어프레임, 우선순위와 구현 가이드를 개발팀이 이어받을 수 있는 형태로 정리합니다.'],
+    ['컨설팅 기간은 얼마나 걸리나요?','범위에 따라 약 3~10주이며 서비스 규모와 조사 방식에 따라 세부 일정이 달라집니다.']
+  ]},
+  maintenance:{label:'운영 · 유지보수',items:[
+    ['다른 업체가 만든 사이트도 유지보수할 수 있나요?','기술 스택과 소스, 서버 접근 권한을 진단한 뒤 가능 범위와 인수인계 조건을 안내합니다.'],
+    ['오류 대응 시간은 어떻게 정하나요?','장애 등급과 계약 수준에 따라 접수·1차 응답·처리 목표 시간을 구분해 운영합니다.'],
+    ['콘텐츠 수정도 유지보수에 포함되나요?','텍스트, 이미지, 배너, 게시물 등 정기 콘텐츠 반영을 월별 범위 안에서 포함할 수 있습니다.'],
+    ['기능 개선도 가능한가요?','소규모 개선은 월 운영 범위로 처리하고, 규모가 큰 기능은 별도 견적과 일정으로 진행합니다.'],
+    ['운영 리포트를 받을 수 있나요?','월간 처리 내역, 오류 현황, 개선 항목, 다음 달 계획을 정리한 리포트를 제공합니다.']
+  ]},
+  education:{label:'AI 교육 & 강의',items:[
+    ['교육 대상과 수준에 맞춰 커리큘럼을 구성하나요?','기업, 기관, 대학의 목적과 참여자 수준을 사전 진단해 입문·실무·심화 과정으로 맞춤 설계합니다.'],
+    ['어떤 AI 도구를 교육하나요?','생성형 AI의 원리와 활용법을 중심으로 텍스트, 이미지, 영상, 업무 자동화 도구를 목적에 맞게 구성합니다.'],
+    ['실습 중심 교육도 가능한가요?','가능합니다. 참가자가 직접 프롬프트를 작성하고 업무 문서, 콘텐츠, 서비스 아이디어 등의 결과물을 만드는 방식으로 진행합니다.'],
+    ['온라인과 오프라인 모두 가능한가요?','대면 강의, 온라인 라이브, 혼합형 워크숍 모두 가능하며 인원과 환경에 맞춰 운영 방식을 제안합니다.'],
+    ['교육 후 결과 리포트도 제공하나요?','과정에 따라 만족도, 참여도, 실습 결과, 후속 학습 제안을 정리한 결과 리포트를 제공할 수 있습니다.']
+  ]}
+};
+const FAQ2 = [
+  ['최소 예산이 정해져 있나요?','프로젝트 범위에 따라 다릅니다. 예산 범위를 알려주시면 그에 맞는 구성을 제안드립니다.'],
+  ['지방 / 해외 기업도 가능한가요?','전 과정 비대면 진행이 가능합니다.'],
+  ['상담만 받아봐도 되나요?','물론입니다. 상담 후 계약 의무는 전혀 없습니다.']
+];
+const TEAM = [['000','대표',200],['000','기획 · 컨설팅 리드',210],['000','디자인 리드',192],['000','개발 리드',204]];
+const CLIENTS = ['현대자동차','서울시','금융보안원','LG화학','효성','중소기업중앙회','방위사업청','에너지관리공단','LH','GSFRESH','온라인투어','보스톤사이언티픽'];
+
+/* ===================== Toast ===================== */
+const toast = Object.assign(document.createElement('div'), { className:'toast' });
+document.body.appendChild(toast);
+let tT; const say = m => { toast.textContent = m; toast.classList.add('is-on'); clearTimeout(tT); tT = setTimeout(()=>toast.classList.remove('is-on'), 2800); };
+
+/* ===================== Reveal / Counter ===================== */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.1, rootMargin:'0px 0px -6% 0px' });
+const observeReveals = root => $$('.rv:not(.in)', root).forEach((el,i) => { el.style.transitionDelay = Math.min(i,6)*55 + 'ms'; io.observe(el); });
+
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  cio.unobserve(e.target);
+  const el = e.target, b = el.querySelector('b') || el;
+  const target = parseFloat(el.dataset.count); if(!isFinite(target)) return;
+  const dec = (el.dataset.count.split('.')[1]||'').length;
+  const suf = el.dataset.suffix || '';
+  if(REDUCED){ b.textContent = target.toFixed(dec) + suf; return; }
+  const t0 = performance.now(), dur = 1400;
+  const tick = now => { const k = Math.min(1,(now-t0)/dur), e2 = 1-Math.pow(1-k,3);
+    b.textContent = (target*e2).toFixed(dec) + suf; if(k<1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}), { threshold:.5 });
+
+/* ===================== Templates ===================== */
+/* 포트폴리오 이미지: portfolio/{번호}.png 로 통일.
+   아래 목록의 번호만 이미지를 표시하고, 없는 번호는 이미지 없이 표시합니다.
+   (portfolio 폴더에 {번호}.png 를 추가하면 이 목록에도 번호만 넣어주세요) */
+const PORTFOLIO_IMG_NUMS = new Set([
+  "01","04","05","06","07","09","11","12","13","18","22","23","25","28","36",
+  "38","41","42","45","46","47","48","49","50","51","52","53","54","56","57",
+  "58","61","62","63","64","65","66","67","68","71"
+]);
+const imgSrc = no => 'portfolio/' + no + '.png';
+/* 번호별 롤링(자동 전환) 이미지 — 여러 장을 크로스페이드로 순환 */
+const PORTFOLIO_ROLL = {
+  "70": ["portfolio/70.png","portfolio/70_1.png"]
+};
+const workCard = w => {
+  const roll = PORTFOLIO_ROLL[w.no];
+  const hasImg = PORTFOLIO_IMG_NUMS.has(w.no);
+  const alt = w.name.replace(/"/g,'&quot;');
+  let inner;
+  if(roll){
+    inner = roll.map((src,i) =>
+      `<img class="thumb__img roll ${i===0?'roll--base':'roll--fade'}" loading="lazy" src="${src}" alt="${alt}">`
+    ).join('');
+  } else {
+    inner = `<span class="thumb__pending" role="status">이미지 준비중입니다.</span>`
+      + (hasImg ? `<img class="thumb__img" loading="lazy" src="${imgSrc(w.no)}" alt="${alt}" onload="this.parentElement.classList.add('has-image')" onerror="this.parentElement.classList.add('is-missing');this.remove()">` : ``);
+  }
+  return `
+  <article class="work" data-work="${alt}">
+    <div class="thumb${roll?' thumb--roll has-image':''}" style="--h:${w.h}">
+      ${inner}
+    </div>
+    <div class="work__meta">
+      <span class="pill">${TYPE_LABEL[w.type]}</span>
+      <h3 class="h-sm">${w.name}</h3>
+      <p class="tiny">${w.period}년</p>
+    </div>
+  </article>`;
+};
+/* 포트폴리오 목록 = 이미지 없는 텍스트 카드 (구분 · 년도 · 프로젝트명) */
+const workCardText = w => {
+  const alt = w.name.replace(/"/g,'&quot;');
+  return `
+  <article class="work work--text" data-work="${alt}">
+    <div class="work--text__top">
+      <span class="pill">${TYPE_LABEL[w.type]}</span>
+      <span class="work__year">${w.period}년</span>
+    </div>
+    <h3 class="work__title">${w.name}</h3>
+  </article>`;
+};
+/* 상단 이미지 스와이프 띠 — 프로젝트와 무관하게 이미지만 자동 순환 */
+const stripSrcs = [
+  ...[...PORTFOLIO_IMG_NUMS].sort((a,b)=>(+a)-(+b)).map(imgSrc),
+  ...Object.values(PORTFOLIO_ROLL).flat()
+];
+$('#pfStrip').innerHTML = [...stripSrcs, ...stripSrcs]
+  .map(src => `<div class="pf-strip__item"><img src="${src}" alt="" onerror="this.closest('.pf-strip__item').remove()"></div>`).join('');
+
+/* 상단 이미지 클릭/터치 → 모달로 크게 보기 */
+const pfModal = Object.assign(document.createElement('div'), { className:'pf-modal' });
+pfModal.innerHTML = `<button class="pf-modal__close" type="button" aria-label="닫기">&times;</button><img class="pf-modal__img" alt="확대 이미지">`;
+document.body.appendChild(pfModal);
+const pfModalImg = pfModal.querySelector('.pf-modal__img');
+const openPfModal = src => { pfModalImg.src = src; pfModal.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
+const closePfModal = () => { pfModal.classList.remove('is-open'); document.body.style.overflow = ''; };
+$('#pfStrip').addEventListener('click', e => { const img = e.target.closest('.pf-strip__item img'); if(img) openPfModal(img.currentSrc || img.src); });
+pfModal.addEventListener('click', e => { if(e.target === pfModal || e.target.closest('.pf-modal__close')) closePfModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && pfModal.classList.contains('is-open')) closePfModal(); });
+const skel = () => `<div class="work--text" style="pointer-events:none">
+  <div class="work--text__top"><div class="skel" style="height:28px;width:40%;border-radius:99px"></div></div>
+  <div class="skel" style="height:20px;width:82%;border-radius:6px;margin-top:6px"></div>
+  <div class="skel" style="height:20px;width:58%;border-radius:6px;margin-top:9px"></div></div>`;
+
+/* ===================== Static renders ===================== */
+$('#marq').innerHTML = [...CLIENTS, ...CLIENTS].map(c => `<span class="marq__item">${c}</span>`).join('');
+$('#homeWorks').innerHTML = WORKS.slice(0,3).map(workCard).join('');
+$('#ptypes').innerHTML = PTYPES.map(([n,t,d,out,term,key]) => `
+  <div class="card card--hover rv ${key==='education'?'ptype--education':''}">
+    <span class="pill pill--grad">TYPE ${n}</span>
+    <h3 class="h-md" style="margin:16px 0 10px;font-size:clamp(19px,2vw,24px)">${t}</h3>
+    <p class="small" style="margin-bottom:24px">${d}</p>
+    <div style="border-top:1px solid var(--line);padding-top:18px;display:grid;gap:12px">
+      <div class="kv"><span>산출물</span><b style="font-size:13.5px;font-weight:600;line-height:1.6">${out}</b></div>
+      <div class="kv"><span>기간</span><b class="gtext">${term}</b></div>
+    </div>
+  </div>`).join('');
+
+const flowKeys = Object.keys(FLOWS);
+$('#flowTabs').innerHTML = flowKeys.map((key,i) => `<button class="flow-tab ${i===0?'is-on':''}" type="button" role="tab" aria-selected="${i===0}" data-flow="${key}">${FLOWS[key].label}</button>`).join('');
+$('#flowPanels').innerHTML = flowKeys.map((key,i) => { const f=FLOWS[key]; return `
+  <div class="flow-panel ${i===0?'is-on':''}" role="tabpanel" data-panel="${key}">
+    <div class="flow-steps">${f.steps.map((st,idx)=>`<div class="flow-step"><b>${String(idx+1).padStart(2,'0')}</b><h3>${st[0]}</h3><p>${st[1]}</p></div>`).join('')}</div>
+    <div class="flow-note">${f.note}</div>
+  </div>`; }).join('');
+const flowTabButtons = () => $$('.flow-tab', $('#flowTabs'));
+const activateFlow = (key, userAction=false) => {
+  const buttons = flowTabButtons();
+  buttons.forEach(btn => {
+    const on = btn.dataset.flow === key;
+    btn.classList.toggle('is-on', on);
+    btn.setAttribute('aria-selected', on ? 'true' : 'false');
+    btn.tabIndex = on ? 0 : -1;
+    if(on && userAction) btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  });
+  $$('.flow-panel').forEach(panel => panel.classList.toggle('is-on', panel.dataset.panel === key));
+};
+
+let flowTimer = null;
+const FLOW_INTERVAL = 3500;
+let flowInView = false;
+const runNextFlow = () => {
+  // 브라우저가 숨겨졌거나 진행 방식 영역을 벗어나면 자동 전환을 멈춥니다.
+  if(document.hidden || !flowInView) {
+    stopFlowAuto();
+    return;
+  }
+  const buttons = flowTabButtons();
+  if(!buttons.length) return;
+  const current = buttons.findIndex(btn => btn.classList.contains('is-on'));
+  const next = buttons[(current + 1) % buttons.length];
+  // 자동 전환 시 scrollIntoView를 호출하지 않아 페이지가 해당 영역으로 끌려오지 않습니다.
+  activateFlow(next.dataset.flow);
+  flowTimer = setTimeout(runNextFlow, FLOW_INTERVAL);
+};
+const startFlowAuto = () => {
+  if(flowTimer || !flowInView || document.hidden) return;
+  flowTimer = setTimeout(runNextFlow, FLOW_INTERVAL);
+};
+const stopFlowAuto = () => {
+  clearTimeout(flowTimer);
+  flowTimer = null;
+};
+const restartFlowAuto = () => {
+  stopFlowAuto();
+  startFlowAuto();
+};
+
+$('#flowTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.flow-tab');
+  if(!btn) return;
+  activateFlow(btn.dataset.flow, true);
+  restartFlowAuto();
+});
+$('#flowTabs').addEventListener('keydown', e => {
+  if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) return;
+  const buttons = flowTabButtons();
+  const current = buttons.findIndex(btn => btn.classList.contains('is-on'));
+  let nextIndex = current;
+  if(e.key === 'ArrowRight') nextIndex = (current + 1) % buttons.length;
+  if(e.key === 'ArrowLeft') nextIndex = (current - 1 + buttons.length) % buttons.length;
+  if(e.key === 'Home') nextIndex = 0;
+  if(e.key === 'End') nextIndex = buttons.length - 1;
+  e.preventDefault();
+  const next = buttons[nextIndex];
+  activateFlow(next.dataset.flow, true);
+  next.focus();
+  restartFlowAuto();
+});
+
+const flowSection = $('#flowTabs').closest('.sec');
+const flowObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    // 영역이 화면에 충분히 보일 때만 자동 전환합니다.
+    flowInView = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+    if(flowInView) restartFlowAuto();
+    else stopFlowAuto();
+  });
+}, { threshold:[0, 0.25, 0.5] });
+flowObserver.observe(flowSection);
+
+document.addEventListener('visibilitychange', () => {
+  if(document.hidden) stopFlowAuto();
+  else if(flowInView) restartFlowAuto();
+});
+const accHTML = l => l.map(([q,a]) => `<div class="acc__i"><button class="acc__q" type="button">${q}</button><div class="acc__a"><div><p>${a}</p></div></div></div>`).join('');
+const faqKeys = Object.keys(FAQ_GROUPS);
+$('#faqTabs').innerHTML = faqKeys.map((key,i)=>`<button class="faq-tab${i===0?' is-on':''}" type="button" role="tab" aria-selected="${i===0}" data-faq="${key}">${FAQ_GROUPS[key].label}<span class="faq-count">5</span></button>`).join('');
+function renderFAQ(key){
+  $('#faq').innerHTML = accHTML(FAQ_GROUPS[key].items);
+  $$('#faqTabs .faq-tab').forEach(btn=>{ const on=btn.dataset.faq===key; btn.classList.toggle('is-on',on); btn.setAttribute('aria-selected',String(on)); });
+}
+renderFAQ(faqKeys[0]);
+$('#faqTabs').addEventListener('click',e=>{ const btn=e.target.closest('.faq-tab'); if(!btn) return; renderFAQ(btn.dataset.faq); });
+$('#faq2').innerHTML = accHTML(FAQ2);
+
+/* ===================== 유형별 집계 (포트폴리오 탭 배지에 사용) ===================== */
+const counts = { all: ALL.length };
+Object.keys(TYPE_LABEL).forEach(t => counts[t] = ALL.filter(w => w.type===t).length);
+
+/* ===================== Portfolio ===================== */
+const PAGE = 9;
+let state = { cat:'all', year:'all', sort:'latest', q:'', shown:PAGE };
+$('#tabs').innerHTML = ['all','web','system','consult','app','etc']
+  .filter(k => k==='all' || counts[k] > 0)
+  .map(k => `<button class="tab${k==='all'?' is-on':''}" data-cat="${k}">${k==='all'?'전체':TYPE_LABEL[k]}</button>`).join('');
+
+function list(){
+  const q = state.q.trim().toLowerCase();
+  let a = WORKS.filter(w =>
+    (state.cat==='all'  || w.type===state.cat) &&
+    (state.year==='all' || w.period===state.year) &&
+    (!q || w.name.toLowerCase().includes(q)
+        || (TYPE_LABEL[w.type]||'').toLowerCase().includes(q)
+        || String(w.no).includes(q)));
+  if(state.sort==='name') a = a.slice().sort((x,y)=>x.name.localeCompare(y.name,'ko'));
+  return a;
+}
+function renderGrid(reset){
+  if(reset) state.shown = PAGE;
+  const a = list();
+  $('#grid').innerHTML = a.slice(0,state.shown).map(workCardText).join('');
+  $('#empty').classList.toggle('is-on', a.length===0);
+  const rest = a.length - state.shown;
+  $('#more').style.display = rest>0 ? '' : 'none';
+  $('#more').textContent = '더 보기';
+  observeReveals($('#portfolio'));
+}
+renderGrid(true);
+
+/* ===================== Work detail ===================== */
+function openWork(name){
+  const w = WORKS.find(x => x.name === name) || WORKS[0];
+  $('#wCat').textContent   = TYPE_LABEL[w.type];
+  $('#wTitle').textContent = w.name;
+  $('#wLead').textContent  = `${w.period}년에 수행한 ${TYPE_LABEL[w.type]} 프로젝트입니다. 기획·설계부터 개발, 검수까지 전 과정을 담당했습니다.`;
+  $('#wType').textContent  = TYPE_LABEL[w.type];
+  $('#wYear').textContent  = `${w.period}년`;
+  const hero = $('#wHero');
+  hero.classList.remove('has-image');
+  hero.style.background = 'var(--grad)';
+  hero.querySelectorAll('img.wHeroImg').forEach(n => n.remove());
+  const roll = PORTFOLIO_ROLL[w.no];
+  if(roll){
+    roll.forEach((src,i) => {
+      const im = document.createElement('img');
+      im.className = 'wHeroImg roll ' + (i===0 ? 'roll--base' : 'roll--fade');
+      im.src = src; im.alt = w.name; im.loading = 'lazy';
+      im.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:' + (i===0?2:3);
+      hero.appendChild(im);
+    });
+    hero.classList.add('has-image');
+  } else if(PORTFOLIO_IMG_NUMS.has(w.no)){
+    const heroImg = document.createElement('img');
+    heroImg.className = 'wHeroImg'; heroImg.src = imgSrc(w.no); heroImg.alt = w.name; heroImg.loading = 'lazy';
+    heroImg.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2';
+    heroImg.onload = () => hero.classList.add('has-image');
+    heroImg.onerror = () => heroImg.remove();
+    hero.appendChild(heroImg);
+  }
+  const same = WORKS.filter(x => x.type===w.type && x.name!==w.name).slice(0,3);
+  const fill = WORKS.filter(x => x.name!==w.name && !same.includes(x)).slice(0,3);
+  $('#related').innerHTML = same.concat(fill).slice(0,3).map(workCardText).join('');
+  go('work');
+}
+
+/* ===================== Router ===================== */
+const TITLES = {
+  home:'JTOCOM — 웹 컨설팅부터 반응형 웹, UIUX 기획·구축까지',
+  about:'About — JTOCOM', projects:'Services — JTOCOM',
+  portfolio:'Portfolio — JTOCOM', work:'Project Detail — JTOCOM',
+  contact:'Contact — JTOCOM', done:'문의 완료 — JTOCOM'
+};
+function go(id){
+  if(!$('#'+id)) return;
+  $$('.page').forEach(p => p.classList.toggle('is-on', p.id===id));
+  const key = id==='work' ? 'portfolio' : (id==='done' ? 'contact' : id);
+  $$('#nav button').forEach(b => b.classList.toggle('is-on', b.dataset.go===key));
+  document.title = TITLES[id] || TITLES.home;
+  closeDrawer();
+  window.scrollTo({ top:0, behavior:'instant' });
+  history.replaceState(null,'','#/'+id);
+  const page = $('#'+id);
+  observeReveals(page);
+  $$('[data-count]', page).forEach(el => cio.observe(el));
+}
+
+/* ===================== Drawer ===================== */
+const drawer = $('#drawer'), burger = $('#burger');
+function openDrawer(){ drawer.classList.add('is-open'); burger.classList.add('is-on'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+function closeDrawer(){ drawer.classList.remove('is-open'); burger.classList.remove('is-on'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+burger.addEventListener('click', () => drawer.classList.contains('is-open') ? closeDrawer() : openDrawer());
+
+/* ===================== Click delegation ===================== */
+document.addEventListener('click', e => {
+  const nav = e.target.closest('[data-go]');
+  if(nav){ go(nav.dataset.go); return; }
+
+  const q = e.target.closest('.acc__q');
+  if(q){ q.closest('.acc__i').classList.toggle('is-on'); return; }
+
+  const tab = e.target.closest('[data-cat]');
+  if(tab){ $$('[data-cat]').forEach(t=>t.classList.remove('is-on')); tab.classList.add('is-on'); state.cat = tab.dataset.cat; renderGrid(true); return; }
+
+  if(e.target.closest('#more')){
+    const rest = Math.min(PAGE, list().length - state.shown);
+    $('#grid').insertAdjacentHTML('beforeend', skel().repeat(rest));
+    setTimeout(() => { state.shown += PAGE; renderGrid(false); }, 460);
+    return;
+  }
+  if(e.target.closest('[data-reset]')){ state.cat='all'; state.year='all'; state.q=''; $('#year').value='all'; $('#search').value=''; $('#searchClear').hidden=true; $$('[data-cat]').forEach(t=>t.classList.toggle('is-on', t.dataset.cat==='all')); renderGrid(true); return; }
+  if(e.target.closest('#drop')){ say('데모 사이트에서는 파일 업로드가 동작하지 않습니다.'); return; }
+  if(e.target.closest('[data-dl]')){ say('회사 소개서는 문의 폼을 통해 보내드립니다.'); return; }
+  if(e.target.closest('[data-privacy]')){ say('개인정보처리방침 전문 페이지는 준비 중입니다.'); return; }
+  const t = e.target.closest('[data-toast]');
+  if(t){ say(t.dataset.toast); return; }
+});
+$('#sort').addEventListener('change', e => { state.sort = e.target.value; renderGrid(true); });
+$('#year').addEventListener('change', e => { state.year = e.target.value; renderGrid(true); });
+
+const searchInput = $('#search'), searchClear = $('#searchClear');
+searchInput.addEventListener('input', e => {
+  state.q = e.target.value;
+  searchClear.hidden = !state.q;
+  renderGrid(true);
+});
+searchClear.addEventListener('click', () => {
+  state.q = ''; searchInput.value = ''; searchClear.hidden = true;
+  searchInput.focus(); renderGrid(true);
+});
+
+/* ===================== Form ===================== */
+const RULES = {
+  'f-type':    v => v ? '' : '문의 유형을 선택해 주세요.',
+  'f-company': v => v.trim() ? '' : '회사명을 입력해 주세요.',
+  'f-name':    v => v.trim() ? '' : '담당자명을 입력해 주세요.',
+  'f-email':   v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : '올바른 이메일 형식이 아닙니다.',
+  'f-tel':     v => (!v.trim() || /^[0-9-]{9,13}$/.test(v.trim())) ? '' : '올바른 연락처 형식이 아닙니다.',
+  'f-msg':     v => v.trim().length >= 10 ? '' : '10자 이상 입력해 주세요.',
+  'f-agree':   v => v ? '' : '개인정보 수집·이용에 동의해 주세요.'
+};
+function check(id){
+  const el = $('#'+id), box = el.closest('.field'), err = box.querySelector('.err');
+  const msg = RULES[id](el.type==='checkbox' ? el.checked : el.value);
+  el.classList.toggle('is-err', !!msg && el.type!=='checkbox');
+  err.classList.toggle('is-on', !!msg);
+  if(msg) err.textContent = msg;
+  return !msg;
+}
+Object.keys(RULES).forEach(id => {
+  const el = $('#'+id);
+  el.addEventListener(el.tagName==='SELECT'||el.type==='checkbox' ? 'change' : 'blur', () => check(id));
+  el.addEventListener('input', () => { if(el.classList.contains('is-err')) check(id); });
+});
+$('#f-msg').addEventListener('input', e => $('#cnt').textContent = e.target.value.length.toLocaleString());
+
+/* 문의 데이터 → 구글 시트 (Apps Script 웹앱) */
+const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyaIyz7a3JG-USSORvfcpyQblYN9vsMFIIt-k0I1tyJ16Ap8LLNnLeBgpOnCiqLkI6S/exec';
+$('#form').addEventListener('submit', e => {
+  e.preventDefault();
+  const bad = Object.keys(RULES).filter(id => !check(id));
+  const banner = $('#banner');
+  if(bad.length){
+    banner.textContent = `입력하지 않은 필수 항목이 ${bad.length}개 있습니다. 확인해 주세요.`;
+    banner.classList.add('is-on');
+    const first = $('#'+bad[0]);
+    first.scrollIntoView({ behavior:'smooth', block:'center' });
+    setTimeout(()=>first.focus({ preventScroll:true }), 320);
+    return;
+  }
+  banner.classList.remove('is-on');
+  const btn = $('#submit');
+  btn.disabled = true; btn.textContent = '전송 중…';
+
+  const email = $('#f-email').value;
+  const payload = new URLSearchParams({
+    type:     $('#f-type').value,
+    company:  $('#f-company').value,
+    name:     $('#f-name').value,
+    email:    email,
+    tel:      $('#f-tel').value,
+    budget:   $('#f-budget').value,
+    when:     $('#f-when').value,
+    message:  $('#f-msg').value,
+    agree:    $('#f-agree').checked ? '동의' : '',
+    marketing:$('#f-mkt').checked ? '동의' : ''
+  });
+
+  fetch(SHEET_ENDPOINT, { method:'POST', body: payload })
+    .then(async r => {
+      const t = await r.text();
+      let j = null; try { j = JSON.parse(t); } catch(_){}
+      if(!r.ok || (j && j.ok === false)) throw new Error((j && j.error) || ('HTTP ' + r.status));
+      return j || { ok:true };
+    })
+    .then(res => {
+      if(res && res.ok === false) throw new Error(res.error || 'server');
+      const d = new Date();
+      const ymd = `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+      $('#doneNo').textContent = `#JTO-${ymd}-${String(Math.floor(Math.random()*9000)+1000)}`;
+      $('#doneMail').textContent = email;
+      $('#form').reset(); $('#cnt').textContent = '0';
+      go('done');
+    })
+    .catch(() => {
+      banner.textContent = '전송 중 문제가 발생했습니다. 잠시 후 다시 시도하시거나 jtocom@jtocom.com 으로 보내주세요.';
+      banner.classList.add('is-on');
+      banner.scrollIntoView({ behavior:'smooth', block:'center' });
+    })
+    .finally(() => { btn.disabled = false; btn.textContent = '문의 보내기'; });
+});
+
+/* ===================== Header / mobile bar ===================== */
+const hdr = $('#hdr'), mbar = $('#mbar'), toTop = $('#toTop');
+addEventListener('scroll', () => {
+  hdr.classList.toggle('is-stuck', scrollY > 8);
+  const cur = $('.page.is-on').id;
+  mbar.classList.toggle('is-on', scrollY > 520 && cur !== 'contact' && cur !== 'done');
+  toTop.classList.toggle('is-on', scrollY > 480);
+}, { passive:true });
+toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
+
+/* ===================== Boot ===================== */
+observeReveals(document);
+go(location.hash.replace(/^#\/?/,'') || 'home');
+</script>
+</body>
+</html>
