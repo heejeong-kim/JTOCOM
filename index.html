@@ -198,27 +198,470 @@ main>section{position:relative;isolation:isolate}
 @media(max-width:700px){#history .original-history .tl__i{padding:14px 18px;margin-bottom:8px}}
 @media(max-width:600px){#lab .labcard{flex-basis:300px;padding:22px}#lab .labcard h3{font-size:21px}#lab .labcard p{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.lab-mark svg{animation:none}#lab .labcard{transition:none}}
+
+.carousel-controls{display:flex;justify-content:flex-end;gap:8px;margin-bottom:14px}
+.carousel-controls button{border:1px solid #b9cedc;background:#fff;color:#133451;border-radius:999px;padding:11px 18px;font-size:13px;font-weight:700;transition:background .2s}
+.carousel-controls button:hover{background:#0b1830;color:#fff}
+.manual-slider{overflow-x:auto!important;scrollbar-width:none;touch-action:pan-x pan-y;cursor:grab}
+.manual-slider::-webkit-scrollbar{display:none}
+.manual-slider:focus-visible{outline:2px solid #168ac2;outline-offset:4px}
+#lab .labtrack{animation:none!important;transform:none!important}
+.manual-slider.dragging{cursor:grabbing}
+#portfolio .work-preview{position:relative;overflow:hidden;border:1px solid #ccdae8;border-top:4px solid #168ac2;min-height:220px;padding:26px;background:linear-gradient(135deg,#fff 60%,#eaf4fc);box-shadow:0 10px 25px #13263d08;transition:transform .25s,box-shadow .25s}
+#portfolio .work-preview:nth-child(3n+2){border-top-color:#7164e8;background:linear-gradient(135deg,#fff 60%,#f1effc)}
+#portfolio .work-preview:nth-child(3n){border-top-color:#168575;background:linear-gradient(135deg,#fff 60%,#eaf7f3)}
+#portfolio .work-preview small{align-self:flex-start;background:#0b1830;color:#fff;padding:4px 12px;border-radius:30px;font-size:12px}
+#portfolio .work-preview h3{font-size:22px;line-height:1.45;max-width:90%;word-break:keep-all}
+#portfolio .work-preview>span{border-top:1px solid #dce4ec;padding-top:14px;color:#24435d}
+#portfolio .work-preview:hover{transform:translateY(-5px);box-shadow:0 16px 35px #13263d18}
+.mini-gallery{margin-top:36px}
+.mini-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mini-heading>span{font-size:11px;font-weight:700;color:#526b80;letter-spacing:.12em}
+.mini-track{display:flex;width:max-content;gap:16px;padding:8px 0 16px}
+.mini-project{display:block;flex:0 0 176px;width:176px;height:112px;overflow:hidden;border-radius:40px;background:white;border:1px solid #d4dfeb;box-shadow:0 5px 14px #13263d10}
+.mini-project img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.mini-project:hover img{transform:scale(1.06)}
+@media(max-width:600px){.mini-project{width:150px;flex-basis:150px;height:100px}.carousel-controls button{padding:10px 14px}}
+
+/* Quiet editorial cards; edge arrows replace the toolbar. */
+.lab-carousel,.mini-gallery{position:relative}
+.lab-carousel{padding-inline:30px}
+.mini-gallery{padding-inline:30px}
+.carousel-controls{position:absolute;inset:0;display:block;margin:0;pointer-events:none;z-index:4}
+.carousel-controls button{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:56px;padding:8px;border:0;border-radius:0;background:transparent;color:#263b50;pointer-events:auto}
+.carousel-controls button[data-direction="-1"]{left:-10px}
+.carousel-controls button[data-direction="1"]{right:-10px}
+.carousel-controls button svg{width:24px;height:32px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.carousel-controls button:hover{background:transparent;color:#168ac2}
+.carousel-controls button:focus-visible{outline:2px solid #168ac2;outline-offset:2px;border-radius:6px}
+.mini-heading{margin-bottom:10px}
+#build .product-card,#lab .labcard,#portfolio .work-preview{border:1px solid #d9dfe5;border-top:1px solid #d9dfe5;background:#fff;box-shadow:0 4px 16px #13263d05}
+#build .product-card{--accent:#243a50;--tint:#f2f4f6}
+#lab .labcard:nth-child(n){--lab-accent:#243a50;--lab-tint:#f2f4f6}
+#portfolio .work-preview:nth-child(n){border-top-color:#d9dfe5;background:#fff}
+#portfolio .work-preview small{background:none;color:#526174;padding:0;font-size:14px;letter-spacing:.04em}
+#portfolio .work-preview h3{font-size:23px;font-weight:700;margin-top:24px;line-height:1.5}
+#portfolio .work-preview>span{color:#627080;font-size:12px}
+#build .num,#lab .lab-category{color:#627080;font-size:12px;letter-spacing:.06em}
+#build .product-card h3,#lab .labcard h3{font-weight:700;color:#132236}
+#build .product-value{color:#263b50}
+#lab .lab-mark,.product-icon{background:#f2f4f6;color:#526174;border-radius:10px}
+#lab .lab-mark svg{animation:none}
+#lab .lab-tags span,.product-features li{background:none;border:1px solid #e0e5e9;color:#526174;font-weight:500}
+#portfolio .work-preview:hover,#lab .labcard:hover,#build .product-card:hover{border-color:#aab9c7;box-shadow:0 12px 28px #13263d0c}
+@media(max-width:600px){.lab-carousel,.mini-gallery{padding-inline:24px}.carousel-controls button{width:32px;padding:5px}.carousel-controls button[data-direction="-1"]{left:-8px}.carousel-controls button[data-direction="1"]{right:-8px}}
+
+/* Secondary heading supports, rather than competes with, the hero. */
+#shift .shift-title{font-size:clamp(28px,3.2vw,43px);line-height:1.4;letter-spacing:-.04em;font-weight:700;margin:18px 0 24px}
+#shift .shift-title>span{display:block}
+#shift .shift-title em{font-style:normal;color:#b1d6df;background:none;animation:none}
+#shift .sectionhead{max-width:560px;margin-bottom:0}
+#shift .sectionhead>p{font-size:16px;line-height:1.85;max-width:44ch;color:#afbdcd}
+#shift .twocol{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(40px,6vw,84px)}
+@media(max-width:1000px){#shift .twocol{grid-template-columns:1fr}#shift .sectionhead{max-width:640px}}
+@media(max-width:600px){#shift .shift-title{font-size:clamp(25px,6.5vw,32px);line-height:1.4}}
+
+/* Shared section hierarchy and alternating surface rhythm. */
+main>section:not(.hero) .sectionhead{max-width:none}
+main>section:not(.hero) .sectionhead h2,
+#shift .sectionhead .shift-title{font-size:clamp(28px,3.2vw,43px);line-height:1.4;letter-spacing:-.04em;font-weight:700;margin:18px 0 24px;white-space:nowrap}
+#shift .shift-title>span{display:inline}
+#shift,#lab,#portfolio,#consult{background:linear-gradient(125deg,#0b1830,#12263c);color:#fff}
+#build,#history,#education{background:linear-gradient(125deg,#f5f9fc,#eef5fa 60%,#f3f1fa);color:#111b2d}
+#shift .sectionhead>p,#lab .sectionhead>p,#portfolio .sectionhead>p,#consult .sectionhead>p{color:#b8c7d7}
+#lab .sectionhead small{color:#aebfd0}
+#shift .eyebrow,#lab .eyebrow,#portfolio .eyebrow,#consult .eyebrow{color:#8fd6e3}
+#lab .sectionhead .grad{background:none;color:#b1d6df}
+#portfolio .mini-heading>span{color:#aebfd0}
+#lab .carousel-controls button,#portfolio .carousel-controls button{color:#c7dbe7}
+#lab .carousel-controls button:hover,#portfolio .carousel-controls button:hover{color:#fff}
+#history .eyebrow{color:#168ac2}
+#history .original-history:before{background:linear-gradient(#3b87a8,#8b80b6,#b6ccdb)}
+#history .original-history .tl__i{background:#ffffffc9;border-color:#d3dfe9;box-shadow:0 8px 22px #13263d08}
+#history .original-history .tl__i b{color:#286988}
+#history .original-history .small{color:#172a3e!important}
+#history .original-history .tiny{color:#526174}
+#history .original-history .tl__i:after{border-color:#eef5fa;background:#3c94ad}
+#history .original-history .tl__i:before{background:#7ca6b9}
+#consult .form{color:#111b2d}
+#consult .aside{border-color:#ffffff24}
+#shift .twocol{grid-template-columns:1fr;gap:38px}
+#shift .sectionhead{max-width:none}
+#shift .sectionhead>p{max-width:65ch}
+#shift .shift-journey{padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;align-items:stretch}
+#shift .shift-journey:before{display:none}
+#shift .shift-journey .signal{margin:0;padding:28px;display:flex;flex-direction:column}
+#shift .step-number{position:relative;left:auto;top:auto;margin-bottom:22px;width:40px;height:40px}
+#shift .shift-journey .signal:not(:last-child):before{content:"→";left:auto;right:-32px;bottom:auto;top:50%;font-size:25px;animation:journeyAcross 12s ease-in-out infinite}
+#shift .shift-journey .signal:nth-child(2):before{animation-delay:4s}
+#shift .shift-outcome{margin-top:auto;padding-top:18px}
+#shift .shift-journey .signal p{margin-bottom:22px}
+@keyframes journeyAcross{0%,24%,40%,100%{opacity:.35;transform:translateX(-2px)}32%{opacity:1;transform:translateX(3px)}}
+@media(max-width:800px){
+main>section:not(.hero) .sectionhead h2,#shift .sectionhead .shift-title{white-space:normal;font-size:clamp(26px,4.7vw,36px);word-break:keep-all}
+#shift .shift-journey{grid-template-columns:1fr;gap:30px}
+#shift .shift-journey .signal:not(:last-child):before{content:"↓";right:50%;top:auto;bottom:-29px;animation:none}
+}
+@media(prefers-reduced-motion:reduce){#shift .shift-journey .signal:before{animation:none}}
+/* Allow supporting section copy to use the full content width. */
+main>section:not(.hero) .sectionhead>p,
+#shift .sectionhead>p{max-width:none;width:100%}
+@media(min-width:1200px){#shift .sectionhead>p{white-space:nowrap}}
+/* White portfolio cards must not inherit the dark section's white text. */
+#portfolio .work-preview,
+#portfolio .work-preview:visited,
+#portfolio .work-preview h3{color:#132236}
+#portfolio .work-preview small{color:#526174}
+#portfolio .work-preview>span{color:#526174}
+@media(min-width:1200px){
+  #lab .sectionhead>p{white-space:nowrap;font-size:clamp(13px,1.05vw,16px)}
+}
++/* Interactive hero */
+.hero{--pointer-x:72%;--pointer-y:45%;min-height:calc(100svh - 76px);padding:clamp(42px,6.5vh,76px) 0;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:560px;height:560px;left:var(--pointer-x);top:var(--pointer-y);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#67d8ef26 0,#7467ee16 34%,transparent 70%);pointer-events:none;transition:left .18s linear,top .18s linear}
+.hero>.wrap{width:100%;display:grid;grid-template-columns:minmax(540px,1.08fr) minmax(460px,.92fr);align-items:center;gap:clamp(42px,6vw,96px)}
+.hero-copy{position:relative;z-index:3}.hero-copy>p{max-width:650px}
+.hero-progress{display:flex;align-items:center;gap:10px;margin-top:30px;font-size:10px;font-weight:900;letter-spacing:.14em;color:#8291a5}.hero-progress i{width:34px;height:1px;background:#cdd9e4;position:relative;overflow:hidden}.hero-progress i:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#25bfe2,#6765ef);transform:translateX(-100%);animation:heroProgress 9s linear infinite}.hero-progress i:nth-of-type(2):after{animation-delay:3s}.hero-progress span{transition:.35s}.hero-progress span.is-active{color:#0e93cc}
+.hero-visual{position:relative!important;inset:auto!important;width:min(100%,560px)!important;height:430px!important;justify-self:end;z-index:2;perspective:1200px}
+.pivot-board{position:absolute;inset:0;border:1px solid #c7dfea;border-radius:36px;background:linear-gradient(145deg,#ffffffd9,#f4fbffb8 50%,#f2f0ffb8);box-shadow:0 32px 80px #2d648b1b,inset 0 1px #fff;overflow:hidden;transform:rotateX(var(--hero-rx,0deg)) rotateY(var(--hero-ry,0deg));transform-style:preserve-3d;transition:transform .18s ease-out}.pivot-board:after{content:"";position:absolute;inset:-40%;background:conic-gradient(from 90deg,transparent,#50cbe516,transparent 30%,#6c64ef14,transparent 60%,#2ad0a414,transparent);animation:pivotAura 13s linear infinite}
+.pivot-grid{position:absolute;inset:0;opacity:.42;background-image:linear-gradient(#5fa8c40e 1px,transparent 1px),linear-gradient(90deg,#5fa8c40e 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+.pivot-route{position:absolute;inset:0;width:100%;height:100%;z-index:1}.pivot-route path{fill:none;stroke-width:2}.route-base{stroke:#bed2de;stroke-dasharray:4 8}.route-live{stroke:url(#pivotGradient);stroke-width:3!important;stroke-linecap:round;stroke-dasharray:54 620;animation:routeTravel 4.5s linear infinite;filter:drop-shadow(0 0 5px #5ed8ee)}
+.pivot-node{position:absolute;z-index:4;width:190px;padding:18px 19px;text-align:left;border:1px solid #c8dae4;border-radius:20px;background:#ffffffed;color:#152238;box-shadow:0 16px 34px #214d6914;cursor:pointer;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .45s}.pivot-node span{display:block;font-size:9px;font-weight:900;letter-spacing:.13em;color:#168fc0;margin-bottom:8px}.pivot-node strong{display:block;font-size:16px;line-height:1.35}.pivot-node small{display:block;margin-top:7px;font-size:9px;letter-spacing:.08em;color:#758599}.pivot-node:before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:#b9cbd5;box-shadow:0 0 0 6px #b9cbd51a;transition:.35s}.pivot-node.is-active{border-color:#55cce4;box-shadow:0 22px 48px #1b91bd26,0 0 0 5px #55cce411;transform:translateY(-8px) scale(1.035)}.pivot-node.is-active:before{background:#4dcae7;box-shadow:0 0 0 8px #4dcae72b}
+.node-build{left:25px;top:54px}.node-build:before{right:-5px;bottom:23px}.node-connect{left:185px;top:173px;width:202px}.node-connect:before{right:-5px;bottom:25px}.node-transform{right:24px;bottom:39px;width:202px}.node-transform:before{left:-5px;top:23px}.node-transform.is-active{border-color:#38cba5;box-shadow:0 22px 48px #17a98622,0 0 0 5px #38cba511}
+.pivot-core{position:absolute;z-index:3;right:58px;top:47px;width:103px;height:103px;border-radius:50%;display:grid;place-content:center;text-align:center;background:#0d1c34;color:white;box-shadow:0 0 0 13px #5bcce40e,0 20px 40px #142d5040;animation:coreFloat 4s ease-in-out infinite}.pivot-core>b{font-size:27px;letter-spacing:-.08em}.pivot-core small{font-size:7px;line-height:1.25;letter-spacing:.13em;color:#7ce2ef}.pivot-core>span{position:absolute;inset:-12px;border:1px dashed #65d0e6;border-radius:50%;animation:orbitSpin 9s linear infinite}
+.result-chip{position:absolute;z-index:5;padding:7px 10px;border-radius:99px;background:#0f2039;color:#fff;font-size:9px;font-weight:800;box-shadow:0 8px 20px #1a35582b;animation:chipFloat 4s ease-in-out infinite}.chip-one{right:15px;top:168px}.chip-two{left:35px;bottom:103px;animation-delay:-1.2s}.chip-three{right:218px;bottom:19px;animation-delay:-2.3s}
+.orbit-dot{position:absolute;z-index:3;width:7px;height:7px;border-radius:50%;background:#6863ef;box-shadow:0 0 0 6px #6863ef1c;animation:dotPulse 2.2s ease-in-out infinite}.dot-one{left:165px;top:154px}.dot-two{right:88px;bottom:142px;animation-delay:-1.1s}
+.pivot-caption{position:absolute;z-index:4;left:26px;bottom:20px;display:flex;align-items:center;gap:8px;font-size:9px;color:#698093}.pivot-caption span{font-weight:900;color:#1aa8ca}.pivot-caption b{color:#1b2a3c}.pivot-caption i{width:32px;height:1px;background:linear-gradient(90deg,#25bfe2,#6b64ef)}
+@keyframes routeTravel{to{stroke-dashoffset:-674}}@keyframes pivotAura{to{transform:rotate(360deg)}}@keyframes coreFloat{50%{transform:translateY(-7px)}}@keyframes chipFloat{50%{transform:translateY(-5px)}}@keyframes dotPulse{50%{transform:scale(1.7);opacity:.45}}@keyframes heroProgress{0%,12%{transform:translateX(-100%)}35%,100%{transform:translateX(100%)}}
+@media(max-width:1180px){.hero{min-height:auto;padding:76px 0}.hero>.wrap{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy>p{margin-left:auto;margin-right:auto}.hero .actions,.hero-progress{justify-content:center}.hero-visual{justify-self:center;margin-top:16px}}
+@media(max-width:620px){.hero{padding:54px 0 62px}.hero>.wrap{gap:30px}.hero-visual{height:360px!important;transform:scale(.88);transform-origin:top center;margin-bottom:-42px}.pivot-board{border-radius:28px}.pivot-node{width:165px;padding:14px}.node-connect{left:145px;width:180px}.node-transform{width:180px}.pivot-core{right:30px;transform:scale(.82)}.hero-progress{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){.pivot-board,.pivot-node{transition:none}.route-live,.pivot-board:after,.pivot-core,.pivot-core>span,.result-chip,.orbit-dot,.hero-progress i:after{animation:none}}
+
+/* ===== 섹션별 카드 스타일 (브랜드 톤: 네이비 · 블루 · 시안 · 퍼플) =====
+   ① What we build : 라이트 타일 — 브랜드 색상 단일 계열(시안→퍼플) 은은한 틴트 + 네이비 원형 아이콘
+   ② J2 Lab        : 다크 글래스 — 반투명 카드 + 시안 라인 아이콘 + 아웃라인 칩
+   ③ Portfolio     : 화이트 에디토리얼 — 큰 워터마크 번호 + 호버 시 그라데이션 바 */
+
+/* ---------- ① What we build : 라이트 타일 ---------- */
+#build .cards .product-card{--tile:linear-gradient(160deg,#eaf6fb,#dcefF7);--tag:#1c7fb3;--ink-t:#0f1b2e;--sub:#5b6a7d;
+  position:relative;overflow:hidden;border:0!important;border-top:0!important;border-radius:24px;background:var(--tile)!important;
+  box-shadow:0 1px 0 #ffffff inset,0 2px 10px #0f1f3308!important;color:var(--ink-t);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+#build .cards .product-card:nth-child(2){--tile:linear-gradient(160deg,#e9f1fc,#dbe8f9);--tag:#2d6fc0}
+#build .cards .product-card:nth-child(3){--tile:linear-gradient(160deg,#ecedfc,#dfe1f9);--tag:#4d5fc9}
+#build .cards .product-card:nth-child(4){--tile:linear-gradient(160deg,#f0ebfb,#e4dcf8);--tag:#6a58c9}
+#build .cards .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #0f1f3316!important;border:0!important}
+#build .cards .product-card:before{content:"";position:absolute;right:-70px;bottom:-90px;width:230px;height:230px;border-radius:50%;background:#ffffff66;pointer-events:none}
+#build .cards .product-icon{width:56px;height:56px;padding:15px;border-radius:50%!important;background:linear-gradient(145deg,#1c3557,#0b1830)!important;color:#7ce2ef!important;box-shadow:0 10px 22px #0b183033,inset 0 1px 0 #ffffff22;transition:transform .3s}
+#build .cards .product-card:hover .product-icon{transform:translateY(-4px) rotate(-6deg)}
+#build .cards .product-icon svg{stroke-width:1.8}
+#build .cards .num{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--tag)!important}
+#build .cards .product-audience{display:none}
+#build .cards .product-card h3{font-size:clamp(22px,1.6vw,26px);font-weight:800;line-height:1.35;letter-spacing:-.045em;color:var(--ink-t)!important;margin:6px 0 10px;word-break:keep-all}
+#build .cards .product-value{color:var(--ink-t);font-size:15px;font-weight:600;margin:0 0 6px}
+#build .cards .product-desc{color:var(--sub);font-size:14px;line-height:1.75;margin:0 0 18px}
+#build .cards .product-features{border-top:0;padding-top:0;margin-top:auto;position:relative;z-index:1}
+#build .cards .product-features li{background:#ffffffc4!important;border:0!important;color:#2a3a4f!important;font-weight:600;border-radius:999px;padding:6px 11px;font-size:12px}
+
+/* ---------- ② J2 Lab : 다크 글래스 ---------- */
+#lab .labtrack .labcard{flex-basis:360px;min-height:320px;padding:26px;position:relative;overflow:hidden;border-radius:22px;
+  border:1px solid #ffffff1c!important;border-top:1px solid #ffffff30!important;background:linear-gradient(160deg,#ffffff14,#ffffff06)!important;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 20px 40px #00000033!important;color:#fff;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+#lab .labtrack .labcard:before{content:"";position:absolute;top:-80px;right:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#65d6e72e,transparent 65%);pointer-events:none;transition:opacity .3s}
+#lab .labtrack .labcard:hover{transform:translateY(-6px);border-color:#65d6e78c!important;box-shadow:0 0 0 1px #65d6e72a,0 24px 48px #00000055!important}
+#lab .labtrack .lab-category{font-size:12px;font-weight:700;letter-spacing:.04em;color:#78dce8!important}
+#lab .labtrack .lab-mark{width:48px;height:48px;border-radius:14px!important;background:#65d6e714!important;border:1px solid #65d6e755;color:#8fe4ef!important;box-shadow:none;transition:transform .3s,background .3s}
+#lab .labtrack .labcard:hover .lab-mark{background:#65d6e72a!important;transform:translateY(-3px)}
+#lab .labtrack .lab-mark svg{animation:none;stroke-width:1.7}
+#lab .labtrack .labcard h3{font-size:23px;font-weight:700;line-height:1.4;letter-spacing:-.035em;color:#fff!important;margin:14px 0 10px;word-break:keep-all}
+#lab .labtrack .labcard p{color:#b4c2d1;font-size:14px;line-height:1.8;margin:0 0 20px}
+#lab .labtrack .lab-scope{border-top:1px solid #ffffff14;padding-top:16px;margin-top:auto;position:relative;z-index:1}
+#lab .labtrack .lab-scope-label{color:#8fa4b8;font-size:11px;font-weight:700;letter-spacing:.06em}
+#lab .labtrack .lab-tags span{background:transparent!important;border:1px solid #ffffff2a!important;color:#d5e0ea!important;font-weight:500;border-radius:999px;padding:5px 11px;font-size:12px}
+
+/* ---------- ③ Portfolio : 화이트 에디토리얼 ---------- */
+#portfolio .preview-grid{counter-reset:proj}
+#portfolio .preview-grid .work-preview{counter-increment:proj;position:relative;overflow:hidden;min-height:210px;padding:26px 26px 22px;border-radius:22px;
+  border:0!important;background:#fff!important;color:#0f1b2e;box-shadow:0 6px 20px #00000026!important;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+#portfolio .preview-grid .work-preview:hover{transform:translateY(-6px);box-shadow:0 22px 44px #00000040!important;border:0!important}
+/* 워터마크 번호 */
+#portfolio .preview-grid .work-preview:before{content:"0" counter(proj);position:absolute;right:16px;bottom:-22px;font-size:104px;font-weight:900;letter-spacing:-.08em;line-height:1;color:#0b183009;pointer-events:none;transition:color .3s}
+#portfolio .preview-grid .work-preview:hover:before{color:#168ac214}
+/* 호버 시 좌→우로 펼쳐지는 그라데이션 바 */
+#portfolio .preview-grid .work-preview:after{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:linear-gradient(90deg,#168ac2,#65d6e7,#7164e8);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+#portfolio .preview-grid .work-preview:hover:after{width:100%}
+#portfolio .preview-grid .work-preview small{font-size:12px;font-weight:700;letter-spacing:.06em;color:#168ac2!important;background:none!important;padding:0;padding-right:60px;display:flex;align-items:center;gap:8px}
+#portfolio .preview-grid .work-preview small:before{content:"";width:18px;height:2px;background:#168ac2;border-radius:2px}
+#portfolio .preview-grid .work-preview h3{font-size:21px;font-weight:800;line-height:1.4;letter-spacing:-.04em;color:#0f1b2e!important;margin:12px 0 10px;padding-right:44px;word-break:keep-all}
+#portfolio .preview-grid .work-preview>span:not(.tile-ico){color:#627080!important;font-size:13px;font-weight:600;border:0;padding-top:0;margin-top:auto;transition:color .2s}
+#portfolio .preview-grid .work-preview:hover>span:not(.tile-ico){color:#168ac2!important}
+#portfolio .preview-grid .work-preview .tile-ico{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:13px;background:#0b1830;z-index:2;display:grid;place-items:center;color:#7ce2ef!important;pointer-events:none;transition:transform .3s,background .3s}
+#portfolio .preview-grid .work-preview .tile-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#portfolio .preview-grid .work-preview:hover .tile-ico{transform:translateY(-3px);background:linear-gradient(145deg,#168ac2,#7164e8);color:#fff!important}
+
+@media(max-width:600px){
+  #build .cards .product-card,#lab .labtrack .labcard,#portfolio .preview-grid .work-preview{border-radius:20px}
+  #lab .labtrack .labcard{flex-basis:300px;min-height:0}
+  #build .cards .product-icon{width:50px;height:50px;padding:13px}
+  #portfolio .preview-grid .work-preview:before{font-size:84px}
+}
+@media(prefers-reduced-motion:reduce){#build .cards .product-card,#build .cards .product-icon,#lab .labtrack .labcard,#lab .labtrack .lab-mark,#portfolio .preview-grid .work-preview,#portfolio .preview-grid .work-preview:after,#portfolio .preview-grid .work-preview .tile-ico{transition:none}}
+
+/* ===== 섹션 톤 리듬 : 라이트/다크 교차 =====
+   hero L · shift D · build L · lab D · portfolio L · education D · history L · consult D */
+#portfolio{background:linear-gradient(125deg,#f5f9fc,#eef5fa 60%,#f3f1fa)!important;color:#111b2d}
+#portfolio .eyebrow{color:#168ac2}
+#portfolio .sectionhead>p{color:#48576b}
+#portfolio .mini-heading>span{color:#526b80}
+#portfolio .carousel-controls button{color:#263b50}
+#portfolio .carousel-controls button:hover{color:#168ac2}
+#portfolio .preview-grid .work-preview{box-shadow:0 6px 20px #13263d0d!important;border:1px solid #dfe7ef!important}
+#portfolio .preview-grid .work-preview:hover{box-shadow:0 22px 44px #13263d1a!important;border-color:#c9d7e4!important}
+#portfolio .mini-project{border-color:#d4dfeb}
+#education{background:linear-gradient(125deg,#0b1830,#12263c)!important;color:#fff}
+#education .eyebrow{color:#8fd6e3}
+#education .sectionhead h2{color:#fff}
+#education .sectionhead>p{color:#b8c7d7}
+#education .edu-card{color:#111b2d;border:1px solid #ffffff1a;box-shadow:0 12px 30px #00000033;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+#education .edu-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px #00000055}
+#education .edu-body small{color:#6a5ae0}
+#education .edu-body h3{color:#132236}
+#education .more-row .btn.outline{background:#fff;color:#0b1830;border-color:#fff}
+#history{border-top:1px solid #dbe5ee}
+/* 스냅샷 프레임 : 라운드 20 · 다크 아웃라인 / 서브 텍스트 하단 배치 */
+#portfolio .mini-project{border-radius:20px;border:1.5px solid #0b1830;box-shadow:0 6px 16px #13263d14}
+#portfolio .mini-project:hover{border-color:#168ac2}
+#portfolio .portfolio-outro{margin:34px 0 0;text-align:center;color:#48576b;font-size:16px;line-height:1.7;word-break:keep-all}
+#portfolio .more-row{margin-top:18px}
+@media(max-width:600px){#portfolio .portfolio-outro{font-size:15px;margin-top:26px}}
+/* 포트폴리오 순서 : 헤딩 → 스냅샷 → 카드 → 더보기 */
+#portfolio .mini-gallery{margin:0 0 34px}
+#portfolio .mini-heading{margin:0}
+#portfolio .more-row{margin-top:30px}
+/* ===== 상담 신청 : 컴팩트 폼 + 우측 진행 방식 + 하단 비주얼 모션 ===== */
+#consult .consultgrid{grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:22px;align-items:stretch}
+#consult .form{display:flex;flex-direction:column}
+#consult .form .field:has(textarea){flex:1;display:flex;flex-direction:column}
+#consult .form .field textarea{flex:1;min-height:96px;resize:none}
+#consult .form>label{margin-top:auto}
+#consult .form{padding:clamp(20px,2.4vw,30px)}
+#consult .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#consult .field{gap:5px;margin-bottom:11px}
+#consult .field label{font-size:12px}
+#consult .field input,#consult .field textarea{padding:10px 12px;font-size:14px;border-radius:9px;background:#f8fafc}
+#consult .field input::placeholder,#consult .field textarea::placeholder{color:#9aa7b6}
+#consult .field input:focus,#consult .field textarea:focus{outline:2px solid #168ac2;outline-offset:0;background:#fff}
+#consult .field textarea{min-height:96px}
+#consult .form>label{font-size:12px!important;display:block;margin:2px 0 8px}
+#consult #formMsg{margin:0 0 8px;font-size:13px}
+#consult .form .btn{padding:12px 20px}
+#consult .aside{display:flex;flex-direction:column;padding:clamp(20px,2.4vw,30px)}
+#consult .aside h3{font-size:21px;margin-bottom:10px}
+#consult .aside>p{font-size:13.5px;margin:0}
+#consult .aside ul{margin:16px 0 0;gap:10px}
+#consult .aside li{padding-top:9px;font-size:13.5px}
+#consult .aside strong{font-size:12px;margin-bottom:2px}
+.consult-motion{margin-top:18px;padding-top:18px;border-top:1px solid #ffffff1a}
+.consult-motion svg{display:block;width:100%;height:auto}
+.consult-motion .cm-base{fill:none;stroke:#ffffff22;stroke-width:2;stroke-dasharray:4 7}
+.consult-motion .cm-live{fill:none;stroke:url(#cmGrad);stroke-width:3;stroke-linecap:round;stroke-dasharray:46 400;animation:cmTravel 3.6s linear infinite;filter:drop-shadow(0 0 5px #5ed8ee)}
+.consult-motion .cm-ring{fill:#65d6e70e;stroke:#65d6e744;stroke-width:1;transform-origin:center;transform-box:fill-box;animation:cmRing 3.6s ease-in-out infinite}
+.consult-motion .cm-dot{fill:#0b1830;stroke:#78dce8;stroke-width:2;animation:cmDot 3.6s ease-in-out infinite}
+.consult-motion .n2 .cm-ring,.consult-motion .n2 .cm-dot{animation-delay:1.2s}
+.consult-motion .n3 .cm-ring,.consult-motion .n3 .cm-dot{animation-delay:2.4s}
+.consult-motion text{fill:#d5e0ea;font-size:12px;font-weight:700;text-anchor:middle;font-family:inherit}
+.consult-motion .cm-step{fill:#78dce8;font-size:9px;letter-spacing:.14em;font-weight:900}
+.cm-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.cm-chips span{font-size:11px;font-weight:600;color:#d5e0ea;border:1px solid #ffffff26;border-radius:999px;padding:5px 10px}
+@keyframes cmTravel{to{stroke-dashoffset:-446}}
+@keyframes cmRing{0%,25%,100%{transform:scale(1);stroke:#65d6e744}12%{transform:scale(1.25);stroke:#65d6e7cc}}
+@keyframes cmDot{0%,25%,100%{fill:#0b1830}12%{fill:#65d6e7}}
+@media(max-width:1000px){#consult .consultgrid{grid-template-columns:1fr}}
+@media(max-width:600px){#consult .field-row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.consult-motion .cm-live,.consult-motion .cm-ring,.consult-motion .cm-dot{animation:none}}
+/* 상담 폼 : 업무 유형 카테고리 칩 */
+#consult .field label small{font-weight:500;color:#7a8797;font-size:11px;margin-left:6px}
+#consult .cat-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+#consult .cat-chip{position:relative;cursor:pointer}
+#consult .cat-chip input{position:absolute;opacity:0;width:0;height:0}
+#consult .cat-chip span{display:inline-block;font-size:12.5px;font-weight:600;color:#3b4a5e;background:#f3f6f9;border:1px solid #dfe6ee;border-radius:999px;padding:7px 12px;transition:background .2s,color .2s,border-color .2s,transform .15s}
+#consult .cat-chip:hover span{border-color:#9fc2d8;background:#eaf4fa}
+#consult .cat-chip input:checked+span{background:#0b1830;color:#fff;border-color:#0b1830}
+#consult .cat-chip input:checked+span:before{content:"✓ ";color:#78dce8}
+#consult .cat-chip input:focus-visible+span{outline:2px solid #168ac2;outline-offset:2px}
+#consult .cat-chip:active span{transform:scale(.97)}
+/* ===== 포트폴리오 카드 : 4x2 그래픽 타일 (스냅샷과 구분되는 추상 비주얼) ===== */
+#portfolio .preview-grid--8{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+#portfolio .preview-grid--8 .work-preview{--wa:#168ac2;--wb:#65d6e7;--wt:#e9f5fb;counter-increment:none;display:flex;flex-direction:column;min-height:0;padding:0;border-radius:20px;overflow:hidden;background:#fff!important;border:1px solid #dfe7ef!important;box-shadow:0 6px 20px #13263d0d!important}
+#portfolio .preview-grid--8 .work-preview.c2{--wa:#6a5ae0;--wb:#9b8bfa;--wt:#efedfc}
+#portfolio .preview-grid--8 .work-preview.c3{--wa:#0f8f7d;--wb:#3ed1a8;--wt:#e8f6f2}
+#portfolio .preview-grid--8 .work-preview.c4{--wa:#2f5fc4;--wb:#5aa8ff;--wt:#e9f0fc}
+#portfolio .preview-grid--8 .work-preview.c5{--wa:#8b3fc9;--wb:#c48bff;--wt:#f4ecfc}
+#portfolio .preview-grid--8 .work-preview.c6{--wa:#0e7c9c;--wb:#3fc3ee;--wt:#e7f4f9}
+#portfolio .preview-grid--8 .work-preview.c7{--wa:#4759d6;--wb:#8e9cff;--wt:#ebeefc}
+#portfolio .preview-grid--8 .work-preview.c8{--wa:#1f3a5c;--wb:#5d8bb8;--wt:#e9eff5}
+#portfolio .preview-grid--8 .work-preview:before,#portfolio .preview-grid--8 .work-preview:after{display:none}
+#portfolio .preview-grid--8 .work-preview:hover{transform:translateY(-6px);box-shadow:0 22px 44px #13263d1a!important;border-color:#c9d7e4!important}
+/* 상단 비주얼 : 틴트 배경 + 격자 + 궤도 링 + 아이콘 */
+#portfolio .wp-visual{position:relative;height:120px;overflow:hidden;background:
+  radial-gradient(circle at 85% 20%,color-mix(in srgb,var(--wb) 35%,transparent),transparent 45%),
+  linear-gradient(#0b183008 1px,transparent 1px),linear-gradient(90deg,#0b183008 1px,transparent 1px),var(--wt);
+  background-size:auto,22px 22px,22px 22px,auto}
+#portfolio .wp-visual:before,#portfolio .wp-visual:after{content:"";position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--wa) 30%,transparent);pointer-events:none}
+#portfolio .wp-visual:before{width:150px;height:150px;right:-30px;top:-40px}
+#portfolio .wp-visual:after{width:230px;height:230px;right:-70px;top:-80px;border-style:dashed;opacity:.7;animation:wpSpin 40s linear infinite}
+#portfolio .wp-icon{position:absolute;left:18px;bottom:16px;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,var(--wa),var(--wb));color:#fff;box-shadow:0 10px 22px color-mix(in srgb,var(--wa) 35%,transparent);transition:transform .3s}
+#portfolio .wp-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#portfolio .work-preview:hover .wp-icon{transform:translateY(-4px) rotate(-6deg)}
+#portfolio .wp-year{position:absolute;right:14px;top:14px;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--wa);background:#ffffffcc;border:1px solid color-mix(in srgb,var(--wa) 25%,transparent);border-radius:999px;padding:4px 10px}
+#portfolio .wp-body{padding:14px 16px 16px}
+#portfolio .preview-grid--8 .work-preview small{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--wa)!important;padding:0;display:flex;align-items:center;gap:6px}
+#portfolio .preview-grid--8 .work-preview small:before{width:14px;background:var(--wa)}
+#portfolio .preview-grid--8 .work-preview h3{font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.03em;margin:6px 0 6px;padding:0;color:#0f1b2e!important;word-break:keep-all}
+#portfolio .preview-grid--8 .work-preview p{margin:0;font-size:12.5px;line-height:1.6;color:#627080;word-break:keep-all}
+#portfolio .preview-grid--8 .work-preview:hover h3{color:var(--wa)!important}
+@keyframes wpSpin{to{transform:rotate(360deg)}}
+@media(max-width:1200px){#portfolio .preview-grid--8{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#portfolio .preview-grid--8{grid-template-columns:1fr;gap:12px}#portfolio .wp-visual{height:100px}}
+@media(prefers-reduced-motion:reduce){#portfolio .wp-visual:after{animation:none}}
+/* 스냅샷 프레임 아웃라인 완화 */
+#portfolio .mini-project{border:1px solid #c9d6e2;box-shadow:0 4px 12px #13263d0c}
+#portfolio .mini-project:hover{border-color:#168ac2}
+@media(max-width:1200px){#portfolio .preview-grid--8{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#portfolio .preview-grid--8{grid-template-columns:1fr 1fr;gap:12px}#portfolio .wp-body{padding:12px}#portfolio .preview-grid--8 .work-preview h3{font-size:14px}}
+/* Education history 4x2 */
+#education .preview-grid--edu{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+#education .preview-grid--edu .edu-card img{height:132px}
+#education .preview-grid--edu .edu-body{padding:14px 16px 16px}
+#education .preview-grid--edu .edu-body h3{font-size:14.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:1200px){#education .preview-grid--edu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#education .preview-grid--edu{grid-template-columns:1fr;gap:12px}}
+/* 히어로 상하 패딩 동일화 */
+.hero{padding:clamp(80px,8.5vw,120px) 0!important}
+@media(max-width:1180px){.hero{padding:76px 0!important}}
+@media(max-width:620px){.hero{padding:56px 0!important}}
+/* ===== 걸어온 길 : 가로 타임라인(5열)로 컴팩트화 ===== */
+#history{padding-block:clamp(56px,6vw,84px)!important}
+#history .sectionhead{margin-bottom:28px}
+#history .original-history{max-width:none;padding:34px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+#history .original-history:before{left:0;right:0;top:0;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,#65d6e7,#7164e8,#65d6e7);opacity:.6}
+#history .original-history .tl__i{width:auto;margin:0!important;padding:18px 18px 20px;border-radius:16px;background:#fff!important;border:1px solid #d9e3ee;box-shadow:0 6px 18px #13263d08;display:block}
+#history .original-history .tl__i:nth-child(even){margin-left:0!important}
+#history .original-history .tl__i:before{content:"";position:absolute;left:24px;right:auto;top:-34px;width:2px;height:22px;background:#7ca6b9}
+#history .original-history .tl__i:after{content:"";position:absolute;left:19px;right:auto;top:-40px;width:12px;height:12px;border-radius:50%;background:#3c94ad;border:3px solid #f5f9fc;box-shadow:0 0 0 3px #65d6e733}
+#history .original-history .tl__i:nth-child(even):before,#history .original-history .tl__i:nth-child(even):after{left:24px}
+#history .original-history .tl__i:nth-child(even):after{left:19px}
+#history .original-history .tl__i b{font-size:clamp(22px,1.8vw,26px)!important;margin-bottom:8px!important;color:#168ac2;letter-spacing:-.04em}
+#history .original-history .small{font-size:14.5px;font-weight:700;line-height:1.4;word-break:keep-all}
+#history .original-history .tiny{font-size:12.5px;line-height:1.6;margin-top:6px!important;word-break:keep-all}
+#history .original-history .tl__i:hover{transform:translateY(-4px);border-color:#9fc2d8}
+#history .history-reveal{transform:translateY(16px)}
+@media(max-width:1000px){#history .original-history{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){#history .original-history{grid-template-columns:1fr 1fr;gap:12px}#history .original-history .tl__i{padding:14px}}
+/* 걸어온 길 : 2018(우) → 2025(좌)로 올라오며 짙어지는 그라데이션 */
+#history .original-history:before{background:linear-gradient(90deg,#7164e8,#168ac2 45%,#65d6e7 75%,#dfe7ef);opacity:1}
+#history .original-history .tl__i{transition:transform .3s,box-shadow .3s}
+#history .original-history .tl__i:nth-child(1){background:linear-gradient(150deg,#12264a,#0b1830)!important;border-color:#0b1830;box-shadow:0 16px 34px #0b183033}
+#history .original-history .tl__i:nth-child(1) b{color:#78dce8}
+#history .original-history .tl__i:nth-child(1) .small{color:#fff!important}
+#history .original-history .tl__i:nth-child(1) .tiny{color:#b4c2d1}
+#history .original-history .tl__i:nth-child(2){background:linear-gradient(150deg,#dcecf7,#c9dff1)!important;border-color:#b9d3e8}
+#history .original-history .tl__i:nth-child(3){background:linear-gradient(150deg,#e9f3fa,#dcebf6)!important;border-color:#cddfec}
+#history .original-history .tl__i:nth-child(4){background:linear-gradient(150deg,#f3f8fc,#eaf2f9)!important;border-color:#dbe6f0}
+#history .original-history .tl__i:nth-child(5){background:#fff!important;border-color:#e3eaf1}
+#history .original-history .tl__i:nth-child(2) b{color:#1c6fa8}
+#history .original-history .tl__i:nth-child(3) b{color:#2a83b8}
+#history .original-history .tl__i:nth-child(4) b{color:#4a97c4}
+#history .original-history .tl__i:nth-child(5) b{color:#7fb0cc}
+#history .original-history .tl__i:nth-child(1):after{background:#7164e8;box-shadow:0 0 0 4px #7164e833,0 0 16px #7164e888}
+#history .original-history .tl__i:nth-child(2):after{background:#168ac2;box-shadow:0 0 0 3px #168ac233}
+#history .original-history .tl__i:nth-child(3):after{background:#3fb3d6}
+#history .original-history .tl__i:nth-child(4):after{background:#8dd4e3}
+#history .original-history .tl__i:nth-child(5):after{background:#c9dbe6}
+#history .original-history .tl__i:nth-child(1):before{background:#7164e8}
+#history .original-history .tl__i:nth-child(2):before{background:#168ac2}
+#history .original-history .tl__i:nth-child(3):before{background:#3fb3d6}
+#history .original-history .tl__i:nth-child(4):before{background:#8dd4e3}
+#history .original-history .tl__i:nth-child(5):before{background:#c9dbe6}
+/* What we build : 아이콘 상시 모션 (부유 + 링 펄스) */
+#build .cards .product-icon{position:relative;animation:pIconFloat 4s ease-in-out infinite}
+#build .cards .product-icon:after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #65d6e7;opacity:0;animation:pIconRing 4s ease-out infinite}
+#build .cards .product-2 .product-icon,#build .cards .product-2 .product-icon:after{animation-delay:1s}
+#build .cards .product-3 .product-icon,#build .cards .product-3 .product-icon:after{animation-delay:2s}
+#build .cards .product-4 .product-icon,#build .cards .product-4 .product-icon:after{animation-delay:3s}
+#build .cards .product-card:hover .product-icon{animation-play-state:paused}
+@keyframes pIconFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-5deg)}}
+@keyframes pIconRing{0%{transform:scale(.8);opacity:.7}70%,100%{transform:scale(1.7);opacity:0}}
+@media(prefers-reduced-motion:reduce){#build .cards .product-icon,#build .cards .product-icon:after{animation:none}}
+/* Selected portfolio : 블루·남색 계열로 재정렬 (시안 → 스카이 → 블루 → 로열 → 인디고 → 네이비) */
+#portfolio .preview-grid--8 .work-preview.c1{--wa:#0f8fb8;--wb:#65d6e7;--wt:#e7f6fa}
+#portfolio .preview-grid--8 .work-preview.c2{--wa:#1a7fd0;--wb:#5cb8ff;--wt:#e8f2fc}
+#portfolio .preview-grid--8 .work-preview.c3{--wa:#2a62c9;--wb:#6f9dff;--wt:#e9eefb}
+#portfolio .preview-grid--8 .work-preview.c4{--wa:#3d4fc4;--wb:#8892f5;--wt:#ebecfb}
+#portfolio .preview-grid--8 .work-preview.c5{--wa:#1b4f8a;--wb:#4f8fd6;--wt:#e8eef6}
+#portfolio .preview-grid--8 .work-preview.c6{--wa:#0e6f8f;--wb:#3fb6d6;--wt:#e6f2f6}
+#portfolio .preview-grid--8 .work-preview.c7{--wa:#5b52d8;--wb:#9a93ff;--wt:#eeedfc}
+#portfolio .preview-grid--8 .work-preview.c8{--wa:#0b1830;--wb:#3e5f8a;--wt:#e9edf3}
+/* JTOCOM history : 6열 + 2026 기준 그라데이션 */
+#history .original-history{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+#history .original-history .tl__i{padding:16px 15px 18px}
+#history .original-history .tl__i b{font-size:clamp(20px,1.6vw,24px)!important}
+#history .original-history .small{font-size:13.5px}
+#history .original-history .tiny{font-size:12px}
+#history .original-history .tl__i:nth-child(1){background:linear-gradient(150deg,#12264a,#0b1830)!important;border-color:#0b1830;box-shadow:0 16px 34px #0b183033}
+#history .original-history .tl__i:nth-child(1) b{color:#78dce8}
+#history .original-history .tl__i:nth-child(1) .small{color:#fff!important}
+#history .original-history .tl__i:nth-child(1) .tiny{color:#b4c2d1}
+#history .original-history .tl__i:nth-child(2){background:linear-gradient(150deg,#cfe3f3,#bcd6ec)!important;border-color:#a9c9e2}
+#history .original-history .tl__i:nth-child(2) .small{color:#0f2a45!important}
+#history .original-history .tl__i:nth-child(3){background:linear-gradient(150deg,#dcecf7,#c9dff1)!important;border-color:#b9d3e8}
+#history .original-history .tl__i:nth-child(4){background:linear-gradient(150deg,#e9f3fa,#dcebf6)!important;border-color:#cddfec}
+#history .original-history .tl__i:nth-child(5){background:linear-gradient(150deg,#f3f8fc,#eaf2f9)!important;border-color:#dbe6f0}
+#history .original-history .tl__i:nth-child(6){background:#fff!important;border-color:#e3eaf1}
+#history .original-history .tl__i:nth-child(2) b{color:#155f96}
+#history .original-history .tl__i:nth-child(3) b{color:#1c6fa8}
+#history .original-history .tl__i:nth-child(4) b{color:#2a83b8}
+#history .original-history .tl__i:nth-child(5) b{color:#4a97c4}
+#history .original-history .tl__i:nth-child(6) b{color:#7fb0cc}
+#history .original-history .tl__i:nth-child(1):after,#history .original-history .tl__i:nth-child(1):before{background:#7164e8}
+#history .original-history .tl__i:nth-child(1):after{box-shadow:0 0 0 4px #7164e833,0 0 16px #7164e888}
+#history .original-history .tl__i:nth-child(2):after,#history .original-history .tl__i:nth-child(2):before{background:#168ac2}
+#history .original-history .tl__i:nth-child(2):after{box-shadow:0 0 0 3px #168ac233}
+#history .original-history .tl__i:nth-child(3):after,#history .original-history .tl__i:nth-child(3):before{background:#2f9fcc}
+#history .original-history .tl__i:nth-child(4):after,#history .original-history .tl__i:nth-child(4):before{background:#3fb3d6}
+#history .original-history .tl__i:nth-child(5):after,#history .original-history .tl__i:nth-child(5):before{background:#8dd4e3}
+#history .original-history .tl__i:nth-child(6):after,#history .original-history .tl__i:nth-child(6):before{background:#c9dbe6;box-shadow:none}
+@media(max-width:1200px){#history .original-history{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){#history .original-history{grid-template-columns:1fr 1fr}}
+/* Consult와의 경계 : 얇은 하이라이트 라인 */
+#consult{border-top:1px solid #ffffff14;box-shadow:inset 0 1px 0 #65d6e722}
 </style></head><body>
 <header class="nav"><div class="wrap"><a class="logo" href="#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks"><a href="#shift">The shift</a><a href="#build">What we build</a><a href="#lab">J2 Lab</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="#consult">상담 시작하기</a></div></header>
-<main id="top"><section class="hero"><div class="ambient" aria-hidden="true"></div><div class="wrap"><span class="eyebrow">Vertical AI Studio</span><h1><span class="hero-title-line"><span class="hero-title-words">웹을 만드는 회사에서</span></span><span class="hero-title-line"><span class="hero-title-words"><span class="grad">기업의 일을 바꾸는 회사</span>로</span></span></h1><p>제이투컴은 AI를 이해하는 개발자이자 교육자입니다. 현장의 반복 업무를 발견하고, 실제로 쓰이는 AI 제품과 자동화로 연결합니다.</p><div class="actions"><a class="btn primary" href="#build">AI 솔루션 살펴보기</a><a class="btn outline" href="#consult">우리 회사도 바꿀 수 있을까?</a></div><div class="hero-visual"><span class="hero-orbit" aria-hidden="true"></span><span class="hero-orbit orbit-two" aria-hidden="true"></span><svg class="hero-flow" viewBox="0 0 340 340" aria-hidden="true"><path d="M65 55 C240 30 120 150 280 160 M280 160 C320 270 80 160 140 290"/><path class="flow-pulse" d="M65 55 C240 30 120 150 280 160"/><path class="flow-pulse alt" d="M280 160 C320 270 80 160 140 290"/></svg><div class="vcard">문서·데이터<small>회사에 쌓인 지식</small></div><div class="vcard">AI 업무비서<small>질문하고 바로 실행</small></div><div class="vcard">반복 업무 자동화<small>팀의 다음 일을 줄입니다</small></div><i class="vline"></i><i class="vline"></i></div></div></section>
-<section class="dark" id="shift"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="twocol"><div class="sectionhead"><span class="eyebrow" style="color:#78dce8">The shift</span><h2>이제 고객은<br>웹사이트가 아니라<br><span class="grad">일의 변화</span>를 삽니다.</h2><p>홈페이지, 쇼핑몰, 관리자 페이지는 누구나 빠르게 만들 수 있습니다. 제이투컴은 그 다음 질문에서 시작합니다.</p></div><ol class="signals shift-journey" aria-label="업무 변화의 세 단계">
+<main id="top"><section class="hero" id="hero"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="hero-copy"><span class="eyebrow">AI AGENCY → WORK TRANSFORMATION</span><h1><span class="hero-title-line"><span class="hero-title-words">웹을 만드는 회사에서</span></span><span class="hero-title-line"><span class="hero-title-words"><span class="grad">기업의 일을 바꾸는 회사</span>로</span></span></h1><p>제이투컴은 AI를 이해하는 개발자이자 교육자입니다. 현장의 반복 업무를 발견하고, 실제로 쓰이는 AI 제품과 자동화로 연결합니다.</p><div class="actions"><a class="btn primary" href="#build">AI 솔루션 살펴보기</a><a class="btn outline" href="#consult">우리 회사도 바꿀 수 있을까?</a></div><div class="hero-progress" aria-hidden="true"><span class="is-active">BUILD</span><i></i><span>CONNECT</span><i></i><span>TRANSFORM</span></div></div><div class="hero-visual" id="heroVisual" aria-label="AI 제작에서 기업 업무 변화로 이어지는 제이투컴의 전환 과정"><div class="pivot-board"><div class="pivot-grid" aria-hidden="true"></div><svg class="pivot-route" viewBox="0 0 560 430" aria-hidden="true"><defs><linearGradient id="pivotGradient" x1="0" x2="1"><stop stop-color="#48c9e8"/><stop offset=".52" stop-color="#5d68ef"/><stop offset="1" stop-color="#24c79a"/></linearGradient></defs><path class="route-base" d="M112 115 C200 115 185 223 278 223 S366 330 458 330"/><path class="route-live" d="M112 115 C200 115 185 223 278 223 S366 330 458 330"/></svg><button class="pivot-node node-build is-active" type="button" data-hero-step="0"><span>01 · AI AGENCY</span><strong>빠르게 만듭니다</strong><small>WEB · CONTENT · AI</small></button><button class="pivot-node node-connect" type="button" data-hero-step="1"><span>02 · CONNECT</span><strong>일과 데이터를 잇습니다</strong><small>PROCESS · DATA · PEOPLE</small></button><button class="pivot-node node-transform" type="button" data-hero-step="2"><span>03 · TRANSFORM</span><strong>기업의 일을 바꿉니다</strong><small>LESS WORK · MORE IMPACT</small></button><div class="pivot-core" aria-hidden="true"><span></span><b>J2</b><small>OPERATING<br>PARTNER</small></div><span class="orbit-dot dot-one" aria-hidden="true"></span><span class="orbit-dot dot-two" aria-hidden="true"></span><span class="result-chip chip-one">반복 업무 ↓</span><span class="result-chip chip-two">실행 속도 ↑</span><span class="result-chip chip-three">운영 역량 ↑</span><div class="pivot-caption"><span>FROM</span><b>제작 중심</b><i></i><span>TO</span><b>성과 중심</b></div></div></div></div></section>
+<section class="dark" id="shift"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="twocol"><div class="sectionhead"><span class="eyebrow" style="color:#78dce8">The shift</span><h2 class="shift-title"><span>고객이 선택하는 것은,</span> <span><em>일의 변화</em>입니다.</span></h2><p>홈페이지, 쇼핑몰, 관리자 페이지는 누구나 빠르게 만들 수 있습니다. 제이투컴은 그 다음 질문에서 시작합니다.</p></div><ol class="signals shift-journey" aria-label="업무 변화의 세 단계">
 <li class="signal"><span class="step-number" aria-hidden="true">1</span><span class="shift-stage">STEP 01 · 문제 발견</span><b>쌓인 업무에서, 바꿀 일을 찾습니다.</b><p>견적서·계약서·매뉴얼·보고서의 흐름을 살펴보고, 반복되는 업무와 시간이 걸리는 지점을 파악합니다.</p><span class="shift-outcome">변화의 시작 · 개선할 업무 선정</span></li>
 <li class="signal"><span class="step-number" aria-hidden="true">2</span><span class="shift-stage">STEP 02 · 업무 적용</span><b>막막했던 AI가, 실제 업무에 쓰입니다.</b><p>선정한 업무에 데이터와 AI 도구를 연결하고, 직원이 직접 사용하며 작은 범위부터 효과를 검증합니다.</p><span class="shift-outcome">변화의 실행 · 현장에서 검증</span></li>
 <li class="signal"><span class="step-number" aria-hidden="true">3</span><span class="shift-stage">STEP 03 · 지속 개선</span><b>한 번의 도입이, 더 나은 운영으로 이어집니다.</b><p>사용자의 피드백과 업무 결과를 반영해 도구를 개선하고, 검증한 방식을 조직의 다른 업무로 확장합니다.</p><span class="shift-outcome">변화의 확장 · 조직에 정착</span></li>
 </ol></div></div></section>
-<section id="build"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">What we build</span><h2>교육에서 발견하고,<br>제품으로 해결합니다.</h2><p>반복 업무를 줄이고 팀의 역량을 키우는 네 가지 핵심 상품입니다.</p></div><div class="cards"><article class="card product-card product-1"><div class="product-top"><span class="num">01 / BUSINESS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span></div><span class="product-audience">기업·공공기관</span><h3>AI 업무비서 구축</h3><p class="product-value">찾고 작성하는 시간을 줄입니다.</p><p class="product-desc">사내 문서와 규정을 연결해 근거를 찾고, 견적서·메일·보고서 작성을 지원합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>문서 검색</li><li>답변 지원</li><li>문서 작성</li></ul></article><article class="card product-card product-2"><div class="product-top"><span class="num">02 / EDUCATORS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3Z"/></svg></span></div><span class="product-audience">교수·강사·교육기관</span><h3>AI 콘텐츠 스튜디오</h3><p class="product-value">강의 하나의 활용도를 넓힙니다.</p><p class="product-desc">강의와 교안을 학습자료·퀴즈·콘텐츠로 전환해 제작과 재활용을 돕습니다.</p><ul class="product-features" aria-label="핵심 기능"><li>강의 재가공</li><li>퀴즈 제작</li><li>콘텐츠 확장</li></ul></article><article class="card product-card product-3"><div class="product-top"><span class="num">03 / STUDENTS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5ZM6 10v6c4 3 8 3 12 0v-6M21 8v8"/></svg></span></div><span class="product-audience">학생·취업 준비생</span><h3>AI 취업 코치</h3><p class="product-value">다음 준비를 구체화합니다.</p><p class="product-desc">이력서와 포트폴리오를 분석해 보완할 프로젝트와 면접 준비 방향을 제안합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>역량 분석</li><li>프로젝트 제안</li><li>면접 준비</li></ul></article><article class="card product-card product-4"><div class="product-top"><span class="num">04 / TEAMS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M14 6h4v4M10 18H6v-4"/></svg></span></div><span class="product-audience">기업·업무 담당팀</span><h3>맞춤형 AI 웹앱</h3><p class="product-value">우리 팀의 일하는 방식에 맞춥니다.</p><p class="product-desc">조직의 업무 흐름을 진단하고 기존 시스템과 연결되는 자동화·웹앱을 설계합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>업무 진단</li><li>시스템 연동</li><li>맞춤 개발</li></ul></article></div></div></section>
-<section class="lab" id="lab"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">J2 Lab</span><h2>조직의 과제를 해결하는<br><span class="grad">AI 프로젝트 연구소</span></h2><p>기업·공공기관·대학·교육기관의 실제 업무를 분석하고, 데이터와 기존 시스템을 연결하는 프로젝트를 설계합니다. 작은 범위에서 검증한 뒤 운영 현장으로 확장합니다.<br><small>아래는 적용 가능한 프로젝트 유형입니다. 조직의 업무와 데이터 환경에 맞춰 범위를 구체화합니다.</small></p></div><div class="lab-window"><div class="labtrack" id="labTrack"></div></div></div></section>
+<section id="build"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">What we build</span><h2>교육에서 발견하고, 제품으로 해결합니다.</h2><p>반복 업무를 줄이고 팀의 역량을 키우는 네 가지 핵심 상품입니다.</p></div><div class="cards"><article class="card product-card product-1"><div class="product-top"><span class="num">01 / BUSINESS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span></div><span class="product-audience">기업·공공기관</span><h3>AI 업무비서 구축</h3><p class="product-value">찾고 작성하는 시간을 줄입니다.</p><p class="product-desc">사내 문서와 규정을 연결해 근거를 찾고, 견적서·메일·보고서 작성을 지원합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>문서 검색</li><li>답변 지원</li><li>문서 작성</li></ul></article><article class="card product-card product-2"><div class="product-top"><span class="num">02 / MARKETING</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3Z"/></svg></span></div><span class="product-audience">마케팅·홍보·영업 조직</span><h3>AI 콘텐츠 스튜디오</h3><p class="product-value">제작 기간은 줄이고, 콘텐츠 양은 늘립니다.</p><p class="product-desc">브로슈어·제품 소개 영상·SNS 콘텐츠를 AI로 기획·제작하고, 브랜드 톤을 유지한 채 채널별로 확장합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>AI 브로슈어</li><li>홍보 영상</li><li>채널별 변환</li></ul></article><article class="card product-card product-3"><div class="product-top"><span class="num">03 / TEAMS</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M14 6h4v4M10 18H6v-4"/></svg></span></div><span class="product-audience">기업·업무 담당팀</span><h3>맞춤형 AI 웹앱</h3><p class="product-value">우리 팀의 일하는 방식에 맞춥니다.</p><p class="product-desc">조직의 업무 흐름을 진단하고 기존 시스템과 연결되는 자동화·웹앱을 설계합니다.</p><ul class="product-features" aria-label="핵심 기능"><li>업무 진단</li><li>시스템 연동</li><li>맞춤 개발</li></ul></article><article class="card product-card product-4"><div class="product-top"><span class="num">04 / ORGANIZATION</span><span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5ZM6 10v6c4 3 8 3 12 0v-6M21 8v8"/></svg></span></div><span class="product-audience">기업·공공기관·대학</span><h3>AI 도입 교육·컨설팅</h3><p class="product-value">도구 교육에서 끝나지 않고, 첫 업무 적용까지 갑니다.</p><p class="product-desc">직무별 AI 실무 교육으로 현장의 반복 업무를 발견하고, 파일럿 설계와 성과 기준까지 함께 세웁니다.</p><ul class="product-features" aria-label="핵심 기능"><li>실무 교육</li><li>업무 진단</li><li>파일럿 설계</li></ul></article></div></div></section>
+<section class="lab" id="lab"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">J2 Lab</span><h2>조직의 과제를 해결하는 <span class="grad">AI 프로젝트 연구소</span></h2><p>기업·공공기관·대학·교육기관의 실제 업무를 분석하고, 데이터와 기존 시스템을 연결하는 프로젝트를 설계합니다. 작은 범위에서 검증한 뒤 운영 현장으로 확장합니다.<br><small>적용 가능한 프로젝트 유형을 조직의 업무와 데이터 환경에 맞춰 범위를 구체화합니다.</small></p></div><div class="lab-carousel"><div class="carousel-controls"><button type="button" data-carousel="labSlider" data-direction="-1" aria-label="J2 Lab 이전"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4-8 8 8 8"/></svg></button><button type="button" data-carousel="labSlider" data-direction="1" aria-label="J2 Lab 다음"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg></button></div><div class="lab-window manual-slider" id="labSlider" tabindex="0" aria-label="J2 Lab 프로젝트 슬라이더"><div class="labtrack" id="labTrack"></div></div></div></div></section>
 
-<section class="history" id="history"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">JTOCOM history</span><h2>걸어온 길</h2></div><div class="original-history"><div class="tl__i"><b>2025~</b><div><p class="small" style="color:var(--ink)">생성형 AI 접목</p><p class="tiny" style="margin-top:4px">웹·콘텐츠 제작에 생성형 AI 도입, AI 실무 교육·강의 확대</p></div></div>
+<section class="portfolio" id="portfolio"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="archive-heading"><div class="sectionhead"><span class="eyebrow">Selected portfolio</span><h2>경험으로 쌓아온 실행력</h2><p>웹과 플랫폼, 업무 시스템을 구축해온 경험을 조직의 생산성 개선으로 연결합니다.</p></div></div><div class="mini-gallery"><div class="mini-heading"><div class="carousel-controls"><button type="button" data-carousel="portfolioSlider" data-direction="-1" aria-label="포트폴리오 이미지 이전"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4-8 8 8 8"/></svg></button><button type="button" data-carousel="portfolioSlider" data-direction="1" aria-label="포트폴리오 이미지 다음"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg></button></div></div><div class="manual-slider" id="portfolioSlider" tabindex="0" aria-label="포트폴리오 이미지 슬라이더"><div class="mini-track"><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/01.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/06.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/07.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/11.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/36.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/41.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/46.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/47.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/50.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/51.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/56.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a><a class="mini-project" href="portfolio.html" aria-label="포트폴리오 전체 보기"><img src="portfolio/thumb/57.webp" alt="제이투컴 프로젝트 이미지" loading="lazy" draggable="false"></a></div></div></div><div class="preview-grid preview-grid--8"><a class="work-preview c1" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 3 6.2L4 20l1.3-3.4A8 8 0 0 1 4 12Z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>AI 챗봇</small><h3>Group DEMEX AI Chatbot System</h3><p>그룹사 문서와 규정을 연결한 사내 AI 상담 챗봇을 구축했습니다.</p></div></a><a class="work-preview c2" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5Z"/><path d="M15 4v4h4M8 13h8M8 17h5"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>컨설팅</small><h3>디지털교과서 표준화 작업 컨설팅</h3><p>교과서 콘텐츠 구조와 메타데이터 표준화를 설계했습니다.</p></div></a><a class="work-preview c3" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>컨설팅</small><h3>에너지관리공단 에너지바우처 업무 포털 컨설팅</h3><p>신청·심사·지급 업무 흐름을 진단하고 포털 개선안을 제시했습니다.</p></div></a><a class="work-preview c4" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>시스템 구축</small><h3>Group DEMEX Admin System</h3><p>챗봇과 콘텐츠 운영을 위한 통합 관리자 시스템을 구축했습니다.</p></div></a><a class="work-preview c5" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>데이터</small><h3>전국학교급식 데이터 전처리·시각화</h3><p>급식 데이터를 정제하고 지역·학교별 대시보드로 시각화했습니다.</p></div></a><a class="work-preview c6" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4Z"/><path d="m4 15 5-5 4 4 3-3 4 4M15 8h.01"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>AI 콘텐츠</small><h3>DMEX AI Brochure 제작</h3><p>생성형 AI로 서비스 소개 브로슈어를 기획·제작했습니다.</p></div></a><a class="work-preview c7" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4 4 0 0 1-1 8.9H7Z"/></svg></span><span class="wp-year">2026</span></div><div class="wp-body"><small>시스템 구축</small><h3>SaaS 플랫폼 시스템 구축</h3><p>멀티테넌트 구조의 구독형 서비스 플랫폼을 구축했습니다.</p></div></a><a class="work-preview c8" href="portfolio.html"><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12l8-4.5M12 12v9M12 12 4 7.5"/></svg></span><span class="wp-year">2025</span></div><div class="wp-body"><small>메타버스 웹</small><h3>JOYTOWN 2.0 (with Metaverse)</h3><p>메타버스와 연동되는 반응형 커뮤니티 플랫폼을 고도화했습니다.</p></div></a></div><div class="more-row"><a class="btn outline" href="portfolio.html" aria-label="포트폴리오 전체 더보기">더보기 <span aria-hidden="true">↗</span></a></div></div></section><section class="bundle" id="education"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="archive-heading"><div class="sectionhead"><span class="eyebrow">Education history</span><h2>현장에서 배우고, 함께 성장합니다.</h2><p>기업·공공기관·대학·부트캠프의 최신 교육과 멘토링 이력입니다.</p></div></div><div class="preview-grid preview-grid--edu"><a class="edu-card" href="education.html"><img src="assets/p3.png" alt="2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링" loading="lazy"><div class="edu-body"><small>대학 · 2026.09</small><h3>2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p4.png" alt="2026. 09 성신여자대학교 「취업 말고 커리어」 특강" loading="lazy"><div class="edu-body"><small>대학 · 2026.08~09</small><h3>2026. 09 성신여자대학교 「취업 말고 커리어」 특강</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p5.png" alt="WISET 이공계 생성형 AI 활용 실무 교육" loading="lazy"><div class="edu-body"><small>공공기관 · 2026.07~08</small><h3>WISET 이공계 생성형 AI 활용 실무 교육</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p6.png" alt="무역안보관리원 AI 영상 제작 및 AI 자동화 실무 교육" loading="lazy"><div class="edu-body"><small>공공기관 · 2026.07</small><h3>무역안보관리원 AI 영상 제작 및 AI 자동화 실무 교육</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p8.png" alt="AI 서비스 기획 부트캠프" loading="lazy"><div class="edu-body"><small>부트캠프 · 2026.04~현재</small><h3>AI 서비스 기획 부트캠프</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p9.png" alt="2026년 취업전략 멘토링" loading="lazy"><div class="edu-body"><small>부트캠프 · 2026.02~현재</small><h3>2026년 취업전략 멘토링</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p7.png" alt="한국경제 청년일경험지원사업 ESG 지원형 멀티모달 AX 마케팅 캠프 멘토링" loading="lazy"><div class="edu-body"><small>기업 · 2026</small><h3>한국경제 청년일경험지원사업 ESG 지원형 멀티모달 AX 마케팅 캠프 멘토링</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p1.png" alt="동양미래대학교 컴퓨터공학부 겸임교수" loading="lazy"><div class="edu-body"><small>대학 · 2025.03~현재</small><h3>동양미래대학교 컴퓨터공학부 겸임교수</h3></div></a></div><div class="more-row"><a class="btn outline" href="education.html" aria-label="교육 이력 전체 더보기">더보기 <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="history" id="history"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">JTOCOM history</span><h2>걸어온 길</h2></div><div class="original-history"><div class="tl__i"><b>2026~</b><div><p class="small" style="color:var(--ink)">AI 제품화·자동화로 확장</p><p class="tiny" style="margin-top:4px">AI 업무비서·챗봇 제품 구축, 업무 자동화 컨설팅, 공공기관·대학 AI 교육 확대</p></div></div><div class="tl__i"><b>2025~</b><div><p class="small" style="color:var(--ink)">생성형 AI 도입, AI 회사로 피벗</p><p class="tiny" style="margin-top:4px">웹·콘텐츠 제작에 생성형 AI 적용, AI 실무 교육·강의 시작</p></div></div>
             <div class="tl__i"><b>2024~</b><div><p class="small" style="color:var(--ink)">AI · 메타버스 영역 확장</p><p class="tiny" style="margin-top:4px">Group DEMEX AI Chatbot, JOYTOWN 2.0 (with Metaverse)</p></div></div>
             <div class="tl__i"><b>2022~</b><div><p class="small" style="color:var(--ink)">공공 · 금융 프로젝트 확대</p><p class="tiny" style="margin-top:4px">금융보안원, 방위사업청, 부동산광고시장 감시센터</p></div></div>
             <div class="tl__i"><b>2021~</b><div><p class="small" style="color:var(--ink)">플랫폼 · 인트라넷 구축 다수</p><p class="tiny" style="margin-top:4px">O2O 펫플랫폼 CRM, AJ대원·엘바라이프·새롬 인트라넷</p></div></div>
-            <div class="tl__i"><b>2018~</b><div><p class="small" style="color:var(--ink)">차세대 컨설팅 · 시스템 구축</p><p class="tiny" style="margin-top:4px">LG화학, 효성 ESS, 온라인투어, GSFRESH</p></div></div></div></div></section>
-<section class="portfolio" id="portfolio"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="archive-heading"><div class="sectionhead"><span class="eyebrow">Selected portfolio</span><h2>경험으로 쌓아온 실행력</h2><p>웹과 플랫폼, 업무 시스템을 구축해온 경험을 조직의 생산성 개선으로 연결합니다.</p></div></div><div class="preview-grid"><a class="work-preview" href="portfolio.html"><small>2026</small><h3>Group DEMEX AI Chatbot System</h3><span>프로젝트 보기 ↗</span></a><a class="work-preview" href="portfolio.html"><small>2026</small><h3>디지털교과서 표준화 작업 컨설팅</h3><span>프로젝트 보기 ↗</span></a><a class="work-preview" href="portfolio.html"><small>2026</small><h3>에너지관리공단 에너지바우처 업무 포털 컨설팅</h3><span>프로젝트 보기 ↗</span></a><a class="work-preview" href="portfolio.html"><small>2026</small><h3>Group DEMEX Admin System</h3><span>프로젝트 보기 ↗</span></a><a class="work-preview" href="portfolio.html"><small>2026</small><h3>전국학교급식 데이터전처리시각화</h3><span>프로젝트 보기 ↗</span></a><a class="work-preview" href="portfolio.html"><small>2026</small><h3>DMEX AI Brochure 제작</h3><span>프로젝트 보기 ↗</span></a></div><div class="more-row"><a class="btn outline" href="portfolio.html" aria-label="포트폴리오 전체 더보기">더보기 <span aria-hidden="true">↗</span></a></div></div></section><section class="bundle" id="education"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="archive-heading"><div class="sectionhead"><span class="eyebrow">Education history</span><h2>현장에서 배우고,<br>함께 성장합니다.</h2><p>기업·공공기관·대학·부트캠프의 최신 교육과 멘토링 이력입니다.</p></div></div><div class="preview-grid"><a class="edu-card" href="education.html"><img src="assets/p3.png" alt="2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링" loading="lazy"><div class="edu-body"><small>대학 · 2026.09</small><h3>2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p4.png" alt="2026. 09 성신여자대학교 「취업 말고 커리어」 특강" loading="lazy"><div class="edu-body"><small>대학 · 2026.08~09</small><h3>2026. 09 성신여자대학교 「취업 말고 커리어」 특강</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p5.png" alt="WISET 이공계 생성형 AI 활용 실무 교육" loading="lazy"><div class="edu-body"><small>공공기관 · 2026.07~08</small><h3>WISET 이공계 생성형 AI 활용 실무 교육</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p6.png" alt="무역안보관리원 AI 영상 제작 및 AI 자동화 실무 교육" loading="lazy"><div class="edu-body"><small>공공기관 · 2026.07</small><h3>무역안보관리원 AI 영상 제작 및 AI 자동화 실무 교육</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p8.png" alt="AI 서비스 기획 부트캠프" loading="lazy"><div class="edu-body"><small>부트캠프 · 2026.04~현재</small><h3>AI 서비스 기획 부트캠프</h3></div></a><a class="edu-card" href="education.html"><img src="assets/p9.png" alt="2026년 취업전략 멘토링" loading="lazy"><div class="edu-body"><small>부트캠프 · 2026.02~현재</small><h3>2026년 취업전략 멘토링</h3></div></a></div><div class="more-row"><a class="btn outline" href="education.html" aria-label="교육 이력 전체 더보기">더보기 <span aria-hidden="true">↗</span></a></div></div></section>
-<section class="consult" id="consult"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">AI transition consulting</span><h2>AI 전환 상담 신청</h2><p>왼쪽 상담 신청 폼과 오른쪽 안내 영역에서 진행 방식과 연락처를 확인할 수 있습니다.</p></div><div class="consultgrid"><form class="form" id="form"><div class="field"><label>회사명 *</label><input name="company" required></div><div class="field"><label>담당자명 *</label><input name="name" required></div><div class="field"><label>이메일 *</label><input name="email" type="email" required></div><div class="field"><label>연락처</label><input name="tel"></div><div class="field"><label>현재 줄이고 싶은 업무 *</label><textarea name="message" required></textarea></div><label style="font-size:13px"><input name="agree" type="checkbox" required> 개인정보 수집·이용에 동의합니다.</label><input type="hidden" name="type" value="AI 전환 상담"><input type="hidden" name="budget" value="미정"><input type="hidden" name="when" value="미정"><p id="formMsg" style="color:#168ac2"></p><button class="btn primary" type="submit" style="width:100%">상담 신청 보내기</button></form><aside class="aside"><h3>JTOCOM과 바로 연결하세요</h3><p>문제 정의부터 AI 제품화, 교육과 운영까지 한 팀이 함께합니다.</p><ul><li><strong>이메일</strong>jtocom@jtocom.com</li><li><strong>전화</strong>010-2867-8552</li><li><strong>응답 시간</strong>영업일 기준 24시간 내</li><li><strong>진행 방식</strong>현황 파악 → 첫 업무 선정 → 솔루션 제안</li></ul></aside></div></div></section></main><footer style="background:#071226;color:#9aabba;padding:30px 0"><div class="wrap">JTOCOM · Vertical AI Studio · jtocom@jtocom.com · 010-2867-8552</div></footer><button class="top" id="topBtn">↑</button>
+            <div class="tl__i"><b>2018~</b><div><p class="small" style="color:var(--ink)">2018년 회사 설립</p><p class="tiny" style="margin-top:4px">LG화학, 효성 ESS, 온라인투어, GSFRESH</p></div></div></div></div></section>
+<section class="consult" id="consult"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="sectionhead"><span class="eyebrow">AI transition consulting</span><h2>AI 전환 상담 신청</h2><p>왼쪽 상담 신청 폼과 오른쪽 안내 영역에서 진행 방식과 연락처를 확인할 수 있습니다.</p></div><div class="consultgrid"><form class="form" id="form" novalidate><div class="field-row"><div class="field"><label>회사명 *</label><input name="company" required placeholder="회사명"></div><div class="field"><label>담당자명 *</label><input name="name" required placeholder="이름"></div></div><div class="field-row"><div class="field"><label>이메일 *</label><input name="email" type="email" required placeholder="name@company.com"></div><div class="field"><label>연락처</label><input name="tel" placeholder="010-0000-0000"></div></div><div class="field field-cat"><label>줄이고 싶은 업무 유형 * <small>해당하는 항목을 모두 선택하세요</small></label><div class="cat-chips" id="catChips"><label class="cat-chip"><input type="checkbox" name="cat" value="문서 검색·작성"><span>문서 검색·작성</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="고객 문의 응대"><span>고객 문의 응대</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="견적·제안서 작성"><span>견적·제안서 작성</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="데이터 정리·보고"><span>데이터 정리·보고</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="콘텐츠·영상 제작"><span>콘텐츠·영상 제작</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="승인·프로세스 자동화"><span>승인·프로세스 자동화</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="AI 교육·도입 진단"><span>AI 교육·도입 진단</span></label><label class="cat-chip"><input type="checkbox" name="cat" value="기타"><span>기타</span></label></div><input type="hidden" name="category" id="catValue"></div><div class="field"><label>현재 상황을 자세히 알려주세요 * <small>누가 · 얼마나 자주 · 어떤 도구로 하고 있는지 적어주세요</small></label><textarea name="message" required placeholder="예) 영업팀 3명이 매주 월요일 견적서 15건을 엑셀로 수작업 작성하고 있습니다. 제품 사양이 자주 바뀌어 단가 확인에 시간이 오래 걸리고, 담당자별로 양식이 달라 검토가 어렵습니다."></textarea></div><label style="font-size:13px"><input name="agree" type="checkbox" required> 개인정보 수집·이용에 동의합니다.</label><input type="hidden" name="type" value="AI 전환 상담"><input type="hidden" name="budget" value="미정"><input type="hidden" name="when" value="미정"><p id="formMsg" style="color:#168ac2"></p><button class="btn primary" type="submit" style="width:100%">상담 신청 보내기</button></form><aside class="aside"><h3>JTOCOM과</h3><p>문제 정의부터 AI 제품화, 교육과 운영까지 한 팀이 함께합니다.</p><ul><li><strong>이메일</strong>jtocom@jtocom.com</li><li><strong>전화</strong>010-2867-8552</li><li><strong>응답 시간</strong>영업일 기준 24시간 내</li><li><strong>진행 방식</strong>현황 파악 → 첫 업무 선정 → 솔루션 제안</li></ul>
+<div class="consult-motion" aria-hidden="true"><svg viewBox="0 0 420 150"><defs><linearGradient id="cmGrad" x1="0" x2="1"><stop stop-color="#48c9e8"/><stop offset=".5" stop-color="#6d68ef"/><stop offset="1" stop-color="#2ad0a4"/></linearGradient></defs>
+<path class="cm-base" d="M50 62 C120 62 110 62 210 62 S300 62 370 62"/><path class="cm-live" d="M50 62 C120 62 110 62 210 62 S300 62 370 62"/>
+<g class="cm-node n1" transform="translate(50 62)"><circle class="cm-ring" r="22"/><circle class="cm-dot" r="9"/><text y="52">현황 파악</text><text class="cm-step" y="-34">STEP 1</text></g>
+<g class="cm-node n2" transform="translate(210 62)"><circle class="cm-ring" r="22"/><circle class="cm-dot" r="9"/><text y="52">첫 업무 선정</text><text class="cm-step" y="-34">STEP 2</text></g>
+<g class="cm-node n3" transform="translate(370 62)"><circle class="cm-ring" r="22"/><circle class="cm-dot" r="9"/><text y="52">솔루션 제안</text><text class="cm-step" y="-34">STEP 3</text></g>
+</svg><div class="cm-chips"><span>영업일 24h 응답</span><span>현황 진단부터</span><span>소규모 파일럿 시작</span></div></div></aside></div></div></section></main><footer style="background:#fff;color:#526174;padding:30px 0;border-top:1px solid #dce4ec"><div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px"><span>JTOCOM · Vertical AI Studio · jtocom@jtocom.com · 010-2867-8552</span><span style="color:#8a97a8;font-size:13px">© 2018 by JTOCOM.</span></div></footer><button class="top" id="topBtn">↑</button>
 <script>const labs=[["지식 관리","사내 지식 검색·업무 Q&A","분산된 규정·매뉴얼·프로젝트 문서를 연결하고, 출처를 확인할 수 있는 답변으로 정보 탐색을 지원합니다.","문서 수집 · 권한별 검색 · 근거 표시"],["문서 처리","비정형 문서 데이터 추출","계약서·신청서·거래명세서의 주요 항목을 추출하고 검수 후 업무 시스템에 반영하는 흐름을 설계합니다.","OCR · 항목 추출 · 검수 대기열"],["영업 지원","견적·제안서 작성 지원","제품 정보, 가격 기준, 기존 제안 사례를 활용해 고객 요구에 맞는 초안을 구성하고 담당자 검토로 연결합니다.","요구사항 정리 · 견적 산출 · 승인"],["계약 관리","계약 검토·의무사항 관리","표준 계약과 변경 조항을 비교하고, 담당자가 검토할 쟁점과 갱신·이행 일정을 정리합니다.","조항 비교 · 검토 항목 · 일정 알림"],["고객 운영","고객 문의 분류·응대 지원","문의 내용과 이력을 분석해 담당 부서로 배정하고, 지식 기반 답변 초안과 후속 처리 항목을 제안합니다.","문의 분류 · 답변 초안 · 상담 이관"],["프로세스 자동화","부서 간 업무·승인 자동화","접수부터 검토·승인·결과 통지까지 반복되는 절차를 연결하고, 예외 상황은 담당자가 처리하도록 구성합니다.","업무 분기 · 승인 단계 · 처리 기록"],["데이터 분석","운영 지표·성과 리포팅","여러 시스템의 데이터를 정리해 운영 지표를 시각화하고, 변화 원인과 확인할 이슈를 보고서 초안으로 제공합니다.","데이터 통합 · 대시보드 · 정기 보고"],["재무 운영","증빙 검수·정산 대사","영수증·세금계산서·거래 내역을 비교해 누락과 불일치를 표시하고 정산 담당자의 확인을 지원합니다.","증빙 추출 · 내역 대조 · 예외 검수"],["구매 관리","공급사·구매 제안 비교","견적 조건, 납기, 제품 사양을 공통 기준으로 정리해 구매 검토에 필요한 비교표를 구성합니다.","사양 비교 · 조건 정리 · 검토 보고"],["제조·품질","품질 이슈·조치 이력 관리","검사 기록과 불량 보고서를 구조화하고, 유사 사례와 조치 이력을 찾아 현장의 원인 검토를 돕습니다.","검사 데이터 · 유사 사례 · 조치 추적"],["현장 지원","설비 매뉴얼·점검 지원","설비별 매뉴얼과 점검 이력을 연결해 필요한 절차를 검색하고, 작업자가 확인할 체크리스트를 구성합니다.","설비별 검색 · 체크리스트 · 점검 기록"],["인사·교육","온보딩·직무 학습 지원","조직 규정과 직무 자료를 기반으로 입문 과정을 구성하고, 직원 질문과 학습 피드백을 개선에 활용합니다.","직무별 과정 · 규정 안내 · 피드백"],["콘텐츠 운영","교육 콘텐츠 제작·재활용","강의 영상과 교안을 학습 노트·퀴즈·요약 콘텐츠로 전환하고, 검수와 버전 관리까지 이어지는 제작 흐름을 만듭니다.","전사 · 콘텐츠 변환 · 버전 관리"],["교육 평가","과제 피드백·평가 보조","명시된 평가 기준과 제출물을 대조해 피드백 초안을 제시하고, 최종 평가는 교육 담당자가 확인합니다.","평가 기준 · 피드백 초안 · 교사 검토"],["프로젝트 운영","회의·프로젝트 실행 관리","회의에서 결정사항·담당자·기한을 추출하고, 프로젝트 진행 상황과 미완료 항목을 함께 추적합니다.","회의 정리 · 실행 과제 · 진행 추적"],["조사·연구","리서치·근거 자료 관리","여러 자료의 핵심 내용과 출처를 정리하고, 비교 기준에 따라 검토 가능한 리서치 브리프를 구성합니다.","자료 수집 · 출처 관리 · 비교 분석"],["시스템 연계","업무 시스템·AI 도구 연동","기존 그룹웨어·CRM·ERP와 필요한 AI 기능을 연결해 데이터 입력과 반복 작업을 줄이는 운영 흐름을 설계합니다.","API 연계 · 접근 권한 · 실행 로그"],["성과 검증","AI 도입 진단·파일럿 설계","업무 빈도와 소요 시간, 데이터 준비도를 점검해 우선순위를 정하고 도입 전후 성과를 비교할 기준을 설계합니다.","업무 진단 · 파일럿 · 성과 측정"]];
 document.querySelector('#labTrack').innerHTML=labs.concat(labs).map((x,i)=>`<article class="labcard" ${i>=labs.length?'aria-hidden="true"':''}><div class="lab-card-top"><span class="lab-category">${String(i%labs.length+1).padStart(2,'0')} / ${x[0]}</span><span class="lab-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h9v9M6 9v9h9"/></svg></span></div><h3>${x[1]}</h3><p>${x[2]}</p><div class="lab-scope"><span class="lab-scope-label">주요 구현 범위</span><div class="lab-tags">${x[3].split(' · ').map(t=>`<span>${t}</span>`).join('')}</div></div></article>`).join('');
-document.querySelector('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,msg=document.querySelector('#formMsg'),b=f.querySelector('button');if(!f.reportValidity())return;b.disabled=true;b.textContent='전송 중…';try{const r=await fetch('https://script.google.com/macros/s/AKfycbyaIyz7a3JG-USSORvfcpyQblYN9vsMFIIt-k0I1tyJ16Ap8LLNnLeBgpOnCiqLkI6S/exec',{method:'POST',body:new URLSearchParams(new FormData(f))});if(!r.ok)throw Error();msg.textContent='상담 신청이 접수되었습니다. 영업일 기준 24시간 내 회신드리겠습니다.';f.reset()}catch(_){msg.textContent='전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.'}finally{b.disabled=false;b.textContent='상담 신청 보내기'}});const topBtn=document.querySelector('#topBtn');addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>400));topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});</script><script>
+document.querySelector('#form').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,msg=document.querySelector('#formMsg'),b=f.querySelector('button');const cats=[...f.querySelectorAll('input[name=cat]:checked')].map(i=>i.value);document.querySelector('#catValue').value=cats.join(', ');if(!cats.length){msg.textContent='줄이고 싶은 업무 유형을 1개 이상 선택해 주세요.';document.querySelector('#catChips').scrollIntoView({behavior:'smooth',block:'center'});return}msg.textContent='';if(!f.reportValidity())return;b.disabled=true;b.textContent='전송 중…';try{const r=await fetch('https://script.google.com/macros/s/AKfycbyaIyz7a3JG-USSORvfcpyQblYN9vsMFIIt-k0I1tyJ16Ap8LLNnLeBgpOnCiqLkI6S/exec',{method:'POST',body:new URLSearchParams(new FormData(f))});if(!r.ok)throw Error();msg.textContent='상담 신청이 접수되었습니다. 영업일 기준 24시간 내 회신드리겠습니다.';f.reset()}catch(_){msg.textContent='전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.'}finally{b.disabled=false;b.textContent='상담 신청 보내기'}});const topBtn=document.querySelector('#topBtn');addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>400));topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});</script><script>
 const historyRows=document.querySelectorAll('.original-history .tl__i');
 if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
@@ -226,4 +669,35 @@ if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: red
   }),{threshold:0.15});
   historyRows.forEach(row=>{row.classList.add('history-reveal');observer.observe(row)});
 }
+</script><script>
+document.querySelectorAll('.manual-slider').forEach(view=>{
+ const track=view.firstElementChild;
+ if(view.id==='portfolioSlider'){[...track.children].forEach(card=>{const copy=card.cloneNode(true);copy.setAttribute('aria-hidden','true');copy.tabIndex=-1;track.appendChild(copy)})}
+ let hovering=false,down=false,moved=false,start=0,initial=0,pauseUntil=0,last=0;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ function width(){return (track.scrollWidth+parseFloat(getComputedStyle(track).gap||0))/2}
+ function tick(now){
+  const elapsed=last?Math.min(now-last,50):0;last=now;
+  if(!reduced.matches&&!document.hidden&&!hovering&&!down&&now>pauseUntil&&!view.contains(document.activeElement)){
+   view.scrollLeft+=elapsed*(view.id==='labSlider'?0.025:0.032);
+   if(view.scrollLeft>=width())view.scrollLeft-=width();
+  }
+  requestAnimationFrame(tick);
+ }
+ view.addEventListener('mouseenter',()=>hovering=true);view.addEventListener('mouseleave',()=>hovering=false);
+ view.addEventListener('pointerdown',e=>{pauseUntil=performance.now()+4500;if(e.pointerType!=='mouse')return;down=true;moved=false;start=e.clientX;initial=view.scrollLeft});
+ view.addEventListener('pointermove',e=>{if(!down)return;const delta=e.clientX-start;if(Math.abs(delta)>6){moved=true;view.classList.add('dragging');view.scrollLeft=initial-delta;e.preventDefault()}});
+ const release=()=>{down=false;view.classList.remove('dragging')};window.addEventListener('pointerup',release);view.addEventListener('pointercancel',release);
+ view.addEventListener('dragstart',e=>e.preventDefault());
+ view.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false}},true);
+ view.addEventListener('wheel',()=>pauseUntil=performance.now()+4500,{passive:true});
+ document.querySelectorAll('[data-carousel="'+view.id+'"]').forEach(button=>button.addEventListener('click',()=>{
+  pauseUntil=performance.now()+5000;
+  const direction=Number(button.dataset.direction),step=track.firstElementChild.getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap||0);
+  if(direction<0&&view.scrollLeft<step)view.scrollLeft+=width();
+  if(direction>0&&view.scrollLeft>=width())view.scrollLeft-=width();
+  view.scrollBy({left:direction*step,behavior:reduced.matches?'instant':'smooth'});
+ }));
+ requestAnimationFrame(tick);
+});
 </script></body></html>
