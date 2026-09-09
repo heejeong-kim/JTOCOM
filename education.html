@@ -728,10 +728,77 @@ main{padding-top:0}
 footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
 #drawer[hidden],#burger[hidden]{display:none!important}
 @media(max-width:800px){.current-header .navlinks{display:none}}
-</style></head>
+</style><style>
+/* ===== 인덱스 패턴 적용 : 라이트 히어로 → 라이트 검색/탭 → 다크 이력 밴드(4열) → 라이트 CTA ===== */
+#education .eyebrow{color:#168ac2}#education .eyebrow::before{background:#168ac2}
+#education .eyebrow::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#65d6e7;margin-left:4px}
+#education .search__input{border-color:#dfe7ef}#education .search__input:focus{border-color:#168ac2;box-shadow:0 0 0 4px #168ac222}
+#education .tab{border-color:#dfe7ef;color:#3b4a5e}#education .tab.is-on,#education .tab.tab--edu.is-on{background:#0b1830;border-color:#0b1830;color:#fff}
+#education .tab.is-on b{color:#78dce8;opacity:1}
+.edu-records{background:transparent;padding:clamp(16px,2vw,24px) 0 clamp(48px,6vw,72px)}
+.edu-records .empty .lead{color:#48576b}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.edu-grid4{gap:18px}
+@media(max-width:1200px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.g4{grid-template-columns:1fr}}
+.edu-grid4 .edu-card{border:1px solid #dfe7ef;border-radius:20px;box-shadow:0 4px 14px #13263d0a;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.edu-grid4 .edu-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px #13263d1a;border-color:#c9d7e4}
+.edu-grid4 .edu-card--featured{border:1px solid #168ac2aa;box-shadow:0 0 0 1px #168ac222,0 4px 14px #13263d0a}
+.edu-grid4 .edu-card__thumb{aspect-ratio:auto;height:132px}
+.edu-grid4 .edu-card__body{padding:14px 16px 16px;gap:8px}
+.edu-grid4 .edu-card__meta{gap:6px}
+.edu-grid4 .edu-card__meta .pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:0;border:0;background:none!important;color:#6a5ae0!important}
+.edu-grid4 .edu-card__meta .pill--bootcamp{color:#a14e10!important}
+.edu-grid4 .edu-card__org{font-size:11px;padding:2px 8px}
+.edu-grid4 .edu-card__term{font-size:11.5px}
+.edu-grid4 .edu-card__title{font-size:14.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.edu-grid4 .edu-card__sum{font-size:12.5px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.edu-grid4 .edu-card__badge{background:#0b1830}
+</style><style>
+/* ===== 교육 이력 목록 모션 ===== */
+/* 1) 스크롤 등장 : 열·행 순서로 계단식 (4열 기준) */
+.edu-grid4 .edu-card.rv{opacity:0;transform:translateY(28px) scale(.97);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s;transition-delay:calc(var(--i,0) * 70ms)!important}
+.edu-grid4 .edu-card.rv.in{opacity:1;transform:none}
+/* 2) 썸네일 : 등장 후 느린 켄번즈, 호버 시 확대 */
+.edu-grid4 .edu-card__thumb{overflow:hidden}
+.edu-grid4 .edu-card__thumb img{transform:scale(1.02);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.edu-grid4 .edu-card:hover .edu-card__thumb img{transform:scale(1.08)}
+/* 3) 호버 : 상단 그라데이션 바가 좌→우로 펼쳐짐 + 카드 리프트 */
+.edu-grid4 .edu-card{position:relative}
+.edu-grid4 .edu-card:after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#168ac2,#65d6e7,#7164e8);transition:width .45s cubic-bezier(.2,.8,.2,1);z-index:2}
+.edu-grid4 .edu-card:hover:after{width:100%}
+.edu-grid4 .edu-card:hover{transform:translateY(-6px)!important}
+/* 4) 썸네일 위 빛 스윕 (호버) */
+.edu-grid4 .edu-card__thumb:before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(105deg,transparent,#ffffff66,transparent);transform:skewX(-18deg);z-index:1;pointer-events:none;transition:left .7s ease}
+.edu-grid4 .edu-card:hover .edu-card__thumb:before{left:120%}
+/* 5) 겸임교수 배지 : 은은한 펄스 */
+.edu-grid4 .edu-card__badge{animation:eduBadge 3.2s ease-in-out infinite}
+@keyframes eduBadge{0%,100%{box-shadow:0 5px 14px #0b183033}50%{box-shadow:0 5px 14px #0b183033,0 0 0 6px #65d6e722}}
+/* 6) 제목 색 전환 */
+.edu-grid4 .edu-card__title{transition:color .25s}
+.edu-grid4 .edu-card:hover .edu-card__title{color:#168ac2}
+@media(prefers-reduced-motion:reduce){.edu-grid4 .edu-card.rv{opacity:1;transform:none;transition:none}.edu-grid4 .edu-card__badge{animation:none}.edu-grid4 .edu-card__thumb:before{display:none}}
+</style><style>
+/* ===== 교육 이력 상시 모션 ===== */
+/* 썸네일 켄번즈 : 카드마다 위상 다르게 천천히 줌인/아웃 */
+.edu-grid4 .edu-card__thumb img{animation:eduKen 16s ease-in-out infinite alternate;animation-delay:calc(var(--i,0) * -1.3s);transform-origin:50% 40%}
+.edu-grid4 .edu-card:hover .edu-card__thumb img{animation-play-state:paused}
+@keyframes eduKen{0%{transform:scale(1.02) translate(0,0)}100%{transform:scale(1.1) translate(-1.5%,1.5%)}}
+/* 빛 스윕 : 호버가 아니어도 주기적으로 한 번씩 지나감 (카드별 시차) */
+.edu-grid4 .edu-card__thumb:before{transition:none;animation:eduSweep 9s linear infinite;animation-delay:calc(var(--i,0) * .8s)}
+@keyframes eduSweep{0%,78%{left:-60%}100%{left:130%}}
+/* 카드 자체 : 아주 느린 부유 (열마다 위상 차) */
+.edu-grid4 .edu-card.rv.in{animation:eduFloat 7s ease-in-out infinite;animation-delay:calc(var(--i,0) * -.9s)}
+.edu-grid4 .edu-card.rv.in:hover{animation-play-state:paused}
+@keyframes eduFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+/* 이미지 없는 카드 : 플레이스홀더 배경이 천천히 흐름 */
+.edu-grid4 .edu-card__thumb{background:linear-gradient(135deg,#EFECFF,#F5F8FC 40%,#E8ECFA 60%,#EFECFF);background-size:300% 300%;animation:eduBg 12s ease-in-out infinite;animation-delay:calc(var(--i,0) * -1s)}
+@keyframes eduBg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(prefers-reduced-motion:reduce){.edu-grid4 .edu-card__thumb img,.edu-grid4 .edu-card__thumb:before,.edu-grid4 .edu-card.rv.in,.edu-grid4 .edu-card__thumb{animation:none}}
+</style><style>/* 모바일 탭 가로 스크롤바(회색 라인) 숨김 */.tabs{scrollbar-width:none;-ms-overflow-style:none}.tabs::-webkit-scrollbar{display:none;height:0}</style></head>
 <body>
 
-<header class="current-header" id="hdr"><div class="wrap"><a class="logo" href="index.html#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="index.html#shift">The shift</a><a href="index.html#build">What we build</a><a href="index.html#lab">J2 Lab</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="index.html#consult">상담 시작하기</a></div></header>
+<header class="current-header" id="hdr"><div class="wrap"><a class="logo" href="index.html#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="index.html#top">Company</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="index.html#consult">Contact Us</a></div></header>
 
 <div id="drawer" hidden></div><button id="burger" hidden aria-expanded="false"></button>
 <main>
@@ -1046,7 +1113,7 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
 </section>
 
 <!-- ===================== EDUCATION (AI 교육 & 강의 이력) ===================== -->
-<section class="page is-on" id="education"><div class="wrap" style="padding-top:28px"><a href="index.html" style="font-size:14px;color:#64748b">← 메인으로 돌아가기</a></div>
+<section class="page is-on" id="education">
 
   <!-- 히어로 ─ 레이아웃만 잡아둔 상태입니다. 문구·수치는 교체해서 쓰세요 -->
   <div class="edu-hero">
@@ -1074,28 +1141,28 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
   </div>
 
   <!-- 검색 · 대상 필터 -->
-  <div class="sec" style="padding-block:clamp(40px,5vw,64px) 0">
+  <div class="sec" style="padding-block:clamp(40px,5vw,64px) clamp(8px,1vw,12px)">
     <div class="wrap">
       <div class="head rv" style="margin-bottom:clamp(24px,3vw,34px)">
         <span class="eyebrow">Records</span>
         <h2 class="h-lg">교육 이력</h2>
       </div>
-      <div class="edu-bar rv">
+      <div class="edu-bar rv" hidden style="display:none!important">
         <div class="search" style="flex:1;min-width:260px">
           <svg class="search__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M12.5 12.5 16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           <input type="search" id="eduSearch" class="search__input" placeholder="강의명 · 대상 · 내용으로 검색" aria-label="교육 이력 검색" autocomplete="off">
           <button type="button" class="search__clear" id="eduSearchClear" aria-label="검색어 지우기" hidden>&times;</button>
         </div>
-        <span class="edu-count" id="eduCount"></span>
+        <span class="edu-count" id="eduCount" hidden></span>
       </div>
       <div class="tabs rv" id="eduTabs" style="margin-bottom:clamp(24px,3vw,34px)"></div>
     </div>
   </div>
 
-  <!-- 이력 목록 -->
-  <div class="sec" style="padding-top:0">
+  <!-- 이력 목록 (다크 밴드 · 4열) -->
+  <div class="sec edu-records" style="padding-top:0">
     <div class="wrap">
-      <div class="grid g3" id="eduGrid"></div>
+      <div class="grid g4 edu-grid4" id="eduGrid"></div>
       <div class="empty" id="eduEmpty">
         <p class="lead" style="margin:0 auto 20px">검색 조건에 맞는 교육 이력이 없습니다.<br>다른 키워드로 찾아보세요.</p>
         <button class="btn btn--line" data-edu-reset>전체 보기</button>
@@ -1893,13 +1960,13 @@ const eduFiltered = () => LECTURES.filter(l => {
   if(!q) return true;
   return [l.name, l.target, l.summary, l.period, l.org].join(' ').toLowerCase().includes(q);
 });
-const eduCard = l => {
+const eduCard = (l, i = 0) => {
   const alt = l.name.replace(/"/g,'&quot;');
   const thumb = l.thumb
     ? `<img src="${l.thumb}" alt="${alt}" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<span class=\\'edu-card__ph\\'>이미지 준비중</span>'">`
     : `<span class="edu-card__ph">이미지 준비중</span>`;
   return `
-  <article class="edu-card rv ${l.featured ? 'edu-card--featured' : ''}">
+  <article class="edu-card rv ${l.featured ? 'edu-card--featured' : ''}" style="--i:${i}">
     <div class="edu-card__thumb">${thumb}${l.name.includes('겸임교수') ? '<span class="edu-card__badge">겸임교수</span>' : ''}</div>
     <div class="edu-card__body">
       <div class="edu-card__meta">
@@ -1914,7 +1981,7 @@ const eduCard = l => {
 };
 const renderEdu = () => {
   const rows = eduFiltered();
-  $('#eduGrid').innerHTML = rows.map(eduCard).join('');
+  $('#eduGrid').innerHTML = rows.map((l, i) => eduCard(l, i)).join('');
   $('#eduCount').innerHTML = `총 <b>${rows.length}</b>건`;
   $('#eduEmpty').classList.toggle('is-on', rows.length === 0);
   observeReveals($('#education'));

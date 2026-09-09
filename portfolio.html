@@ -728,10 +728,73 @@ main{padding-top:0}
 footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
 #drawer[hidden],#burger[hidden]{display:none!important}
 @media(max-width:800px){.current-header .navlinks{display:none}}
-</style></head>
+</style><style>
+/* ===== 인덱스 페이지 패턴 적용 (라이트 히어로 → 다크 스냅샷 밴드 → 라이트 카드) ===== */
+#portfolio.page{background:linear-gradient(120deg,#f8fcff,#eefafd 55%,#f4f1fc)}
+#portfolio .eyebrow{color:#168ac2}
+#portfolio .eyebrow::before{background:#168ac2}
+#portfolio .eyebrow::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#65d6e7;margin-left:4px}
+#portfolio .h-xl{letter-spacing:-.06em}
+#portfolio .gtext{background:linear-gradient(110deg,#168ac2,#7164e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#portfolio .lead{color:#48576b}
+/* 다크 스냅샷 밴드 */
+.pf-band{background:transparent;padding:0 0 clamp(8px,1vw,12px);margin-bottom:clamp(36px,5vw,60px)}
+.pf-band .pf-strip{margin-bottom:0}
+.pf-strip__item{width:clamp(200px,17vw,232px);aspect-ratio:auto;height:120px;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #c9d6e2;box-shadow:0 4px 12px #13263d0c}
+.pf-strip__item img{object-fit:cover;object-position:top}
+.pf-strip__item:hover{transform:translateY(-4px);border-color:#168ac2}
+/* 검색·탭 */
+#portfolio .search__input{border-color:#dfe7ef;background:#fff}
+#portfolio .search__input:focus{border-color:#168ac2;box-shadow:0 0 0 4px #168ac222}
+#portfolio .tab{border-color:#dfe7ef;color:#3b4a5e}
+#portfolio .tab.is-on{background:#0b1830;border-color:#0b1830;color:#fff}
+#portfolio .tab.is-on b{color:#78dce8;opacity:1}
+#portfolio .select{border-color:#dfe7ef;border-radius:999px}
+/* 카드 그리드 4열 */
+.pf-grid{gap:18px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1200px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.g4{grid-template-columns:1fr}}
+/* 텍스트 카드 = 인덱스 그래픽 타일 (톤 다운 블루그레이 8톤) */
+.work--text{--wa:#2f7d99;--wb:#8fc3d3;--wt:#f0f5f8;padding:0;gap:0;min-height:0;border-radius:20px;overflow:hidden;background:#fff!important;border:1px solid #e3e9f0;box-shadow:0 4px 14px #13263d0a;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.work--text:nth-child(8n+2){--wa:#33709f;--wb:#8fb6d6;--wt:#eff4f9}
+.work--text:nth-child(8n+3){--wa:#3d5f95;--wb:#93a9cc;--wt:#eff2f8}
+.work--text:nth-child(8n+4){--wa:#4a5494;--wb:#9aa0cc;--wt:#f0f1f8}
+.work--text:nth-child(8n+5){--wa:#2c4a6e;--wb:#7f9bb9;--wt:#eef2f6}
+.work--text:nth-child(8n+6){--wa:#2f6b7f;--wb:#86b3c0;--wt:#eef4f6}
+.work--text:nth-child(8n+7){--wa:#524f9a;--wb:#9f9cce;--wt:#f1f0f8}
+.work--text:nth-child(8n){--wa:#1f2e48;--wb:#6c7f9b;--wt:#eef1f5}
+.work--text:hover{transform:translateY(-6px);box-shadow:0 22px 44px #13263d1a;border-color:#c9d7e4;background:#fff!important}
+.work--text .wp-visual{position:relative;height:104px;overflow:hidden;background:radial-gradient(circle at 85% 20%,color-mix(in srgb,var(--wb) 22%,transparent),transparent 45%),linear-gradient(#0b183006 1px,transparent 1px),linear-gradient(90deg,#0b183006 1px,transparent 1px),var(--wt);background-size:auto,22px 22px,22px 22px,auto}
+.work--text .wp-visual:before,.work--text .wp-visual:after{content:"";position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--wa) 18%,transparent);pointer-events:none}
+.work--text .wp-visual:before{width:140px;height:140px;right:-30px;top:-40px}
+.work--text .wp-visual:after{width:220px;height:220px;right:-70px;top:-80px;border-style:dashed;opacity:.7;animation:wpSpin 40s linear infinite}
+.work--text .wp-icon{position:absolute;left:16px;bottom:14px;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,var(--wa),var(--wb));color:#fff;box-shadow:0 8px 18px color-mix(in srgb,var(--wa) 22%,transparent);transition:transform .3s}
+.work--text .wp-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.work--text:hover .wp-icon{transform:translateY(-4px) rotate(-6deg)}
+.work--text .wp-year{position:absolute;right:12px;top:12px;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--wa);background:#ffffffd9;border:1px solid color-mix(in srgb,var(--wa) 18%,transparent);border-radius:999px;padding:4px 10px}
+.work--text .wp-body{padding:14px 16px 16px}
+.work--text .wp-body small{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--wa);display:flex;align-items:center;gap:6px}
+.work--text .wp-body small:before{content:"";width:14px;height:2px;border-radius:2px;background:var(--wa)}
+.work--text .work__title{font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:-.03em;margin:6px 0 0;color:#0f1b2e;word-break:keep-all}
+.work--text:hover .work__title{color:var(--wa)}
+.work--text .wp-service{margin:6px 0 0;font-size:12.5px;line-height:1.6;color:#627080;word-break:keep-all}
+@keyframes wpSpin{to{transform:rotate(360deg)}}
+/* 이미지 카드 = 인덱스 Education 카드 패턴 */
+.work:not(.work--text){border:1px solid #e3e9f0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 4px 14px #13263d0a;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.work:not(.work--text):hover{transform:translateY(-6px);box-shadow:0 22px 44px #13263d1a}
+.work:not(.work--text) .thumb{border-radius:0;box-shadow:none!important;transform:none!important}
+.work:not(.work--text) .work__meta{padding:14px 16px 16px}
+.work:not(.work--text) .work__meta h3{font-size:15.5px;line-height:1.45;margin:8px 0 4px}
+.work:not(.work--text) .pill{font-size:11px;font-weight:700;letter-spacing:.06em;color:#168ac2;border:0;padding:0;background:none}
+/* 더 보기 버튼 = 인덱스 outline 버튼 */
+#portfolio #more{border-radius:999px;background:#fff;border:1px solid #dce4ec;color:#111b2d;font-weight:700}
+#portfolio #more:hover{border-color:#0b1830}
+@media(prefers-reduced-motion:reduce){.work--text .wp-visual:after{animation:none}}
+</style><style>/* 모바일 탭 가로 스크롤바(회색 라인) 숨김 */.tabs{scrollbar-width:none;-ms-overflow-style:none}.tabs::-webkit-scrollbar{display:none;height:0}</style></head>
 <body>
 
-<header class="current-header" id="hdr"><div class="wrap"><a class="logo" href="index.html#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="index.html#shift">The shift</a><a href="index.html#build">What we build</a><a href="index.html#lab">J2 Lab</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="index.html#consult">상담 시작하기</a></div></header>
+<header class="current-header" id="hdr"><div class="wrap"><a class="logo" href="index.html#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="index.html#top">Company</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="index.html#consult">Contact Us</a></div></header>
 
 <div id="drawer" hidden></div><button id="burger" hidden aria-expanded="false"></button>
 <main>
@@ -989,7 +1052,7 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
 </section>
 
 <!-- ===================== PORTFOLIO ===================== -->
-<section class="page is-on" id="portfolio"><div class="wrap" style="padding-top:28px"><a href="index.html" style="font-size:14px;color:#64748b">← 메인으로 돌아가기</a></div>
+<section class="page is-on" id="portfolio">
   <div class="sec" style="padding-bottom:clamp(28px,4vw,44px)">
     <div class="wrap">
       <span class="eyebrow rv">Portfolio</span>
@@ -998,11 +1061,11 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
     </div>
   </div>
 
-  <div class="pf-strip" aria-hidden="true">
+  <div class="pf-band"><div class="pf-strip" aria-hidden="true">
     <div class="pf-strip__track" id="pfStrip"></div>
-  </div>
+  </div></div>
 
-  <div class="wrap" style="margin-bottom:clamp(18px,2.5vw,26px)">
+  <div class="wrap" hidden style="display:none!important">
     <div class="search">
       <svg class="search__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M12.5 12.5 16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       <input type="search" id="search" class="search__input" placeholder="프로젝트명 · 유형으로 검색" aria-label="포트폴리오 검색" autocomplete="off">
@@ -1033,7 +1096,7 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
 
   <div class="sec" style="padding-top:0">
     <div class="wrap">
-      <div class="grid g3" id="grid"></div>
+      <div class="grid g4 pf-grid" id="grid"></div>
       <div class="empty" id="empty">
         <p class="lead" style="margin:0 auto 20px">해당 조건의 작업물이 없습니다.<br>다른 유형을 확인해 보세요.</p>
         <button class="btn btn--line" data-reset>전체 보기</button>
@@ -1398,7 +1461,16 @@ const TRACK = [
 ];
 
 /* 유형 자동 분류 — 우선순위: 컨설팅 > App > Responsive Web > 시스템 구축 > 기타 */
-const TYPE_LABEL = { web:'Responsive Web', system:'시스템 구축', consult:'컨설팅', app:'App', workflow:'AI Workflow 자동화', etc:'기타' };
+const TYPE_LABEL = { web:'Responsive Web', system:'시스템 구축', consult:'컨설팅', app:'App', workflow:'AI Workflow 자동화', etc:'기타' }
+/* 유형별 픽토그램 (인덱스 포트폴리오 타일과 동일 스타일) */
+const TYPE_ICON = {
+  web:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/>',
+  system:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/>',
+  consult:'<path d="M5 4h10l4 4v12H5Z"/><path d="M15 4v4h4M8 13h8M8 17h5"/>',
+  app:'<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>',
+  workflow:'<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>',
+  etc:'<path d="M4 5h16v14H4Z"/><path d="m4 15 5-5 4 4 3-3 4 4M15 8h.01"/>'
+};;
 function classify(name){
   if (/컨설팅|UX 컨설팅|UXUI 컨설팅/.test(name)) return 'consult';
   if (/\bAPP\b|\bApp\b|APP\//.test(name))        return 'app';
@@ -1649,12 +1721,12 @@ const workCardText = w => {
   const alt = w.name.replace(/"/g,'&quot;');
   return `
   <article class="work work--text" data-work="${alt}">
-    <div class="work--text__top">
-      <span class="pill">${TYPE_LABEL[w.type]}</span>
-      <span class="work__year">${w.period}년</span>
+    <div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24">${TYPE_ICON[w.type] || TYPE_ICON.etc}</svg></span><span class="wp-year">${w.period}</span></div>
+    <div class="wp-body">
+      <small>${TYPE_LABEL[w.type]}</small>
+      <h3 class="work__title">${w.name}</h3>
+      ${w.service ? `<p class="wp-service">${w.service}</p>` : ''}
     </div>
-    ${w.service ? `<p class="small">${w.service}</p>` : ''}
-    <h3 class="work__title">${w.name}</h3>
   </article>`;
 };
 /* 상단 이미지 스와이프 띠 — 프로젝트와 무관하게 이미지만 자동 순환 */
@@ -2071,7 +2143,7 @@ const counts = { all: WORKS.length };
 Object.keys(TYPE_LABEL).forEach(t => counts[t] = WORKS.filter(w => w.type===t).length);
 
 /* ===================== Portfolio ===================== */
-const PAGE = 9;
+const PAGE = 12; // 4열 그리드에 맞춰 12개씩
 let state = { cat:'all', year:'all', sort:'latest', q:'', shown:PAGE };
 $('#tabs').innerHTML = ['all','web','system','consult','app','workflow','etc']
   .filter(k => k==='all' || counts[k] > 0)
