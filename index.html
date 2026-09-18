@@ -790,4 +790,21 @@ const set=id=>{links.forEach(a=>a.classList.toggle('is-active',map[a.dataset.doc
 if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)set(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
 Object.values(map).forEach(id=>{const el=document.getElementById(id);if(el)io.observe(el)});}
 })();
+</script><script src="assets/js/works-data.js"></script>
+<script>
+/* 메인 "경험으로 쌓아온 실행력" — 포트폴리오 공통 데이터(WORKS)의 최신 8건을 자동 노출
+   ▸ works-data.js 를 불러오지 못하면 기존 정적 카드가 그대로 보입니다. */
+(() => {
+  const grid = document.querySelector('#portfolio .preview-grid--8');
+  if (!grid || typeof WORKS === 'undefined') return;
+  const esc = t => String(t ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const descOf = w => w.service || (typeof WORK_DESC !== 'undefined' && WORK_DESC[w.name])
+    || `${w.period}년에 수행한 ${TYPE_LABEL[w.type] || ''} 프로젝트입니다.`;
+  grid.innerHTML = WORKS.slice(0, 8).map((w, i) => {
+    const link = w.url
+      ? `href="${esc(w.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(w.name)} (새 탭에서 열림)"`
+      : `href="portfolio.html"`;
+    return `<a class="work-preview c${i + 1}" ${link}><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24">${TYPE_ICON[w.type] || TYPE_ICON.etc}</svg></span><span class="wp-year">${esc(w.period)}</span></div><div class="wp-body"><small>${esc(TYPE_LABEL[w.type] || '기타')}</small><h3>${esc(w.name)}</h3><p>${esc(descOf(w))}</p></div></a>`;
+  }).join('');
+})();
 </script></body></html>

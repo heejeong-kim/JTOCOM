@@ -326,6 +326,11 @@ main{ padding-top:var(--nav-h); }
 .pill--bootcamp{ background:#FFF0E2; color:#A14E10; border-color:#FFD7B6; }
 .edu-card__title{ font-size:clamp(16px,1.5vw,18px); font-weight:700; letter-spacing:-.03em; line-height:1.45; color:var(--ink); }
 .edu-card__sum{ font-size:13.5px; line-height:1.75; color:var(--ink-2); }
+/* 카드 CTA 버튼 (외부 강의 사이트 새 탭 링크) */
+.edu-card__cta{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; margin-top:auto; padding-top:6px; }
+.edu-card__btn{ display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:999px; background:var(--edu); color:#fff !important; font-size:12.5px; font-weight:700; letter-spacing:-.02em; text-decoration:none; transition:background .2s, transform .2s, box-shadow .2s; }
+.edu-card__btn:hover{ background:var(--edu-deep); transform:translateY(-1px); box-shadow:0 8px 18px rgba(101,87,216,.28); }
+.edu-card__btn:focus-visible{ outline:2px solid var(--edu-deep); outline-offset:2px; }
 @media (max-width:900px){ .edu-hero__grid{ grid-template-columns:1fr; } }
 @media (max-width:640px){ .edu-hero__stats{ grid-template-columns:1fr; max-width:none; } .edu-bar{ flex-direction:column; align-items:stretch; } }
 /* ===== About 비주얼 모션 ===== */
@@ -1155,7 +1160,7 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
         </div>
         <span class="edu-count" id="eduCount" hidden></span>
       </div>
-      <div class="tabs rv" id="eduTabs" style="margin-bottom:clamp(24px,3vw,34px)"></div>
+      <div class="rv" style="display:flex;justify-content:flex-end;margin-bottom:clamp(24px,3vw,34px)"><select class="select" id="eduTarget" aria-label="교육 대상 선택" style="min-width:180px"></select></div>
     </div>
   </div>
 
@@ -1909,15 +1914,22 @@ $('#ptypes').innerHTML = PTYPES.map(([n,t,d,out,term,key]) => { const edu = key=
 const EDU_TARGETS = ['기업','공공기관','대학','부트캠프'];
 const LECTURES = [
   { name:'동양미래대학교 컴퓨터공학부 겸임교수', period:'2025.03~현재', target:'대학', org:'', featured:true,
-    summary:'생성형 AI 활용과 UIUX 기획을 주제로 컴퓨터공학부에서 강의하고 있습니다.', thumb:'' },
+    summary:'생성형 AI 활용과 UIUX 기획을 주제로 컴퓨터공학부에서 강의하고 있습니다.', thumb:'',
+    links:[{ label:'생성형 AI활용', url:'https://heejeong-kim.github.io/utilization-of-generativeai/index.html' }] },
   { name:'숭의여자대학교 IT소프트웨어융합과 겸임교수', period:'2024.01~현재', target:'대학', org:'', featured:true,
-    summary:'생성형 AI·데이터 리터러시, 데이터 분석·시각화, 생성형 AI 웹툰 제작, 융합 콘텐츠 제작을 가르치고 있습니다.', thumb:'' },
+    summary:'생성형 AI·데이터 리터러시, 데이터 분석·시각화, 생성형 AI 웹툰 제작, 융합 콘텐츠 제작을 가르치고 있습니다.', thumb:'',
+    links:[{ label:'AI와 디지털 리터러시', url:'https://heejeong-kim.github.io/ai-digital-literacy/' },
+           { label:'웹프로젝트 실습', url:'https://heejeong-kim.github.io/web-project-practice-2026/' }] },
   { name:'2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링', period:'2026.09', target:'대학', org:'',
-    summary:'KU 캠퍼스타운 AI Nest 프로그램에서 참여 팀을 대상으로 생성형 AI 활용 수업 및 멘토링을 진행했습니다.', thumb:'' },
+    summary:'KU 캠퍼스타운 AI Nest 프로그램에서 참여 팀을 대상으로 생성형 AI 활용 수업 및 멘토링을 진행했습니다.', thumb:'',
+    links:[{ label:'펫 x AI', url:'https://heejeong-kim.github.io/ku-ai-nest/' },
+           { label:'에코푸드 x AI', url:'https://heejeong-kim.github.io/ku-ai-nest2/' }] },
   { name:'2026. 09 성신여자대학교 「취업 말고 커리어」 특강', period:'2026.08~09', target:'대학', org:'',
-    summary:'취업을 넘어 커리어 관점의 진로 설계를 주제로 특강과 멘토링을 진행했습니다.', thumb:'' },
+    summary:'취업을 넘어 커리어 관점의 진로 설계를 주제로 특강과 멘토링을 진행했습니다.', thumb:'',
+    links:[{ label:'커리어 특강', url:'https://heejeong-kim.github.io/sungshin-lecture/' }] },
   { name:'WISET 이공계 생성형 AI 활용 실무 교육', period:'2026.07~08', target:'공공기관', org:'',
-    summary:'이공계 연구자·종사자를 대상으로 생성형 AI를 실무에 활용하는 방법을 실습 중심으로 진행했습니다.', thumb:'' },
+    summary:'이공계 연구자·종사자를 대상으로 생성형 AI를 실무에 활용하는 방법을 실습 중심으로 진행했습니다.', thumb:'',
+    links:[{ label:'강의교안', url:'https://heejeong-kim.github.io/wiset-ai/' }] },
   { name:'무역안보관리원 AI 영상 제작 및 AI 자동화 실무 교육', period:'2026.07', target:'공공기관', org:'',
     summary:'AI 영상 제작과 업무 자동화를 실제 업무에 적용하는 실습 과정을 진행했습니다.', thumb:'' },
   { name:'한국경제 청년일경험지원사업 ESG 지원형 멀티모달 AX 마케팅 캠프 멘토링', period:'2026', target:'기업', org:'',
@@ -1951,7 +1963,8 @@ const LECTURES = [
 ];
 
 /* 썸네일 자동 매핑 — 전체 순서 기준 assets/p1.png … p20.png (파일이 없으면 카드에서 '이미지 준비중'으로 자동 대체) */
-LECTURES.forEach((l, i) => { l.thumb = 'assets/p' + (i + 1) + '.png'; });
+/* 썸네일을 직접 지정한 항목(thumb 값 있음)은 번호 매핑에서 제외 → 기존 p번호 이미지가 밀리지 않음 */
+{ let n = 0; LECTURES.forEach(l => { if (l.thumb) return; n++; l.thumb = 'assets/p' + n + '.png'; }); }
 
 const eduState = { q:'', target:'all' };
 const eduFiltered = () => LECTURES.filter(l => {
@@ -1976,6 +1989,7 @@ const eduCard = (l, i = 0) => {
       </div>
       <h3 class="edu-card__title">${l.name}</h3>
       <p class="edu-card__sum">${l.summary}</p>
+      ${(l.links||[]).length ? `<div class="edu-card__cta">${l.links.map(k => `<a class="edu-card__btn" href="${k.url}" target="_blank" rel="noopener noreferrer" aria-label="${k.label} (새 탭에서 열림)">${k.label}<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`).join('')}</div>` : ''}
     </div>
   </article>`;
 };
@@ -1986,8 +2000,10 @@ const renderEdu = () => {
   $('#eduEmpty').classList.toggle('is-on', rows.length === 0);
   observeReveals($('#education'));
 };
-$('#eduTabs').innerHTML = ['all', ...EDU_TARGETS]
-  .map(t => `<button class="tab tab--edu ${t==='all'?'is-on':''}" type="button" data-edu-target="${t}">${t==='all'?'전체':t}</button>`).join('');
+/* 교육 대상 필터 = 셀렉트 박스 (전체 ~ 부트캠프, 건수 표시) */
+$('#eduTarget').innerHTML = ['all', ...EDU_TARGETS]
+  .map(t => `<option value="${t}">${t==='all'?'전체 대상':t} (${t==='all' ? LECTURES.length : LECTURES.filter(l => l.target===t).length})</option>`).join('');
+$('#eduTarget').addEventListener('change', e => { eduState.target = e.target.value; renderEdu(); });
 renderEdu();
 
 /* ===================== 교육 히어로 인터랙티브 뉴럴 네트워크 ===================== */
@@ -2238,16 +2254,10 @@ document.addEventListener('click', e => {
   const ext = e.target.closest('[data-go-new]');
   if(ext){ go(ext.dataset.goNew); return; }
 
-  const eduTab = e.target.closest('[data-edu-target]');
-  if(eduTab){
-    $$('[data-edu-target]').forEach(t => t.classList.toggle('is-on', t === eduTab));
-    eduState.target = eduTab.dataset.eduTarget;
-    renderEdu(); return;
-  }
   if(e.target.closest('[data-edu-reset]')){
     eduState.q = ''; eduState.target = 'all';
     $('#eduSearch').value = ''; $('#eduSearchClear').hidden = true;
-    $$('[data-edu-target]').forEach(t => t.classList.toggle('is-on', t.dataset.eduTarget === 'all'));
+    $('#eduTarget').value = 'all';
     renderEdu(); return;
   }
 
