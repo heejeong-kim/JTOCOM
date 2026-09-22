@@ -1398,10 +1398,6 @@ a.work--link:focus-visible{outline:3px solid #168ac2;outline-offset:3px}
 
 <div class="mbar" id="mbar"><button class="btn btn--grad btn--block" data-go="contact">무료 상담 신청</button></div>
 
-<button class="to-top" id="toTop" type="button" aria-label="맨 위로 이동">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
-
 <script src="assets/js/works-data.js"></script>
 <script>
 const $  = (s,r=document) => r.querySelector(s);
@@ -2227,14 +2223,12 @@ $('#form').addEventListener('submit', e => {
 });
 
 /* ===================== Header / mobile bar ===================== */
-const hdr = $('#hdr'), mbar = $('#mbar'), toTop = $('#toTop');
+const hdr = $('#hdr'), mbar = $('#mbar');
 addEventListener('scroll', () => {
   hdr.classList.toggle('is-stuck', scrollY > 8);
   const cur = $('.page.is-on').id;
   mbar.classList.toggle('is-on', scrollY > 520 && cur !== 'contact' && cur !== 'done');
-  toTop.classList.toggle('is-on', scrollY > 480);
 }, { passive:true });
-toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
 addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
 
 /* ===================== Boot ===================== */
@@ -2243,5 +2237,7 @@ go(location.hash.replace(/^#\/?/,'') || 'portfolio');
 /* 주소창 해시가 바뀌면(링크 공유·뒤로가기) 해당 페이지로 이동 — replaceState 는 hashchange 를 발생시키지 않아 순환하지 않습니다 */
 addEventListener('hashchange', () => go(location.hash.replace(/^#\/?/,'') || 'portfolio'));
 </script>
+<nav class="site-dock" aria-label="Quick navigation"><a href="index.html#top" aria-label="Back to Top"><span>Back to Top</span><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a><a href="index.html#build" aria-label="Capabilities"><span>Capabilities</span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M14 6h4v4M10 18H6v-4"/></svg></a><a href="index.html#lab" aria-label="AI Lab"><span>AI Lab</span><svg viewBox="0 0 24 24"><path d="M9 3v6L4 18a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V3M8 3h8"/></svg></a><a href="index.html#consult" aria-label="AX Consultation"><span>AX Consultation</span><svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4V6Z"/><path d="M8 10h8M8 13h5"/></svg></a></nav>
+<script>(()=>{const d=document.querySelector('.site-dock');if(!d||d.querySelector('[data-dock="top"]'))return;const a=document.createElement('a');a.href='#top';a.dataset.dock='top';a.setAttribute('aria-label','Top');a.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span>Back to Top</span>';a.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});d.appendChild(a);})();</script>
 </body>
 </html>
