@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>데이터로 보는 환경 | 인터랙티브 MVP 프로토타입</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(10, 18, 34, 0.84);
+      --panel-strong: rgba(12, 20, 38, 0.94);
+      --line: rgba(255,255,255,0.12);
+      --text: #ecf2ff;
+      --muted: #9fb0ca;
+      --blue: #38bdf8;
+      --cyan: #5eead4;
+      --green: #22c55e;
+      --yellow: #facc15;
+      --orange: #fb923c;
+      --red: #ef4444;
+      --red-deep: #b91c1c;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(56,189,248,.13), transparent 24%),
+        radial-gradient(circle at 85% 10%, rgba(239,68,68,.11), transparent 22%),
+        linear-gradient(135deg, #020817 0%, #07111f 45%, #0b1730 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 20%), rgba(94,234,212,.08), transparent 220px),
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px);
+      background-size: auto, 48px 48px, 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.92), transparent 82%);
+      z-index: -1;
+    }
+
+    .page {
+      width: min(1440px, 96vw);
+      margin: 0 auto;
+      padding: 20px 0 42px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1.35fr .95fr;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .hero, .panel, .chart-card, .map-panel, .alert-card, .insight-card, .kpi {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 32px 32px 34px;
+      min-height: 292px;
+      background:
+        linear-gradient(135deg, rgba(16,24,39,.96), rgba(14,25,46,.88)),
+        radial-gradient(circle at 78% 24%, rgba(94,234,212,.12), transparent 22%);
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 24%, rgba(255,255,255,.08) 44%, transparent 60%);
+      transform: translateX(-120%);
+      animation: heroShimmer 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes heroShimmer {
+      0%, 62% { transform: translateX(-120%); }
+      82%, 100% { transform: translateX(120%); }
+    }
+
+    .cloud-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cloud {
+      position: absolute;
+      background: radial-gradient(circle at 40% 40%, rgba(255,255,255,.44), rgba(255,255,255,.12) 62%, transparent 72%);
+      filter: blur(12px);
+      opacity: .52;
+      animation: cloudFloat 16s ease-in-out infinite;
+    }
+
+    .cloud.c1 { width: 210px; height: 92px; left: 80px; top: 72px; }
+    .cloud.c2 { width: 150px; height: 70px; left: 260px; top: 108px; animation-delay: -5s; }
+    .cloud.c3 { width: 190px; height: 80px; left: 430px; top: 78px; animation-delay: -2.7s; }
+    .cloud.c4 { width: 170px; height: 70px; right: 88px; top: 38px; animation-delay: -8s; opacity: .32; }
+    .cloud.c5 { width: 250px; height: 110px; right: -20px; top: 108px; animation-delay: -6s; opacity: .28; }
+
+    @keyframes cloudFloat {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(22px, -10px, 0) scale(1.06); }
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #d6f4ff;
+      background: rgba(56,189,248,.08);
+      border: 1px solid rgba(56,189,248,.36);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+    }
+
+    .title-cloud-wrap {
+      position: relative;
+      z-index: 2;
+      margin-top: 18px;
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 5vw, 68px);
+      letter-spacing: -3px;
+      line-height: 1.03;
+      position: relative;
+      color: #f7fbff;
+      text-shadow: 0 0 18px rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.4);
+    }
+
+    h1 .title-fill {
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(180deg, #ffffff 0%, #ebf5ff 28%, #dbeafe 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1 .title-fill::before {
+      content: "";
+      position: absolute;
+      inset: 18% -2% 10% -2%;
+      z-index: -1;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 20% 48%, rgba(255,255,255,.36), transparent 24%),
+        radial-gradient(circle at 45% 50%, rgba(255,255,255,.26), transparent 22%),
+        radial-gradient(circle at 68% 46%, rgba(255,255,255,.30), transparent 25%),
+        radial-gradient(circle at 86% 52%, rgba(255,255,255,.24), transparent 18%);
+      filter: blur(7px);
+      opacity: .85;
+      animation: titleBreathe 7.2s ease-in-out infinite;
+    }
+
+    @keyframes titleBreathe {
+      0%, 100% { transform: scale(1) translateX(0); opacity: .78; }
+      50% { transform: scale(1.03) translateX(5px); opacity: .96; }
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      margin: 14px 0 0;
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.68;
+      color: #d2dced;
+    }
+
+    .header-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .alert-card, .insight-card, .map-panel, .panel, .chart-card { border-radius: var(--radius-lg); }
+
+    .alert-card {
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(127,29,29,.74), rgba(17,24,39,.92));
+      border-color: rgba(248,113,113,.34);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .alert-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -50px;
+      top: -60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(248,113,113,.34), transparent 68%);
+      filter: blur(12px);
+    }
+
+    .alert-top, .section-title, .global-item, .action-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .alert-top { margin-bottom: 14px; }
+
+    .alert-level {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      color: #ffe0e0;
+      background: rgba(239,68,68,.24);
+      border: 1px solid rgba(248,113,113,.38);
+      animation: alertPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes alertPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.22); }
+      50% { box-shadow: 0 0 0 10px rgba(239,68,68,0); }
+    }
+
+    .big-number {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .small-note {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .insight-card { padding: 24px; }
+    .insight-card h3, .panel h3, .map-panel h3, .chart-card h3, .section h2 { margin: 0; letter-spacing: -.6px; }
+
+    .insight-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+    .insight-list li { display: grid; grid-template-columns: 16px 1fr; gap: 10px; color: #d8e1ee; font-size: 14px; line-height: 1.45; }
+    .dot { width: 9px; height: 9px; margin-top: 5px; border-radius: 50%; background: var(--orange); }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .kpi {
+      border-radius: 20px;
+      padding: 18px;
+      min-height: 128px;
+      transform: translateY(12px);
+      opacity: 0;
+      animation: riseIn .68s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .kpi:nth-child(1) { animation-delay: .04s; }
+    .kpi:nth-child(2) { animation-delay: .08s; }
+    .kpi:nth-child(3) { animation-delay: .12s; }
+    .kpi:nth-child(4) { animation-delay: .16s; }
+    .kpi:nth-child(5) { animation-delay: .20s; }
+    .kpi:nth-child(6) { animation-delay: .24s; }
+
+    @keyframes riseIn { to { transform: translateY(0); opacity: 1; } }
+
+    .kpi .label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .kpi .value { font-size: 30px; font-weight: 900; letter-spacing: -1px; margin-top: 10px; font-variant-numeric: tabular-nums; }
+    .kpi .trend { margin-top: 10px; font-size: 12px; color: #d6e0ef; }
+    .kpi .trend.up { color: #fecaca; }
+    .kpi .trend.warn { color: #fde68a; }
+    .kpi .trend.safe { color: #bbf7d0; }
+    .kpi .value.severity-high, .kpi .trend.severity-high { color: #ff8585; }
+    .kpi .value.severity-mid { color: #ffd56e; }
+
+    .kpi:hover, .panel:hover, .chart-card:hover, .map-panel:hover, .global-item:hover, .action-item:hover, .forecast-mini:hover {
+      transform: translateY(-5px);
+      border-color: rgba(94,234,212,.34);
+      box-shadow: 0 24px 60px rgba(0,0,0,.46);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.14fr .86fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .map-panel, .panel, .chart-card { padding: 24px; }
+    .panel-stack { display: grid; gap: 20px; }
+
+    .section-title { margin-bottom: 16px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #d6e4f5;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.14);
+      cursor: pointer;
+      user-select: none;
+      transition: .22s ease;
+    }
+    .chip.active {
+      color: #eefbff;
+      border-color: rgba(56,189,248,.48);
+      background: rgba(56,189,248,.18);
+      box-shadow: 0 0 0 4px rgba(56,189,248,.08), 0 0 24px rgba(56,189,248,.15);
+    }
+    .chip:hover { transform: translateY(-2px); }
+
+
+    .map-info-stack {
+      margin-top: 14px;
+      margin-bottom: 16px;
+      display: grid;
+      gap: 10px;
+      max-width: 760px;
+    }
+
+    .map-info-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .map-info-card {
+      padding: 15px 17px;
+      border-radius: 18px;
+      background: rgba(2,6,23,.72);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 28px rgba(0,0,0,.24);
+      backdrop-filter: blur(12px);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .map-info-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56,189,248,.32);
+      background: rgba(2,6,23,.82);
+    }
+
+    .map-info-card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      letter-spacing: -.2px;
+    }
+
+    .map-info-card span {
+      display: block;
+      color: #b8c7db;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+
+    .map-box {
+      position: relative;
+      height: 500px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(12,25,44,.94), rgba(9,18,32,.92)),
+        radial-gradient(circle at 20% 10%, rgba(56,189,248,.10), transparent 22%);
+    }
+
+    .map-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .leaflet-korea-map {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #07111f;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease;
+    }
+
+    .leaflet-korea-map.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .leaflet-korea-map .leaflet-tile {
+      filter: saturate(.78) brightness(.72) contrast(1.08);
+    }
+
+    .leaflet-korea-map .leaflet-control-attribution {
+      background: rgba(2,6,23,.72);
+      color: #cbd5e1;
+      font-size: 10px;
+      border-radius: 10px 0 0 0;
+    }
+
+    .leaflet-korea-map .leaflet-control-attribution a {
+      color: #93c5fd;
+    }
+
+    .map-mode-toggle {
+      display: none;
+      position: absolute;
+      left: 18px;
+      top: 54px;
+      z-index: 5;
+      display: inline-flex;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(2,6,23,.72);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .map-mode-toggle button {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: #cbd5e1;
+      background: transparent;
+      font-weight: 900;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .map-mode-toggle button.active {
+      color: #eff6ff;
+      background: rgba(56,189,248,.18);
+      box-shadow: inset 0 0 0 1px rgba(56,189,248,.28);
+    }
+
+    .leaflet-region-label {
+      min-width: 52px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: white;
+      text-align: center;
+      font: 900 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Noto Sans KR", sans-serif;
+      text-shadow: 0 1px 4px rgba(0,0,0,.55);
+      box-shadow: 0 12px 26px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.38);
+      animation: mapMarkerFloat 3.8s ease-in-out infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes mapMarkerFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .map-fallback-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 5;
+      max-width: 260px;
+      padding: 9px 11px;
+      border-radius: 14px;
+      color: #cbd5e1;
+      background: rgba(2,6,23,.72);
+      border: 1px solid rgba(255,255,255,.10);
+      font-size: 11px;
+      line-height: 1.45;
+      backdrop-filter: blur(10px);
+      display: none;
+    }
+
+    .map-fallback-note.show {
+      display: block;
+    }
+
+
+
+
+    .map-layer-tabs {
+      position: absolute;
+      left: 50%;
+      top: 56px;
+      transform: translateX(-50%);
+      z-index: 6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(2,6,23,.72);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.26);
+    }
+
+    .map-layer-tabs .chip {
+      min-width: 62px;
+      text-align: center;
+      justify-content: center;
+      display: inline-flex;
+    }
+
+    .map-layer-tabs .chip.active {
+      background: linear-gradient(90deg, rgba(56,189,248,.22), rgba(94,234,212,.14));
+    }
+
+
+    .map-box .map-note {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #d8f7ff;
+      background: rgba(2,6,23,.62);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 12px;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
+    }
+
+
+    .map-pulse {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 2.8s ease-out infinite;
+    }
+    .map-pulse.p1 { width: 108px; height: 108px; left: 154px; top: 130px; border: 1px solid rgba(248,113,113,.42); }
+    .map-pulse.p2 { width: 126px; height: 126px; left: 208px; top: 238px; border: 1px solid rgba(56,189,248,.35); animation-delay: .9s; }
+    .map-pulse.p3 { width: 96px; height: 96px; left: 284px; top: 320px; border: 1px solid rgba(250,204,21,.34); animation-delay: 1.5s; }
+
+
+    .region-map {
+      position: relative;
+      z-index: 2;
+      width: 310px;
+      height: 380px;
+      margin: 62px auto 0;
+      filter: drop-shadow(0 24px 34px rgba(0,0,0,.38));
+    }
+
+    .region-map::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 48% 52% 44% 56% / 36% 44% 56% 64%;
+      border: 1px solid rgba(255,255,255,.09);
+      background:
+        radial-gradient(circle at 50% 22%, rgba(56,189,248,.06), transparent 30%),
+        radial-gradient(circle at 42% 74%, rgba(250,204,21,.05), transparent 34%);
+      transform: rotate(-8deg) scale(.98);
+      opacity: .9;
+    }
+
+    .region-shape {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font: 900 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Noto Sans KR", sans-serif;
+      text-shadow: 0 1px 4px rgba(0,0,0,.45);
+      cursor: pointer;
+      outline: none;
+      transition: transform .22s ease, filter .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+      animation: floatRegion 4.4s ease-in-out infinite;
+    }
+
+    .region-shape:nth-child(2n) { animation-delay: .55s; }
+    .region-shape:nth-child(3n) { animation-delay: 1.05s; }
+
+    @keyframes floatRegion {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -5px; }
+    }
+
+    .region-shape:hover,
+    .region-shape.selected {
+      z-index: 5;
+      transform: scale(1.09);
+      filter: brightness(1.18) saturate(1.12);
+      border-color: rgba(255,255,255,.85);
+      box-shadow: 0 0 0 5px rgba(255,255,255,.10), 0 16px 40px rgba(0,0,0,.36);
+    }
+
+    .region-map { width: 310px; height: 420px; margin-top: 28px; transition: opacity .35s ease, transform .35s ease; }
+    .region-map.map-hidden { opacity: 0; transform: scale(.96); pointer-events: none; }
+    .region-map::before {
+      inset: 18px 26px 14px 26px;
+      border-radius: 36px;
+      transform: none;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(56,189,248,.05), transparent 26%),
+        radial-gradient(circle at 48% 72%, rgba(250,204,21,.04), transparent 30%);
+    }
+
+    .region-shape {
+      border-radius: 999px;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -.5px;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,.14), 0 12px 24px rgba(0,0,0,.24);
+    }
+
+    .region-shape.small-label { font-size: 16px; }
+
+    .r-gangwon { width: 94px; height: 54px; left: 104px; top: 18px; background: var(--orange); }
+    .r-metro { width: 112px; height: 78px; left: 76px; top: 58px; background: var(--red); }
+    .r-chungcheong { width: 116px; height: 72px; left: 150px; top: 96px; background: var(--yellow); color: #3b2600; text-shadow: none; }
+    .r-jeolla { width: 100px; height: 82px; left: 76px; top: 152px; background: var(--orange); }
+    .r-gyeongsang { width: 122px; height: 88px; left: 148px; top: 186px; background: var(--red); }
+    .r-southwest { width: 96px; height: 86px; left: 56px; top: 244px; background: var(--green); }
+    .r-southeast { width: 110px; height: 72px; left: 146px; top: 294px; background: var(--orange); }
+    .r-jeju { width: 64px; height: 42px; left: 98px; top: 352px; background: var(--red); font-size: 15px; }
+
+    .r-jeolla, .r-southwest, .r-southeast { font-size: 15px; }
+    .r-southwest { width: 112px; }
+    .r-southeast { width: 126px; }
+
+
+    @keyframes pulse {
+      from { opacity: .68; transform: scale(.55); }
+      to { opacity: 0; transform: scale(1.9); }
+    }
+
+    .korea-svg {
+      width: 100%;
+      height: 100%;
+      padding: 38px 10px 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .province {
+      cursor: pointer;
+      transition: transform .22s ease, filter .22s ease, stroke .22s ease, opacity .22s ease;
+      transform-origin: center;
+    }
+    .province:hover, .province.selected {
+      filter: brightness(1.16) saturate(1.1);
+      transform: translateY(-2px) scale(1.02);
+      stroke: rgba(255,255,255,.95);
+      stroke-width: 3;
+    }
+
+    .legend {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(2,6,23,.72);
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: 12px;
+      color: #cdd9eb;
+    }
+    .legend-row { display: flex; align-items: center; gap: 8px; }
+    .sq { width: 11px; height: 11px; border-radius: 3px; }
+
+    .risk-summary, .global-list, .action-list { display: grid; gap: 12px; }
+    .risk-summary { margin-top: 18px; }
+
+    .risk-item, .global-item, .action-item {
+      padding: 14px 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      transition: .22s ease;
+    }
+    .risk-item {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(56,189,248,.12);
+      font-size: 20px;
+      animation: iconBob 4.6s ease-in-out infinite;
+    }
+    @keyframes iconBob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-3px);} }
+    .risk-title { font-weight: 900; margin-bottom: 3px; }
+    .risk-desc, .global-item span, .action-item span { color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .badge { padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 900; }
+    .badge.red { background: rgba(239,68,68,.18); color: #ffb4b4; }
+    .badge.orange { background: rgba(251,146,60,.18); color: #ffd7af; }
+    .badge.yellow { background: rgba(250,204,21,.16); color: #ffefb0; }
+    .badge.green { background: rgba(34,197,94,.16); color: #bbf7d0; }
+
+    .action-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(86,28,28,.34), rgba(13,22,40,.94)),
+        radial-gradient(circle at 10% 12%, rgba(239,68,68,.14), transparent 18%);
+      border-color: rgba(248,113,113,.22);
+    }
+    .action-panel::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(120deg, rgba(239,68,68,.36), rgba(250,204,21,.10), rgba(56,189,248,.20));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      animation: borderRun 3.8s linear infinite;
+    }
+    @keyframes borderRun { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+
+    .action-callout {
+      margin: 12px 0 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(239,68,68,.10);
+      border: 1px solid rgba(248,113,113,.18);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .action-callout::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 16%, rgba(255,255,255,.08) 40%, transparent 58%);
+      transform: translateX(-120%);
+      animation: heroShimmer 5.2s ease-in-out infinite;
+    }
+    .action-signal {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(239,68,68,.18);
+      color: #ffd2d2;
+      font-size: 22px;
+      box-shadow: 0 0 0 0 rgba(239,68,68,.30);
+      animation: signalPulse 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes signalPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.26); transform: scale(1); }
+      50% { box-shadow: 0 0 0 12px rgba(239,68,68,0); transform: scale(1.06); }
+    }
+    .action-callout strong { display: block; font-size: 16px; margin-bottom: 4px; }
+    .action-list .action-item { animation: actionFloat 4.4s ease-in-out infinite; }
+    .action-list .action-item:nth-child(2) { animation-delay: .6s; }
+    .action-list .action-item:nth-child(3) { animation-delay: 1.2s; }
+    @keyframes actionFloat { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-3px);} }
+    .action-cta {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      color: white;
+      font-weight: 900;
+      letter-spacing: -.2px;
+      background: linear-gradient(90deg, var(--red), #f97316);
+      box-shadow: 0 14px 30px rgba(239,68,68,.24);
+      animation: ctaBounce 2.4s ease-in-out infinite;
+    }
+    @keyframes ctaBounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-4px);} }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr .95fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .bars {
+      height: 210px;
+      display: flex;
+      align-items: end;
+      gap: 12px;
+      padding-top: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .bar-wrap { flex: 1; display: grid; gap: 8px; text-align: center; color: var(--muted); font-size: 11px; }
+    .bar {
+      height: var(--bar-h, 20px);
+      min-height: 18px;
+      border-radius: 12px 12px 0 0;
+      background: linear-gradient(180deg, var(--bar-top), var(--bar-bottom));
+      transform-origin: bottom;
+      transform: scaleY(0);
+      animation: growBar 1.1s cubic-bezier(.2,.8,.2,1) forwards;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.28), 0 -6px 18px rgba(239,68,68,.10);
+    }
+    .bar-wrap:nth-child(1) .bar { animation-delay: .02s; }
+    .bar-wrap:nth-child(2) .bar { animation-delay: .06s; }
+    .bar-wrap:nth-child(3) .bar { animation-delay: .10s; }
+    .bar-wrap:nth-child(4) .bar { animation-delay: .14s; }
+    .bar-wrap:nth-child(5) .bar { animation-delay: .18s; }
+    .bar-wrap:nth-child(6) .bar { animation-delay: .22s; }
+    .bar-wrap:nth-child(7) .bar { animation-delay: .26s; }
+    .bar-wrap:nth-child(8) .bar { animation-delay: .30s; }
+    .bar-wrap:nth-child(9) .bar { animation-delay: .34s; }
+    .bar-wrap:nth-child(10) .bar { animation-delay: .38s; }
+    @keyframes growBar { to { transform: scaleY(1); } }
+    .bar:hover { filter: brightness(1.14); }
+
+    .chart-mini-kpi {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #dfe8f5;
+      font-size: 13px;
+    }
+
+    .donut-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      align-items: center;
+      gap: 18px;
+      min-height: 230px;
+    }
+
+    .donut-shell {
+      width: 170px;
+      height: 170px;
+      perspective: 800px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto;
+    }
+
+    .donut-3d {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: conic-gradient(var(--red) 0 42%, var(--orange) 42% 70%, var(--blue) 70% 88%, var(--green) 88% 100%);
+      transform: rotate(-18deg);
+      animation: donutSpin 1.2s cubic-bezier(.2,.8,.2,1) both;
+      box-shadow: 0 18px 28px rgba(0,0,0,.30), inset 0 3px 8px rgba(255,255,255,.16);
+    }
+    .donut-3d::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: inherit;
+      transform: translateY(16px);
+      filter: brightness(.58) saturate(.75);
+      z-index: -1;
+    }
+    .donut-3d::after {
+      content: "피해액\A비중";
+      white-space: pre;
+      position: absolute;
+      inset: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      color: #e9f3ff;
+      line-height: 1.3;
+      font-size: 14px;
+      background: radial-gradient(circle at 30% 30%, rgba(31,41,55,1), rgba(11,17,29,1));
+      box-shadow: inset 0 -10px 16px rgba(0,0,0,.36), inset 0 2px 4px rgba(255,255,255,.08);
+    }
+    @keyframes donutSpin { from { transform: rotate(-110deg) scale(.82); opacity: .46; } to { transform: rotate(-18deg) scale(1); opacity: 1; } }
+
+    .legend-list { display: grid; gap: 10px; color: #d5e0ef; font-size: 13px; }
+
+    /* 그리드 항목이 내용(max-content) 폭만큼 늘어나 화면 밖으로 벗어나지 않도록 */
+    .chart-grid > *, .main-grid > *, .bottom-grid > * { min-width: 0; }
+    .forecast-moving-wrap {
+      margin-top: 16px;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      cursor: grab;
+      touch-action: pan-x pan-y;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      position: relative;
+    }
+    .forecast-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      padding: 16px;
+    }
+    .forecast-moving-wrap::-webkit-scrollbar { display: none; }
+    .forecast-moving-wrap.is-dragging { cursor: grabbing; user-select: none; }
+    @keyframes moveLTR {
+      from { transform: translateX(-46%); }
+      to { transform: translateX(0); }
+    }
+    .forecast-mini {
+      width: min(200px, 62vw);
+      padding: 14px 15px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(17,24,39,.72));
+      border: 1px solid rgba(255,255,255,.08);
+      flex: 0 0 auto;
+    }
+    .forecast-mini strong { display: block; margin-bottom: 8px; font-size: 15px; }
+    .forecast-mini p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .forecast-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      color: #ffe0e0;
+      background: rgba(239,68,68,.12);
+      border: 1px solid rgba(248,113,113,.16);
+    }
+
+    .forecast-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+    .forecast-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      transition: .22s ease;
+    }
+    .forecast-card strong { display: block; font-size: 15px; margin-bottom: 12px; }
+    .meter { height: 12px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; margin-bottom: 10px; }
+    .meter span {
+      display: block;
+      height: 100%;
+      width: 0 !important;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--yellow), var(--orange), var(--red));
+      animation: fillMeter 1.3s cubic-bezier(.2,.8,.2,1) forwards;
+      animation-delay: .35s;
+    }
+    @keyframes fillMeter { to { width: var(--meter-w); } }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .global-item b, .action-item b { font-size: 14px; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%) translateY(24px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 40;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(7,17,31,.94);
+      border: 1px solid rgba(56,189,248,.28);
+      color: #eff8ff;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 18px 50px rgba(0,0,0,.42);
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1180px) {
+      header, .main-grid, .chart-grid, .bottom-grid { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .page { width: 94vw; padding-top: 16px; }
+      .hero, .alert-card, .insight-card, .map-panel, .panel, .chart-card, .kpi { padding: 18px; border-radius: 22px; }
+      h1 { font-size: 42px; letter-spacing: -1.8px; }
+      .subtitle { font-size: 16px; }
+      .kpi-grid, .forecast-grid { grid-template-columns: 1fr; }
+      .donut-row { grid-template-columns: 1fr; }
+      .section-title { flex-direction: column; align-items: flex-start; }
+      .map-box { height: 430px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <section class="hero">
+        <div class="cloud-layer">
+          <span class="cloud c1"></span>
+          <span class="cloud c2"></span>
+          <span class="cloud c3"></span>
+          <span class="cloud c4"></span>
+          <span class="cloud c5"></span>
+        </div>
+        <div class="eyebrow">🌏 Climate Disaster Intelligence MVP</div>
+        <div class="title-cloud-wrap">
+          <h1><span class="title-fill">데이터로 보는 환경</span></h1>
+        </div>
+        <p class="subtitle">
+          과거 자연재해 피해와 현재 위험 신호, 미래 기후재난 예측을 한 화면에서 연결해
+          한국의 폭염·호우·태풍 위험을 미리 이해하고 대비하도록 돕는 대시보드입니다.
+        </p>
+      </section>
+
+      <aside class="header-side">
+        <section class="alert-card">
+          <div class="alert-top">
+            <strong>오늘의 한국 기후재난 위험도</strong>
+            <span class="alert-level">경계</span>
+          </div>
+          <p class="big-number">72 / 100</p>
+          <p class="small-note" id="alertInsight">폭염과 국지성 호우 위험이 동시에 상승했습니다. 수도권·남부 내륙·해안 지역의 복합위험을 우선 확인하세요.</p>
+        </section>
+        <section class="insight-card">
+          <h3>핵심 인사이트</h3>
+          <ul class="insight-list">
+            <li><span class="dot"></span><span>한국 MVP는 폭염, 호우·홍수, 태풍 3개 재난을 우선 분석합니다.</span></li>
+            <li><span class="dot" style="background:var(--red)"></span><span>과거 데이터는 발생 횟수, 인명피해, 재산피해액, 복구비 중심으로 구성합니다.</span></li>
+            <li><span class="dot" style="background:var(--blue)"></span><span>미래 영역은 2030·2050 전망과 지역별 위험 증가율로 표현합니다.</span></li>
+          </ul>
+        </section>
+      </aside>
+    </header>
+
+    <section class="kpi-grid" aria-label="핵심 지표">
+      <article class="kpi">
+        <div class="label">최근 10년 자연재난 피해액</div>
+        <div class="value" data-count="8.4" data-suffix="조원">8.4조원</div>
+        <div class="trend up">▲ 장기 증가 추세</div>
+      </article>
+      <article class="kpi">
+        <div class="label">올해 폭염일수</div>
+        <div class="value" data-count="24" data-suffix="일">24일</div>
+        <div class="trend warn">평년 대비 +8일</div>
+      </article>
+      <article class="kpi">
+        <div class="label">집중호우 위험 지역</div>
+        <div class="value" data-count="38" data-suffix="곳">38곳</div>
+        <div class="trend up">침수 이력 지역 포함</div>
+      </article>
+      <article class="kpi">
+        <div class="label">태풍 영향 가능성</div>
+        <div class="value severity-mid">중간</div>
+        <div class="trend warn">남해안·제주 주의</div>
+      </article>
+      <article class="kpi">
+        <div class="label">취약계층 노출도</div>
+        <div class="value severity-high">높음</div>
+        <div class="trend severity-high">고령층 폭염 노출 증가</div>
+      </article>
+      <article class="kpi">
+        <div class="label">대비 행동 완료율</div>
+        <div class="value" data-count="61" data-suffix="%">61%</div>
+        <div class="trend safe">체크리스트 기반</div>
+      </article>
+    </section>
+
+    <main class="main-grid">
+      <section class="map-panel">
+        <div class="section-title">
+          <div>
+            <h2>위험지도 : 대한민국 기후재난 종합 지도</h2>
+            <div class="map-info-stack">
+              <p class="map-info-note">기본 화면은 OpenStreetMap 기반 실제 대한민국 지도이며, 지도 호출이 제한되는 환경에서는 버블형 권역 지도로 자동 대체됩니다.</p>
+              <div class="map-info-card" id="mapTooltip">
+                <b>종합 위험지도</b>
+                <span>지역을 클릭하면 위험 메시지가 바뀝니다. 색상은 관심→주의→경계→심각 순서입니다.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="map-box">
+          <div id="leafletKoreaMap" class="leaflet-korea-map active" aria-label="OpenStreetMap 기반 대한민국 지도"></div>
+          <div class="map-note">대한민국 리스크 레이어</div>
+          <div class="map-layer-tabs" aria-label="위험 유형 필터">
+            <span class="chip active" data-mode="total">종합</span>
+            <span class="chip" data-mode="heat">폭염</span>
+            <span class="chip" data-mode="rain">호우</span>
+            <span class="chip" data-mode="typhoon">태풍</span>
+          </div>
+          <div class="map-fallback-note" id="mapFallbackNote">지도 호출이 차단되면 버블 지도로 자동 대체됩니다.</div>
+          <span class="map-pulse p1"></span><span class="map-pulse p2"></span><span class="map-pulse p3"></span>
+          
+                              <div class="region-map map-hidden" aria-label="권역별 재난 위험도 도형 지도">
+            <button class="region-shape r-gangwon" data-name="강원" data-title="강원 | 산불·대설 복합위험" data-desc="건조·강풍 조건과 산악지형 때문에 산불·대설 위험을 함께 모니터링합니다.">강원</button>
+            <button class="region-shape r-metro" data-name="수도권" data-title="수도권 | 호우·침수 위험 높음" data-desc="지하공간, 하천변, 교통 밀집 지역의 단시간 침수 위험이 큽니다.">수도권</button>
+            <button class="region-shape r-chungcheong" data-name="충청" data-title="충청 | 집중호우 주의" data-desc="짧은 시간 강한 비가 내리면 농경지·저지대 피해가 빠르게 확대될 수 있습니다.">충청</button>
+            <button class="region-shape r-jeolla" data-name="충청" data-title="충청 | 폭염·호우 경계" data-desc="남부 내륙 폭염과 장마철 집중호우를 함께 관리해야 합니다.">충청</button>
+            <button class="region-shape r-gyeongsang" data-name="경상" data-title="경상 | 폭염·태풍 복합위험" data-desc="도심 열섬과 고령층 노출, 동남권 태풍·강풍 영향을 함께 관리해야 합니다.">경상</button>
+            <button class="region-shape r-southwest" data-name="전라" data-title="전라 | 태풍·침수 관심" data-desc="해안 저지대와 농경지 침수 가능성을 우선 확인합니다.">전라</button>
+            <button class="region-shape r-southeast" data-name="경남" data-title="경남 | 태풍·강풍 경계" data-desc="항만·산업단지·해안 인프라의 강풍·월파 리스크가 큽니다.">경남</button>
+            <button class="region-shape r-jeju small-label" data-name="제주" data-title="제주 | 태풍 노출도 높음" data-desc="태풍 접근 시 강풍, 월파, 항공·항만 차질 가능성이 빠르게 커집니다.">제주</button>
+          </div>
+          <div class="legend">
+            <div class="legend-row"><span class="sq" style="background:var(--green)"></span>관심</div>
+            <div class="legend-row"><span class="sq" style="background:var(--yellow)"></span>주의</div>
+            <div class="legend-row"><span class="sq" style="background:var(--orange)"></span>경계</div>
+            <div class="legend-row"><span class="sq" style="background:var(--red)"></span>심각</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel-stack">
+        <section class="panel">
+          <h3>재난 유형별 현재 위험</h3>
+          <div class="risk-summary">
+            <div class="risk-item">
+              <div class="icon">🔥</div>
+              <div><div class="risk-title">폭염</div><div class="risk-desc">남부 내륙·도심 열섬·고령층 노출 증가</div></div>
+              <span class="badge red">심각</span>
+            </div>
+            <div class="risk-item">
+              <div class="icon">🌧️</div>
+              <div><div class="risk-title">호우·침수</div><div class="risk-desc">수도권 저지대·하천 인접 지역 위험 상승</div></div>
+              <span class="badge orange">경계</span>
+            </div>
+            <div class="risk-item">
+              <div class="icon">🌀</div>
+              <div><div class="risk-title">태풍</div><div class="risk-desc">제주·남해안 중심 강풍·월파 가능성</div></div>
+              <span class="badge yellow">주의</span>
+            </div>
+            <div class="risk-item">
+              <div class="icon">🌲</div>
+              <div><div class="risk-title">산불</div><div class="risk-desc">동해안 건조·강풍 조건 발생 시 급상승</div></div>
+              <span class="badge green">관심</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel action-panel">
+          <h3>오늘의 권고 행동</h3>
+          <div class="action-callout">
+            <div class="action-signal">⚠️</div>
+            <div>
+              <strong>지금 가장 먼저 확인하세요</strong>
+              <span>폭염 취약계층 안부 확인, 침수 취약 구역 접근 제한, 태풍 대비 비상물품 점검을 즉시 권고합니다.</span>
+            </div>
+          </div>
+          <div class="action-list">
+            <div class="action-item"><b>폭염</b><span>낮 시간 야외활동 조정, 독거노인 안부 확인, 냉방 취약가구 점검</span></div>
+            <div class="action-item"><b>호우</b><span>지하차도·하천변 접근 금지, 차량 고지대 이동, 배수구 점검</span></div>
+            <div class="action-item"><b>태풍</b><span>창문 고정, 외부 적치물 정리, 보조배터리·손전등·비상식량 준비</span></div>
+          </div>
+          <div class="action-cta">지금 대비 체크리스트 확인하기 →</div>
+        </section>
+      </aside>
+    </main>
+
+    <section class="chart-grid">
+      <article class="chart-card">
+        <div class="section-title">
+          <div>
+            <h3>최근 10년 자연재난 피해액 추이</h3>
+            <p class="small-note">단위: 조 원, 높은 값일수록 더 붉은 계열로 표시</p>
+          </div>
+        </div>
+        <div class="bars">
+          <div class="bar-wrap"><div class="bar" style="--bar-h:46px; --bar-top:#fcd34d; --bar-bottom:#fb923c"></div><span>2016</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:58px; --bar-top:#fbbf24; --bar-bottom:#fb923c"></div><span>2017</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:52px; --bar-top:#facc15; --bar-bottom:#f97316"></div><span>2018</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:75px; --bar-top:#fb923c; --bar-bottom:#f97316"></div><span>2019</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:128px; --bar-top:#f87171; --bar-bottom:#ef4444"></div><span>2020</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:64px; --bar-top:#fb923c; --bar-bottom:#ea580c"></div><span>2021</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:116px; --bar-top:#fb7185; --bar-bottom:#ef4444"></div><span>2022</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:142px; --bar-top:#ef4444; --bar-bottom:#dc2626"></div><span>2023</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:96px; --bar-top:#f97316; --bar-bottom:#ea580c"></div><span>2024</span></div>
+          <div class="bar-wrap"><div class="bar" style="--bar-h:154px; --bar-top:#ef4444; --bar-bottom:#b91c1c"></div><span>2025</span></div>
+        </div>
+        <div class="chart-mini-kpi"><span>최저 0.9조원</span><strong>최고 3.0조원</strong></div>
+      </article>
+
+      <article class="chart-card">
+        <h3>재난 유형별 피해 비중</h3>
+        <div class="donut-row">
+          <div class="donut-shell"><div class="donut-3d"></div></div>
+          <div class="legend-list">
+            <div class="legend-row"><span class="sq" style="background:var(--red)"></span>호우·홍수 42%</div>
+            <div class="legend-row"><span class="sq" style="background:var(--orange)"></span>태풍 28%</div>
+            <div class="legend-row"><span class="sq" style="background:var(--blue)"></span>폭염 18%</div>
+            <div class="legend-row"><span class="sq" style="background:var(--green)"></span>기타 12%</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chart-card">
+        <h3>미래 위험 증가 예측</h3>
+        <p class="small-note">2050년 중간 시나리오 기준, 카드가 좌→우로 계속 흐르며 미래 위험 요인을 강조합니다.</p>
+        <div class="forecast-moving-wrap">
+          <div class="forecast-track">
+            <div class="forecast-mini"><strong>폭염 노출 인구</strong><p>고령층과 1인 가구 비중이 높은 지역에서 건강위험이 커질 수 있습니다.</p><div class="forecast-flag">+32% 증가 예상</div></div>
+            <div class="forecast-mini"><strong>집중호우 강도</strong><p>도시 배수 용량을 초과하는 단시간 강수 가능성이 높아집니다.</p><div class="forecast-flag">+24% 증가 예상</div></div>
+            <div class="forecast-mini"><strong>태풍 복합피해</strong><p>강풍과 해안 침수, 정전이 동시에 발생할 가능성을 고려해야 합니다.</p><div class="forecast-flag">연안 위험 확대</div></div>
+            <div class="forecast-mini"><strong>산불 기상일수</strong><p>건조일수와 강풍 조합이 늘어나 동해안 산불 위험이 상승합니다.</p><div class="forecast-flag">봄철 관리 강화</div></div>
+            <div class="forecast-mini"><strong>폭염 노출 인구</strong><p>고령층과 1인 가구 비중이 높은 지역에서 건강위험이 커질 수 있습니다.</p><div class="forecast-flag">+32% 증가 예상</div></div>
+            <div class="forecast-mini"><strong>집중호우 강도</strong><p>도시 배수 용량을 초과하는 단시간 강수 가능성이 높아집니다.</p><div class="forecast-flag">+24% 증가 예상</div></div>
+            <div class="forecast-mini"><strong>태풍 복합피해</strong><p>강풍과 해안 침수, 정전이 동시에 발생할 가능성을 고려해야 합니다.</p><div class="forecast-flag">연안 위험 확대</div></div>
+            <div class="forecast-mini"><strong>산불 기상일수</strong><p>건조일수와 강풍 조합이 늘어나 동해안 산불 위험이 상승합니다.</p><div class="forecast-flag">봄철 관리 강화</div></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <div class="section-title">
+          <div>
+            <h3>글로벌 → 국가별 비교 요약</h3>
+            <p class="small-note">MVP에서는 세계지도와 국가 비교 핵심 메시지를 먼저 제공합니다.</p>
+          </div>
+        </div>
+        <div class="global-list">
+          <div class="global-item"><b>글로벌 발생 건수</b><span>홍수·폭풍·폭염 중심 증가 추세</span></div>
+          <div class="global-item"><b>피해액 TOP 국가</b><span>절대 피해액과 GDP 대비 피해율을 함께 비교</span></div>
+          <div class="global-item"><b>한국 비교 위치</b><span>태풍·호우 피해와 폭염 건강위험을 중심으로 분석</span></div>
+          <div class="global-item"><b>국가별 상세</b><span>한국, 일본, 미국, 필리핀, 독일 비교 가능</span></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h3>2030·2050 미래 예측 카드</h3>
+        <p class="small-note">정확한 단일 값보다, 위험 증가 방향과 수준을 직관적으로 보여줍니다.</p>
+        <div class="forecast-grid">
+          <div class="forecast-card">
+            <strong>폭염일수</strong>
+            <div class="meter"><span style="--meter-w:82%"></span></div>
+            <p class="small-note">2050년 고령층 노출 위험 크게 증가</p>
+          </div>
+          <div class="forecast-card">
+            <strong>집중호우</strong>
+            <div class="meter"><span style="--meter-w:74%"></span></div>
+            <p class="small-note">도시 침수와 지하공간 위험 확대</p>
+          </div>
+          <div class="forecast-card">
+            <strong>태풍 피해</strong>
+            <div class="meter"><span style="--meter-w:63%"></span></div>
+            <p class="small-note">강풍·해안 침수 복합위험 관리 필요</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      Prototype v0.2 · 샘플 데이터 기반 인터랙티브 시안입니다. 실제 서비스 구현 시 행정안전부 재해연보, 기상청 기후통계, 국민재난안전포털, EM-DAT, IPCC/CMIP6 데이터와 연계하세요.
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">필터가 적용되었습니다.</div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+    const mapModes = {
+      total: {
+        toast: '종합 위험지도로 전환했습니다.',
+        alert: '72 / 100',
+        insight: '수도권·경상권은 복합위험이 높고, 서남권은 상대적으로 안정적이지만 태풍·침수 대비가 필요합니다.',
+        colors: {
+          'r-gangwon': '#fb923c', 'r-metro': '#ef4444', 'r-chungcheong': '#facc15', 'r-jeolla': '#fb923c',
+          'r-gyeongsang': '#ef4444', 'r-southwest': '#22c55e', 'r-southeast': '#fb923c', 'r-jeju': '#ef4444'
+        }
+      },
+      heat: {
+        toast: '폭염 위험 레이어를 적용했습니다.',
+        alert: '84 / 100',
+        insight: '경상과 전라, 수도권 중심으로 폭염 위험이 높고 강원은 상대적으로 완화됩니다.',
+        colors: {
+          'r-gangwon': '#facc15', 'r-metro': '#ef4444', 'r-chungcheong': '#facc15', 'r-jeolla': '#ef4444',
+          'r-gyeongsang': '#ef4444', 'r-southwest': '#22c55e', 'r-southeast': '#fb923c', 'r-jeju': '#fb923c'
+        }
+      },
+      rain: {
+        toast: '호우·침수 위험 레이어를 적용했습니다.',
+        alert: '78 / 100',
+        insight: '수도권과 충청의 집중호우 위험이 높고, 전라권도 단시간 강수에 주의가 필요합니다.',
+        colors: {
+          'r-gangwon': '#fb923c', 'r-metro': '#ef4444', 'r-chungcheong': '#ef4444', 'r-jeolla': '#fb923c',
+          'r-gyeongsang': '#facc15', 'r-southwest': '#22c55e', 'r-southeast': '#22c55e', 'r-jeju': '#22c55e'
+        }
+      },
+      typhoon: {
+        toast: '태풍 위험 레이어를 적용했습니다.',
+        alert: '66 / 100',
+        insight: '제주와 동남, 경상, 서남권은 태풍 접근 시 강풍과 침수, 월파 위험이 빠르게 증가할 수 있습니다.',
+        colors: {
+          'r-gangwon': '#22c55e', 'r-metro': '#facc15', 'r-chungcheong': '#facc15', 'r-jeolla': '#fb923c',
+          'r-gyeongsang': '#ef4444', 'r-southwest': '#ef4444', 'r-southeast': '#ef4444', 'r-jeju': '#ef4444'
+        }
+      }
+    };
+
+    const leafletRegions = [
+      { key: 'r-gangwon', name: '강원', lat: 37.82, lng: 128.20, color: '#fb923c', title: '강원 | 산불·대설 복합위험', desc: '건조·강풍 조건과 산악지형 때문에 산불·대설 위험을 함께 모니터링합니다.' },
+      { key: 'r-metro', name: '수도권', lat: 37.55, lng: 126.98, color: '#ef4444', title: '수도권 | 호우·침수 위험 높음', desc: '지하공간, 하천변, 교통 밀집 지역의 단시간 침수 위험이 큽니다.' },
+      { key: 'r-chungcheong', name: '충청', lat: 36.55, lng: 127.40, color: '#facc15', title: '충청 | 집중호우 주의', desc: '짧은 시간 강한 비가 내리면 농경지·저지대 피해가 빠르게 확대될 수 있습니다.' },
+      { key: 'r-jeolla', name: '전라', lat: 35.82, lng: 127.12, color: '#fb923c', title: '전라 | 폭염·호우 경계', desc: '남부 내륙 폭염과 장마철 집중호우를 함께 관리해야 합니다.' },
+      { key: 'r-gyeongsang', name: '경상', lat: 35.90, lng: 128.65, color: '#ef4444', title: '경상 | 폭염·태풍 복합위험', desc: '도심 열섬과 고령층 노출, 동남권 태풍·강풍 영향을 함께 관리해야 합니다.' },
+      { key: 'r-southwest', name: '전라', lat: 34.85, lng: 126.75, color: '#22c55e', title: '전라 | 태풍·침수 관심', desc: '해안 저지대와 농경지 침수 가능성을 우선 확인합니다.' },
+      { key: 'r-southeast', name: '경남', lat: 35.24, lng: 128.20, color: '#fb923c', title: '경남 | 태풍·강풍 경계', desc: '항만·산업단지·해안 인프라의 강풍·월파 리스크가 큽니다.' },
+      { key: 'r-jeju', name: '제주', lat: 33.38, lng: 126.55, color: '#ef4444', title: '제주 | 태풍 노출도 높음', desc: '태풍 접근 시 강풍, 월파, 항공·항만 차질 가능성이 빠르게 커집니다.' }
+    ];
+
+    let leafletMap = null;
+    let leafletMarkers = [];
+
+    function labelIcon(region) {
+      return L.divIcon({
+        className: '',
+        html: `<div class="leaflet-region-label" style="background:${region.color}">${region.name}</div>`,
+        iconSize: [78, 34],
+        iconAnchor: [39, 17]
+      });
+    }
+
+    function initLeafletMap() {
+      if (!window.L || leafletMap) return Boolean(leafletMap);
+      try {
+        leafletMap = L.map('leafletKoreaMap', {
+          zoomControl: false,
+          attributionControl: true,
+          scrollWheelZoom: false,
+          dragging: true
+        }).setView([36.25, 127.85], 6);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 9,
+          minZoom: 5,
+          attribution: '&copy; OpenStreetMap'
+        }).addTo(leafletMap);
+
+        L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
+
+        leafletMarkers = leafletRegions.map((region) => {
+          const marker = L.marker([region.lat, region.lng], { icon: labelIcon(region) }).addTo(leafletMap);
+          marker.on('click', () => {
+            $('#mapTooltip').innerHTML = `<b>${region.title}</b><span>${region.desc}</span>`;
+            showToast(`${region.name} 위험 요약을 갱신했습니다.`);
+          });
+          return { region, marker };
+        });
+
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function setMapView(type) {
+      const realMap = $('#leafletKoreaMap');
+      const bubbleMap = $('.region-map');
+      const fallbackNote = $('#mapFallbackNote');
+      const realBtn = $('#realMapBtn');
+      const bubbleBtn = $('#bubbleMapBtn');
+
+      if (type === 'real') {
+        const ok = initLeafletMap();
+        if (!ok) {
+          realMap.classList.remove('active');
+          bubbleMap.classList.remove('map-hidden');
+          fallbackNote.classList.add('show');
+          if (realBtn) realBtn.classList.remove('active');
+          if (bubbleBtn) bubbleBtn.classList.add('active');
+          showToast('지도 호출이 차단되어 버블 지도로 자동 대체했습니다.');
+          return;
+        }
+
+        realMap.classList.add('active');
+        bubbleMap.classList.add('map-hidden');
+        if (realBtn) realBtn.classList.add('active');
+        if (bubbleBtn) bubbleBtn.classList.remove('active');
+        fallbackNote.classList.remove('show');
+        setTimeout(() => leafletMap.invalidateSize(), 120);
+        showToast('OpenStreetMap 기반 대한민국 지도를 기본 화면으로 표시합니다.');
+      } else {
+        realMap.classList.remove('active');
+        bubbleMap.classList.remove('map-hidden');
+        if (bubbleBtn) bubbleBtn.classList.add('active');
+        if (realBtn) realBtn.classList.remove('active');
+        fallbackNote.classList.remove('show');
+        showToast('버블형 권역 지도로 전환했습니다.');
+      }
+    }
+
+    function updateLeafletColors(mode) {
+      if (!leafletMap || !mapModes[mode]) return;
+      const config = mapModes[mode];
+      leafletMarkers.forEach(({ region, marker }) => {
+        region.color = config.colors[region.key] || region.color;
+        marker.setIcon(labelIcon(region));
+      });
+    }
+
+
+    function showToast(message) {
+      const toast = $('#toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    function animateText(el, nextValue) {
+      el.style.transform = 'scale(.96)';
+      el.style.opacity = '.55';
+      setTimeout(() => {
+        el.textContent = nextValue;
+        el.style.transform = 'scale(1)';
+        el.style.opacity = '1';
+      }, 130);
+    }
+
+    function setMode(mode) {
+      const config = mapModes[mode];
+      animateText($('.big-number'), config.alert);
+      $('#alertInsight').textContent = config.insight;
+      Object.entries(config.colors).forEach(([className, fill]) => {
+        const region = document.querySelector('.' + className);
+        if (region) region.style.background = fill;
+      });
+      $('#mapTooltip').innerHTML = `<b>${mode === 'total' ? '종합 위험지도' : $('.chip.active').textContent + ' 위험지도'}</b><span>${config.insight}</span>`;
+      updateLeafletColors(mode);
+      showToast(config.toast);
+    }
+
+    $$('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        $$('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        setMode(chip.dataset.mode);
+      });
+    });
+
+    if ($('#realMapBtn')) $('#realMapBtn').addEventListener('click', () => setMapView('real'));
+    if ($('#bubbleMapBtn')) $('#bubbleMapBtn').addEventListener('click', () => setMapView('bubble'));
+
+    $$('.region-shape').forEach(region => {
+      region.addEventListener('click', () => {
+        $$('.region-shape').forEach(r => r.classList.remove('selected'));
+        region.classList.add('selected');
+        $('#mapTooltip').innerHTML = `<b>${region.dataset.title}</b><span>${region.dataset.desc}</span>`;
+        showToast(`${region.dataset.name} 위험 요약을 갱신했습니다.`);
+      });
+    });
+
+    function countUp(el, target, suffix = '', duration = 1000) {
+      const start = performance.now();
+      const decimals = String(target).includes('.') ? 1 : 0;
+      function frame(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Number(target) * eased;
+        el.textContent = value.toFixed(decimals) + suffix;
+        if (progress < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    window.addEventListener('load', () => {
+      $$('.value[data-count]').forEach((el, index) => {
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        setTimeout(() => countUp(el, target, suffix), index * 70);
+      });
+      setMapView('real');
+    });
+
+    document.addEventListener('pointermove', (event) => {
+      document.documentElement.style.setProperty('--mx', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--my', `${event.clientY}px`);
+    });
+  </script>
+<script>
+/* 미래 위험 증가 예측 — 카드 영역 안에서 스와이프(터치)·드래그(마우스)·자동 흐름(좌→우) */
+(() => {
+  const wrap = document.querySelector('.forecast-moving-wrap');
+  if (!wrap) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SPEED = 0.35;              // 자동 흐름 속도(px/frame)
+  let acc = 0, paused = false, resumeT = 0, dragging = false, startX = 0, startLeft = 0, moved = false;
+  const half = () => wrap.scrollWidth / 2;   // 카드가 2벌 복제되어 있어 절반 지점에서 이어 붙임
+  const loop = () => {                      // 무한 루프 위치 보정
+    const h = half();
+    if (wrap.scrollLeft <= 0) wrap.scrollLeft += h;
+    else if (wrap.scrollLeft >= h * 1.5) wrap.scrollLeft -= h;
+  };
+  const hold = () => { paused = true; clearTimeout(resumeT); };
+  const release = (ms = 2500) => { clearTimeout(resumeT); resumeT = setTimeout(() => paused = false, ms); };
+  requestAnimationFrame(() => { wrap.scrollLeft = half(); });
+  const step = () => {
+    if (!paused && !reduce && wrap.scrollWidth > wrap.clientWidth) {
+      acc += SPEED;                       // 소수 단위 이동은 누적 후 정수로 반영(브라우저가 scrollLeft를 반올림)
+      if (acc >= 1) { const n = Math.floor(acc); acc -= n; wrap.scrollLeft -= n; loop(); }
+    }
+    requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+  wrap.addEventListener('scroll', loop, { passive: true });
+  wrap.addEventListener('touchstart', hold, { passive: true });
+  wrap.addEventListener('touchend', () => release(), { passive: true });
+  wrap.addEventListener('wheel', () => { hold(); release(); }, { passive: true });
+  wrap.addEventListener('mouseenter', hold);
+  wrap.addEventListener('mouseleave', () => { if (!dragging) release(600); });
+  /* 마우스 드래그 스와이프 */
+  wrap.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') return;
+    dragging = true; moved = false; startX = e.clientX; startLeft = wrap.scrollLeft;
+    wrap.classList.add('is-dragging'); wrap.setPointerCapture(e.pointerId); hold();
+  });
+  wrap.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX; if (Math.abs(dx) > 3) moved = true;
+    wrap.scrollLeft = startLeft - dx; loop();
+  });
+  const end = () => { if (!dragging) return; dragging = false; wrap.classList.remove('is-dragging'); release(); };
+  wrap.addEventListener('pointerup', end); wrap.addEventListener('pointercancel', end);
+})();
+</script>
+</body>
+</html>
