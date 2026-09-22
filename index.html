@@ -717,8 +717,82 @@ main>section:not(.hero) .sectionhead>p,
 #build .cards .product-4{--tile:linear-gradient(160deg,#ecedfc,#dfe1f9);--tag:#4d5fc9}
 #build .cards .product-5{--tile:linear-gradient(160deg,#f1ebfb,#e5dcf8);--tag:#6a58c9}
 #build .cards .product-5 .product-icon,#build .cards .product-5 .product-icon:after{animation-delay:4s}
+<style>
+/* AX partner refresh */
+:root{--ax-ink:#0a1c31;--ax-blue:#1565d8;--ax-paper:#f6f8fb}
+body{background:var(--ax-paper);color:var(--ax-ink)}
+.nav{height:82px;background:#fff!important;backdrop-filter:none!important;border-bottom:1px solid #dce4ec;opacity:1!important}
+.navlinks{gap:30px;font-size:13px;letter-spacing:.04em}.nav .btn{background:var(--ax-ink)!important;color:#fff!important;font-size:13px}
+.hero{min-height:calc(100vh - 82px);display:flex;align-items:center;padding:clamp(90px,10vw,160px) 0!important;background:radial-gradient(circle at 75% 22%,#d9fbff 0,transparent 24%),radial-gradient(circle at 88% 72%,#e4e0ff 0,transparent 25%),linear-gradient(135deg,#f8fbff,#eef4fb 58%,#f7f5ff);border-bottom:1px solid #dce6f0}
+.hero h1{font-size:clamp(44px,6vw,88px)!important;line-height:1.04;letter-spacing:-.085em;margin:25px 0 28px}.hero h1 .grad{background-image:linear-gradient(105deg,#1565d8,#7b63e8 55%,#16a9b8);animation:none}.hero p{max-width:560px;color:#4c6075;font-size:18px;line-height:1.8}.hero .primary{background:var(--ax-blue);box-shadow:0 12px 25px #1565d833}.hero .outline{border-color:#bbc9d8;background:#ffffff99}.hero-progress{margin-top:52px}.hero-visual{width:560px;height:430px;right:0;top:50%;transform:translateY(-50%)}.pivot-board{border:1px solid #c7d6e6;border-radius:28px;background:linear-gradient(145deg,#ffffffb8,#edf5ffb8);box-shadow:0 24px 70px #11375f1c}.pivot-core{background:var(--ax-ink);box-shadow:0 0 0 12px #1565d814,0 18px 34px #09182b35}.pivot-node{border-color:#c7d6e6;background:#ffffffee;box-shadow:0 13px 30px #173c6117}.pivot-node.is-active,.pivot-node:hover{border-color:var(--ax-blue);box-shadow:0 0 0 4px #1565d814,0 16px 34px #173c6122}
+section{padding:clamp(84px,9vw,136px) 0}.sectionhead h2{letter-spacing:-.075em}#build{background:#fff}#build .product-card{border-radius:18px;box-shadow:0 6px 24px #102b4510;border-color:#dce5ef}#lab{background:linear-gradient(135deg,#eaf8fc,#f0efff)}#portfolio{background:#f4f7fb!important}#education{background:var(--ax-ink)!important}#history{background:#fff!important}#consult{background:linear-gradient(135deg,#dff8fb,#efedff)}
+@media(max-width:1180px){.hero-visual{position:relative;right:auto;top:auto;transform:none;margin:55px auto 0}.hero{display:block}.hero-copy{max-width:780px}}
+@media(max-width:620px){.nav{height:70px}.navlinks{display:none}.hero{min-height:auto;padding:80px 0!important}.hero h1{font-size:clamp(42px,11vw,60px)!important;white-space:normal}.hero p{font-size:16px}.hero-visual{width:calc(100vw - 40px);height:330px}.pivot-board{border-radius:20px}}
+/* Readability correction: J2 Lab uses a light surface, never low-contrast white text. */
+#lab{color:#10243a!important;background:linear-gradient(135deg,#edf8fb,#f4f2ff)!important}
+#lab .sectionhead h2{color:#10243a!important}
+#lab .sectionhead p,#lab .sectionhead small{color:#526579!important}
+#lab .sectionhead .grad{background:linear-gradient(100deg,#1468c9,#6a58ce);-webkit-background-clip:text;background-clip:text;color:transparent}
+#lab .labcard,#lab .labtrack .labcard{background:#fff!important;border:1px solid #d4e0eb!important;color:#10243a!important;box-shadow:0 10px 28px #16385d14!important}
+#lab .labtrack .labcard h3{color:#10243a!important}
+#lab .labtrack .labcard p{color:#526579!important}
+#lab .labtrack .lab-category{color:#1468c9!important}
+#lab .labtrack .lab-mark{background:#eaf6fb!important;border:1px solid #a9dcea!important;color:#168eaa!important}
+#lab .labtrack .lab-scope{border-top:1px solid #dfe7ef!important}
+#lab .labtrack .lab-scope-label{color:#617589!important}
+#lab .labtrack .lab-tags span{background:#f3f7fa!important;border:1px solid #d7e3eb!important;color:#536a7d!important}
+#lab .carousel-controls button{color:#1d5b8e!important}
+#lab .carousel-controls button{color:#d7f4f8!important}#lab .carousel-controls button:hover{color:#65d6e7!important}
+.hero{min-height:760px!important;padding:76px 0 84px!important}.hero>.wrap{min-height:610px}.hero-visual{height:430px!important}.hero:before{width:680px;height:680px;transition:left .12s ease-out,top .12s ease-out}.pivot-board{transition:transform .16s ease-out,box-shadow .3s}.pivot-board.is-engaged{box-shadow:0 35px 90px #2d648b32,inset 0 1px #fff}.pivot-node{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s,filter .35s}.pivot-node:not(.is-active){filter:saturate(.8)}.pivot-node:hover{transform:translateY(-6px) scale(1.03);filter:saturate(1.15)}.pivot-core{transition:transform .4s ease,box-shadow .4s}.hero-visual:hover .pivot-core{transform:scale(1.08)}
+@media(max-width:1180px){.hero{min-height:auto!important;padding:84px 0 96px!important}.hero>.wrap{min-height:0}}
+@media(max-width:620px){.hero{padding:64px 0 72px!important}.hero-visual{height:360px!important}}
+/* Hero balance + continuous text motion */
+.hero{min-height:690px!important;padding:92px 0 54px!important}
+.hero>.wrap{min-height:0!important;align-items:center}
+.hero-copy{padding-top:18px}
+.hero-visual{top:auto!important;right:auto!important;transform:none!important;margin:0!important;align-self:center}.pivot-core{background:#f7fbff!important;color:#10243a!important;border:1px solid #9cd9e8}.pivot-core small{color:#36b8d1!important}.pivot-core b{color:#10243a!important}
+.hero .eyebrow{animation:heroLabelPulse 5s ease-in-out infinite!important}
+.hero h1{animation:heroTitleFloat 7s ease-in-out infinite!important}
+.hero h1 .grad{background-size:220% 100%!important;animation:heroGradientSweep 6s ease-in-out infinite!important}
+.hero .hero-copy>p{animation:heroCopyBreath 6s ease-in-out infinite!important}
+.hero .actions{animation:heroActionsLift 6s ease-in-out infinite!important}
+.hero-progress{animation:heroProgressLift 6s ease-in-out infinite!important}
+@keyframes heroLabelPulse{0%,100%{opacity:.78;letter-spacing:.16em}50%{opacity:1;letter-spacing:.21em}}
+@keyframes heroTitleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes heroGradientSweep{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes heroCopyBreath{0%,100%{opacity:.88;transform:translateY(0)}50%{opacity:1;transform:translateY(-2px)}}
+@keyframes heroActionsLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes heroProgressLift{0%,100%{opacity:.72;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@media(max-width:1180px){.hero{min-height:auto!important;padding:86px 0 74px!important}.hero-copy{padding-top:0}.hero-visual{margin:24px auto 0!important}}
+@media(max-width:620px){.hero{padding:70px 0 58px!important}.hero h1{animation:heroTitleFloat 7s ease-in-out infinite!important}}
+@media(prefers-reduced-motion:reduce){.hero .eyebrow,.hero h1,.hero h1 .grad,.hero .hero-copy>p,.hero .actions,.hero-progress{animation:none!important}}
+/* Hero headline: staggered vertical motion with a readable highlight sweep. */
+.hero h1{overflow:visible!important}
+.hero h1 .hero-title-line{display:block;overflow:visible}
+.hero h1 .hero-title-words{display:inline-block;will-change:transform,background-position;animation:heroHeadlineFloat 5.8s ease-in-out infinite,heroHeadlineHighlight 7s ease-in-out infinite!important;background-image:linear-gradient(105deg,#0b1f33 0%,#0b1f33 37%,#65c9ff 49%,#0b1f33 61%,#0b1f33 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .hero-title-line:nth-child(2) .hero-title-words{animation-delay:-2.4s,-3.2s!important;background-image:linear-gradient(105deg,#1565d8 0%,#6c5ce7 34%,#b3f1ff 49%,#6c5ce7 62%,#1565d8 100%)!important;background-size:260% 100%!important}
+@keyframes heroHeadlineFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-8px,0)}}
+@keyframes heroHeadlineHighlight{0%,100%{background-position:0% 50%}52%{background-position:100% 50%}}
+@media(max-width:620px){.hero h1 .hero-title-words{animation-duration:6.4s,7.5s!important}.hero h1 .hero-title-line:nth-child(2) .hero-title-words{animation-delay:-2.6s,-3.5s!important}}
+@media(prefers-reduced-motion:reduce){.hero h1 .hero-title-words{animation:none!important;background-image:none!important;color:inherit!important}.hero h1 .hero-title-line:nth-child(2) .hero-title-words{color:#4f63dc!important}}
+/* Final contrast pass: content must read before the ambient decoration. */
+body{color:#0b1f33!important;background:#f7f9fc}
+main>section .sectionhead h2{color:#0b1f33!important;text-shadow:none!important}
+main>section .sectionhead p{color:#334b63!important;opacity:1!important}
+.hero{background:#f4f8fc!important}.hero h1{color:#0b1f33!important}.hero p{color:#29445e!important;font-weight:500}.hero .eyebrow{color:#075fc4!important}
+#shift{background:#0b1f33!important}#shift .sectionhead h2{color:#fff!important}#shift .sectionhead p{color:#d7e3ee!important}
+#build{background:#fff!important}#build .sectionhead h2,#build .sectionhead p{color:#0b1f33!important}
+#lab{background:#0b1f33!important;color:#fff!important}#lab .sectionhead h2{color:#fff!important}#lab .sectionhead p,#lab .sectionhead small{color:#c8d7e5!important}#lab .sectionhead .grad{background:linear-gradient(100deg,#65d6e7,#a9a0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+#portfolio{background:#f3f6fa!important}#portfolio .sectionhead h2,#portfolio .sectionhead p{color:#0b1f33!important}
+#education{background:#0b1f33!important}#education .sectionhead h2{color:#fff!important}#education .sectionhead p{color:#d7e3ee!important}
+#history{background:#fff!important}#history .sectionhead h2,#history .sectionhead p{color:#0b1f33!important}
+#consult{background:#0b1f33!important;color:#fff!important}#consult .sectionhead h2{color:#fff!important}#consult .sectionhead p{color:#c8d7e5!important}#consult .sectionhead .eyebrow{color:#7ee4ed!important}
+#consult .form{background:#fff!important;color:#0b1f33!important;border-color:#d9e4ed!important}#consult .aside{background:#eef7fa!important;color:#0b1f33!important;border-color:#cfe2ea!important}#consult .aside h3{color:#0b1f33!important}#consult .aside p,#consult .aside li{color:#415c70!important}#consult .aside strong{color:#126b8a!important}#consult .aside li{border-top-color:#cbdde5!important}.consult-motion{border-top-color:#cbdde5!important}.consult-motion text{fill:#31536a!important}.cm-chips span{color:#31536a!important;border-color:#b8d2dd!important}
+.ambient{opacity:.28!important}.ambient:before,.ambient:after{animation:none!important}
+#lab .labcard{opacity:1!important}.labtrack .labcard h3{font-weight:800!important}.labtrack .labcard p{font-weight:500!important}
+.hero .btn.primary,.hero .btn.primary span{color:#fff!important;background:#0b62c9!important}.hero .btn.outline{color:#0b1f33!important;background:#fff!important}.actions .btn{opacity:1!important;text-shadow:none!important}
 </style></head><body>
-<header class="nav"><div class="wrap"><a class="logo" href="#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="#top">Company</a><a href="portfolio.html">Portfolio</a><a href="education.html">Education</a></nav><a class="btn primary" href="#consult">Contact Us</a></div></header>
+<header class="nav"><div class="wrap"><a class="logo" href="#top"><img src="assets/logo.png" alt="JTOCOM"></a><nav class="navlinks" id="nav"><a href="#top">AX PARTNER</a><a href="#build">CAPABILITIES</a><a href="portfolio.html">CASE STUDIES</a><a href="education.html">INSIGHTS</a></nav><a class="btn primary" href="#consult">프로젝트 시작하기 ↗</a></div></header>
 <main id="top"><section class="hero" id="hero"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="hero-copy"><span class="eyebrow">AI AGENCY → WORK TRANSFORMATION</span><h1><span class="hero-title-line"><span class="hero-title-words">웹을 만드는 회사에서</span></span><span class="hero-title-line"><span class="hero-title-words"><span class="grad">기업의 일을 바꾸는 회사</span>로</span></span></h1><p>제이투컴은 AI를 이해하는 개발자이자 교육자입니다. 현장의 반복 업무를 발견하고, 실제로 쓰이는 AI 제품과 자동화로 연결합니다.</p><div class="actions"><a class="btn primary" href="#build">AI 솔루션 살펴보기</a><a class="btn outline" href="#consult">우리 회사도 바꿀 수 있을까?</a></div><div class="hero-progress" aria-hidden="true"><span class="is-active">BUILD</span><i></i><span>CONNECT</span><i></i><span>TRANSFORM</span></div></div><div class="hero-visual" id="heroVisual" aria-label="AI 제작에서 기업 업무 변화로 이어지는 제이투컴의 전환 과정"><div class="pivot-board"><div class="pivot-grid" aria-hidden="true"></div><svg class="pivot-route" viewBox="0 0 560 430" aria-hidden="true"><defs><linearGradient id="pivotGradient" x1="0" x2="1"><stop stop-color="#48c9e8"/><stop offset=".52" stop-color="#5d68ef"/><stop offset="1" stop-color="#24c79a"/></linearGradient></defs><path class="route-base" d="M112 115 C200 115 185 223 278 223 S366 330 458 330"/><path class="route-live" d="M112 115 C200 115 185 223 278 223 S366 330 458 330"/></svg><button class="pivot-node node-build is-active" type="button" data-hero-step="0"><span>01 · AI AGENCY</span><strong>빠르게 만듭니다</strong><small>WEB · CONTENT · AI</small></button><button class="pivot-node node-connect" type="button" data-hero-step="1"><span>02 · CONNECT</span><strong>일과 데이터를 잇습니다</strong><small>PROCESS · DATA · PEOPLE</small></button><button class="pivot-node node-transform" type="button" data-hero-step="2"><span>03 · TRANSFORM</span><strong>기업의 일을 바꿉니다</strong><small>LESS WORK · MORE IMPACT</small></button><div class="pivot-core" aria-hidden="true"><span></span><b>J2</b><small>OPERATING<br>PARTNER</small></div><span class="orbit-dot dot-one" aria-hidden="true"></span><span class="orbit-dot dot-two" aria-hidden="true"></span><span class="result-chip chip-one">반복 업무 ↓</span><span class="result-chip chip-two">실행 속도 ↑</span><span class="result-chip chip-three">운영 역량 ↑</span><div class="pivot-caption"><span>FROM</span><b>제작 중심</b><i></i><span>TO</span><b>성과 중심</b></div></div></div></div></section>
 <section class="dark" id="shift"><div class="ambient" aria-hidden="true"></div><div class="wrap"><div class="twocol"><div class="sectionhead"><span class="eyebrow" style="color:#78dce8">The shift</span><h2 class="shift-title"><span>고객이 선택하는 것은,</span> <span><em>일의 변화</em>입니다.</span></h2><p>홈페이지, 쇼핑몰, 관리자 페이지는 누구나 빠르게 만들 수 있습니다. 제이투컴은 그 다음 질문에서 시작합니다.</p></div><p class="swipe-hint" aria-hidden="true">SWIPE →</p><ol class="signals shift-journey swipe-x" aria-label="업무 변화의 세 단계">
 <li class="signal"><span class="step-number" aria-hidden="true">1</span><span class="shift-stage">STEP 01 · 문제 발견</span><b>쌓인 업무에서, 바꿀 일을 찾습니다.</b><p>견적서·계약서·매뉴얼·보고서의 흐름을 살펴보고, 반복되는 업무와 시간이 걸리는 지점을 파악합니다.</p><span class="shift-outcome">변화의 시작 · 개선할 업무 선정</span></li>
@@ -806,5 +880,89 @@ Object.values(map).forEach(id=>{const el=document.getElementById(id);if(el)io.ob
       : `href="portfolio.html"`;
     return `<a class="work-preview c${i + 1}" ${link}><div class="wp-visual" aria-hidden="true"><span class="wp-icon"><svg viewBox="0 0 24 24">${TYPE_ICON[w.type] || TYPE_ICON.etc}</svg></span><span class="wp-year">${esc(w.period)}</span></div><div class="wp-body"><small>${esc(TYPE_LABEL[w.type] || '기타')}</small><h3>${esc(w.name)}</h3><p>${esc(descOf(w))}</p></div></a>`;
   }).join('');
+})();
+</script><script>
+(()=>{
+ const set=(selector,text)=>{const el=document.querySelector(selector);if(el)el.textContent=text};
+ set('#hero .eyebrow','AX TRANSFORMATION PARTNER · JTOCOM');
+ const lines=document.querySelectorAll('#hero h1 .hero-title-words');
+ if(lines[0]) lines[0].textContent='기업의 일을 진단하고';
+ if(lines[1]) lines[1].innerHTML='<span class="grad">AI로 다시 설계합니다.</span>';
+ set('#hero .hero-copy>p','제이투컴은 업무를 관찰하고, 우선순위를 정하고, 작은 파일럿으로 검증한 뒤 조직에 정착시키는 AX 전환 파트너입니다.');
+ set('#hero .actions .primary','AX 전환 진단 시작하기');
+ set('#hero .actions .outline','전환 영역 살펴보기');
+ set('#build .eyebrow','AX CAPABILITIES');
+ set('#build h2','업무를 바꾸는 네 가지 실행 영역');
+ set('#build .sectionhead p','진단부터 파일럿, 시스템 구축과 조직 확산까지 한 흐름으로 연결합니다.');
+ set('#shift .eyebrow','AX TRANSFORMATION METHOD');
+ set('#shift h2','문제를 찾고, 작게 검증하고, 조직에 정착시킵니다.');
+ const capabilityNames=['업무 전환 진단·자동화','AI 기반 콘텐츠 운영','데이터 기반 의사결정','조직 맞춤형 AI 운영 시스템','AX 도입 교육·정착'];
+ document.querySelectorAll('#build .product-card h3').forEach((el,i)=>{if(capabilityNames[i])el.textContent=capabilityNames[i]});
+ set('#portfolio .eyebrow','SELECTED AX CASES');
+ set('#portfolio h2','만든 결과가 아니라, 바뀐 업무를 봅니다.');
+ set('#portfolio .sectionhead p','웹·플랫폼·업무 시스템 구축 경험을 조직의 생산성과 운영 변화로 연결한 사례입니다.');
+ set('#consult .eyebrow','START YOUR AX JOURNEY');
+ set('#consult h2','우리 조직의 첫 번째 전환 과제를 찾아보세요.');
+ set('#consult .sectionhead p','현재 업무 흐름과 반복되는 문제를 알려주시면, 우선순위와 파일럿 범위를 함께 제안합니다.');
+ set('#consult .aside h3','AX 전환 파트너 JTOCOM');
+ set('#consult .aside>p','문제 정의부터 업무 설계, AI 제품화, 교육과 운영 정착까지 한 팀이 함께합니다.');
+})();
+</script><script>
+/* History copy: show capability evolution toward AX partnership. */
+(()=>{
+ const rows=[
+  ['2026~','AX 전환 파트너로 확장','업무 진단부터 AI 제품화, 파일럿 검증과 조직 정착까지 전환 전 과정을 함께 설계합니다.'],
+  ['2025~','생성형 AI를 업무에 적용','AI 실무 교육과 업무 자동화 프로젝트를 통해 반복 업무를 발견하고 실제 적용으로 연결했습니다.'],
+  ['2024~','AI·데이터 기반 프로젝트 확대','사내 지식 검색, AI 챗봇, 데이터 활용 등 조직의 의사결정과 운영을 돕는 프로젝트를 시작했습니다.'],
+  ['2023~','복잡한 기업·공공 업무 이해','대기업과 공공기관의 다양한 시스템을 구축하며 부서 간 프로세스와 운영 구조를 경험했습니다.'],
+  ['2021~','플랫폼과 업무 시스템 구축','CRM, 인트라넷, 관리자 시스템 등 조직이 매일 사용하는 업무 기반을 설계하고 구축했습니다.'],
+  ['2018~','디지털 제품 구축 역량 확보','회사 설립 이후 웹·플랫폼·콘텐츠 프로젝트를 수행하며 빠르게 만들고 운영하는 실행력을 쌓았습니다.']
+ ];
+ document.querySelectorAll('#history .tl__i').forEach((row,i)=>{
+  if(!rows[i])return;
+  const [year,title,desc]=rows[i];
+  const yearEl=row.querySelector('b'), titleEl=row.querySelector('.small'), descEl=row.querySelector('.tiny');
+  if(yearEl)yearEl.textContent=year;
+  if(titleEl)titleEl.textContent=title;
+  if(descEl)descEl.textContent=desc;
+ });
+})();
+</script><script>
+/* Hero interaction: pointer depth, clickable journey nodes, and calm auto-progression. */
+(()=>{
+ const hero=document.querySelector('#hero'),visual=document.querySelector('#heroVisual'),board=visual?.querySelector('.pivot-board');
+ const nodes=[...document.querySelectorAll('[data-hero-step]')];
+ if(!hero||!visual||!board||!nodes.length)return;
+ let active=0,timer;
+ const activate=(index,manual=false)=>{
+  active=(index+nodes.length)%nodes.length;
+  nodes.forEach((node,i)=>node.classList.toggle('is-active',i===active));
+  const progress=document.querySelectorAll('.hero-progress span');
+  progress.forEach((el,i)=>el.classList.toggle('is-active',i===active));
+  board.dataset.active=String(active);
+  if(manual){clearInterval(timer);timer=setInterval(()=>activate(active+1),5200)}
+ };
+ nodes.forEach((node,i)=>node.addEventListener('click',()=>activate(i,true)));
+ visual.addEventListener('pointermove',event=>{
+  const rect=visual.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width-.5,y=(event.clientY-rect.top)/rect.height-.5;
+  board.style.setProperty('--hero-rx',`${(-y*5).toFixed(2)}deg`);board.style.setProperty('--hero-ry',`${(x*7).toFixed(2)}deg`);board.classList.add('is-engaged');
+  hero.style.setProperty('--pointer-x',`${event.clientX}px`);hero.style.setProperty('--pointer-y',`${event.clientY}px`);
+ });
+ visual.addEventListener('pointerleave',()=>{board.style.setProperty('--hero-rx','0deg');board.style.setProperty('--hero-ry','0deg');board.classList.remove('is-engaged')});
+ activate(0);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>activate(active+1),5200);
+})();
+</script><script>
+/* Section naming pass: navigation labels and content headings use one AX vocabulary. */
+(()=>{
+ const set=(selector,text)=>{const el=document.querySelector(selector);if(el)el.textContent=text};
+ set('#shift .sectionhead h2','문제를 찾고, 작게 검증하고, 조직에 정착시킵니다.');
+ set('#build .sectionhead h2','업무를 바꾸는 네 가지 실행 영역');
+ set('#lab .sectionhead h2','조직의 과제를 해결하는 AI 프로젝트 연구소');
+ set('#portfolio .sectionhead h2','만든 결과가 아니라, 바뀐 업무를 봅니다.');
+ set('#education .sectionhead h2','현장에서 배우고, 조직에 정착시킵니다.');
+ set('#history .sectionhead h2','디지털 제작에서 AX 전환 파트너로');
+ set('#consult .sectionhead h2','우리 조직의 첫 번째 전환 과제를 찾아보세요.');
+ const labels={shift:'Transformation',build:'Capabilities',lab:'AI Lab',history:'Our Journey',consult:'AX Consultation',top:'Back to Top'};
+ document.querySelectorAll('.side-dock a[data-dock]').forEach(link=>{const label=link.querySelector('span'),key=link.dataset.dock;if(label&&labels[key])label.textContent=labels[key];if(labels[key])link.setAttribute('aria-label',labels[key])});
 })();
 </script></body></html>
