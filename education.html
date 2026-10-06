@@ -1178,7 +1178,6 @@ footer .wrap{max-width:1560px;padding:0 clamp(20px,5vw,80px)}
         </div>
         <span class="edu-count" id="eduCount" hidden></span>
       </div>
-      <div class="rv" style="display:flex;justify-content:flex-end;margin-bottom:clamp(24px,3vw,34px)"><select class="select" id="eduTarget" aria-label="교육 대상 선택" style="min-width:180px"></select></div>
     </div>
   </div>
 
@@ -1934,6 +1933,9 @@ const LECTURES = [
     summary:'생성형 AI·데이터 리터러시, 데이터 분석·시각화, 생성형 AI 웹툰 제작, 융합 콘텐츠 제작을 가르치고 있습니다.', thumb:'',
     links:[{ label:'AI와 디지털 리터러시', url:'https://heejeong-kim.github.io/ai-digital-literacy/' },
            { label:'웹프로젝트 실습', url:'https://heejeong-kim.github.io/web-project-practice-2026/' }] },
+  { name:'과학기술경력 포트폴리오 특강', period:'2026.10', target:'공공기관', org:'',
+    summary:'과학기술 분야 경력자를 대상으로 경력을 포트폴리오로 구조화하고 표현하는 방법을 특강으로 진행했습니다.', thumb:'assets/p10.png',
+    links:[{ label:'특강 페이지', url:'https://heejeong-kim.github.io/science-tech-26/#top' }] },
   { name:'2026 KU(건국대학교) 캠퍼스타운 AI Nest 프로그램 강사 및 멘토링', period:'2026.09', target:'대학', org:'',
     summary:'KU 캠퍼스타운 AI Nest 프로그램에서 참여 팀을 대상으로 생성형 AI 활용 수업 및 멘토링을 진행했습니다.', thumb:'',
     links:[{ label:'펫 x AI', url:'https://heejeong-kim.github.io/ku-ai-nest/' },
@@ -1953,7 +1955,7 @@ const LECTURES = [
   { name:'2026년 취업전략 멘토링', period:'2026.02~현재', target:'부트캠프', org:'제로베이스',
     summary:'취업 전략 수립을 주제로 참여자별 1:1 멘토링을 진행했습니다.', thumb:'' },
   { name:'goormedu ICT이노베이션스퀘어 기초학습 콘텐츠강사 - GenAI', period:'2025.12', target:'기업', org:'',
-    summary:'ICT이노베이션스퀘어 기초학습 과정의 생성형 AI(GenAI) 콘텐츠를 기획·강의했습니다.', thumb:'' },
+    summary:'ICT이노베이션스퀘어 기초학습 과정의 생성형 AI(GenAI) 콘텐츠를 기획·강의했습니다.', thumb:'assets/p23.png', keepSlot:true },
   { name:'한국경제 AI크리에이터 아카데미 (생성형 AI)', period:'2025.05~07', target:'기업', org:'',
     summary:'생성형 AI를 활용한 콘텐츠 크리에이팅 실무 과정을 진행했습니다.', thumb:'' },
   { name:'AI활용 프로젝트 실무 강사 – AI 활용 기획부터 MVP까지 1:1 멘토링', period:'2024.01~현재', target:'부트캠프', org:'제로베이스',
@@ -1978,7 +1980,8 @@ const LECTURES = [
 
 /* 썸네일 자동 매핑 — 전체 순서 기준 assets/p1.png … p20.png (파일이 없으면 카드에서 '이미지 준비중'으로 자동 대체) */
 /* 썸네일을 직접 지정한 항목(thumb 값 있음)은 번호 매핑에서 제외 → 기존 p번호 이미지가 밀리지 않음 */
-{ let n = 0; LECTURES.forEach(l => { if (l.thumb) return; n++; l.thumb = 'assets/p' + n + '.png'; }); }
+/* keepSlot:true → 직접 지정한 썸네일을 쓰되 번호 자리는 유지 (뒤 항목 p번호가 당겨지지 않음) */
+{ let n = 0; LECTURES.forEach(l => { if (l.thumb) { if (l.keepSlot) n++; return; } n++; l.thumb = 'assets/p' + n + '.png'; }); }
 
 const eduState = { q:'', target:'all' };
 const eduFiltered = () => LECTURES.filter(l => {
@@ -2014,10 +2017,6 @@ const renderEdu = () => {
   $('#eduEmpty').classList.toggle('is-on', rows.length === 0);
   observeReveals($('#education'));
 };
-/* 교육 대상 필터 = 셀렉트 박스 (전체 ~ 부트캠프, 건수 표시) */
-$('#eduTarget').innerHTML = ['all', ...EDU_TARGETS]
-  .map(t => `<option value="${t}">${t==='all'?'전체 대상':t} (${t==='all' ? LECTURES.length : LECTURES.filter(l => l.target===t).length})</option>`).join('');
-$('#eduTarget').addEventListener('change', e => { eduState.target = e.target.value; renderEdu(); });
 renderEdu();
 
 /* ===================== 교육 히어로 인터랙티브 뉴럴 네트워크 ===================== */
@@ -2271,7 +2270,6 @@ document.addEventListener('click', e => {
   if(e.target.closest('[data-edu-reset]')){
     eduState.q = ''; eduState.target = 'all';
     $('#eduSearch').value = ''; $('#eduSearchClear').hidden = true;
-    $('#eduTarget').value = 'all';
     renderEdu(); return;
   }
 
