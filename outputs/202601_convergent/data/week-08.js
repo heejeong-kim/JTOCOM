@@ -1,0 +1,3 @@
+/* 자동 생성 파일 — 앞 20%는 미리보기, 나머지는 암호화됨 */
+window.WEEK_DATA = window.WEEK_DATA || {};
+window.WEEK_DATA[8] = {"v": 2, "preview": "1~7주차에서 배운 융합 콘텐츠의 개념과 본인의 기획 논리를 바탕으로 한 직무수행능력평가로 진행", "lock": {"kdf": "PBKDF2-SHA256", "iter": 310000, "salt": "rxnYfuxXxdN/8H9cHz5vXw==", "iv": "pyPpiTovYh+ylRxJ", "ct": "fEQnfq7+nSSEOABOBmuZcdZbZgk2ri4Fhokuu1KfO+HJnTtu92bKI2dPUAxqtJw5YYVNuAjWbAEnZztNHqkbD44oWmWiNwVaqI+kiE+qiZVXaxA6rOyEZoTVIvu92HPIQBnDT61TtFzE8F5yN+86rpBXY30emC0srMir6SN5Hfhc5lSexiA9OB4xxBzzBv1UnsTZD2OjAf2YmUcJPLkhSArLABUOZg4+As/xDeNdKqo7aJ3EWOhPA7cC7uyqzZh2VwvuetsMSl8gwp3ZV4FcGKa4b38F1MdOAeJzyGHEHntje9eYKtnkIRyMaMsdhvYotxF8MdIyosG3y1qRp9wajWnqxpVOa7hvvOcwPYk4Mp3wkogoHN7Ta8jdtOdDxYqZzvKW"}};
