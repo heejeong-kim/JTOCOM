@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko" data-theme-key="theme-lecture">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강의교안 | 융합콘텐츠제작 2026-1</title>
+<meta name="description" content="2026년 1학기 융합콘텐츠제작 주차별 강의교안 웹뷰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/lecture.css">
+<script src="../assets/js/common.js"></script>
+</head>
+<body class="lecture">
+<div class="bg-fx" aria-hidden="true"></div>
+<canvas id="net" aria-hidden="true"></canvas>
+
+<a href="#lecture-content" class="sr-skip" style="position:absolute;left:-9999px">본문 바로가기</a>
+
+<!-- 상단 바 -->
+<header class="topbar">
+  <button class="icon-btn" id="sideToggle" type="button" aria-label="주차 목록 열고 닫기" title="주차 목록 (S)">☰</button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-txt"><b>FUSION//LAB</b><span>융합콘텐츠제작 · 2026-1</span></span>
+  </a>
+  <nav class="topnav">
+    <a href="../index.html#weeks">주차별 수업</a>
+    <a href="../index.html#eval">평가</a>
+  </nav>
+  <div class="top-tools">
+    <span class="sys"><i class="dot blink" style="--ph:var(--c-lime)"></i><span id="sysCode">W--</span></span>
+    <button class="icon-btn" id="fsDown" type="button" title="글자 작게" aria-label="글자 작게">A−</button>
+    <button class="icon-btn" id="fsUp" type="button" title="글자 크게" aria-label="글자 크게">A+</button>
+    <button class="icon-btn" id="focusBtn" type="button" title="집중 모드 (F)" aria-label="집중 모드" aria-pressed="false">◎</button>
+    <button class="icon-btn" type="button" onclick="toggleTheme()" title="테마 전환" aria-label="테마 전환" data-theme-label>☀</button>
+    <button class="icon-btn" id="lockBtn" type="button" title="다시 잠그기" aria-label="다시 잠그기" hidden>🔒</button>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- 사이드바가 닫혔을 때 다시 여는 탭 -->
+<button class="side-open" id="sideOpen" type="button" title="주차 목록 열기 (S)" aria-label="주차 목록 열기"><span class="so-ico">▶</span><span class="so-txt">주차 목록</span><span class="so-wk" id="sideOpenWk"></span></button>
+
+<div class="shell">
+  <!-- 주차 선택 -->
+  <aside class="side" id="side" aria-label="주차 선택">
+    <div class="glass side-box">
+      <div class="side-title"><span>CONTENTS // <span id="sideCount"></span></span><button class="side-close" id="sideClose" type="button" title="주차 목록 닫기 (S)" aria-label="주차 목록 닫기">◀ 닫기</button></div>
+      <nav id="weekNav"></nav>
+    </div>
+  </aside>
+
+  <!-- 본문 -->
+  <main class="article" id="lecture-content">
+    <section class="glass hud lec-hero" id="hero">
+      <div class="hero-scan" aria-hidden="true"></div>
+      <div class="loading">LOADING LECTURE DATA…</div>
+    </section>
+    <article class="prose" id="prose"></article>
+    <nav class="pager" id="pager" aria-label="이전 다음 주차"></nav>
+  </main>
+
+  <!-- 목차 -->
+  <aside class="toc" id="toc" aria-label="이 페이지 목차"></aside>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span class="mono">FUSION//LAB · 융합콘텐츠제작 · 2026년 1학기 · 데이터 기반 인터랙티브 동화 제작</span>
+    <span class="mono">← → 주차 이동 · F 집중 모드 · S 목록 · <a href="#top" onclick="scrollTo({top:0});return false;">↑ TOP</a></span>
+  </div>
+</footer>
+
+<script src="../assets/js/weeks.js"></script>
+<script src="../assets/js/notion-render.js"></script>
+<script src="../assets/js/vault.js"></script>
+<script src="../assets/js/lecture.js"></script>
+</body>
+</html>
