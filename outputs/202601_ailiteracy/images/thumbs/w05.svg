@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4c1d95"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+<radialGradient id="r" cx=".8" cy=".2" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="450" fill="url(#g)"/><rect width="800" height="450" fill="url(#r)"/>
+<circle cx="561" cy="171" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="765" cy="174" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="292" cy="221" r="2" fill="#fff" fill-opacity=".25"/><circle cx="580" cy="31" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="538" cy="386" r="2" fill="#fff" fill-opacity=".25"/><circle cx="668" cy="187" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="599" cy="384" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="373" cy="4" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="11" cy="49" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="507" cy="191" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="25" cy="174" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="508" cy="26" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="240" cy="166" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="160" cy="174" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="578" cy="37" r="2" fill="#fff" fill-opacity=".25"/><circle cx="369" cy="42" r="2" fill="#fff" fill-opacity=".25"/><circle cx="164" cy="295" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="690" cy="66" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="748" cy="421" r="2" fill="#fff" fill-opacity=".25"/><circle cx="507" cy="165" r="2" fill="#fff" fill-opacity=".25"/><circle cx="633" cy="199" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="270" cy="397" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="788" cy="233" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="568" cy="387" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="117" cy="343" r="2" fill="#fff" fill-opacity=".25"/><circle cx="561" cy="242" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="75" cy="193" r="2" fill="#fff" fill-opacity=".25"/><circle cx="202" cy="226" r="2" fill="#fff" fill-opacity=".25"/><circle cx="697" cy="3" r="2" fill="#fff" fill-opacity=".25"/><circle cx="597" cy="369" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="252" cy="402" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="177" cy="9" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="81" cy="48" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="716" cy="89" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="131" cy="358" r="2" fill="#fff" fill-opacity=".25"/><circle cx="629" cy="315" r="1.5" fill="#fff" fill-opacity=".25"/><circle cx="687" cy="238" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="768" cy="84" r="2.5" fill="#fff" fill-opacity=".25"/><circle cx="299" cy="279" r="2" fill="#fff" fill-opacity=".25"/><circle cx="757" cy="202" r="1.5" fill="#fff" fill-opacity=".25"/>
+<text x="48" y="120" font-family="'IBM Plex Sans KR','IBM Plex Sans',Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="6" fill="#c4b5fd">WEEK</text>
+<text x="40" y="300" font-family="'IBM Plex Sans KR','IBM Plex Sans',Arial,sans-serif" font-size="200" font-weight="700" fill="#fff" fill-opacity=".95">05</text>
+<rect x="48" y="340" width="90" height="8" rx="4" fill="#c4b5fd"/>
+<line x1="640" y1="225" x2="730" y2="225" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="637" y1="240" x2="688" y2="261" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="628" y1="253" x2="692" y2="317" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="615" y1="262" x2="636" y2="313" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="600" y1="265" x2="600" y2="355" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="585" y1="262" x2="564" y2="313" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="572" y1="253" x2="508" y2="317" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="563" y1="240" x2="512" y2="261" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="560" y1="225" x2="470" y2="225" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="563" y1="210" x2="512" y2="189" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="572" y1="197" x2="508" y2="133" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="585" y1="188" x2="564" y2="137" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="600" y1="185" x2="600" y2="95" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="615" y1="188" x2="636" y2="137" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="628" y1="197" x2="692" y2="133" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<line x1="637" y1="210" x2="688" y2="189" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+<circle cx="600" cy="225" r="26" fill="#fff"/>
+</svg>
