@@ -66,3 +66,45 @@ toTop.addEventListener('click', () => {
 });
 
 // (히어로 배경 모션은 js/hero-fx.js 에서 처리)
+
+// ===== 2~4교시 교안 비밀번호 =====
+// 정적 페이지의 표시만 제어합니다. 비공개 교안에는 서버 인증이 필요합니다.
+const lessonPasswordDigest = 'e78ade4ce722f944316a251dbaa19c5f685801f6f047af0f22c171f7f2cb5c19';
+
+document.querySelectorAll('[data-lesson-password]').forEach(form => {
+  const input = form.querySelector('input');
+  const button = form.querySelector('button');
+  const message = form.querySelector('[role="status"]');
+  const result = form.nextElementSibling;
+
+  input.addEventListener('input', () => {
+    input.removeAttribute('aria-invalid');
+    message.textContent = '';
+  });
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    button.disabled = true;
+
+    try {
+      const bytes = new TextEncoder().encode(input.value.trim());
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      const hex = Array.from(new Uint8Array(hash), byte => byte.toString(16).padStart(2, '0')).join('');
+      if (hex !== lessonPasswordDigest) {
+        input.setAttribute('aria-invalid', 'true');
+        message.textContent = '비밀번호가 일치하지 않아요. 다시 확인해 주세요.';
+        input.focus();
+        return;
+      }
+
+      form.reset();
+      form.hidden = true;
+      result.hidden = false;
+      result.focus();
+    } catch {
+      message.textContent = '비밀번호를 확인할 수 없어요. HTTPS 또는 로컬 웹서버에서 다시 열어 주세요.';
+    } finally {
+      button.disabled = false;
+    }
+  });
+});

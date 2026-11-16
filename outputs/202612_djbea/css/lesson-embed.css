@@ -945,9 +945,18 @@
 .acc-item[open] > summary{border-bottom:1px solid var(--line)}
 .acc-body{background:#f6f7f8}
 .acc-body > .lesson-scope{padding:clamp(20px,2.4vw,36px)}
-.acc-empty{padding:28px;text-align:center;color:var(--ink-500)}
-.acc-empty b{display:block;font-size:16px;color:var(--ink-700)}
-.acc-empty p{margin-top:4px;font-size:14px}
+.lesson-access{padding:clamp(16px,2.4vw,28px);color:var(--ink-700)}
+.lesson-password label{display:block;margin-bottom:8px;font-weight:700;color:var(--ink-900)}
+.lesson-password-controls{display:flex;flex-wrap:wrap;gap:8px}
+.lesson-password-controls input,.lesson-password-controls button{
+  min-height:44px;padding:8px 12px;border:1px solid var(--line);
+  border-radius:var(--radius-sm);font:inherit;
+}
+.lesson-password-controls input{width:min(100%,240px);background:#fff;color:var(--ink-900)}
+.lesson-password-controls button{background:#115e59;color:#fff;font-weight:700;cursor:pointer}
+.lesson-password-controls button:disabled{opacity:.65;cursor:wait}
+.lesson-password-controls input[aria-invalid="true"]{border-color:#a12626}
+.lesson-password-message:not(:empty){margin-top:8px;color:#a12626;font-size:14px}
 .lecture-feedback{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
   padding:clamp(16px,2.4vw,28px);border-top:1px solid #9bd6c9;background:#eaf8f4;
