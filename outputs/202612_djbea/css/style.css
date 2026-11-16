@@ -308,20 +308,15 @@ ul,ol{margin:0;padding:0;list-style:none}
 .pipeline-wrap{margin-top:clamp(56px,6vw,88px)}
 .pipeline-wrap h3{font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.02em}
 .pipeline-wrap > p{margin-top:8px;font-size:15px;color:var(--ink-500)}
-.pipeline{margin-top:28px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;counter-reset:st}
+.pipeline{margin-top:28px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .pipe{
   position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:22px 20px;min-width:0;
 }
-.pipe::before{counter-increment:st;content:"STEP 0" counter(st);font-family:var(--mono);font-size:14px;color:var(--blue-600);font-weight:500}
 .pipe:not(:last-child)::after{
   content:"";position:absolute;right:-13px;top:50%;width:10px;height:10px;border-top:2px solid var(--blue-500);border-right:2px solid var(--blue-500);
   transform:translateY(-50%) rotate(45deg);
 }
 .pipe h4{margin-top:8px;font-size:17px;font-weight:700;line-height:1.4}
-.pipe dl{margin:14px 0 0;display:grid;gap:10px}
-.pipe dt{font-size:14px;font-weight:600;color:var(--ink-500)}
-.pipe dd{margin:2px 0 0;font-size:14px;color:var(--ink-700);line-height:1.55}
-.pipe dd.out{color:var(--green-500);font-weight:600}
 .note{
   margin-top:20px;display:flex;gap:12px;align-items:flex-start;padding:16px 20px;border-radius:var(--radius-md);
   background:#fff8e8;border:1px solid #f6e1ad;font-size:15px;color:#6b4e00;
@@ -530,7 +525,6 @@ ul,ol{margin:0;padding:0;list-style:none}
   margin-top:0;padding:clamp(24px,3vw,48px);border-radius:var(--radius-lg);
   background:linear-gradient(180deg,var(--blue-50),#fff);border:1px solid #d6e4fb;
 }
-.pf-head{max-width:820px}
 .pf-badge{
   display:inline-block;font-size:14px;font-weight:700;color:#fff;padding:6px 14px;border-radius:999px;
   background:var(--grad-light);
@@ -542,16 +536,25 @@ ul,ol{margin:0;padding:0;list-style:none}
 .pipeline-wrap.is-feature .pf-head h3 .hl{background-image:var(--grad-light);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pipeline-wrap.is-feature .pf-head p{margin-top:10px;font-size:clamp(16px,1.3vw,18px);color:var(--ink-700);line-height:1.7}
 .pipeline-wrap.is-feature .pf-head p strong{color:var(--blue-600)}
-.is-feature .pipeline{margin-top:clamp(24px,2.4vw,36px)}
-.is-feature .pipe{padding:24px 22px;border-color:#d6e4fb;box-shadow:0 6px 18px rgba(11,37,86,.05)}
-.is-feature .pipe::before{
-  display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--blue-600);
+.pipeline-wrap.is-feature .pf-head p strong:first-child{color:#115e59}
+.is-feature .pipeline{margin-top:24px}
+.pipe-period-1{--period-color:#115e59;--period-border:#9bd6c9;background:#eaf8f4}
+.pipe-period-2{--period-color:#0a5bd3;--period-border:#b8d3f8}
+.pipe-period-3{--period-color:#6540a4;--period-border:#d6c6ef}
+.pipe-period-4{--period-color:#94440d;--period-border:#ebc9a8}
+.is-feature .pipe{padding:20px 16px;border-color:var(--period-border,#d6e4fb);box-shadow:0 6px 18px rgba(11,37,86,.05)}
+.is-feature .pipe-period{
+  display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--period-color,var(--blue-600));
   padding:3px 10px;border-radius:999px;
 }
 .is-feature .pipe h4{margin-top:12px;font-family:var(--display);font-size:clamp(19px,1.5vw,22px);font-weight:800;letter-spacing:-.02em}
-.is-feature .pipe dt{font-size:14px;margin-top:4px}
-.is-feature .pipe dd{font-size:16px;line-height:1.6}
-.is-feature .pipe dd.out{font-size:16px}
+.pipe-summary,.pipe-output{font-size:16px;line-height:1.6}
+.pipe-summary{margin-top:14px;color:var(--ink-700)}
+.pipe-output{display:flex;align-items:flex-start;gap:8px;margin-top:14px;color:var(--green-500);font-weight:600}
+.pipe-output::before{
+  content:"";flex:none;width:12px;height:12px;margin-top:.42em;border-radius:50%;
+  background:var(--green-500);box-shadow:0 0 0 3px var(--green-100);
+}
 .is-feature .note{font-size:15px}
 
 /* =========================================================
@@ -674,16 +677,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 }
 
 /* 실습 흐름 — Sample / Output 라벨 (동그라미 아이콘) */
-.pipe dt.lbl{
-  display:flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-}
-.pipe dt.lbl::before{content:"";flex:none;width:12px;height:12px;border-radius:50%;box-sizing:border-box}
-.pipe dt.lbl-sample{color:var(--blue-600)}
-.pipe dt.lbl-sample::before{border:3px solid var(--blue-500);background:#fff}
-.pipe dt.lbl-output{color:#0c7c66}
-.pipe dt.lbl-output::before{background:var(--green-500);box-shadow:0 0 0 3px var(--green-100)}
-.pipe dt.lbl + dd{padding-left:20px}
 
 /* 히어로 배지 — 공식 교육명 */
 .hero-badge{max-width:100%}
@@ -934,16 +927,13 @@ img.lesson-thumb{position:absolute;inset:0;z-index:-2;width:100%;height:100%;obj
   .ov-ratio{justify-content:space-around;align-items:center}
 }
 
-/* 실습 흐름 STEP 카드 — SAMPLE / OUTPUT 줄을 카드 간 같은 높이로 정렬 (subgrid) */
+/* 실습 흐름 STEP 카드 — 설명과 결과물을 카드 간 같은 높이로 정렬 (subgrid) */
 .is-feature .pipeline{grid-auto-rows:auto;row-gap:0}
 .is-feature .pipe{
-  display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:0;align-content:start;
+  display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start;
 }
-.is-feature .pipe::before{justify-self:start;align-self:start}
+.is-feature .pipe-period{justify-self:start;align-self:start}
 .is-feature .pipe h4{margin-top:12px}
-.is-feature .pipe dl{display:contents}
-.is-feature .pipe dt.lbl{margin-top:14px}
-.is-feature .pipe dt.lbl + dd{margin:4px 0 0}
 @media (max-width:768px){
   .is-feature .pipeline{row-gap:22px}
   .is-feature .pipe{grid-row:auto;grid-template-rows:auto}

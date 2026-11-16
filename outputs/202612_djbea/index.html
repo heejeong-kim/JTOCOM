@@ -147,14 +147,20 @@
       <div class="pf-head reveal">
         <span class="pf-badge">실습 시나리오</span>
         <h3>하나의 가상 지원사업으로 이어지는 <span class="hl">실습 흐름</span></h3>
-        <p>교시마다 다른 예제가 아니라, <strong>같은 사업을 운영하는 과정</strong>으로 4개 교시가 연결됩니다.</p>
+        <p><strong>1교시</strong>에서 AI 활용과 자동화의 기초를 익히고, <strong>2~4교시</strong>에서 같은 가상 지원사업의 안내부터 결과 보고까지 실습합니다.</p>
       </div>
       <div class="pipeline">
-        <div class="pipe reveal"><h4>사업 안내</h4><dl><dt class="lbl lbl-sample">Sample</dt><dd>사업 공고문, 참여자 명단 Excel</dd><dt class="lbl lbl-output">Output</dt><dd class="out">대상별 안내문, 이메일·문자 초안</dd></dl></div>
-        <div class="pipe reveal d1"><h4>신청 접수</h4><dl><dt class="lbl lbl-sample">Sample</dt><dd>신청서 PDF, 제출서류 목록</dd><dt class="lbl lbl-output">Output</dt><dd class="out">신청 정보 정리표</dd></dl></div>
-        <div class="pipe reveal d2"><h4>서류 검토</h4><dl><dt class="lbl lbl-sample">Sample</dt><dd>증빙자료 PDF, 검토 기준표</dd><dt class="lbl lbl-output">Output</dt><dd class="out">누락·불일치 검토표, 보완 요청문</dd></dl></div>
-        <div class="pipe reveal d3"><h4>실적 관리</h4><dl><dt class="lbl lbl-sample">Sample</dt><dd>월별·사업별 실적 Excel</dd><dt class="lbl lbl-output">Output</dt><dd class="out">사업별 집계표, 성과 분석 차트</dd></dl></div>
-        <div class="pipe reveal d4"><h4>결과 보고</h4><dl><dt class="lbl lbl-sample">Sample</dt><dd>실적 데이터, 보고서 양식</dd><dt class="lbl lbl-output">Output</dt><dd class="out">사업 결과보고서 초안</dd></dl></div>
+        <div class="pipe pipe-period-1 reveal">
+          <span class="pipe-period">1교시</span>
+          <h4>생성형 AI 기초</h4>
+          <p class="pipe-summary">AI와 담당자 역할 분담, 실무 프롬프트 작성, 에이전트 설정</p>
+          <p class="pipe-output">자동화 우선순위 3개, 1순위 업무 실행 카드</p>
+        </div>
+        <div class="pipe pipe-period-2 reveal"><span class="pipe-period">2교시</span><h4>사업 안내</h4><p class="pipe-summary">사업 공고문, 참여자 명단 Excel</p><p class="pipe-output">대상별 안내문, 이메일·문자 초안</p></div>
+        <div class="pipe pipe-period-3 reveal d1"><span class="pipe-period">3교시</span><h4>신청 접수</h4><p class="pipe-summary">신청서 PDF, 제출서류 목록</p><p class="pipe-output">신청 정보 정리표</p></div>
+        <div class="pipe pipe-period-3 reveal d2"><span class="pipe-period">3교시</span><h4>서류 검토</h4><p class="pipe-summary">증빙자료 PDF, 검토 기준표</p><p class="pipe-output">누락·불일치 검토표, 보완 요청문</p></div>
+        <div class="pipe pipe-period-4 reveal d3"><span class="pipe-period">4교시</span><h4>실적 관리</h4><p class="pipe-summary">월별·사업별 실적 Excel</p><p class="pipe-output">사업별 집계표, 성과 분석 차트</p></div>
+        <div class="pipe pipe-period-4 reveal d4"><span class="pipe-period">4교시</span><h4>결과 보고</h4><p class="pipe-summary">실적 데이터, 보고서 양식</p><p class="pipe-output">사업 결과보고서 초안</p></div>
       </div>
       <div class="note reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
@@ -1167,6 +1173,13 @@
         </summary>
         <div class="acc-body">
           <div class="acc-empty"><b>교안 준비 중</b><p>교안이 완성되면 이 자리에 바로 표시됩니다.</p></div>
+          <section class="lecture-feedback" aria-labelledby="lecture-feedback-title">
+            <div>
+              <h3 id="lecture-feedback-title">강의 피드백</h3>
+              <p>오늘 강의에서 도움이 된 점과 개선되었으면 하는 점을 들려주세요.</p>
+            </div>
+            <button class="lecture-feedback-action" type="button" disabled>피드백 제출 준비 중</button>
+          </section>
         </div>
       </details>
     </div>

@@ -948,6 +948,18 @@
 .acc-empty{padding:28px;text-align:center;color:var(--ink-500)}
 .acc-empty b{display:block;font-size:16px;color:var(--ink-700)}
 .acc-empty p{margin-top:4px;font-size:14px}
+.lecture-feedback{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  padding:clamp(16px,2.4vw,28px);border-top:1px solid #9bd6c9;background:#eaf8f4;
+}
+.lecture-feedback h3{font-size:clamp(18px,1.5vw,22px);color:#115e59}
+.lecture-feedback p{margin-top:4px;color:var(--ink-700)}
+.lecture-feedback-action{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:8px 16px;border:1px solid transparent;border-radius:var(--radius-sm);
+  background:#115e59;color:#fff;font:inherit;font-weight:700;
+}
+.lecture-feedback-action:disabled{background:#fff;border-color:#9bd6c9;color:#115e59;cursor:default}
 /* 내장 교안: 목차 고정 위치를 메인 헤더 높이에 맞춤 */
 .lesson-scope .toc{top:92px}
 .lesson-scope .block{scroll-margin-top:96px}
