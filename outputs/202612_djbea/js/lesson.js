@@ -47,7 +47,7 @@ if (toc && tocToggle) {
 }
 
 // ===== 목차: 현재 읽는 섹션 강조 (상위·하위 항목) =====
-const tocLinks = [...document.querySelectorAll('.toc a')];
+const tocLinks = [...document.querySelectorAll('.toc-list a[href^="#"]')];
 const targets = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 const setActive = id => {
   const link = tocLinks.find(a => a.getAttribute('href') === '#' + id);

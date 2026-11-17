@@ -1091,3 +1091,18 @@
 .kit-btn svg{width:18px;height:18px}
 .kit-btn:hover{filter:brightness(1.08)}
 @media (max-width:560px){ .kit-btn{width:100%;justify-content:center} }
+
+/* 교안의 이론과 실습 구분 */
+.lesson-kind{
+  display:inline-flex;flex:none;align-items:center;padding:3px 10px;border-radius:999px;
+  font-family:var(--font);font-size:14px;font-weight:700;line-height:1.5;
+  letter-spacing:normal;white-space:nowrap;vertical-align:middle;
+}
+.lesson-kind-theory{background:#e7f0fd;color:#154b96}
+.lesson-kind-practice{background:#e0f5ee;color:#115e59}
+.lesson-part-practice{border-left:3px solid #73bfae;padding-left:clamp(12px,1.6vw,24px)}
+.lab{border-color:#a4d7cb}
+.lab-head{background:#eaf8f4}
+.lab-head h3 small{color:#115e59}
+.lesson-02 .check-points li{padding-left:16px}
+.lesson-02 .check-points li::before{content:"";top:.65em;left:2px;width:6px;height:6px;background:#0f766e}

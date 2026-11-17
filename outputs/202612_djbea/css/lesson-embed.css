@@ -584,6 +584,10 @@
 .lesson-scope .flow-line li:last-child::before{background:#0b8a7c}
 .lesson-scope .deliver{background:#e3f5f2;color:#0b6157}
 .lesson-scope .check-points li::before{background:#e3f5f2;color:#0b8a7c}
+#lesson-2 .check-points li{padding-left:16px}
+#lesson-2 .check-points li::before{
+  content:"";top:.65em;left:2px;width:6px;height:6px;background:#0f766e;
+}
 .lesson-scope .ch-q span{background:#17191c}
 .lesson-scope .ch-q code{background:#f1f3f5;color:#17191c}
 .lesson-scope .split-good{background:#e3f5f2;border-color:#bfe7e0}
@@ -946,6 +950,8 @@
 .acc-body{background:#f6f7f8}
 .acc-body > .lesson-scope{padding:clamp(20px,2.4vw,36px)}
 .lesson-access{padding:clamp(16px,2.4vw,28px);color:var(--ink-700)}
+.lesson-access[hidden],.lesson-password-result[hidden]{display:none}
+.lesson-access .lesson-password-result{margin:0}
 .lesson-password label{display:block;margin-bottom:8px;font-weight:700;color:var(--ink-900)}
 .lesson-password-controls{display:flex;flex-wrap:wrap;gap:8px}
 .lesson-password-controls input,.lesson-password-controls button{
@@ -1067,3 +1073,18 @@
   .lesson-scope .l-layout > .toc{width:40px;margin-left:-20px}
   .lesson-scope .l-layout > .toc:not(.is-closed){width:300px;margin-left:-280px}
 }
+
+/* 교안의 이론과 실습 구분 */
+.lesson-scope .lesson-kind{
+  display:inline-flex;flex:none;align-items:center;padding:3px 10px;border-radius:999px;
+  font-family:var(--font);font-size:14px;font-weight:700;line-height:1.5;
+  letter-spacing:normal;white-space:nowrap;vertical-align:middle;
+}
+.lesson-scope .lesson-kind-theory{background:#e7f0fd;color:#154b96}
+.lesson-scope .lesson-kind-practice{background:#e0f5ee;color:#115e59}
+.lesson-scope .lesson-part-practice{border-left:3px solid #73bfae;padding-left:clamp(12px,1.6vw,24px)}
+.lesson-scope .lab{border-color:#a4d7cb}
+.lesson-scope .lab-head{background:#eaf8f4}
+.lesson-scope .lab-head h3 small{color:#115e59}
+.lesson-scope .lesson-page-link{margin:0 0 16px;text-align:right}
+.lesson-scope .lesson-page-link a{color:var(--blue-600);font-weight:700;text-decoration:underline}

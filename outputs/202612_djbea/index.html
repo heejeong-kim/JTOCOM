@@ -153,8 +153,8 @@
         <div class="pipe pipe-period-1 reveal">
           <span class="pipe-period">1교시</span>
           <h4>생성형 AI 기초</h4>
-          <p class="pipe-summary">AI와 담당자 역할 분담, 실무 프롬프트 작성, 에이전트 설정</p>
-          <p class="pipe-output">자동화 우선순위 3개, 1순위 업무 실행 카드</p>
+          <p class="pipe-summary">AI와 담당자 역할 분담, 실무 프롬프트 작성, 자동화 후보 도출, 기업지원사업 운영 에이전트 설정</p>
+          <p class="pipe-output">개인 실행 카드, 공통 기업지원사업 운영 에이전트</p>
         </div>
         <div class="pipe pipe-period-2 reveal"><span class="pipe-period">2교시</span><h4>사업 안내</h4><p class="pipe-summary">사업 공고문, 참여자 명단 Excel</p><p class="pipe-output">대상별 안내문, 이메일·문자 초안</p></div>
         <div class="pipe pipe-period-3 reveal d1"><span class="pipe-period">3교시</span><h4>신청 접수</h4><p class="pipe-summary">신청서 PDF, 제출서류 목록</p><p class="pipe-output">신청 정보 정리표</p></div>
@@ -172,7 +172,7 @@
         <h3 class="pf-badge kit-badge">실습 자료 키트</h3>
         <p>교육생 전원이 같은 샘플 파일 6종으로 실습해 도구·파일 형식 차이로 인한 지연을 줄입니다. 모든 자료는 교육용 가상 데이터입니다.</p>
       </div>
-      <a class="kit-cta" href="agent/실습자료_키트.zip" download aria-label="실습 자료 키트 ZIP 파일 download">
+      <a class="kit-cta" href="agent/기업지원사업_에이전트.zip" download aria-label="실습 자료 키트 ZIP 파일 download">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"/></svg>
         <span>키트 download</span><small>ZIP · 6종</small>
       </a>
@@ -197,7 +197,7 @@
       <details class="acc-item" id="lesson-1">
         <summary>
           <img class="acc-thumb" src="asset/thumb/c01.webp" alt="" width="240" height="136" loading="lazy">
-          <span class="acc-title"><span class="acc-head"><span class="acc-no">1교시</span><b>공공기관 업무에 적용하는 생성형 AI</b></span><span class="acc-tasks"><span>AI와 담당자의 역할 분담</span><span>실무 프롬프트 구조화</span><span>업무 자동화 에이전트</span><span>자동화 후보 도출</span></span></span>
+          <span class="acc-title"><span class="acc-head"><span class="acc-no">1교시</span><b>공공기관 업무에 적용하는 생성형 AI</b></span><span class="acc-tasks"><span>AI와 담당자의 역할 분담</span><span>실무 프롬프트 구조화</span><span>자동화 후보 도출</span><span>업무 자동화 에이전트 만들기</span></span></span>
           <span class="acc-min">50분</span>
           <span class="acc-ic" aria-hidden="true"></span>
         </summary>
@@ -229,21 +229,21 @@
               <li><a href="#l1-c23">1-3 업무 유형별 활용 방식</a></li>
               <li><a href="#l1-c24">1-4 실무 프롬프트 구조화</a></li>
               <li><a href="#l1-c25">1-5 보안 유의사항</a></li>
-            </ol>
-          </li>
-          <li><a href="#l1-agent"><span>2</span><em>업무 자동화 에이전트 만들기</em></a>
-            <ol class="toc-sub">
-              <li><a href="#l1-a31">2-1 채팅과 에이전트의 차이</a></li>
-              <li><a href="#l1-a32">2-2 공통 설계 · 버전 관리 · 지침</a></li>
-              <li><a href="#l1-a33">2-3 ChatGPT · Claude 구축 방법</a></li>
-              <li><a href="#l1-a34">2-4 에이전트 안전 수칙</a></li>
-              <li><a href="#l1-a35">2-5 첫 업무 실행</a></li>
-            </ol>
-          </li>
-          <li><a href="#l1-lab"><span>3</span><em>직접 해 보는 AI 업무 실습</em></a>
-            <ol class="toc-sub">
               <li><a href="#l1-p1">실습 1 · 같은 요청, 다른 결과</a></li>
+            </ol>
+          </li>
+          <li><a href="#l1-lab"><span>2</span><em>내 업무에서 자동화 후보 고르기</em></a>
+            <ol class="toc-sub">
               <li><a href="#l1-p3">실습 2 · 자동화 후보 도출</a></li>
+            </ol>
+          </li>
+          <li><a href="#l1-agent"><span>3</span><em>업무 자동화 에이전트 만들기</em></a>
+            <ol class="toc-sub">
+              <li><a href="#l1-a31">3-1 채팅과 에이전트의 차이</a></li>
+              <li><a href="#l1-a32">3-2 공통 설계 · 버전 관리 · 지침</a></li>
+              <li><a href="#l1-a33">3-3 ChatGPT · Claude 구축 방법</a></li>
+              <li><a href="#l1-a34">3-4 에이전트 안전 수칙</a></li>
+              <li><a href="#l1-a35">3-5 공통 에이전트 첫 업무 시험</a></li>
             </ol>
           </li>
           <li><a href="#l1-wrap"><span>4</span><em>정리</em></a>
@@ -265,8 +265,8 @@
         <div class="goals">
           <div class="goal"><b><span class="tn gnum">1</span><span class="gt">AI에게 맡길 일과 사람이 할 일을 구분함</span></b><p>강점·한계와 신호등 기준으로 업무별 활용 수준을 판단</p></div>
           <div class="goal"><b><span class="tn gnum">2</span><span class="gt">실무 프롬프트를 구조화해 작성함</span></b><p>5요소 + 고도화 기법으로 바로 쓰는 결과 얻기</p></div>
-          <div class="goal"><b><span class="tn gnum">3</span><span class="gt">업무 자동화 에이전트를 구축함</span></b><p>프로젝트에 지침·컨텍스트·로컬 폴더를 연결해 하나의 업무 흐름 실행</p></div>
-          <div class="goal"><b><span class="tn gnum">4</span><span class="gt">내 업무 중 AI 활용 후보를 도출함</span></b><p>평가 기준·매트릭스로 우선순위 3개와 실행 카드 작성</p></div>
+          <div class="goal"><b><span class="tn gnum">3</span><span class="gt">내 업무 중 AI 활용 후보를 도출함</span></b><p>평가 기준·매트릭스로 우선순위 3개와 실행 카드 작성</p></div>
+          <div class="goal"><b><span class="tn gnum">4</span><span class="gt">업무 자동화 에이전트를 구축함</span></b><p>프로젝트에 지침·컨텍스트·로컬 폴더를 연결해 하나의 업무 흐름 실행</p></div>
         </div>
         <div class="callout callout-info">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
@@ -277,7 +277,7 @@
       <!-- ========== 2. 개념 ========== -->
       <section class="block reveal" id="l1-concept" aria-labelledby="l1-conceptTitle">
         <div class="block-head">
-          <div><span class="num">1</span><h2 id="l1-conceptTitle">업무에 쓰는 <span class="hl">생성형 AI 기본기</span></h2></div>
+          <div><span class="num">1</span><h2 id="l1-conceptTitle">업무에 쓰는 <span class="hl">생성형 AI 기본기</span></h2></div><span class="lesson-kind lesson-kind-theory">이론</span>
         </div>
 
         <!-- 2-1 -->
@@ -637,17 +637,248 @@
           </div>
 
         </div>
+
+        <!-- 실습 1 -->
+        <div class="lab" id="l1-p1">
+          <div class="lab-head"><h3><small>실습 1</small>같은 요청, 다른 결과 — 프롬프트 비교</h3></div>
+          <div class="lab-body">
+            <p>가상의 「2026 중소기업 디지털 전환 지원사업」 선정 기업에 보낼 안내 문자를 두 가지 방식으로 요청하고 결과를 비교합니다.</p>
+            <div class="steps">
+              <div class="step">
+                <h4>A. 짧게 요청하기</h4>
+                <p>아래 프롬프트를 그대로 붙여 넣고 결과를 확인합니다.</p>
+                <div class="prompt-box is-bad">
+                  <div class="pb-head"><span class="pb-title">프롬프트 A · 정보 부족</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>기업지원사업 선정 안내 문자 써</pre>
+                </div>
+              </div>
+              <div class="step">
+                <h4>B. 5요소로 요청하기</h4>
+                <p>새 대화에서 아래 프롬프트를 붙여 넣습니다.</p>
+                <div class="prompt-box">
+                  <div class="pb-head"><span class="pb-title">프롬프트 B · 5요소 구조화</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre><em>[역할]</em> 너는 대전 지역 공공기관의 기업지원사업 담당자야.
+<em>[맥락]</em> 가상의 '2026 중소기업 디지털 전환 지원사업' 1차 서류심사에서 선정된 기업에 결과를 안내해야 해. 협약 서류 제출 마감은 12월 18일(금) 18시이고, 이메일로 접수해.
+<em>[작업]</em> 선정 기업 대표자에게 보낼 안내 문자를 작성해.
+<em>[형식]</em> 90자 이내 단문 1개, 장문 1개. 장문은 ① 선정 사실 ② 제출 서류 ③ 마감일 ④ 문의처 순서로 써.
+<em>[조건]</em> 공손한 공문체, 이모지 사용 금지. 기업명·담당자명은 <mark>{기업명}</mark> <mark>{담당자명}</mark>처럼 변수로 남기고, 주어지지 않은 정보는 지어내지 말고 <mark>[확인 필요]</mark>로 표시해.</pre>
+                </div>
+              </div>
+              <div class="step">
+                <h4>C. 프롬프트 고도화 기법 5가지 실습</h4>
+                <p>B의 답변을 먼저 보관하세요. 각 기법을 비교할 때는 B를 새 대화에 다시 입력한 뒤, 같은 사례에 아래 추가 프롬프트를 하나씩 붙여 넣습니다.</p>
+                <details class="toggle">
+                  <summary>01. 예시 보여 주기</summary>
+                  <div class="tg-body">
+                    <p>예시를 넣기 전후로 문장 순서와 어조를 비교합니다.</p>
+                    <div class="prompt-box">
+                      <div class="pb-head"><span class="pb-title">추가 프롬프트 · 예시 보여 주기</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>B에서 작성한 안내 문자를 아래 [예시]처럼 결과 → 해야 할 일 → 기한 순서로 다듬어 줘. 예시는 문장 구성과 말투에만 참고하고, 사실은 B에 나온 내용만 써. 단문은 90자 이내로 유지해.
+[예시] 귀사의 1차 서류심사 결과를 안내드립니다. 협약 서류를 {제출기한}까지 이메일로 제출해 주시기 바랍니다.</pre>
+                    </div>
+                  </div>
+                </details>
+                <details class="toggle">
+                  <summary>02. 단계 나누기</summary>
+                  <div class="tg-body">
+                    <p>AI가 근거를 정리한 뒤 멈추는지 확인하고, 확인을 마치면 “초안을 작성해 줘”라고 입력합니다.</p>
+                    <div class="prompt-box">
+                      <div class="pb-head"><span class="pb-title">추가 프롬프트 · 단계 나누기</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>안내 문자를 아직 쓰지 말고, B에서 확인되는 선정 사실·제출 방법·마감일과 확인이 필요한 서류명·문의처를 먼저 표로 정리해 줘. 내가 확인했다고 답하면 그때 단문과 장문을 작성해 줘.</pre>
+                    </div>
+                  </div>
+                </details>
+                <details class="toggle">
+                  <summary>03. 역질문 요청</summary>
+                  <div class="tg-body">
+                    <p>질문이 오면 안내문 양식에서 답을 찾아 입력합니다. 자료에서 확인되지 않으면 “확인 필요로 남겨 줘”라고 답합니다.</p>
+                    <div class="prompt-box">
+                      <div class="pb-head"><span class="pb-title">추가 프롬프트 · 역질문 요청</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>문자를 다시 작성하기 전에, B에 없어서 초안 작성에 필요한 정보를 최대 3개까지 먼저 질문해 줘. 이미 제공된 마감일과 접수 방법은 다시 묻지 말고, 내 답을 받을 때까지 작성을 기다려 줘.</pre>
+                    </div>
+                  </div>
+                </details>
+                <details class="toggle">
+                  <summary>04. 자기 점검 요청</summary>
+                  <div class="tg-body">
+                    <p>AI가 만든 확인 결과를 원본 자료와 직접 대조합니다.</p>
+                    <div class="prompt-box">
+                      <div class="pb-head"><span class="pb-title">추가 프롬프트 · 자기 점검 요청</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>지금까지 작성한 문자 초안을 점검해 줘. 90자 이내 여부, 선정 대상, 마감일, 접수 방법, 임의로 추가한 정보 여부를 확인하고, 항목별로 초안 값·근거·수정 필요 여부를 표로 보여 줘. 근거가 없는 곳은 [확인 필요]로 남겨 줘.</pre>
+                    </div>
+                  </div>
+                </details>
+                <details class="toggle">
+                  <summary>05. 템플릿으로 저장</summary>
+                  <div class="tg-body">
+                    <p>응답을 복사해 두고, 가상의 다른 사업 정보로 변수 2개 이상을 바꿔 새 대화에서 다시 실행합니다.</p>
+                    <div class="prompt-box">
+                      <div class="pb-head"><span class="pb-title">추가 프롬프트 · 템플릿으로 저장</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>이 안내 문자 작성 요청을 다른 사업에서도 쓸 수 있는 복사용 프롬프트로 바꿔 줘. 역할·맥락·작업·형식·조건 5요소를 유지하고, 사업명·심사 단계·대상·제출 서류·기한·방법·문의처는 { } 변수로 남겨 줘. 입력하지 않은 변수는 추정하지 않고 [확인 필요]로 표시하도록 조건에 넣어 줘.</pre>
+                    </div>
+                  </div>
+                </details>
+              </div>
+              <div class="step">
+                <h4>D. 비교 포인트 확인하기</h4>
+                <ul class="check-points">
+                  <li>바로 발송 초안으로 쓸 수 있는 결과는 A와 B 중 무엇인가요?</li>
+                  <li>A에서 AI가 <b>임의로 지어낸 정보</b>(날짜·서류·연락처)가 있나요?</li>
+                  <li>B에서 <b>[확인 필요]</b>로 표시된 부분은 어디인가요?</li>
+                  <li>기법을 적용한 뒤 문장 구성, 확인 과정, 재사용 편의성 중 무엇이 달라졌나요?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="deliver"><b>결과</b>A·B 결과 비교 + 고도화 기법 5가지 적용 결과 + 내가 발견한 차이 한 줄</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 2. 실습 2 ========== -->
+      <section class="block reveal" id="l1-lab" aria-labelledby="l1-labTitle">
+        <div class="block-head">
+          <div><span class="num">2</span><h2 id="l1-labTitle">내 업무에서 <span class="hl">자동화 후보 고르기</span></h2></div><span class="lesson-kind lesson-kind-practice">개별 실습</span>
+        </div>
+
+        <!-- 실습 2 -->
+        <div class="lab" id="l1-p3">
+          <div class="lab-head"><h3><small>실습 2</small>내 업무 중 AI 활용·자동화 후보 도출</h3></div>
+          <div class="lab-body">
+            <p>각자 맡은 업무를 잘게 나누고, 4가지 기준으로 점수를 매겨 <b>효과는 크고 시작하기 쉬운 업무</b>를 고릅니다. 내 업무의 우선순위 3개와 1순위 실행 카드를 만들고, 아래 공통 예시와 비교합니다.</p>
+            <div class="steps">
+
+              <div class="step">
+                <h4>업무를 ‘동사 + 대상’ 단위로 쪼개기</h4>
+                <p>“사업 운영”처럼 크게 적으면 AI 활용 지점이 보이지 않습니다. 실제로 손이 가는 작업 단위로 5~8개를 적습니다.</p>
+                <div class="split">
+                  <div class="split-bad"><b>너무 큼</b><span>기업지원사업 운영</span></div>
+                  <div class="split-arrow" aria-hidden="true">→</div>
+                  <div class="split-good"><b>작업 단위</b><span>공고문 초안 작성</span><span>신청 명단 정리</span><span>제출서류 누락 확인</span><span>보완 안내 문자 작성</span><span>월별 실적 집계</span><span>결과보고서 작성</span></div>
+                </div>
+                <h5 class="bank-title">사업 유형별 업무 예시 — 떠오르지 않으면 골라 쓰세요</h5>
+                <div class="bank">
+                  <div class="bank-col"><b>일자리 지원</b><span>구인·구직 상담 기록 정리</span><span>채용박람회 참가기업 안내</span><span>취업 연계 실적 집계</span><span>참여자 만족도 조사 분석</span><span>사후관리 안내 문자</span></div>
+                  <div class="bank-col"><b>기업 지원</b><span>지원사업 공고문 작성</span><span>신청기업 서류 검토</span><span>선정·보완·탈락 안내</span><span>협약 서류 안내</span><span>사업비 집행 현황 정리</span></div>
+                  <div class="bank-col"><b>창업 지원</b><span>창업 교육 신청자 관리</span><span>멘토링 일정 안내</span><span>입주기업 문의 응대</span><span>창업기업 성과 조사 취합</span><span>성과 발표회 결과 보고</span></div>
+                </div>
+              </div>
+
+              <div class="step">
+                <h4>4가지 기준으로 점수 매기기</h4>
+                <p>각 업무를 1~3점으로 평가합니다. <b>위험도는 높을수록 감점</b>되는 역점수입니다.</p>
+                <table class="tbl score-tbl">
+                  <thead><tr><th scope="col">기준</th><th scope="col">질문</th><th scope="col">3점</th><th scope="col">1점</th></tr></thead>
+                  <tbody>
+                    <tr><td data-label="기준">반복성</td><td data-label="질문">얼마나 자주 하나요?</td><td data-label="3점">매주 이상</td><td data-label="1점">연 1~2회</td></tr>
+                    <tr><td data-label="기준">규칙성</td><td data-label="질문">처리 기준이 명확한가요?</td><td data-label="3점">양식·기준이 정해져 있음</td><td data-label="1점">매번 판단이 달라짐</td></tr>
+                    <tr><td data-label="기준">디지털화</td><td data-label="질문">자료가 파일로 있나요?</td><td data-label="3점">엑셀·한글·PDF</td><td data-label="1점">종이·구두</td></tr>
+                    <tr><td data-label="기준">위험도 (역점수)</td><td data-label="질문">개인정보·의사결정이 얽혀 있나요?</td><td data-label="3점">거의 없음</td><td data-label="1점">핵심적으로 포함</td></tr>
+                  </tbody>
+                </table>
+                <div class="legend-row"><span class="tag-auto">10~12점 · AI 자동화 가능</span><span class="tag-assist">7~9점 · AI 보조 + 사람 검토</span><span class="tag-human">6점 이하 또는 위험도 1점 · 사람 전담</span></div>
+              </div>
+
+              <div class="step">
+                <h4 class="mt-split">AI에게 점수화와 분류 요청하기<span class="mt-note">※ <b>{ }</b> 안을 내 업무로 바꾼 뒤 붙여 넣습니다.</span></h4>
+                <div class="prompt-box">
+                  <div class="pb-head"><span class="pb-title">프롬프트 · 업무 평가와 분류</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre><em>[역할]</em> 너는 공공기관 업무 효율화 컨설턴트야.
+<em>[맥락]</em> 나는 <mark>{부서명}</mark>에서 <mark>{담당 사업 유형: 예) 기업지원사업}</mark>을 운영해. 반복 업무는 아래와 같아.
+- <mark>{업무 1}</mark> (주기: <mark>{예) 매주}</mark>)
+- <mark>{업무 2}</mark> (주기: <mark>{ }</mark>)
+- <mark>{업무 3}</mark> (주기: <mark>{ }</mark>)
+- <mark>{업무 4}</mark> (주기: <mark>{ }</mark>)
+- <mark>{업무 5}</mark> (주기: <mark>{ }</mark>)
+<em>[작업]</em> 각 업무를 아래 4가지 기준으로 1~3점 평가하고 분류해.
+- 반복성: 자주 할수록 높음
+- 규칙성: 처리 기준이 명확할수록 높음
+- 디지털화: 자료가 파일로 있을수록 높음
+- 위험도(역점수): 개인정보·의사결정이 적을수록 높음
+분류는 10~12점 'AI 자동화 가능', 7~9점 'AI 보조+사람 검토', 6점 이하 또는 위험도 1점은 '사람 전담'으로 처리해.
+<em>[형식]</em> 업무 | 반복성 | 규칙성 | 디지털화 | 위험도 | 합계 | 분류 | AI 활용 방법 | 검증 포인트 열의 표로 정리해.
+<em>[조건]</em> 점수마다 근거를 짧게 붙여줘. 정보가 부족해 판단하기 어려운 업무는 나에게 질문해줘.</pre>
+                </div>
+                <div class="example">
+                  <span>예시 결과 (가상 · 기업지원사업 담당자)</span>
+                  <table class="tbl score-ex">
+                    <thead><tr><th scope="col">업무</th><th scope="col">반복</th><th scope="col">규칙</th><th scope="col">디지털</th><th scope="col">위험</th><th scope="col">합계</th><th scope="col">분류</th></tr></thead>
+                    <tbody>
+                      <tr><td data-label="업무">보완 안내 문자 작성</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>11</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
+                      <tr><td data-label="업무">신청 명단 분류·안내문 초안</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>11</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
+                      <tr><td data-label="업무">월별 실적 집계</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">3</td><td data-label="합계"><b>12</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
+                      <tr><td data-label="업무">제출서류 누락 확인</td><td data-label="반복">2</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">1</td><td data-label="합계"><b>9</b></td><td data-label="분류"><span class="tag-human">사람 전담*</span></td></tr>
+                      <tr><td data-label="업무">공고문 초안 작성</td><td data-label="반복">1</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>9</b></td><td data-label="분류"><span class="tag-assist">AI 보조+검토</span></td></tr>
+                      <tr><td data-label="업무">결과보고서 작성</td><td data-label="반복">1</td><td data-label="규칙">2</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>8</b></td><td data-label="분류"><span class="tag-assist">AI 보조+검토</span></td></tr>
+                      <tr><td data-label="업무">신청기업 현장 점검</td><td data-label="반복">1</td><td data-label="규칙">1</td><td data-label="디지털">1</td><td data-label="위험">2</td><td data-label="합계"><b>5</b></td><td data-label="분류"><span class="tag-human">사람 전담</span></td></tr>
+                      <tr><td data-label="업무">선정·탈락 결정</td><td data-label="반복">1</td><td data-label="규칙">2</td><td data-label="디지털">2</td><td data-label="위험">1</td><td data-label="합계"><b>6</b></td><td data-label="분류"><span class="tag-human">사람 전담</span></td></tr>
+                    </tbody>
+                  </table>
+                  <p class="tbl-note">* 제출서류 누락 확인은 개인·기업 정보가 담긴 원본을 다루므로 위험도 1점입니다. 다만 가명 처리한 사본과 체크리스트로 <b>1차 확인만 AI에게 맡기는 방식</b>은 가능하며, 3교시에서 실습합니다.</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <h4>효과 × 난이도 매트릭스로 우선순위 정하기</h4>
+                <p>점수가 높은 업무를 ‘효과(절감 시간·영향)’와 ‘난이도(준비·검증 부담)’로 다시 배치합니다. <b>Quick Win</b> 칸의 업무부터 시작합니다.</p>
+                <p>공통 예시에서는 가상 명단·선정기준·안내문 양식이 이미 있고, 바로 다음 교시에 활용할 수 있어 <b>신청 명단 분류·안내문 초안</b>을 1순위로 정합니다.</p>
+                <div class="matrix" role="img" aria-label="효과와 난이도 2x2 매트릭스: Quick Win, 전략 과제, 틈새 개선, 보류">
+                  <span class="mx-y" aria-hidden="true">↑ 효과</span>
+                  <div class="mx q1"><b>Quick Win</b><small>효과 크고 쉬움 · 바로 시작</small><em>1순위 · 신청 명단 분류·안내문 초안</em><em>월별 실적 집계</em><em>보완 안내 문자</em></div>
+                  <div class="mx q2"><b>전략 과제</b><small>효과 크고 어려움 · 단계적으로</small><em>결과보고서 작성</em><em>서류 1차 확인</em></div>
+                  <div class="mx q3"><b>틈새 개선</b><small>효과 작고 쉬움 · 틈틈이</small><em>문체 변환</em><em>회의 메모 정리</em></div>
+                  <div class="mx q4"><b>보류</b><small>효과 작고 어려움 · 나중에</small><em>현장 점검 기록 자동화</em></div>
+                  <span class="mx-x" aria-hidden="true">난이도 →</span>
+                </div>
+              </div>
+
+              <div class="step">
+                <h4>1순위 업무의 실행 카드 만들기</h4>
+                <p>같은 대화에서 이어서 요청합니다. 완성한 카드에는 내 업무에 적용할 자료·결과물·검증 방법을 남깁니다. 수업에서는 아래 공통 실행 카드로 에이전트를 함께 만듭니다.</p>
+                <div class="prompt-box">
+                  <div class="pb-head"><span class="pb-title">후속 프롬프트 · 실행 카드</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
+<pre>위 표에서 '효과는 크고 바로 시작하기 쉬운' 업무 3개를 골라 우선순위를 매겨.
+그리고 1순위 업무에 대해 아래 형식의 실행 카드를 만들어.
+- 업무명 / 현재 방식과 소요 시간(추정)
+- AI 활용 방법 (입력 자료 → 요청 → 결과물)
+- 바로 쓸 수 있는 프롬프트 (5요소 구조)
+- 검증 방법 (무엇을 원본과 대조할지)
+- 기대 효과
+- 오늘 교육 중 연결되는 교시 (2교시 안내문 · 3교시 서류 검토 · 4교시 실적·보고)</pre>
+                </div>
+                <div class="exec-card">
+                  <div class="ec-head"><span>공통 실행 카드 · 1순위</span><b>신청 명단 분류·안내문 초안</b></div>
+                  <dl>
+                    <div><dt>현재 방식</dt><dd>신청 명단을 선정기준에 대조하고, 분류별 안내문을 작성</dd></div>
+                    <div><dt>AI 활용</dt><dd>가상 참여기업 명단·선정기준·안내문 양식 → 명단 분류와 유형별 초안 작성 → Excel 분류표와 DOCX 안내문</dd></div>
+                    <div><dt>검증</dt><dd>분류별 건수 합계, 접수번호와 문안 일치, 마감일·제출 방법 원본 대조</dd></div>
+                    <div><dt>기대 효과</dt><dd>반복 분류·초안 작성 시간 단축, 이후 서류 검토와 실적 보고에도 같은 프로젝트 활용</dd></div>
+                    <div><dt>공통 에이전트</dt><dd>기업지원사업 운영 에이전트 · 2교시 안내문, 3교시 증빙 검토, 4교시 실적 집계·보고</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="step">
+                <h4><span class="opt-tag">옵션</span>옆 사람과 공유하기</h4>
+                <p>내 1순위 업무와 ‘왜 Quick Win인지’를 한 문장으로 이야기합니다.</p>
+              </div>
+            </div>
+            <div class="deliver"><b>결과</b>업무 평가표 + 우선순위 3개 + 1순위 실행 카드</div>
+            <p>개인 실행 카드는 내 업무 적용용으로 보관합니다. 다음 단계에서는 공통 실행 카드를 바탕으로 전원이 <a href="#l1-agent"><b>기업지원사업 운영 에이전트</b></a>를 함께 만듭니다.</p>
+          </div>
+        </div>
       </section>
 
       <!-- ========== 3. 에이전트 구축 ========== -->
       <section class="block reveal" id="l1-agent" aria-labelledby="l1-agentTitle">
         <div class="block-head">
-          <div><span class="num">2</span><h2 id="l1-agentTitle">업무 자동화 <span class="hl">에이전트 만들기</span></h2></div>
+          <div><span class="num">3</span><h2 id="l1-agentTitle">업무 자동화 <span class="hl">에이전트 만들기</span></h2></div>
         </div>
 
-        <!-- 2-1 -->
-        <div class="sub" id="l1-a31">
-          <h3><i>2-1</i>채팅과 에이전트는 무엇이 다를까?</h3>
+        <p><a href="#l1-p3"><b>실습 2의 공통 실행 카드</b></a>를 바탕으로 수강생 모두 각자의 실습 환경에 <strong>기업지원사업 운영 에이전트</strong>를 만듭니다. 같은 프로젝트에 실습 폴더와 공통 지침을 연결해 2~4교시까지 이어 씁니다.</p>
+
+        <!-- 3-1 -->
+        <div class="sub lesson-part-theory" id="l1-a31">
+          <h3><i>3-1</i>채팅과 에이전트는 무엇이 다를까? <span class="lesson-kind lesson-kind-theory">이론</span></h3>
           <p>채팅(Chat)은 질문에 <strong>답</strong>을 줍니다. 에이전트(AI Agent)는 목표를 받으면 스스로 <strong>계획을 세우고, 내 폴더의 파일을 읽고, 결과물 파일을 만들어 저장</strong>합니다. 사람은 계획을 승인하고 결과를 검토합니다.</p>
           <div class="versus">
             <div class="vs vs-ai">
@@ -676,9 +907,9 @@
           </div>
         </div>
 
-        <!-- 2-2 -->
-        <div class="sub" id="l1-a32">
-          <h3><i>2-2</i>공통 설계 — ‘기업지원사업 운영 에이전트’</h3>
+        <!-- 3-2 -->
+        <div class="sub lesson-part-theory" id="l1-a32">
+          <h3><i>3-2</i>공통 설계 — 기업지원사업 예시와 내 업무 <span class="lesson-kind lesson-kind-theory">이론</span></h3>
           <p>도구와 관계없이 <strong>폴더 구조, 파일 규칙, 지침</strong>을 먼저 설계합니다. 이 설계를 ChatGPT와 Claude 어느 쪽에도 그대로 옮길 수 있습니다.</p>
 
           <h4 class="mini-title mt-split"><span class="mt-main"><span class="mt-num">①</span>실습 폴더 구조</span><span class="mt-note">※ 가상·비식별 데이터만 넣습니다.</span></h4>
@@ -770,14 +1001,14 @@
           </div>
           <div class="callout callout-info">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-            <span><b>내 규칙으로 바꾸기</b> — 직접 정한 규칙은 2-3의 ‘지침 넣기’ 아래에 있는 ③ 에이전트 지침의 3·7·8번(파일 이름, 이력 기록, 최종본)에 내 방식대로 고쳐 넣습니다. 지침에 적어 둔 규칙만 에이전트가 매번 같은 방식으로 지킵니다.</span>
+            <span><b>내 규칙으로 바꾸기</b> — 직접 정한 규칙은 3-3의 ‘지침 넣기’ 아래에 있는 ③ 에이전트 지침의 3·7·8번(파일 이름, 이력 기록, 최종본)에 내 방식대로 고쳐 넣습니다. 지침에 적어 둔 규칙만 에이전트가 매번 같은 방식으로 지킵니다.</span>
           </div>
 
         </div>
 
-        <!-- 2-3 -->
-        <div class="sub" id="l1-a33">
-          <h3><i>2-3</i>도구별 구축 방법</h3>
+        <!-- 3-3 -->
+        <div class="sub lesson-part-practice" id="l1-a33">
+          <h3><i>3-3</i>도구별 구축 방법 <span class="lesson-kind lesson-kind-practice">공통 실습</span></h3>
           <p>같은 설계를 두 도구로 만들어 봅니다. 기관 정책과 계정 환경에 맞는 쪽을 선택합니다.</p>
           <div class="tabs" data-tabs>
             <div class="tab-list" role="tablist" aria-label="에이전트 구축 도구">
@@ -793,7 +1024,7 @@
                 <li><b>새 ChatGPT 데스크톱 앱 준비</b><p>chatgpt.com/download 에서 설치하고 로그인합니다. 이전 앱은 ‘ChatGPT Classic’으로 표시되며 Work가 없으므로, 이름이 ‘ChatGPT’인 앱을 실행합니다.</p></li>
                 <li><b>Work 모드로 전환</b><p>화면 왼쪽 위 전환 메뉴에서 ChatGPT를 고른 뒤, Chat / Work 스위치를 <b>Work</b>로 바꿉니다. Work가 보이지 않으면 앱을 업데이트하고 다시 시작합니다.</p></li>
                 <li><b>프로젝트 만들기</b><p><b>Projects</b>에서 새 프로젝트를 만들고 이름을 ‘기업지원사업 운영 에이전트’로 정합니다.</p></li>
-                <li><b>지침 넣기</b><p>프로젝트 지침(Instructions)에 아래 지침을 붙여 넣습니다. 프로젝트 안의 모든 작업에 자동으로 적용됩니다.</p>
+                <li><b>지침 넣기</b><p>프로젝트 지침(Instructions)에 아래 공통 지침을 붙여 넣습니다. 프로젝트 안의 모든 작업에 자동으로 적용됩니다.</p>
                   <h4 class="mini-title mt-split"><span class="mt-main"><span class="mt-num">③</span>에이전트 지침</span><span class="mt-note">※ 프로젝트 지침(Instructions)에 붙여 넣고, 3·7·8번은 내 관리 규칙으로 바꿉니다.</span></h4>
                   <div class="prompt-box">
                     <div class="pb-head"><span class="pb-title">지침 · 기업지원사업 운영 에이전트</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
@@ -822,7 +1053,7 @@
                 </li>
                 <li><b>로컬 폴더 연결</b><p>프로젝트 메뉴 → <b>Edit project</b> → <b>Add folder</b>로 ‘기업지원사업_에이전트’ 폴더를 연결하고 <b>Make primary</b>로 기본 폴더로 지정합니다.</p></li>
                 <li><b>컨텍스트 추가</b><p>공고문·양식·기준표는 00_지침·양식 폴더에 두거나 프로젝트 파일로 추가합니다. 자주 쓰는 지시는 <b>Skills</b>로 저장해 재사용할 수 있습니다.</p></li>
-                <li><b>계획 모드로 실행</b><p>Plan mode를 켜고 2-5의 <b>업무 지시 브리프</b>를 입력합니다. AI가 보여 주는 단계별 계획을 확인하고 승인합니다.</p></li>
+                <li><b>계획 모드로 실행</b><p>Plan mode를 켜고, 안전 수칙을 확인한 뒤 <a href="#l1-a35"><b>3-5의 첫 업무 지시</b></a>를 입력합니다. AI가 보여 주는 단계별 계획을 확인하고 승인합니다.</p></li>
                 <li><b>승인·확인 설정</b><p>처음에는 확인(Check-in)을 ‘주요 결정마다’로, 파일 변경·외부 전송 같은 작업은 <b>승인 필요</b>로 유지합니다.</p></li>
                 <li><b>결과 검토</b><p>05_결과물 폴더의 엑셀·문서를 열어 검토 기준(건수 합계, 날짜, 문안)을 직접 확인합니다.</p></li>
               </ol>
@@ -838,8 +1069,8 @@
               <ol class="setup">
                 <li><b>Claude 데스크톱 앱 준비</b><p>Claude 데스크톱 앱을 설치하고 로그인한 뒤 <b>Cowork</b>를 엽니다.</p></li>
                 <li><b>프로젝트 만들기</b><p>왼쪽 <b>Projects</b>에서 <b>+</b>를 누르고 <b>Use an existing folder</b>로 ‘기업지원사업_에이전트’ 폴더를 고릅니다. (빈 폴더로 시작하려면 <b>Start from scratch</b>)</p></li>
-                <li><b>이름과 설명</b><p>이름은 ‘기업지원사업 운영 에이전트’, 설명은 “신청 명단 분류·안내문 초안·실적 정리용”처럼 용도를 적습니다. 설명은 백그라운드 작업(Dispatch)이 프로젝트를 고를 때 참고합니다.</p></li>
-                <li><b>지침 넣기</b><p><b>Instructions</b>에 아래 지침을 붙여 넣습니다. 프로젝트 안의 모든 세션에 적용됩니다.</p>
+                <li><b>이름과 설명</b><p>이름은 ‘기업지원사업 운영 에이전트’로 정하고, 설명에는 “참여기업 명단 분류·안내문 초안·증빙 검토·실적 집계와 보고서 작성”이라고 적습니다. 설명은 백그라운드 작업(Dispatch)이 프로젝트를 고를 때 참고합니다.</p></li>
+                <li><b>지침 넣기</b><p><b>Instructions</b>에 아래 공통 지침을 붙여 넣습니다. 프로젝트 안의 모든 세션에 적용됩니다.</p>
                   <h4 class="mini-title mt-split"><span class="mt-main"><span class="mt-num">③</span>에이전트 지침</span><span class="mt-note">※ 프로젝트 지침(Instructions)에 붙여 넣고, 3·7·8번은 내 관리 규칙으로 바꿉니다.</span></h4>
                   <div class="prompt-box">
                     <div class="pb-head"><span class="pb-title">지침 · 기업지원사업 운영 에이전트</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
@@ -867,7 +1098,7 @@
                   </div>
                 </li>
                 <li><b>폴더·링크·컨텍스트 추가</b><p><b>Folders</b>에 필요한 폴더를 더하고, <b>Links</b>에 공고 페이지 URL을 넣습니다. claude.ai에서 만든 프로젝트가 있다면 <b>Projects from Chat</b>으로 연결해 그 지식을 함께 쓸 수 있습니다.</p></li>
-                <li><b>세션 시작 · 업무 지시</b><p>사이드바에서 프로젝트를 선택해 새 세션을 열고, 2-5의 <b>업무 지시 브리프</b>를 입력합니다. 계획을 확인한 뒤 진행을 승인합니다.</p></li>
+                <li><b>세션 시작 · 업무 지시</b><p>사이드바에서 프로젝트를 선택해 새 세션을 열고, 안전 수칙을 확인한 뒤 <a href="#l1-a35"><b>3-5의 첫 업무 지시</b></a>를 입력합니다. 계획을 확인한 뒤 진행을 승인합니다.</p></li>
                 <li><b>결과와 메모리</b><p>만든 파일은 프로젝트 폴더에 저장되고, 세션에서 배운 내용은 <b>프로젝트 메모리</b>에 남아 다음 세션에 이어집니다.</p></li>
                 <li><b>반복 업무로 확장 (심화)</b><p>매주 반복되는 정리 작업은 Dispatch나 예약 작업으로 백그라운드에서 실행하도록 넓혀 갈 수 있습니다.</p></li>
               </ol>
@@ -895,10 +1126,10 @@
           </div>
         </div>
 
-        <!-- 2-4 -->
-        <div class="sub" id="l1-a34">
-          <h3><i>2-4</i>에이전트 안전 수칙</h3>
-          <p>에이전트는 내 폴더의 파일을 직접 읽고 만들기 때문에, <strong>실행 전에 아래 4가지 수칙</strong>을 먼저 확인합니다. 2-5에서 첫 업무를 맡길 때도 이 수칙을 그대로 지킵니다.</p>
+        <!-- 3-4 -->
+        <div class="sub lesson-part-practice" id="l1-a34">
+          <h3><i>3-4</i>에이전트 안전 수칙 <span class="lesson-kind lesson-kind-practice">실습 전 확인</span></h3>
+          <p>에이전트는 내 폴더의 파일을 직접 읽고 만들기 때문에, <strong>실행 전에 아래 4가지 수칙</strong>을 먼저 확인합니다. 3-5에서 첫 업무를 맡길 때도 이 수칙을 그대로 지킵니다.</p>
           <div class="checklist">
             <div class="check"><input type="checkbox" id="l1-ag-s1"><label for="l1-ag-s1"><b>실습 폴더만 연결합니다</b><span>바탕화면·문서 전체가 아니라 ‘기업지원사업_에이전트’ 폴더만</span></label></div>
             <div class="check"><input type="checkbox" id="l1-ag-s2"><label for="l1-ag-s2"><b>원본은 따로 보관합니다</b><span>원본 사본을 백업하고, 결과물은 05_결과물에만 저장</span></label></div>
@@ -906,201 +1137,32 @@
             <div class="check"><input type="checkbox" id="l1-ag-s4"><label for="l1-ag-s4"><b>결과는 사람이 직접 검토합니다</b><span>건수 합계, 날짜·금액, 대상자–문안 매칭 확인</span></label></div>
           </div>
         </div>
-        <!-- 2-5 -->
-        <div class="sub" id="l1-a35">
-          <h3><i>2-5</i>첫 업무 실행 — 명단 분류부터 안내문 초안까지</h3>
-          <p>2-3에서 만든 프로젝트에 <strong>업무 지시 브리프</strong>를 입력해 첫 업무를 맡깁니다. 2-4의 안전 수칙대로 계획을 확인하고 승인한 뒤, 결과물을 직접 검토합니다.</p>
+        <!-- 3-5 -->
+        <div class="sub lesson-part-practice" id="l1-a35">
+          <h3><i>3-5</i>공통 에이전트 첫 업무 시험 <span class="lesson-kind lesson-kind-practice">공통 실습</span></h3>
+          <p>3-3에서 만든 기업지원사업 운영 에이전트로 첫 업무를 시험합니다. 3-4의 안전 수칙대로 계획을 확인하고 승인한 뒤, 결과물을 직접 검토합니다.</p>
+          <h4 class="mini-title">공통 예제 · 명단 분류와 안내문 초안</h4>
+          <p>전원이 공통 실행 카드의 첫 업무인 명단 분류와 안내문 초안을 가상 자료 일부로 시험합니다. 2교시에는 같은 프로젝트로 전체 명단을 처리하고, 3교시에는 신청서·증빙을 검토하며, 4교시에는 실적을 집계하고 보고서를 작성합니다.</p>
           <h4 class="mini-title"><span class="mt-main"><span class="mt-num">①</span>업무 흐름</span></h4>
           <ol class="flow-line">
             <li><b>명단 읽기</b><span>01_신청명단</span></li>
             <li><b>기준 적용</b><span>00_지침·양식/선정기준.txt</span></li>
             <li><b>분류 결과 저장</b><span>05_결과물/YYYYMMDD_분류표_v1.xlsx</span></li>
-            <li><b>안내문 초안 3종</b><span>선정·보완·탈락 .docx</span></li>
+            <li><b>안내문 초안 최대 3종</b><span>선정·보완·탈락 .docx</span></li>
             <li><b>사람이 검토</b><span>건수·날짜·문안 확인</span></li>
           </ol>
-          <h4 class="mini-title mt-split"><span class="mt-main"><span class="mt-num">②</span>업무 지시 브리프</span><span class="mt-note">※ 2-3에서 만든 프로젝트의 새 작업(세션)에 붙여 넣습니다.</span></h4>
+          <h4 class="mini-title mt-split"><span class="mt-main"><span class="mt-num">②</span>업무 지시 브리프</span><span class="mt-note">※ 3-3에서 만든 프로젝트의 새 작업(세션)에 붙여 넣습니다.</span></h4>
           <div class="prompt-box">
             <div class="pb-head"><span class="pb-title">업무 지시 · 브리프 (두 도구 공통)</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
-<pre><em>[결과물]</em> 01_신청명단의 명단을 '선정 / 보완 / 탈락'으로 분류한 엑셀 1개와, 분류별 안내문 초안 3종(.docx)을 05_결과물 폴더에 저장해.
+<pre><em>[결과물]</em> 01_신청명단의 가상 명단에서 내가 승인한 5건을 '선정 / 보완 / 탈락'으로 분류한 엑셀 1개와, 분류별 안내문 초안(최대 3종, .docx)을 05_결과물 폴더에 저장해.
 <em>[자료]</em> 01_신청명단/참여기업_명단.xlsx, 00_지침·양식/선정기준.txt, 00_지침·양식/안내문_양식.docx 파일을 사용해.
-<em>[조건]</em> 분류는 선정기준.txt만 따라. 기준으로 판단할 수 없는 행은 '판단 보류' 시트로 따로 모아. 안내문은 양식의 문체와 구성을 유지해.
-<em>[검토 기준]</em> 분류별 건수의 합이 전체 행 수와 같은지 확인해. 안내문의 마감일·제출 방법은 양식과 같게 처리해. 마지막에 '확인 필요' 목록을 붙여줘.
+<em>[조건]</em> 분류는 선정기준.txt만 따라. 기준으로 판단할 수 없는 행은 '판단 보류' 시트로 따로 모아. 안내문은 유형별로 최대 1건만 만들고 양식의 문체와 구성을 유지해. 시험 대상에 없는 유형은 만들지 마.
+<em>[검토 기준]</em> 분류별 건수의 합이 시험에 사용한 행 수와 같은지 확인해. 안내문의 마감일·제출 방법은 양식과 같게 처리해. 마지막에 '확인 필요' 목록을 붙여줘.
 <em>[진행]</em> 실행 전에 단계별 계획을 먼저 보여 주고, 내가 승인하면 시작해.</pre>
           </div>
         </div>
 
-        <div class="deliver"><b>결과</b>내 컴퓨터의 실습 폴더에 연결된 ‘기업지원사업 운영 에이전트’ 프로젝트 1개 + 첫 업무 흐름 실행 결과 파일</div>
-      </section>
-
-      <!-- ========== 4. 실습 ========== -->
-      <section class="block reveal" id="l1-lab" aria-labelledby="l1-labTitle">
-        <div class="block-head">
-          <div><span class="num">3</span><h2 id="l1-labTitle">직접 해 보는 <span class="hl">AI 업무 실습</span></h2></div>
-        </div>
-
-        <!-- 실습 1 -->
-        <div class="lab" id="l1-p1">
-          <div class="lab-head"><h3><small>실습 1</small>같은 요청, 다른 결과 — 프롬프트 비교</h3></div>
-          <div class="lab-body">
-            <p>가상의 「2026 중소기업 디지털 전환 지원사업」 선정 기업에 보낼 안내 문자를 두 가지 방식으로 요청하고 결과를 비교합니다.</p>
-            <div class="steps">
-              <div class="step">
-                <h4>A. 짧게 요청하기</h4>
-                <p>아래 프롬프트를 그대로 붙여 넣고 결과를 확인합니다.</p>
-                <div class="prompt-box is-bad">
-                  <div class="pb-head"><span class="pb-title">프롬프트 A · 정보 부족</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
-<pre>기업지원사업 선정 안내 문자 써</pre>
-                </div>
-              </div>
-              <div class="step">
-                <h4>B. 5요소로 요청하기</h4>
-                <p>새 대화에서 아래 프롬프트를 붙여 넣습니다.</p>
-                <div class="prompt-box">
-                  <div class="pb-head"><span class="pb-title">프롬프트 B · 5요소 구조화</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
-<pre><em>[역할]</em> 너는 대전 지역 공공기관의 기업지원사업 담당자야.
-<em>[맥락]</em> 가상의 '2026 중소기업 디지털 전환 지원사업' 1차 서류심사에서 선정된 기업에 결과를 안내해야 해. 협약 서류 제출 마감은 12월 18일(금) 18시이고, 이메일로 접수해.
-<em>[작업]</em> 선정 기업 대표자에게 보낼 안내 문자를 작성해.
-<em>[형식]</em> 90자 이내 단문 1개, 장문 1개. 장문은 ① 선정 사실 ② 제출 서류 ③ 마감일 ④ 문의처 순서로 써.
-<em>[조건]</em> 공손한 공문체, 이모지 사용 금지. 기업명·담당자명은 <mark>{기업명}</mark> <mark>{담당자명}</mark>처럼 변수로 남기고, 주어지지 않은 정보는 지어내지 말고 <mark>[확인 필요]</mark>로 표시해.</pre>
-                </div>
-              </div>
-              <div class="step">
-                <h4>C. 비교 포인트 확인하기</h4>
-                <ul class="check-points">
-                  <li>바로 발송 초안으로 쓸 수 있는 결과는 A와 B 중 무엇인가요?</li>
-                  <li>A에서 AI가 <b>임의로 지어낸 정보</b>(날짜·서류·연락처)가 있나요?</li>
-                  <li>B에서 <b>[확인 필요]</b>로 표시된 부분은 어디인가요?</li>
-                </ul>
-              </div>
-            </div>
-            <div class="deliver"><b>결과</b>프롬프트 A·B 결과 비교 + 내가 발견한 차이 한 줄</div>
-          </div>
-        </div>
-
-        <!-- 실습 2 -->
-        <div class="lab" id="l1-p3">
-          <div class="lab-head"><h3><small>실습 2</small>내 업무 중 AI 활용·자동화 후보 도출</h3></div>
-          <div class="lab-body">
-            <p>내가 맡은 사업 운영 업무를 잘게 나누고, 4가지 기준으로 점수를 매겨 <b>효과는 크고 시작하기 쉬운 업무</b>를 고릅니다. 마지막에 1순위 업무의 실행 카드를 만듭니다.</p>
-            <div class="steps">
-
-              <div class="step">
-                <h4>업무를 ‘동사 + 대상’ 단위로 쪼개기</h4>
-                <p>“사업 운영”처럼 크게 적으면 AI 활용 지점이 보이지 않습니다. 실제로 손이 가는 작업 단위로 5~8개를 적습니다.</p>
-                <div class="split">
-                  <div class="split-bad"><b>너무 큼</b><span>기업지원사업 운영</span></div>
-                  <div class="split-arrow" aria-hidden="true">→</div>
-                  <div class="split-good"><b>작업 단위</b><span>공고문 초안 작성</span><span>신청 명단 정리</span><span>제출서류 누락 확인</span><span>보완 안내 문자 작성</span><span>월별 실적 집계</span><span>결과보고서 작성</span></div>
-                </div>
-                <h5 class="bank-title">사업 유형별 업무 예시 — 떠오르지 않으면 골라 쓰세요</h5>
-                <div class="bank">
-                  <div class="bank-col"><b>일자리 지원</b><span>구인·구직 상담 기록 정리</span><span>채용박람회 참가기업 안내</span><span>취업 연계 실적 집계</span><span>참여자 만족도 조사 분석</span><span>사후관리 안내 문자</span></div>
-                  <div class="bank-col"><b>기업 지원</b><span>지원사업 공고문 작성</span><span>신청기업 서류 검토</span><span>선정·보완·탈락 안내</span><span>협약 서류 안내</span><span>사업비 집행 현황 정리</span></div>
-                  <div class="bank-col"><b>창업 지원</b><span>창업 교육 신청자 관리</span><span>멘토링 일정 안내</span><span>입주기업 문의 응대</span><span>창업기업 성과 조사 취합</span><span>성과 발표회 결과 보고</span></div>
-                </div>
-              </div>
-
-              <div class="step">
-                <h4>4가지 기준으로 점수 매기기</h4>
-                <p>각 업무를 1~3점으로 평가합니다. <b>위험도는 높을수록 감점</b>되는 역점수입니다.</p>
-                <table class="tbl score-tbl">
-                  <thead><tr><th scope="col">기준</th><th scope="col">질문</th><th scope="col">3점</th><th scope="col">1점</th></tr></thead>
-                  <tbody>
-                    <tr><td data-label="기준">반복성</td><td data-label="질문">얼마나 자주 하나요?</td><td data-label="3점">매주 이상</td><td data-label="1점">연 1~2회</td></tr>
-                    <tr><td data-label="기준">규칙성</td><td data-label="질문">처리 기준이 명확한가요?</td><td data-label="3점">양식·기준이 정해져 있음</td><td data-label="1점">매번 판단이 달라짐</td></tr>
-                    <tr><td data-label="기준">디지털화</td><td data-label="질문">자료가 파일로 있나요?</td><td data-label="3점">엑셀·한글·PDF</td><td data-label="1점">종이·구두</td></tr>
-                    <tr><td data-label="기준">위험도 (역점수)</td><td data-label="질문">개인정보·의사결정이 얽혀 있나요?</td><td data-label="3점">거의 없음</td><td data-label="1점">핵심적으로 포함</td></tr>
-                  </tbody>
-                </table>
-                <div class="legend-row"><span class="tag-auto">10~12점 · AI 자동화 가능</span><span class="tag-assist">7~9점 · AI 보조 + 사람 검토</span><span class="tag-human">6점 이하 또는 위험도 1점 · 사람 전담</span></div>
-              </div>
-
-              <div class="step">
-                <h4 class="mt-split">AI에게 점수화와 분류 요청하기<span class="mt-note">※ <b>{ }</b> 안을 내 업무로 바꾼 뒤 붙여 넣습니다.</span></h4>
-                <div class="prompt-box">
-                  <div class="pb-head"><span class="pb-title">프롬프트 · 업무 평가와 분류</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
-<pre><em>[역할]</em> 너는 공공기관 업무 효율화 컨설턴트야.
-<em>[맥락]</em> 나는 <mark>{부서명}</mark>에서 <mark>{담당 사업 유형: 예) 기업지원사업}</mark>을 운영해. 반복 업무는 아래와 같아.
-- <mark>{업무 1}</mark> (주기: <mark>{예) 매주}</mark>)
-- <mark>{업무 2}</mark> (주기: <mark>{ }</mark>)
-- <mark>{업무 3}</mark> (주기: <mark>{ }</mark>)
-- <mark>{업무 4}</mark> (주기: <mark>{ }</mark>)
-- <mark>{업무 5}</mark> (주기: <mark>{ }</mark>)
-<em>[작업]</em> 각 업무를 아래 4가지 기준으로 1~3점 평가하고 분류해.
-- 반복성: 자주 할수록 높음
-- 규칙성: 처리 기준이 명확할수록 높음
-- 디지털화: 자료가 파일로 있을수록 높음
-- 위험도(역점수): 개인정보·의사결정이 적을수록 높음
-분류는 10~12점 'AI 자동화 가능', 7~9점 'AI 보조+사람 검토', 6점 이하 또는 위험도 1점은 '사람 전담'으로 처리해.
-<em>[형식]</em> 업무 | 반복성 | 규칙성 | 디지털화 | 위험도 | 합계 | 분류 | AI 활용 방법 | 검증 포인트 열의 표로 정리해.
-<em>[조건]</em> 점수마다 근거를 짧게 붙여줘. 정보가 부족해 판단하기 어려운 업무는 나에게 질문해줘.</pre>
-                </div>
-                <div class="example">
-                  <span>예시 결과 (가상 · 기업지원사업 담당자)</span>
-                  <table class="tbl score-ex">
-                    <thead><tr><th scope="col">업무</th><th scope="col">반복</th><th scope="col">규칙</th><th scope="col">디지털</th><th scope="col">위험</th><th scope="col">합계</th><th scope="col">분류</th></tr></thead>
-                    <tbody>
-                      <tr><td data-label="업무">보완 안내 문자 작성</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>11</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
-                      <tr><td data-label="업무">신청 명단 정리</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>11</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
-                      <tr><td data-label="업무">월별 실적 집계</td><td data-label="반복">3</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">3</td><td data-label="합계"><b>12</b></td><td data-label="분류"><span class="tag-auto">AI 자동화 가능</span></td></tr>
-                      <tr><td data-label="업무">제출서류 누락 확인</td><td data-label="반복">2</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">1</td><td data-label="합계"><b>9</b></td><td data-label="분류"><span class="tag-human">사람 전담*</span></td></tr>
-                      <tr><td data-label="업무">공고문 초안 작성</td><td data-label="반복">1</td><td data-label="규칙">3</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>9</b></td><td data-label="분류"><span class="tag-assist">AI 보조+검토</span></td></tr>
-                      <tr><td data-label="업무">결과보고서 작성</td><td data-label="반복">1</td><td data-label="규칙">2</td><td data-label="디지털">3</td><td data-label="위험">2</td><td data-label="합계"><b>8</b></td><td data-label="분류"><span class="tag-assist">AI 보조+검토</span></td></tr>
-                      <tr><td data-label="업무">신청기업 현장 점검</td><td data-label="반복">1</td><td data-label="규칙">1</td><td data-label="디지털">1</td><td data-label="위험">2</td><td data-label="합계"><b>5</b></td><td data-label="분류"><span class="tag-human">사람 전담</span></td></tr>
-                      <tr><td data-label="업무">선정·탈락 결정</td><td data-label="반복">1</td><td data-label="규칙">2</td><td data-label="디지털">2</td><td data-label="위험">1</td><td data-label="합계"><b>6</b></td><td data-label="분류"><span class="tag-human">사람 전담</span></td></tr>
-                    </tbody>
-                  </table>
-                  <p class="tbl-note">* 제출서류 누락 확인은 개인·기업 정보가 담긴 원본을 다루므로 위험도 1점입니다. 다만 가명 처리한 사본과 체크리스트로 <b>1차 확인만 AI에게 맡기는 방식</b>은 가능하며, 3교시에서 실습합니다.</p>
-                </div>
-              </div>
-
-              <div class="step">
-                <h4>효과 × 난이도 매트릭스로 우선순위 정하기</h4>
-                <p>점수가 높은 업무를 ‘효과(절감 시간·영향)’와 ‘난이도(준비·검증 부담)’로 다시 배치합니다. <b>Quick Win</b> 칸의 업무부터 시작합니다.</p>
-                <div class="matrix" role="img" aria-label="효과와 난이도 2x2 매트릭스: Quick Win, 전략 과제, 틈새 개선, 보류">
-                  <span class="mx-y" aria-hidden="true">↑ 효과</span>
-                  <div class="mx q1"><b>Quick Win</b><small>효과 크고 쉬움 · 바로 시작</small><em>보완 안내 문자</em><em>월별 실적 집계</em><em>신청 명단 정리</em></div>
-                  <div class="mx q2"><b>전략 과제</b><small>효과 크고 어려움 · 단계적으로</small><em>결과보고서 작성</em><em>서류 1차 확인</em></div>
-                  <div class="mx q3"><b>틈새 개선</b><small>효과 작고 쉬움 · 틈틈이</small><em>문체 변환</em><em>회의 메모 정리</em></div>
-                  <div class="mx q4"><b>보류</b><small>효과 작고 어려움 · 나중에</small><em>현장 점검 기록 자동화</em></div>
-                  <span class="mx-x" aria-hidden="true">난이도 →</span>
-                </div>
-              </div>
-
-              <div class="step">
-                <h4>1순위 업무의 실행 카드 만들기</h4>
-                <p>같은 대화에서 이어서 요청합니다. 실행 카드는 교육이 끝난 뒤 내 자리에서 바로 시작하기 위한 메모입니다.</p>
-                <div class="prompt-box">
-                  <div class="pb-head"><span class="pb-title">후속 프롬프트 · 실행 카드</span><button type="button" class="copy-btn" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></button></div>
-<pre>위 표에서 '효과는 크고 바로 시작하기 쉬운' 업무 3개를 골라 우선순위를 매겨.
-그리고 1순위 업무에 대해 아래 형식의 실행 카드를 만들어.
-- 업무명 / 현재 방식과 소요 시간(추정)
-- AI 활용 방법 (입력 자료 → 요청 → 결과물)
-- 바로 쓸 수 있는 프롬프트 (5요소 구조)
-- 검증 방법 (무엇을 원본과 대조할지)
-- 기대 효과
-- 오늘 교육 중 연결되는 교시 (2교시 안내문 · 3교시 서류 검토 · 4교시 실적·보고)</pre>
-                </div>
-                <div class="exec-card">
-                  <div class="ec-head"><span>실행 카드 예시</span><b>보완 안내 문자 작성</b></div>
-                  <dl>
-                    <div><dt>현재 방식</dt><dd>보완 대상자마다 사유를 확인해 문자를 개별 작성, 회차당 약 1~2시간(추정)</dd></div>
-                    <div><dt>AI 활용</dt><dd>가명 처리한 보완 대상 목록(사유 포함) → 사유별 문안 요청 → 대상별 문자 초안</dd></div>
-                    <div><dt>검증</dt><dd>대상자–사유–문안 매칭, 마감일·제출 방법 원본 대조</dd></div>
-                    <div><dt>기대 효과</dt><dd>작성 시간 단축, 안내 문구 통일로 재문의 감소</dd></div>
-                    <div><dt>연결 교시</dt><dd>2교시 대상별 안내문 작성 실습</dd></div>
-                  </dl>
-                </div>
-              </div>
-
-              <div class="step">
-                <h4><span class="opt-tag">옵션</span>옆 사람과 공유하기</h4>
-                <p>내 1순위 업무와 ‘왜 Quick Win인지’를 한 문장으로 이야기합니다.</p>
-              </div>
-            </div>
-            <div class="deliver"><b>결과</b>업무 평가표 + 우선순위 3개 + 1순위 실행 카드</div>
-          </div>
-        </div>
+        <div class="deliver"><b>결과</b>기업지원사업 운영 에이전트 프로젝트 1개 + 가상 자료 시험 결과 + 2~4교시에서 다시 사용할 공통 실습 폴더</div>
       </section>
 
       <!-- ========== 5. 정리 ========== -->
@@ -1112,8 +1174,8 @@
           <div class="ta"><b>1</b><p>AI는 초안·분류·요약·변환을, 사람은 판단·검증·승인·발송을 맡습니다. 기준은 “누가 책임지는가”입니다.</p></div>
           <div class="ta"><b>2</b><p>좋은 결과는 역할·맥락·작업·형식·조건 5요소에서 나오고, 예시·단계·역질문·자기 점검·템플릿으로 더 좋아집니다.</p></div>
           <div class="ta"><b>3</b><p>입력 전에는 개인정보·비공개 여부를, 사용 전에는 원본 대조를 확인합니다.</p></div>
-          <div class="ta"><b>4</b><p>에이전트는 지침·컨텍스트·폴더 권한·업무 흐름 4가지로 만들고, 계획 승인과 결과 검토는 사람이 합니다.</p></div>
-          <div class="ta"><b>5</b><p>자동화 후보는 반복성·규칙성·디지털화·위험도로 평가하고, Quick Win부터 시작합니다.</p></div>
+          <div class="ta"><b>4</b><p>자동화 후보는 반복성·규칙성·디지털화·위험도로 평가하고, Quick Win부터 시작합니다.</p></div>
+          <div class="ta"><b>5</b><p>에이전트는 지침·컨텍스트·폴더 권한·업무 흐름 4가지로 만들고, 계획 승인과 결과 검토는 사람이 합니다.</p></div>
         </div>
 
         <div class="sub" id="l1-quiz" style="margin-top:28px">
@@ -1131,7 +1193,7 @@
         <div class="next">
           <div>
             <small>다음 교시</small>
-            <strong>2교시 사업 참여자 안내문 및 행정문서 작성</strong>
+            <strong><a href="#lesson-2">2교시 사업 참여자 안내문 및 행정문서 작성</a></strong>
             <p>오늘 만든 실행 카드를 떠올리며, 가상 참여자 100명 명단으로 선정·보완·탈락 대상별 안내문을 만듭니다.</p>
           </div>
         </div>
