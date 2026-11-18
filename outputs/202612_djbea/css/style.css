@@ -1000,3 +1000,44 @@ img.lesson-thumb{animation:kenburns 16s ease-in-out infinite alternate;transform
   .kit.kit-in > .kit-cta{grid-column:1;grid-row:auto;justify-self:stretch;justify-content:center}
   .kit.kit-in > .kit-list{grid-template-columns:minmax(0,1fr)}
 }
+
+/* 1교시 시작 전 준비 */
+.class-prep{margin-top:28px;border:1px solid #b8d3f8;border-radius:var(--radius-md);background:#fff;overflow:hidden}
+.class-prep > summary{
+  display:flex;align-items:center;gap:12px;padding:clamp(16px,2vw,24px);
+  background:#fff0d8;color:#92400e;font-size:clamp(18px,1.8vw,24px);font-weight:800;
+  cursor:pointer;list-style:none;line-height:1.5;
+}
+.class-prep > summary::-webkit-details-marker{display:none}
+.class-prep > summary:focus-visible{outline:2px solid #92400e;outline-offset:-4px}
+.class-prep-icon{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:#b45309;color:#fff;font-size:20px}
+.class-prep-chevron{flex:none;width:10px;height:10px;margin-left:auto;border-right:2px solid;border-bottom:2px solid;transform:rotate(45deg);transition:transform .2s}
+.class-prep[open] .class-prep-chevron{transform:rotate(225deg)}
+.class-prep-content{padding:clamp(16px,2vw,24px)}
+.class-prep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:16px}
+.class-prep-kit{grid-column:1 / -1}
+.class-prep-grid > div{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafcfe}
+.class-prep h4{font-size:18px;color:#154b96}
+.class-prep p{margin-top:8px;color:var(--ink-700);font-size:16px;line-height:1.7}
+.class-prep-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.class-prep-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #b8d3f8;border-radius:10px;background:#f3f7fe;color:#154b96;font-size:15px;font-weight:700}
+.class-prep-links a:hover{background:#e7f0fd}
+.class-prep-links a:focus-visible{outline:2px solid #154b96;outline-offset:3px}
+@media(max-width:768px){.class-prep-grid{grid-template-columns:minmax(0,1fr)}}
+
+.class-prep .kit-list{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media(max-width:1024px){.class-prep .kit-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.class-prep .kit-list{grid-template-columns:minmax(0,1fr)}}
+
+.lesson-docs{margin-top:clamp(36px,4vw,56px);scroll-margin-top:96px}
+.lesson-docs > h3{font-size:clamp(24px,2.2vw,30px);font-weight:800;color:var(--ink-900);margin-bottom:20px}
+.lesson-docs > .lesson-acc{margin-top:0}
+
+.class-prep-links a{gap:8px}
+.class-prep-links a img{width:24px;height:24px;object-fit:contain;flex:none}
+
+.class-prep .class-prep-notice{padding:14px 16px;border-left:4px solid #b76b08;border-radius:8px;background:#fff4d6;color:#70400b;line-height:1.8}
+.class-prep-notice strong{color:#743600;font-weight:800}
+
+.class-prep-grid > div{display:flex;flex-direction:column}
+.class-prep-grid > div:not(.class-prep-kit) > .class-prep-links{margin-top:auto;padding-top:16px}

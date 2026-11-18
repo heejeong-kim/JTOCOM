@@ -71,11 +71,29 @@ toTop.addEventListener('click', () => {
 // 정적 페이지의 표시만 제어합니다. 비공개 교안에는 서버 인증이 필요합니다.
 const lessonPasswordDigest = 'e78ade4ce722f944316a251dbaa19c5f685801f6f047af0f22c171f7f2cb5c19';
 
+const isLocalLessonPreview = location.protocol === 'file:' ||
+  ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+
+if (isLocalLessonPreview) {
+  // 로컬 미리보기: 2~4교시만 펼침 (1교시는 기본 닫힘)
+  document.querySelectorAll('.lesson-acc > .acc-item').forEach(lesson => {
+    if (lesson.id !== 'lesson-1') lesson.open = true;
+  });
+}
+
 document.querySelectorAll('[data-lesson-password]').forEach(form => {
+  const access = form.closest('.lesson-access');
+  const result = access.closest('.acc-body').querySelector('.lesson-password-result');
+  const showLesson = () => {
+    access.hidden = true;
+    result.hidden = false;
+  };
+
+  // 로컬에서 열어도 비밀번호를 거치도록 함 (예전의 로컬 자동 열림 제거)
+
   const input = form.querySelector('input');
   const button = form.querySelector('button');
   const message = form.querySelector('[role="status"]');
-  const result = form.nextElementSibling;
 
   input.addEventListener('input', () => {
     input.removeAttribute('aria-invalid');
@@ -98,8 +116,7 @@ document.querySelectorAll('[data-lesson-password]').forEach(form => {
       }
 
       form.reset();
-      form.hidden = true;
-      result.hidden = false;
+      showLesson();
       result.focus();
     } catch {
       message.textContent = '비밀번호를 확인할 수 없어요. HTTPS 또는 로컬 웹서버에서 다시 열어 주세요.';

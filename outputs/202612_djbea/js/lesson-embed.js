@@ -153,3 +153,27 @@
     });
   });
 })();
+
+// ===== 닫힌 시연 토글(details.demo-box) 안으로 가는 링크: 먼저 펼친 뒤 이동 =====
+(() => {
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    let t = null;
+    try { t = document.querySelector(a.getAttribute('href')); } catch { return; }
+    const box = t && t.closest('details.demo-box');
+    if (box && !box.open) box.open = true;
+  }, true);
+})();
+
+// ===== 참고 박스(.law): 머리 영역 아무 곳이나 눌러도 펼치기/접기 =====
+// (펼치기 버튼·원문 보기 링크는 각자 원래 동작을 유지)
+document.querySelectorAll('.law-head').forEach(head => {
+  const btn = head.querySelector('.law-toggle');
+  if (!btn) return;
+  head.classList.add('is-clickable');
+  head.addEventListener('click', e => {
+    if (e.target.closest('a, button')) return;
+    btn.click();
+  });
+});
