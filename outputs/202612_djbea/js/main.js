@@ -74,12 +74,7 @@ const lessonPasswordDigest = 'e78ade4ce722f944316a251dbaa19c5f685801f6f047af0f22
 const isLocalLessonPreview = location.protocol === 'file:' ||
   ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 
-if (isLocalLessonPreview) {
-  // 로컬 미리보기: 2~4교시만 펼침 (1교시는 기본 닫힘)
-  document.querySelectorAll('.lesson-acc > .acc-item').forEach(lesson => {
-    if (lesson.id !== 'lesson-1') lesson.open = true;
-  });
-}
+// 1~4교시 모두 기본 닫힘 · 펼치면 비밀번호 입력
 
 document.querySelectorAll('[data-lesson-password]').forEach(form => {
   const access = form.closest('.lesson-access');
