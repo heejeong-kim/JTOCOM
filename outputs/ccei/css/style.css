@@ -484,3 +484,6 @@
 /* 커리큘럼 표 하단 안내문 */
 .agenda-wrap + .agenda-note { margin: 14px 0 0; white-space: nowrap; }
 @media (max-width: 1100px) { .agenda-wrap + .agenda-note { white-space: normal; } }
+
+/* 사전 안내 삭제 후 진행 흐름과 표 사이 간격 */
+.process + .agenda-wrap { margin-top: 36px; }
