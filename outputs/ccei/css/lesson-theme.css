@@ -1,0 +1,237 @@
+/* =========================================================
+   교안 페이지 테마 — '센터 블루 + 형광펜 교안 노트'
+   · 색: 센터 브랜드 블루를 주색으로, 핵심 문장만 형광펜(노랑)으로 표시
+   · 글꼴: 제목 SUIT, 본문 Pretendard (모노스페이스는 프롬프트에만)
+   · 구조: 왼쪽 고정 목차 + 오른쪽 본문(읽기 좋은 폭)
+   ========================================================= */
+.lesson-page {
+  --accent: #24549c;          /* 센터 블루 */
+  --accent-dark: #1b3f78;     /* 진한 블루 */
+  --ink: #1b2330;             /* 본문 잉크 */
+  --muted: #5c6679;
+  --warm: #f3f6fb;            /* 옅은 블루 그레이 면 */
+  --line: #dde3ec;            /* 구분선 */
+  --marker: #ffe266;          /* 형광펜 */
+  --f-head: "SUIT Variable", "SUIT", "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --f-body: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "IBM Plex Sans KR", sans-serif;
+  background: #fff; color: var(--ink); font-family: var(--f-body);
+  font-feature-settings: "tnum" 0;
+}
+.lesson-page h1, .lesson-page h2, .lesson-page h3, .lesson-page h4,
+.lesson-page .block h2, .lesson-page .sub-title { font-family: var(--f-head); letter-spacing: -.03em; color: var(--ink); }
+
+/* 모노스페이스 라벨 제거 → 본문 글꼴 숫자 */
+.lesson-page .n, .lesson-page .ref, .lesson-page .h-when, .lesson-page .ui-mock .mk, .lesson-page .phone .mk,
+.lesson-page .ui-terms em, .lesson-page .vs::before, .lesson-page .v-step i, .lesson-page .lesson-kicker { font-family: var(--f-head) !important; letter-spacing: 0; }
+.lesson-page .prompt pre { font-family: "D2Coding", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+/* ---------- 표지 ---------- */
+.lesson-page .lesson-hero { padding: 64px 0 56px; background: #fff; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 520px; gap: 64px; align-items: end; }
+.hero-step { margin: 0 0 18px; color: var(--muted); font: 600 16px/1 var(--f-head); }
+.hero-step span:first-child { color: var(--accent); font-weight: 800; }
+.hero-dur { margin-left: 14px; padding-left: 14px; border-left: 1px solid var(--line); }
+.lesson-page .lesson-hero h1 { margin: 0; font-size: clamp(40px, 4.4vw, 64px); font-weight: 800; line-height: 1.1; letter-spacing: -.045em; }
+.lesson-page .lesson-lead { max-width: 34em; margin: 18px 0 0; color: var(--muted); font-size: 18px; line-height: 1.65; }
+.hero-goals { padding: 26px 28px; border-radius: 16px; background: var(--ink); color: #fff; }
+.hero-goals h2 { margin: 0 0 14px !important; color: #fff !important; font-size: 17px !important; font-weight: 700; }
+.hero-goals ol { margin: 0; padding: 0; list-style: none; counter-reset: g; }
+.hero-goals li { position: relative; padding: 9px 0 9px 36px; border-top: 1px solid rgba(255,255,255,.14); font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.9); counter-increment: g; word-break: keep-all; }
+.hero-goals li::before { content: counter(g); position: absolute; left: 0; top: 9px; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--marker); color: var(--ink); font: 800 13px/1 var(--f-head); }
+
+/* ---------- 목차 + 본문 2단 ---------- */
+.lesson-page .lesson-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); column-gap: 72px; padding-top: 56px; padding-bottom: 96px; counter-reset: sec; }
+.lesson-page .lesson-body > *:not(.toc) { grid-column: 2; min-width: 0; }
+.toc { grid-column: 1; grid-row: 1 / span 30; align-self: start; position: sticky; top: 112px; }
+.toc p { margin: 0 0 12px; color: var(--muted); font: 700 14px/1 var(--f-head); }
+.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: t; border-left: 2px solid var(--line); }
+.toc li { counter-increment: t; }
+.toc a { display: flex; gap: 10px; margin-left: -2px; padding: 9px 0 9px 16px; border-left: 2px solid transparent; color: var(--muted); font-size: 15px; line-height: 1.4; transition: color .15s ease, border-color .15s ease; }
+.toc a::before { content: counter(t); color: #9aa5b5; font: 700 14px/1.4 var(--f-head); min-width: 12px; }
+.toc a:hover { color: var(--ink); }
+.toc a.is-active { color: var(--accent); border-left-color: var(--accent); font-weight: 700; }
+.toc a.is-active::before { color: var(--accent); }
+
+/* ---------- 섹션 머리 ---------- */
+.lesson-page .lesson-body > .block { margin-top: 0; padding-top: 0; border-top: 0; counter-increment: sec; }
+.lesson-page .lesson-body > .block + .block { margin-top: 88px; padding-top: 72px; border-top: 1px solid var(--line); }
+.lesson-page .lesson-body > .block::before { display: none; }
+.lesson-page .block-step { display: block; padding: 0; border-radius: 0; background: none; color: var(--accent); font: 700 15px/1 var(--f-head); }
+.lesson-page .block > h2 { display: flex; align-items: baseline; gap: 16px; margin: 12px 0 20px; font-size: 34px; font-weight: 800; }
+.lesson-page .block > h2::before { content: counter(sec); flex: none; color: var(--accent); font: 800 34px/1 var(--f-head); }
+.lesson-page .sub-title { margin: 40px 0 14px !important; font-size: 21px !important; font-weight: 700; }
+.lesson-page .block p { color: #3f4859; font-size: 17px; line-height: 1.8; }
+.lesson-page .block > p, .lesson-page .block > h3 + p { max-width: 46em; }
+
+/* ---------- 핵심: 상자 대신 형광펜 ---------- */
+.lesson-page .callout.tip { margin: 36px 0 0; padding: 0; border: 0; border-radius: 0; background: none; color: var(--ink); font-size: 19px; font-weight: 600; line-height: 1.85;
+  text-decoration: underline; text-decoration-color: var(--marker); text-decoration-thickness: .5em; text-underline-offset: -.28em; text-decoration-skip-ink: none; }
+.lesson-page .callout.tip b { font-weight: 800; }
+.lesson-page .callout.tip > b:first-child { display: inline-block; margin-right: 12px; padding: 3px 10px; border-radius: 5px; background: var(--ink); color: #fff; font: 700 13px/1.4 var(--f-head); text-decoration: none; vertical-align: 3px; }
+.lesson-page .callout.warn { border-left-width: 3px; border-radius: 6px; }
+
+/* ---------- 카드·면 정리: 그림자 줄이고 위계별 모서리 ---------- */
+.lesson-page .case, .lesson-page .fu, .lesson-page .terms > div, .lesson-page .plan-card, .lesson-page .tile { box-shadow: none; }
+.lesson-page .case { border-radius: 12px; padding: 22px; }
+.lesson-page .case-tag { color: var(--muted); }
+.lesson-page .case h3 { font-size: 20px; }
+.lesson-page .terms > div { border-radius: 8px; border-color: var(--line); }
+.lesson-page .terms b { color: var(--accent); font-family: var(--f-head); font-size: 17px; }
+.lesson-page .ui-group { border-radius: 12px; }
+.lesson-page .ui-group summary { background: #fff; border-bottom: 1px solid var(--line); font-family: var(--f-head); font-size: 17px; }
+.lesson-page .ui-group summary em { background: var(--warm); color: var(--accent); }
+.lesson-page .ui-table q { background: #f3f6fb; }
+
+/* 통계: 같은 색 카드 4개 → 흰 면 + 큰 숫자, 그림자 카드만 진하게 */
+.lesson-page .stats { gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.lesson-page .stat { padding: 24px 24px 20px; border-radius: 0; background: #fff !important; color: var(--ink); border-right: 1px solid var(--line); }
+.lesson-page .stat:last-child { border-right: 0; background: var(--ink) !important; color: #fff; }
+.lesson-page .st-src { color: var(--muted); opacity: 1; }
+.lesson-page .stat:last-child .st-src { color: rgba(255,255,255,.7); }
+.lesson-page .st-num { color: var(--accent); font: 800 40px/1.05 var(--f-head); letter-spacing: -.04em; }
+.lesson-page .stat:last-child .st-num { color: var(--marker); }
+.lesson-page .stat p { color: #3f4859 !important; font-size: 14.5px; }
+.lesson-page .stat:last-child p { color: rgba(255,255,255,.85) !important; }
+.lesson-page .st-cite { border-top-color: var(--line); color: var(--muted); }
+.lesson-page .st-cite a { color: var(--accent); }
+.lesson-page .stat:last-child .st-cite { border-top-color: rgba(255,255,255,.2); color: rgba(255,255,255,.65); }
+.lesson-page .stat:last-child .st-cite a { color: #fff; }
+
+/* 현업 활용: 상단 굵은 선 4개 반복 → 가는 테두리 + 제목 강조 */
+.lesson-page .fu { border-top-width: 1px; border-radius: 12px; }
+.lesson-page .fu b { font-family: var(--f-head); font-size: 17px; }
+.lesson-page .fu.warn { border-color: #ecd9a8; }
+
+/* 히스토리 */
+.lesson-page .history li.now::after { border-color: var(--ink); background: var(--ink); }
+.lesson-page .history .now .h-when { color: var(--ink); }
+.lesson-page .history li.key::after { border-color: var(--accent); background: var(--marker); }
+.lesson-page .h-when { font-size: 14px; font-weight: 800; }
+
+/* VS 비교 */
+.lesson-page .vs-lane { border-radius: 14px; }
+.lesson-page .new .vs-tag { background: var(--accent); }
+.lesson-page .vs-compare b { color: var(--accent); font-family: var(--f-head); }
+.lesson-page .vs::before { background: var(--marker); color: var(--ink); box-shadow: 0 0 0 5px #fff; }
+
+/* 오늘의 핵심 */
+.lesson-page .wrapup { border: 0; border-radius: 16px; background: var(--warm); padding: 34px 38px; }
+.lesson-page .wrapup .summary li { font-size: 17px; }
+
+.lesson-page .sources { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); line-height: 1.8; }
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 1200px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .lesson-page .lesson-body { grid-template-columns: 1fr; }
+  .lesson-page .lesson-body > *:not(.toc) { grid-column: 1; }
+  .toc { display: none; }
+  .lesson-page .stats { grid-template-columns: 1fr 1fr; }
+  .lesson-page .stat:nth-child(2) { border-right: 0; }
+  .lesson-page .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 600px) {
+  .lesson-page .block > h2 { font-size: 26px; } .lesson-page .block > h2::before { font-size: 26px; }
+  .lesson-page .stats { grid-template-columns: 1fr; } .lesson-page .stat { border-right: 0; border-bottom: 1px solid var(--line); }
+  .lesson-page .callout.tip { font-size: 17px; }
+}
+/* 보정: 핵심 문장 안 강조어도 잉크색 */
+.lesson-page .callout.tip b { color: var(--ink); }
+
+/* ---------- 목차 열림·닫힘 ---------- */
+.toc-toggle { display: flex; align-items: center; gap: 8px; width: 100%; margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: 700 15px/1 var(--f-head); cursor: pointer; text-align: left; transition: border-color .15s ease, background .15s ease; }
+.toc-toggle span { flex: 1; }
+.toc-toggle svg { width: 16px; height: 16px; color: var(--muted); transition: transform .2s ease; }
+.toc-toggle:hover { border-color: var(--accent); }
+.toc-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.toc.is-closed .toc-toggle svg { transform: rotate(-90deg); }
+.toc.is-closed ol { display: none; }
+/* 닫으면 목차 칸이 좁아지고 본문이 넓어짐 */
+.lesson-page .lesson-body { transition: grid-template-columns .25s ease; }
+.lesson-page .lesson-body.toc-closed { grid-template-columns: 96px minmax(0, 1fr); column-gap: 40px; }
+/* 좁은 화면: 본문 위에 접힌 목차로 표시 */
+@media (max-width: 1200px) {
+  .toc { display: block; position: static; grid-row: auto; margin-bottom: 32px; }
+  .lesson-page .lesson-body.toc-closed { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .lesson-page .lesson-body, .toc-toggle svg { transition: none; } }
+
+/* =========================================================
+   목차: 사이드 칸 제거 → 본문 100% 폭, 오른쪽 플로팅 아이콘
+   ========================================================= */
+.lesson-page .lesson-body { display: block; }
+.lesson-page .lesson-body > * { grid-column: auto; }
+.toc-float { position: fixed; right: 28px; bottom: 92px; z-index: 51; }
+.toc-fab { width: 54px; height: 54px; display: grid; place-content: center; justify-items: center; gap: 1px; border: 0; border-radius: 50%; background: var(--ink); color: #fff; box-shadow: 0 10px 24px rgba(27,35,48,.28); cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.toc-fab svg { width: 19px; height: 19px; }
+.toc-fab span { font: 700 10px/1 var(--f-head); letter-spacing: .02em; }
+.toc-fab:hover, .toc-fab.is-open { background: var(--accent); }
+.toc-fab:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; }
+.toc-panel { position: absolute; right: 0; bottom: 66px; width: 280px; padding: 18px 10px 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 18px 44px rgba(27,35,48,.18); }
+.toc-panel p { margin: 0 0 8px 12px; color: var(--muted); font: 700 13px/1 var(--f-head); }
+.toc-panel ol { margin: 0; padding: 0; list-style: none; counter-reset: t; }
+.toc-panel li { counter-increment: t; }
+.toc-panel a { display: flex; gap: 12px; padding: 10px 12px; border-radius: 8px; color: #3f4859; font-size: 15px; line-height: 1.4; }
+.toc-panel a::before { content: counter(t); min-width: 14px; color: #9aa5b5; font: 800 14px/1.4 var(--f-head); }
+.toc-panel a:hover { background: var(--warm); color: var(--ink); }
+.toc-panel a.is-active { background: var(--warm); color: var(--accent); font-weight: 700; }
+.toc-panel a.is-active::before { color: var(--accent); }
+.toc-panel a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+/* TOP 버튼과 같은 크기·간격으로 위아래 정렬 */
+.lesson-page .to-top { background: var(--accent); }
+@media (max-width: 600px) { .toc-float { right: 16px; bottom: 72px; } .toc-fab { width: 46px; height: 46px; } .toc-panel { bottom: 56px; width: min(280px, calc(100vw - 32px)); } }
+
+/* =========================================================
+   목차·TOP 도크: '1 바이브코딩이란' 제목 줄 오른쪽에 나란히, 스크롤 따라 고정
+   ========================================================= */
+.toc-float.dock { position: sticky; top: 104px; right: auto; bottom: auto; z-index: 51; height: 0; display: flex; justify-content: flex-end; }
+.dock-btns { display: flex; gap: 10px; margin-top: 18px; }
+.dock .toc-fab, .lesson-page .to-top.in-dock { width: 54px; height: 54px; }
+.lesson-page .to-top.in-dock { position: static; opacity: 1; visibility: visible; transform: none; }
+.dock .toc-panel { top: 82px; bottom: auto; right: 0; }
+/* 좁은 화면: 오른쪽 아래 고정으로 전환 */
+@media (max-width: 900px) {
+  .toc-float.dock { position: fixed; top: auto; right: 16px; bottom: 16px; height: auto; }
+  .dock-btns { flex-direction: column; margin-top: 0; }
+  .dock .toc-panel { top: auto; bottom: 116px; }
+  .dock .toc-fab, .lesson-page .to-top.in-dock { width: 46px; height: 46px; }
+}
+/* TOP 버튼: 형광펜 노랑 + 잉크 아이콘 (목차 버튼과 구분) */
+.lesson-page .to-top, .lesson-page .to-top.in-dock { background: var(--marker); color: var(--ink); box-shadow: 0 10px 24px rgba(27,35,48,.18); }
+.lesson-page .to-top:hover { background: var(--accent); color: #fff; }
+
+/* 목차·TOP 버튼을 본문 오른쪽 여백(전용 칸)에 세로로 배치 — 교안 내용을 덮지 않음 */
+@media (min-width: 901px) {
+  .lesson-page .lesson-body, .lesson-page .hero-grid { padding-right: 140px; }   /* 오른쪽 48px 여백 + 버튼 전용 칸 92px */
+  .toc-float.dock { margin-right: -92px; }
+  .dock-btns { flex-direction: column; margin-top: 18px; }
+  .dock .toc-panel { top: 0; right: 66px; }                                       /* 패널은 버튼 왼쪽으로 펼침 */
+}
+/* 보정: 높이 0 도크 안에서 버튼이 눌리지 않도록 */
+.toc-float.dock { align-items: flex-start; }
+.dock-btns { align-self: flex-start; flex: none; }
+.dock-btns > * { flex: none; }
+/* 본문 문단: 폭 제한 해제 → 본문 영역 전체 폭 사용 */
+.lesson-page .block > p, .lesson-page .block > h3 + p { max-width: none; }
+
+/* 목차 버튼: TOP 버튼과 같은 세로줄(브라우저 오른쪽 28px)에 고정 */
+@media (min-width: 901px) {
+  .toc-float.dock { position: fixed; top: 108px; right: 28px; height: auto; margin-right: 0; z-index: 51; }
+  .dock-btns { margin-top: 0; }
+  .dock .toc-panel { top: 0; right: 66px; }
+}
+
+/* 표지: 제목과 '이 시간이 끝나면' 상단 시작점 맞춤, 목표는 한 줄씩 보이도록 박스 확장 */
+.hero-grid { grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: start; }
+.lesson-page .lesson-hero h1 { margin-top: -6px; font-size: clamp(40px, 3.6vw, 56px); }
+.hero-goals li { white-space: nowrap; }
+@media (max-width: 1200px) { .hero-grid { grid-template-columns: 1fr; } .hero-goals li { white-space: normal; } }
+/* 1교시 라벨 복원: 라벨 상단 = 목표 박스 상단 */
+.hero-step { margin: 0 0 14px; line-height: 1.2; }
+.hero-step + h1 { margin-top: 0 !important; }
+
+/* 목차 버튼: TOP 버튼 바로 위에 붙임 */
+.toc-float.dock { position: fixed; top: auto !important; right: 28px; bottom: 92px; height: auto; margin-right: 0; z-index: 51; }
+.dock-btns { margin-top: 0; }
+.dock .toc-panel { top: auto; bottom: 0; right: 66px; }
+@media (max-width: 600px) { .toc-float.dock { right: 16px; bottom: 72px; } .dock .toc-panel { right: 56px; } }

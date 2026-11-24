@@ -9,15 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
 </head>
 <body>
   <div class="page">
     <header class="nav">
       <div class="nav-inner">
-        <a class="brand" href="https://ccei.creativekorea.or.kr/daejeon/main.do" aria-label="대전창조경제혁신센터 대표 페이지">
+        <a class="brand" href="index.html" aria-label="강의 메인으로">
           <img src="https://ccei.creativekorea.or.kr/daejeon/resources/images/common/logo_daejeon.png" alt="대전창조경제혁신센터 로고">
+          <span class="nav-title">실무 중심 바이브코딩 교육</span>
         </a>
-        <span class="nav-caption">임직원 실무교육 · 2026</span>
+        <a class="nav-cta" href="#materials">강의교안 바로가기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </header>
 
@@ -27,7 +29,6 @@
           <div class="hero-content">
             <div class="eyebrow">PRACTICAL VIBE CODING</div>
             <h1 id="hero-title">현장의 아이디어를<br><span class="highlight">작동하는 결과물</span>로</h1>
-            <p class="hero-copy">실무 개선 과제를 찾고, 기획 문서로 구체화한 뒤<br><strong>바이브코딩으로 직접 만들고 테스트하는 하루</strong></p>
             <div class="facts" aria-label="교육 정보">
               <span class="fact">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17"/></svg>
@@ -41,25 +42,34 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M23 11h-6"/></svg>
                 대상 · 임직원 약 30명
               </span>
+              <span class="fact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg>
+                AI 도구 · OpenAI Codex
+              </span>
             </div>
           </div>
 
-          <div class="visual" aria-hidden="true">
-            <div class="visual-orbit"></div><i class="visual-dot dot-one"></i><i class="visual-dot dot-two"></i>
-            <div class="workflow">
-              <div class="workflow-head">
-                <div class="window-controls"><i></i><i></i><i></i></div>
-                <span class="file-label">WORKFLOW / 01—03</span>
-              </div>
-              <h3 class="workflow-title">아이디어에서 작동하는 도구까지</h3>
-              <p class="workflow-sub">실무 개선 과제를 작은 결과물로 구체화합니다</p>
-              <div class="steps">
-                <div class="step"><span class="step-no">01</span><span><b class="step-name">실무 과제 찾기</b><small class="step-detail">반복되는 업무와 불편 살펴보기</small></span><svg class="step-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h15M13 6l6 6-6 6"/></svg></div>
-                <div class="step"><span class="step-no">02</span><span><b class="step-name">기획 문서 만들기</b><small class="step-detail">필요한 기능과 흐름 정리하기</small></span><svg class="step-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h15M13 6l6 6-6 6"/></svg></div>
-                <div class="step"><span class="step-no">03</span><span><b class="step-name">바이브코딩 · 테스트</b><small class="step-detail">만들고 직접 확인하며 다듬기</small></span><svg class="step-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12.5 10 17l9-10"/></svg></div>
-              </div>
-              <div class="workflow-foot"><span>개인 노트북 지참 · GPT 유료 이용 환경</span><span class="status">실습 중심</span></div>
+          <div class="visual">
+            <div class="hero-glow glow-a" aria-hidden="true"></div><div class="hero-glow glow-b" aria-hidden="true"></div>
+            <div class="visual-orbit" aria-hidden="true"><i class="orbit-node node-a"></i><i class="orbit-node node-b"></i></div>
+            <div class="word-cloud" role="list" aria-label="바이브코딩 전에 알아두면 좋은 IT 기본 말">
+              <span class="cloud-word c1" tabindex="0" style="--x:50%;--y:47%;--s:40px;--d:0.0s" data-tip="말로 지시하면 AI가 코드를 만들어 주는 개발 방식">바이브코딩<em>Vibe Coding</em></span>
+              <span class="cloud-word c2" tabindex="0" style="--x:25%;--y:21%;--s:26px;--d:-0.7s" data-tip="AI에게 주는 지시문. 공문처럼 목적·조건을 분명히">프롬프트<em>Prompt</em></span>
+              <span class="cloud-word c0" tabindex="0" style="--x:77%;--y:22%;--s:32px;--d:-1.4s" data-tip="프로그램끼리 정보를 주고받는 약속. 식당의 주문서">API</span>
+              <span class="cloud-word c3" tabindex="0" style="--x:52%;--y:10%;--s:18px;--d:-2.1s" data-tip="만든 서비스를 인터넷에 올려 URL로 공유하는 일">배포<em>Deploy</em></span>
+              <span class="cloud-word c3" tabindex="0" style="--x:12%;--y:44%;--s:23px;--d:-2.8s" data-tip="요청을 받아 처리하는 컴퓨터. 식당의 주방">서버<em>Server</em></span>
+              <span class="cloud-word c4" tabindex="0" style="--x:87%;--y:47%;--s:19px;--d:-3.5s" data-tip="사용자가 보고 누르는 화면. 식당의 홀">프론트엔드<em>Frontend</em></span>
+              <span class="cloud-word c3" tabindex="0" style="--x:50%;--y:67%;--s:21px;--d:-4.2s" data-tip="기관이 누구나 쓰도록 공개한 데이터">공공데이터<em>Open Data</em></span>
+              <span class="cloud-word c2" tabindex="0" style="--x:24%;--y:78%;--s:21px;--d:-4.9s" data-tip="정보를 표처럼 쌓아두는 저장소. 식당의 창고">데이터베이스<em>DB</em></span>
+              <span class="cloud-word c1" tabindex="0" style="--x:76%;--y:77%;--s:22px;--d:-5.6s" data-tip="공개된 API. 공공데이터포털이 대표적">OpenAPI</span>
+              <span class="cloud-word c5" tabindex="0" style="--x:7%;--y:30%;--s:16px;--d:-6.3s" data-tip="서비스의 메뉴와 화면을 나무 구조로 정리한 지도">메뉴 구조도<em>IA</em></span>
+              <span class="cloud-word c0" tabindex="0" style="--x:10%;--y:66%;--s:17px;--d:-7.0s" data-tip="오늘 실습에 쓰는 AI 코딩 도구">Codex</span>
+              <span class="cloud-word c5" tabindex="0" style="--x:93%;--y:30%;--s:16px;--d:-7.7s" data-tip="핵심 기능만 담아 먼저 만들어 보는 첫 버전">MVP<em>최소 기능 제품</em></span>
+              <span class="cloud-word c2" tabindex="0" style="--x:88%;--y:66%;--s:16px;--d:-8.4s" data-tip="사용자가 화면을 거쳐 목적을 이루는 이동 순서">유저 플로우<em>User Flow</em></span>
+              <span class="cloud-word c5" tabindex="0" style="--x:50%;--y:90%;--s:15px;--d:-9.1s" data-tip="문제가 생긴 위치와 이유. AI에게 그대로 전달">오류 메시지<em>Error</em></span>
+              <span class="cloud-word c5" tabindex="0" style="--x:30%;--y:4%;--s:15px;--d:-9.8s" data-tip="무엇을·누구를 위해·어떻게 만들지 정리한 서비스 설계도">PRD<em>요구사항 정의서</em></span>
             </div>
+            <p class="cloud-caption" aria-live="polite"><b>바이브코딩</b><span>단어에 마우스를 올리면 뜻이 보여요</span></p>
           </div>
         </div>
       </section>
@@ -69,25 +79,40 @@
           <div><span class="section-kicker">PROGRAM</span><h2 id="curriculum-title">강의 커리큘럼</h2></div>
           <span class="section-index">01 / CURRICULUM</span>
         </div>
-        <div class="curriculum-intro">
-          <p>실제 웹·앱 사례를 살펴보고, 실무 개선 과제를 Codex로 구현해 테스트하는 하루 과정이다.</p>
-          <span>교육 7시간 · 1교시부터 7교시까지</span>
+
+        <div class="tracks" aria-label="직무별 실무 개선 샘플 과제">
+          <div class="track t01"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20h16"/><path class="ic-bar b1" d="M7 17V11"/><path class="ic-bar b2" d="M12 17V6"/><path class="ic-bar b3" d="M17 17V9"/></svg></span><span class="track-tag">지원사업 운영</span><b>평가점수 집계·순위 도구</b></div>
+          <div class="track t02"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l8-3v18M12 21h8V9l-8-2.5M3 21h18"/><path class="ic-win w1" d="M7 9h2"/><path class="ic-win w2" d="M7 13h2"/><path class="ic-win w3" d="M7 17h2"/><path class="ic-win w4" d="M15 12h2"/><path class="ic-win w5" d="M15 16h2"/></svg></span><span class="track-tag">보육·공간 운영</span><b>입주기업 현황판</b></div>
+          <div class="track t03"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><g class="ic-spin"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.4 10.8 15.6 7.2M8.4 13.2l7.2 3.6"/></g></svg></span><span class="track-tag">오픈이노베이션</span><b>수요-기술 매칭 보드</b></div>
+          <div class="track t04"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><g class="ic-swing"><path d="M9 3h6v4H9z"/><rect x="5" y="7" width="14" height="14" rx="2"/><circle cx="12" cy="12.5" r="2.2"/><path d="M8.5 18c.8-1.6 2-2.3 3.5-2.3s2.7.7 3.5 2.3"/></g></svg></span><span class="track-tag">행사·네트워킹</span><b>참가자 관리·명찰 출력</b></div>
+          <div class="track t05"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><g class="ic-needle"><path d="M12 5.5 14 12h-4Z" fill="currentColor"/><path d="M12 18.5 10 12h4Z"/></g></svg></span><span class="track-tag">원스톱 상담</span><b>지원사업 추천 길잡이</b></div>
+          <div class="track t06"><span class="track-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path class="ic-line" d="M7 15l3.5-4 3 2.5L19 7"/></svg></span><span class="track-tag">성과관리</span><b>보육기업 성과 대시보드</b></div>
+        </div>
+
+        <ol class="process" aria-label="교육 진행 흐름"><li><span>01</span>개념·사례</li><li><span>02</span>첫 결과물</li><li><span>03</span>문제 정의·PRD</li><li><span>04</span>화면·데이터 구현</li><li><span>05</span>핵심 기능 구현</li><li><span>06</span>기능 보완·QA</li><li><span>07</span>발표·시연</li></ol>
+        <div class="setup-panel" aria-label="교육 시작 전 실습 환경 설정">
+          <h3>사전 안내</h3>
+          <div class="setup-content">
+            <p>개인 노트북 · 실습 계정 로그인 · Codex 접속 및 실행 확인 · 인터넷 연결 점검</p>
+            <p>Codex 접속 경로와 계정·실습 파일 위치를 교육 전에 안내하고, 강의 시작 전 접속과 실행 상태를 확인합니다.</p>
+          </div>
         </div>
         <div class="agenda-wrap">
           <table class="agenda">
-            <thead><tr><th>교시</th><th>주제</th><th>주요 내용</th><th>실습 결과</th></tr></thead>
+            <thead><tr><th>교시</th><th>커리큘럼</th><th>배우는 것</th><th>실습</th><th>산출물</th></tr></thead>
             <tbody>
-              <tr><td>1교시</td><td><strong>사례로 시작하기</strong></td><td>3D 대전 지도, 세금술술, 온셋을 보며 제작 배경·사용자 문제·핵심 기능 살펴보기</td><td>사례별 문제와 기능 메모</td></tr>
-              <tr><td>2교시</td><td><strong>Codex와 과제 탐색</strong></td><td>Codex 작업 흐름을 익히고, 반복 업무에서 개선 과제와 사용자를 선택하기</td><td>개선 과제 카드</td></tr>
-              <tr><td>3교시</td><td><strong>기획 문서 만들기</strong></td><td>사용자·입력·처리·결과·완료 기준을 정리하고 구현 작업을 나누기</td><td>간단 기획서와 작업 계획</td></tr>
-              <tr><td>4교시</td><td><strong>첫 버전 구현</strong></td><td>핵심 기능부터 만들고 화면에서 동작을 확인하기</td><td>프로토타입 첫 버전</td></tr>
-              <tr><td>5교시</td><td><strong>기능 연결과 확장</strong></td><td>입력·처리·결과 흐름을 연결하고 작은 단위로 실행·수정하기</td><td>작동하는 기본 흐름</td></tr>
-              <tr><td>6교시</td><td><strong>개선·테스트·디버깅</strong></td><td>사용자 관점에서 기능을 보완하고, 완료 기준에 따라 테스트·오류 수정을 진행하기</td><td>개선된 프로토타입과 테스트 기록</td></tr>
-              <tr><td>7교시</td><td><strong>결과 검토와 시연</strong></td><td>다양한 입력과 변경 내용을 확인하고 결과물을 공유한 뒤 다음 개선 과제를 정리하기</td><td>시연 및 후속 개선 계획</td></tr>
+              <tr class="precheck-row"><td>사전 점검</td><td><strong>실습 환경 확인</strong></td><td>노트북·계정·인터넷 연결</td><td>Codex 접속·실행 및 프로젝트 열기</td><td>실습 준비 완료</td></tr>
+              <tr><td>1교시</td><td><strong>바이브코딩 개념과 사례</strong></td><td><ul class="agenda-points"><li>바이브코딩의 개념과 흐름</li><li>서비스 구조·UI·기획 문서 용어</li><li>요구사항이 화면과 기능으로 구현된 방식</li></ul></td><td>바이브 코딩 웹앱 사례 분석</td><td>사례 분석 메모</td></tr>
+              <tr><td>2교시</td><td><strong>AI와 함께 만드는 첫 결과물</strong></td><td><ul class="agenda-points"><li>프롬프트 작성 원칙</li><li>작게 요청하고 확인하는 반복</li><li>계획 먼저 받기</li></ul></td><td>따라 만들기</td><td>내가 만든 첫 웹 페이지</td></tr>
+              <tr><td>3교시</td><td><strong>실무 문제 정의와 PRD</strong></td><td><ul class="agenda-points"><li>개선 과제 고르는 기준</li><li>사용자·문제·MVP 범위 정하기</li><li>유저 플로우·데이터 정리</li></ul></td><td>템플릿으로 1장 PRD 작성</td><td>과제 정의 + PRD 1장</td></tr>
+              <tr><td>4교시</td><td><strong>구현 ① 화면과 데이터</strong></td><td><ul class="agenda-points"><li>기본 프로젝트를 바탕으로 화면과 기능 수정하기</li><li>CSV·엑셀 데이터 불러오기</li><li>공공데이터 활용 (CSV 또는 API)</li></ul></td><td>자체 과제로 핵심 화면 구현</td><td>데이터가 보이는 화면</td></tr>
+              <tr><td>5교시</td><td><strong>구현 ② 핵심 기능</strong></td><td><ul class="agenda-points"><li>기능 단위로 나눠 요청하기</li><li>잘 되면 저장·안 되면 되돌리기</li></ul></td><td>핵심 기능 1~2개 완성 + 중간 점검</td><td>작동하는 프로토타입</td></tr>
+              <tr><td>6교시</td><td><strong>구현 ③ 기능 보완·QA</strong></td><td><ul class="agenda-points"><li>핵심 기능 마무리</li><li>체크리스트로 사용 흐름 점검</li><li>오류·불편 수정 및 보안 확인</li></ul></td><td>기능 보완 후 체크리스트 기반 QA</td><td>QA 반영 프로토타입</td></tr>
+              <tr><td>7교시</td><td><strong>발표자료 제작과 시연</strong></td><td><ul class="agenda-points"><li>문제·해결 방식·기대 효과 정리</li><li>발표 슬라이드 구성</li><li>현업 적용 계획 세우기</li></ul></td><td>발표자료 제작 + 3분 시연</td><td>발표자료 + 시연 결과</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="agenda-note">※ 사례 리뷰는 구현 규모와 제작 기간을 함께 비교한다. 실습은 가상 자료를 사용하고, 선정·판단이나 실제 행정 시스템 변경은 범위에 포함하지 않는다.</p>
+        <p class="agenda-note">※ 실습은 공개 자료와 가상 데이터만 사용하며, 개인정보·내부 비공개 자료 입력, 지원사업 선정·심사 판단, 실제 행정 시스템 변경은 다루지 않습니다.</p>
       </section>
 
       <section class="section docs" id="materials" aria-labelledby="materials-title">
@@ -95,7 +120,15 @@
           <div><span class="section-kicker">LEARNING MATERIALS</span><h2 id="materials-title">강의 교안</h2></div>
           <span class="section-index">02 / MATERIALS</span>
         </div>
-        <div class="empty-area" aria-label="교안 자료 영역"></div>
+        <div class="lesson-list" aria-label="교시별 교안">
+          <a class="lesson-card" href="lesson-01.html"><span class="no">1교시</span><b>바이브코딩 개념과 사례</b><span class="state">교안 보기 →</span></a>
+          <div class="lesson-card is-soon"><span class="no">2교시</span><b>AI와 함께 만드는 첫 결과물</b><span class="state">준비 중</span></div>
+          <div class="lesson-card is-soon"><span class="no">3교시</span><b>실무 문제 정의와 PRD</b><span class="state">준비 중</span></div>
+          <div class="lesson-card is-soon"><span class="no">4교시</span><b>구현 ① 화면과 데이터</b><span class="state">준비 중</span></div>
+          <div class="lesson-card is-soon"><span class="no">5교시</span><b>구현 ② 핵심 기능</b><span class="state">준비 중</span></div>
+          <div class="lesson-card is-soon"><span class="no">6교시</span><b>구현 ③ 기능 보완·QA</b><span class="state">준비 중</span></div>
+          <div class="lesson-card is-soon"><span class="no">7교시</span><b>발표자료 제작과 시연</b><span class="state">준비 중</span></div>
+        </div>
       </section>
     </main>
 
@@ -107,5 +140,6 @@
     </footer>
   </div>
   <script src="js/script.js" defer></script>
+  <script src="js/top.js" defer></script>
 </body>
 </html>
