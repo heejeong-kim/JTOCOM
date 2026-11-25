@@ -388,3 +388,35 @@
 .lesson-page .prompt .copy.is-done .ic-copy { display: none; }
 .lesson-page .prompt .copy.is-done .ic-done { display: block; }
 .lesson-page .prompt pre { padding-right: 56px; }
+
+/* 3.2~3.5 웹앱 구조 카드 */
+.lesson-page .kgrid { display: grid; gap: 14px; margin: 16px 0; }
+.lesson-page .kgrid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lesson-page .kcard { padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .kcard-tag { color: var(--accent-dark); font-size: 13px; font-weight: 700; }
+.lesson-page .kcard h4 { margin: 4px 0 4px; font-size: 22px; font-weight: 700; }
+.lesson-page .block .kcard p.kcard-role { margin: 0 0 12px; color: var(--muted); font-size: 14.5px; }
+.lesson-page .kcard dl { margin: 0; }
+.lesson-page .kcard dl > div { display: grid; grid-template-columns: 64px 1fr; gap: 10px; padding: 8px 0; border-top: 1px dashed var(--line); }
+.lesson-page .kcard dt { color: var(--accent-dark); font-size: 13.5px; font-weight: 700; }
+.lesson-page .kcard dd { margin: 0; font-size: 14.5px; line-height: 1.55; word-break: keep-all; }
+
+/* 요청과 응답 흐름 */
+.lesson-page .req-flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 22px; margin: 18px 0; padding: 0; list-style: none; counter-reset: rf; }
+.lesson-page .req-flow li { position: relative; padding: 14px 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--warm); counter-increment: rf; }
+.lesson-page .req-flow li + li::before { content: "→"; position: absolute; left: -18px; top: 50%; transform: translateY(-50%); color: var(--accent); font-weight: 700; }
+.lesson-page .req-flow em { display: block; color: var(--muted); font-size: 12.5px; font-style: normal; font-weight: 700; }
+.lesson-page .req-flow b { display: block; margin: 4px 0; font-size: 16px; }
+.lesson-page .req-flow b::before { content: counter(rf) ". "; color: var(--accent); }
+.lesson-page .req-flow span { display: block; color: #55514b; font-size: 13.5px; line-height: 1.5; word-break: keep-all; }
+.lesson-page .req-flow li:nth-child(2), .lesson-page .req-flow li:nth-child(5) { background: #fff; border-color: rgba(201,130,105,.5); }
+
+/* 3.4 오류 프롬프트 간격 */
+.lesson-page #sec-3 .terms + .prompt { margin-top: 14px; }
+
+/* 3.7 핵심 용어 표시 */
+.lesson-page .ui-table .core { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--marker); color: var(--ink); font-size: 11px; font-weight: 700; vertical-align: 2px; }
+
+@media (max-width: 1200px) { .lesson-page .req-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); } .lesson-page .req-flow li:nth-child(4)::before { display: none; } }
+@media (max-width: 1100px) { .lesson-page .kgrid.three { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .lesson-page .req-flow { grid-template-columns: 1fr; } .lesson-page .req-flow li + li::before { display: none; } }
