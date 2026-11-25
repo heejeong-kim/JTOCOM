@@ -737,3 +737,29 @@
   .lesson-page .to-top { right: 12px; bottom: 16px; width: 44px; height: 44px; }
   .toc-float.dock { right: 12px; bottom: 68px; }
 }
+
+/* ── 표지 교시 이동: 누를 수 있는 탭형 네비게이션 ── */
+.hero-nav { margin-top: 30px; }
+.hero-nav .hero-track { display: flex; flex-wrap: wrap; gap: 8px; max-width: none; margin: 0; padding: 0; list-style: none; }
+.hero-nav .hero-track li { flex: none; display: block; gap: 0; }
+.hero-nav .hero-track a, .hero-nav .hero-track .is-soon { display: inline-flex; align-items: center; gap: 6px; height: 40px; margin: 0; padding: 0 16px; border-radius: 999px; font: 700 14.5px/1 var(--f-head); text-decoration: none; transition: background .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s; }
+.hero-nav .hero-track a { border: 1.5px solid #d9c3b9; background: #fff; color: var(--accent-dark); box-shadow: 0 2px 0 rgba(169,101,78,.12); }
+.hero-nav .hero-track a::after { content: ""; width: 7px; height: 7px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); margin-left: 2px; }
+.hero-nav .hero-track a span { color: inherit !important; font: inherit; }
+.hero-nav .hero-track a:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 18px -8px rgba(169,101,78,.6); }
+.hero-nav .hero-track .is-now a { background: var(--ink); border-color: var(--ink); color: #fff; box-shadow: none; cursor: default; pointer-events: none; }
+.hero-nav .hero-track .is-now a::after { content: "보는 중"; width: auto; height: auto; border: 0; transform: none; margin-left: 4px; padding: 3px 7px; border-radius: 999px; background: var(--marker); color: var(--ink); font-size: 11px; }
+.hero-nav .hero-track .is-soon { border: 1.5px dashed #ddd6ce; background: transparent; color: #aaa39b; cursor: not-allowed; }
+.hero-nav .hero-track .is-soon span { color: inherit; font: inherit; }
+.hero-nav .hero-track .is-soon small { font-size: 11px; font-weight: 600; }
+.hero-nav .hero-track a:focus-visible { outline: 3px solid var(--marker); outline-offset: 2px; }
+.hero-nav .hero-track .is-now i, .hero-nav .hero-track i { display: none; }
+@media (prefers-reduced-motion: reduce) { .hero-nav .hero-track a:hover { transform: none; } }
+@media (max-width: 600px) {
+  .hero-nav { margin-top: 20px; }
+  .hero-nav .hero-track { flex-wrap: nowrap; overflow-x: auto; gap: 6px; padding-bottom: 4px; scrollbar-width: none; }
+  .hero-nav .hero-track::-webkit-scrollbar { display: none; }
+  .hero-nav .hero-track a, .hero-nav .hero-track .is-soon { height: 36px; padding: 0 13px; font-size: 13.5px; }
+}
+.hero-nav .hero-track a, .hero-nav .hero-track .is-soon { flex-direction: row; white-space: nowrap; }
+.hero-nav .hero-track li.is-soon { display: inline-flex; }
