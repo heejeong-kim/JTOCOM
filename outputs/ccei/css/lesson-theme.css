@@ -265,3 +265,10 @@
 /* 사례 카드: 링크 버튼 가로 배치 */
 .lesson-page .case-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .lesson-page .case-links .case-link { margin-top: 0; }
+
+/* 토론 질문 토글: 컬러 배경 */
+.lesson-page details.toggle { border: 1.5px solid #c9d8ef; border-radius: 12px; background: #eaf1fb; }
+.lesson-page details.toggle > summary { color: var(--accent-dark); }
+.lesson-page details.toggle[open] > summary { border-bottom: 1px solid #c9d8ef; }
+.lesson-page details.toggle > p { color: var(--ink); }
+.lesson-page details.toggle[open] > summary { padding-bottom: 12px; margin-bottom: 12px; }
