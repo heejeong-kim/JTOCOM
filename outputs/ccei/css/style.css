@@ -492,3 +492,9 @@
 .brand { min-width: 0; }
 .brand img { width: 193px !important; height: auto !important; }
 @media (max-width: 600px) { .brand img { width: 150px !important; } }
+
+/* 커리큘럼 = 강의교안: 교안이 있는 교시는 제목을 링크로 */
+.agenda-link { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; border-bottom: 1.5px solid var(--accent); padding-bottom: 1px; }
+.agenda-link svg { width: 15px; height: 15px; color: var(--accent); flex: none; transition: transform .2s ease; }
+.agenda-link:hover { color: var(--accent-dark); }
+.agenda-link:hover svg { transform: translateX(3px); }
