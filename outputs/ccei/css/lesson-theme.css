@@ -352,3 +352,22 @@
   .lesson-page .vs .vs-bar i, .lesson-page .vs .vs-ic, .lesson-page .vs::before { animation: none !important; }
   .lesson-page .vs .old .vs-bar i, .lesson-page .vs .new .vs-bar i { width: 100% !important; }
 }
+
+/* 3.1 실제 화면으로 용어 찾기: 예시 화면 + 단계별 프롬프트 */
+.lesson-page .screen-guide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 24px; }
+.lesson-page .guide-shot { position: sticky; top: 104px; margin: 0; }
+.lesson-page .guide-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; }
+.lesson-page .guide-shot-ph { display: grid; place-items: center; aspect-ratio: 16 / 10; border: 1.5px dashed var(--line); border-radius: 12px; background: var(--warm); color: var(--muted); font-size: 15px; font-weight: 700; }
+.lesson-page .guide-steps { margin: 0; padding: 0; list-style: none; }
+.lesson-page .guide-steps > li + li { margin-top: 18px; }
+.lesson-page .guide-steps h4 { margin: 0 0 8px; font-size: 17px; font-weight: 700; }
+.lesson-page .block .guide-steps p { margin: 0; font-size: 15px; }
+@media (max-width: 1100px) { .lesson-page .screen-guide { grid-template-columns: 1fr; } .lesson-page .guide-shot { position: static; } }
+.lesson-page .guide-left { position: sticky; top: 104px; display: grid; gap: 16px; }
+.lesson-page .guide-left .guide-shot { position: static; }
+.lesson-page .guide-checks { padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .guide-checks h4 { margin: 0 0 12px; font-size: 16px; font-weight: 700; }
+.lesson-page .guide-checks .apply-checks { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1100px) { .lesson-page .guide-left { position: static; } .lesson-page .guide-checks .apply-checks { grid-template-columns: 1fr 1fr; } }
+.lesson-page .apply .apply-checks { grid-template-columns: 1fr 1fr; }
+.lesson-page .screen-guide { margin-top: 28px; }

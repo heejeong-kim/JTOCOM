@@ -122,39 +122,64 @@
           <h3 class="sub-title">3.1 실제 화면으로 용어 찾기</h3>
           <div class="apply-grid">
             <article class="apply">
-              <span class="apply-tag">서비스 구조 · 저 내려요</span>
+              <span class="apply-tag">서비스 구조 · 센터 홈페이지</span>
               <h4>어떻게 이루어져 있나</h4>
               <dl class="apply-map">
-                <div><dt>화면</dt><dd>노선·하차역·호차를 입력하고, 곧 비는 자리를 확인하는 화면</dd></div>
-                <div><dt>데이터</dt><dd>이용자가 등록한 하차 정보 (노선·하차역·호차)</dd></div>
-                <div><dt>서버</dt><dd>등록된 하차 정보를 모아 같은 열차 이용자에게 보여 주는 처리</dd></div>
-                <div><dt>API</dt><dd>서울시 실시간 지하철 도착 정보 (열차 위치·도착 예정 시간)</dd></div>
-                <div><dt>배포</dt><dd>웹 주소와 앱스토어로 누구나 쓸 수 있게 공개</dd></div>
+                <div><dt>화면</dt><dd>메인 비주얼, 센터 프로그램, 성공스토리, 공지사항 탭이 있는 첫 화면</dd></div>
+                <div><dt>데이터</dt><dd>사업공고·공지사항·센터 프로그램 게시글, 통합회원 정보</dd></div>
+                <div><dt>서버</dt><dd>로그인을 확인하고, 게시글을 불러와 목록·상세 화면으로 보여 주는 처리</dd></div>
+                <div><dt>URL</dt><dd>ccei.creativekorea.or.kr/daejeon — 지역 센터마다 주소 뒤만 다름</dd></div>
               </dl>
             </article>
             <article class="apply">
-              <span class="apply-tag">기획 문서 · 저 내려요</span>
+              <span class="apply-tag">기획 문서 · 센터 홈페이지</span>
               <h4>유저 플로우로 그려 보기</h4>
-              <p class="apply-sub">내릴 사람</p>
-              <ol class="apply-flow"><li>노선 선택</li><li>하차역 입력</li><li>호차 입력</li><li>등록</li></ol>
-              <p class="apply-sub">앉고 싶은 사람</p>
-              <ol class="apply-flow"><li>노선·방향 선택</li><li>내 열차 확인</li><li>곧 비는 칸 확인</li></ol>
-              <p class="apply-note">MVP는 '빈자리 정보 공유' 하나. 좌석 예약·선점 기능은 넣지 않음.</p>
+              <p class="apply-sub">사업공고 찾기</p>
+              <ol class="apply-flow"><li>첫 화면</li><li>알림마당</li><li>사업공고</li><li>공고 상세</li></ol>
+              <p class="apply-sub">창업 상담 받기</p>
+              <ol class="apply-flow"><li>첫 화면</li><li>창업</li><li>창업상담</li><li>상담 신청</li></ol>
+              <p class="apply-note">메뉴 구조도 예: 혁신센터소개 → 인사말 · 센터소개 · 센터연혁 · 조직도 · 찾아오시는 길</p>
             </article>
             <article class="apply">
-              <span class="apply-tag">화면(UI) 용어 · 우리 센터 홈페이지</span>
+              <span class="apply-tag">화면(UI) 용어 · 센터 홈페이지</span>
               <h4>직접 찾아서 체크하기</h4>
-              <div class="apply-checks">
-                <label><input type="checkbox"> 헤더</label><label><input type="checkbox"> GNB</label>
-                <label><input type="checkbox"> 히어로·배너</label><label><input type="checkbox"> 버튼</label>
-                <label><input type="checkbox"> 카드</label><label><input type="checkbox"> 탭</label>
-                <label><input type="checkbox"> 게시판 목록</label><label><input type="checkbox"> 페이지네이션</label>
-                <label><input type="checkbox"> 검색바</label><label><input type="checkbox"> 푸터</label>
-              </div>
+              <div class="apply-checks"><label><input type="checkbox"> 헤더</label><label><input type="checkbox"> 유틸 메뉴 (로그인)</label><label><input type="checkbox"> GNB</label><label><input type="checkbox"> 드롭다운 메뉴</label><label><input type="checkbox"> 팝업존</label><label><input type="checkbox"> 캐러셀</label><label><input type="checkbox"> 페이지 인디케이터</label><label><input type="checkbox"> 카드</label><label><input type="checkbox"> 탭</label><label><input type="checkbox"> 게시판 목록</label><label><input type="checkbox"> 텍스트 링크 (더보기)</label><label><input type="checkbox"> 라디오 버튼</label><label><input type="checkbox"> 셀렉트 (Family Site)</label><label><input type="checkbox"> 푸터</label></div>
               <a class="case-link" href="https://ccei.creativekorea.or.kr/daejeon/" target="_blank" rel="noopener noreferrer">센터 홈페이지 열기 <span aria-hidden="true">↗</span></a>
             </article>
           </div>
-          <p class="apply-try"><b>해 보기</b> 찾은 용어로 AI에게 요청해 봄 — "센터 홈페이지처럼 GNB와 카드형 공지 목록이 있는 첫 화면을 만들어줘"</p>
+          <div class="screen-guide">
+            <div class="guide-left">
+              <figure class="guide-shot">
+                <div class="guide-shot-ph">예시 화면 · 대전창조경제혁신센터 홈페이지 첫 화면</div>
+              </figure>
+            </div>
+            <ol class="guide-steps">
+              <li>
+                <h4>① 화면 캡처하기</h4>
+                <p>대전창조경제혁신센터 홈페이지 첫 화면을 캡처해 AI 대화창에 붙여 넣음.</p>
+              </li>
+              <li>
+                <h4>② 화면(UI) 용어 찾기</h4>
+                <div class="prompt"><pre>첨부한 대전창조경제혁신센터 홈페이지 첫 화면 캡처를 보고, 화면에 있는 UI 요소를 헤더·GNB·캐러셀·카드·탭처럼 정확한 용어로 짚어줘.
+각 요소가 화면의 어디에 있는지 위치도 함께 알려주고, 표(용어 | 위치 | 역할)로 정리해줘.</pre><button type="button" class="copy">복사</button></div>
+              </li>
+              <li>
+                <h4>③ 서비스 구조 짚어 보기</h4>
+                <div class="prompt"><pre>이 홈페이지가 화면·서버·데이터·API로 어떻게 이루어져 있을지 표로 정리해줘.
+화면만 보고 확실히 알 수 없는 부분은 '추측'이라고 표시해줘.</pre><button type="button" class="copy">복사</button></div>
+              </li>
+              <li>
+                <h4>④ 유저 플로우 정리하기</h4>
+                <div class="prompt"><pre>이 홈페이지에서 창업자가 첫 화면에서 사업공고를 찾아 내용을 확인하기까지 거치는 화면 순서를 유저 플로우로 정리해줘.
+화면 이름 → 화면 이름 형식으로 한 줄로 보여줘.</pre><button type="button" class="copy">복사</button></div>
+              </li>
+              <li>
+                <h4>⑤ 찾은 용어로 화면 요청하기</h4>
+                <div class="prompt"><pre>대전창조경제혁신센터 홈페이지처럼 로그인 유틸 메뉴와 GNB가 있는 헤더, 메인 비주얼 캐러셀, 센터 프로그램 카드, 공지사항 탭이 있는 첫 화면을 HTML 파일 하나로 만들어줘.
+내용은 가상 데이터로 채워줘.</pre><button type="button" class="copy">복사</button></div>
+              </li>
+            </ol>
+          </div>
           <h3 class="sub-title">3.2 서비스 구조 용어</h3>
           <div class="anatomy" aria-label="서비스 구조 예시">
             <div class="node"><b>화면</b><small>프론트엔드</small><span>창업 단계·업종을 고르는 입력창과 결과 목록</span></div>
