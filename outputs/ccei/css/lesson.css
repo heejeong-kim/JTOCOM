@@ -102,7 +102,7 @@ a.lesson-card:hover { border-color: var(--accent); transform: translateY(-3px); 
 /* ===== 1600px 기준 레이아웃 (메인 페이지와 동일한 콘텐츠 폭·좌우 여백) ===== */
 .lesson-inner { max-width: var(--max); padding: 0 48px; }
 .terms { grid-template-columns: repeat(6, 1fr); }
-.cases { grid-template-columns: repeat(3, 1fr); }
+.cases { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1200px) { .lesson-inner { padding: 0 32px; } .terms { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px) { .terms, .cases { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .lesson-inner { padding: 0 20px; } .terms, .cases { grid-template-columns: 1fr; } }
