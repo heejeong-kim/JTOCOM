@@ -55,7 +55,7 @@
           <span class="block-step">점검</span>
           <h2>Codex 셋팅 확인</h2>
           <h3 class="sub-title">1.1 Codex 앱 설치·실행</h3>
-          <ul class="checks"><li>노트북에 Codex 앱이 설치되어 있음 (macOS·Windows)</li><li>Codex 앱을 열면 첫 화면이 정상적으로 보임</li></ul>
+          <ul class="checks"><li>노트북에 Codex 앱이 설치되어 있음 (macOS·Windows)</li><li>Codex 앱을 열면 <b>무엇을 만들까요?</b> 화면과 입력창이 보임</li></ul>
           <h3 class="sub-title">1.2 ChatGPT 계정 로그인</h3>
           <ul class="checks"><li>첫 화면에서 <b>Continue with ChatGPT</b>로 로그인함</li><li>교육용으로 안내받은 유료 ChatGPT 계정으로 로그인되어 있음</li><li>로그인 후 메시지 입력창이 보임</li></ul>
           <a class="case-link" href="https://openai.com/ko-KR/codex/get-started/" target="_blank" rel="noopener noreferrer">Codex 시작하기 공식 안내 <span aria-hidden="true">↗</span></a>
@@ -66,13 +66,12 @@
           <span class="block-step">점검</span>
           <h2>로컬 프로젝트 폴더 확인</h2>
           <h3 class="sub-title">2.1 실습 폴더 만들기</h3>
-          <div class="kgrid three">
-            <article class="kcard"><span class="kcard-tag">1단계</span><h4>Codex 폴더</h4><p class="kcard-role">문서(Documents) 안에 모든 실습을 모아 둘 폴더</p><dl><div><dt>Mac</dt><dd>문서 › Codex</dd></div><div><dt>Windows</dt><dd>문서 › Codex</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">2단계</span><h4>vibe-practice 폴더</h4><p class="kcard-role">Codex 폴더 안에 오늘 실습용 폴더</p><dl><div><dt>Mac</dt><dd>문서 › Codex › vibe-practice</dd></div><div><dt>Windows</dt><dd>문서 › Codex › vibe-practice</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">3단계</span><h4>실습 파일 넣기</h4><p class="kcard-role">나눠 준 CSV·엑셀 실습 파일이 있으면 이 폴더에 넣어 둠</p><dl><div><dt>확인</dt><dd>폴더 이름은 영문·숫자로, 띄어쓰기 없이</dd></div></dl></article>
+          <div class="kgrid two">
+            <article class="kcard"><span class="kcard-tag">1단계</span><h4>vibe-practice 폴더</h4><p class="kcard-role">문서(Documents) 안에 오늘 실습용 폴더 하나를 만듦</p><dl><div><dt>Mac</dt><dd>문서 › vibe-practice</dd></div><div><dt>Windows</dt><dd>문서 › vibe-practice</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">2단계</span><h4>실습 파일 넣기</h4><p class="kcard-role">나눠 준 CSV·엑셀 실습 파일이 있으면 이 폴더에 넣어 둠</p><dl><div><dt>확인</dt><dd>폴더 이름은 영문·숫자로, 띄어쓰기 없이</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.2 Codex에 폴더 연결</h3>
-          <ul class="checks"><li>Codex에서 프로젝트 선택(Add project) 화면을 열고 <b>vibe-practice</b> 폴더를 선택함</li><li>입력창 아래가 <b>Local(로컬)</b>로 선택되어 있음</li><li>권한 설정은 기본값(Default permissions)을 그대로 둠</li></ul>
+          <ul class="checks"><li>왼쪽 위 <b>새 채팅</b>을 누름</li><li>입력창 위 <b>이 컴퓨터</b>가 선택된 상태에서 <b>프로젝트 선택</b>을 누르고 <b>vibe-practice</b> 폴더를 고름</li><li>왼쪽 <b>프로젝트</b> 목록에 vibe-practice가 보임</li><li>입력창 아래 <b>승인 요청</b> 설정은 그대로 둠</li></ul>
           <h3 class="sub-title">2.3 연결 확인하기</h3>
           <div class="prompt"><pre>지금 연결된 폴더의 이름과 위치를 알려줘.
 그리고 이 폴더 안에 hello.html 파일을 하나 만들어서, 화면 가운데에 '실습 준비 완료'라는 큰 제목이 보이게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
@@ -86,7 +85,7 @@
             <div class="selfcheck">
             <label><input type="checkbox"> Codex 앱이 열리고 ChatGPT 계정으로 로그인되어 있다</label>
             <label><input type="checkbox"> vibe-practice 폴더를 만들고 Codex에 연결했다</label>
-            <label><input type="checkbox"> 입력창 아래가 Local(로컬)로 되어 있다</label>
+            <label><input type="checkbox"> 왼쪽 프로젝트 목록에 vibe-practice가 보인다</label>
             <label><input type="checkbox"> hello.html을 브라우저로 열어 '실습 준비 완료'를 확인했다</label>
             </div>
           </div>
