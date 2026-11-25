@@ -254,3 +254,10 @@
 .lesson-page .lesson-body > .block > h2 { padding: 18px 26px; border: 1.5px solid var(--accent); border-radius: 12px; background: #eaf1fb; }
 /* 사례 카드: 링크 버튼 2개일 때 나란히 */
 .lesson-page .case-link + .case-link { margin-top: 8px; }
+
+/* 섹션 전체를 아웃라인 박스로 감쌈 (배경색 없음) — 제목 박스는 해제 */
+.lesson-page .lesson-body > .block > h2 { padding: 0; border: 0; border-radius: 0; background: none; }
+.lesson-page .lesson-body > .block:not(#sec-6) { padding: 40px 44px 44px; border: 1.5px solid var(--line); border-radius: 16px; background: #fff; }
+.lesson-page .lesson-body > .block + .block { margin-top: 40px; border-top-width: 1.5px; }
+.lesson-page .lesson-body > .block:not(#sec-6) { border-top: 1.5px solid var(--line); }
+@media (max-width: 600px) { .lesson-page .lesson-body > .block:not(#sec-6) { padding: 28px 20px; } }
