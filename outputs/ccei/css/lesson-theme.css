@@ -438,3 +438,74 @@
 @media (max-width: 600px) { .toc-float.dock { bottom: 72px; } .dock .toc-panel { bottom: 56px; } }
 .dock .lesson-panel { width: 360px; }
 .lesson-panel a, .lesson-panel .is-soon { white-space: nowrap; }
+
+/* 3.1 HTML·CSS·JS 카드: 강조 + 역할을 보여 주는 미니 모션 */
+.lesson-page .stack-demo .kcard { position: relative; border-top: 4px solid var(--accent); }
+.lesson-page .stack-demo .kcard-tag { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 13px; }
+.lesson-page .stack-demo .kcard h4 { margin: 10px 0 2px; font-size: 30px; letter-spacing: -.01em; }
+.lesson-page .stack-demo .kcard p.kcard-role { color: var(--ink); font-size: 16px; font-weight: 600; }
+.lesson-page .demo { position: relative; display: grid; gap: 8px; height: 118px; margin: 4px 0 16px; padding: 14px; border-radius: 10px; background: var(--warm); overflow: hidden; }
+.lesson-page .demo i { display: block; border-radius: 4px; }
+.lesson-page .demo .d-title { width: 55%; height: 14px; }
+.lesson-page .demo .d-input { width: 100%; height: 22px; }
+.lesson-page .demo .d-btn { position: relative; width: 38%; height: 24px; }
+/* HTML: 뼈대(점선 상자)가 하나씩 생김 */
+.lesson-page .demo-html i { border: 1.5px dashed #b5aea5; background: #fff; opacity: 0; transform: translateY(6px); }
+/* CSS: 같은 뼈대에 색·모양이 입혀짐 */
+.lesson-page .demo-css .d-title { background: #c7c0b6; }
+.lesson-page .demo-css .d-input { border: 1.5px solid #c7c0b6; background: #fff; }
+.lesson-page .demo-css .d-btn { background: #c7c0b6; }
+/* JS: 버튼을 누르면 목록에 한 줄씩 추가 */
+.lesson-page .demo-js { align-content: start; }
+.lesson-page .demo-js .d-btn { background: var(--accent); border-radius: 6px; }
+.lesson-page .demo-js .d-cursor { position: absolute; right: -14px; bottom: -14px; width: 14px; height: 14px; border-left: 2px solid var(--ink); border-top: 2px solid var(--ink); transform: rotate(-15deg); }
+.lesson-page .demo-js .d-row { width: 100%; height: 12px; background: #fff; border: 1px solid var(--line); opacity: 0; transform: translateX(-12px); }
+
+@keyframes dBuild { 0%, 5% { opacity: 0; transform: translateY(6px); } 15%, 85% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: none; } }
+@keyframes dTitle { 0%, 20% { background: #c7c0b6; width: 55%; } 35%, 85% { background: var(--ink); width: 70%; } 100% { background: #c7c0b6; width: 55%; } }
+@keyframes dInput { 0%, 30% { border-color: #c7c0b6; border-radius: 4px; } 45%, 85% { border-color: var(--accent); border-radius: 999px; } 100% { border-color: #c7c0b6; border-radius: 4px; } }
+@keyframes dBtn { 0%, 40% { background: #c7c0b6; border-radius: 4px; width: 38%; } 55%, 85% { background: var(--accent); border-radius: 999px; width: 50%; } 100% { background: #c7c0b6; border-radius: 4px; width: 38%; } }
+@keyframes dPress { 0%, 8%, 30%, 38%, 60%, 68%, 100% { transform: scale(1); } 4%, 34%, 64% { transform: scale(.92); } }
+@keyframes dRow { 0% { opacity: 0; transform: translateX(-12px); } 6%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; transform: none; } }
+
+.lesson-page .stack-demo.is-play .demo-html i { animation: dBuild 6s ease infinite; }
+.lesson-page .stack-demo.is-play .demo-html .d-input { animation-delay: .4s; }
+.lesson-page .stack-demo.is-play .demo-html .d-btn { animation-delay: .8s; }
+.lesson-page .stack-demo.is-play .demo-css .d-title { animation: dTitle 6s ease infinite; }
+.lesson-page .stack-demo.is-play .demo-css .d-input { animation: dInput 6s ease infinite; }
+.lesson-page .stack-demo.is-play .demo-css .d-btn { animation: dBtn 6s ease infinite; }
+.lesson-page .stack-demo.is-play .demo-js .d-btn { animation: dPress 6s ease infinite; }
+.lesson-page .stack-demo.is-play .demo-js .r1 { animation: dRow 6s ease .3s infinite backwards; }
+.lesson-page .stack-demo.is-play .demo-js .r2 { animation: dRow 6s ease 2.1s infinite backwards; }
+.lesson-page .stack-demo.is-play .demo-js .r3 { animation: dRow 6s ease 3.9s infinite backwards; }
+.lesson-page .stack-demo.is-play .demo-js .r2 { animation-duration: 6s; }
+@media (prefers-reduced-motion: reduce) {
+  .lesson-page .stack-demo .demo i { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* 3.1 구분 소제목 (① ② ③) */
+.lesson-page .mini-title { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: var(--ink); }
+.lesson-page .sub-title + .mini-title { margin-top: 14px; }
+
+/* ② 요청과 응답: 화면·서버·데이터 세 줄 위를 오가는 흐름 */
+.lesson-page .lane-flow { position: relative; display: grid; grid-template-columns: 72px repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(3, auto); gap: 10px 14px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(var(--warm), var(--warm)) 0 0 / 100% 33.4% no-repeat, #fff; }
+.lesson-page .lane-label { grid-column: 1; align-self: center; color: var(--accent-dark); font-size: 14px; font-weight: 700; }
+.lesson-page .lane-flow::before, .lesson-page .lane-flow::after { content: ""; position: absolute; left: 16px; right: 16px; border-top: 1px dashed var(--line); }
+.lesson-page .lane-flow::before { top: 33.4%; } .lesson-page .lane-flow::after { top: 66.6%; }
+.lesson-page .lane-step { position: relative; z-index: 1; min-height: 84px; padding: 12px 12px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.lesson-page .lane-step em { display: block; margin-bottom: 2px; color: var(--muted); font-size: 12px; font-style: normal; font-weight: 700; }
+.lesson-page .lane-step b { display: block; font-size: 15.5px; }
+.lesson-page .lane-step span { display: block; margin-top: 4px; color: #55514b; font-size: 13px; line-height: 1.5; word-break: keep-all; }
+.lesson-page .lane-step.s-front { border-color: rgba(201,130,105,.55); }
+.lesson-page .lane-step.s-move { border-style: dashed; border-color: var(--accent); background: #fffaf6; }
+.lesson-page .lane-step.s-back { background: #f2efea; }
+.lesson-page .lane-step.s-data { background: #ece7e0; }
+.lesson-page .lane-step b::first-letter { color: var(--accent); }
+@media (max-width: 1100px) {
+  .lesson-page .lane-flow { grid-template-columns: 1fr; background: #fff; }
+  .lesson-page .lane-flow::before, .lesson-page .lane-flow::after, .lesson-page .lane-label { display: none; }
+  .lesson-page .lane-step { grid-column: 1 !important; grid-row: auto !important; }
+}
+.lesson-page .stack-demo .kcard { border-top: 1px solid var(--line); }
+.lesson-page .stack-demo .kcard-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.lesson-page .stack-demo .kcard-head h4 { margin: 0; }

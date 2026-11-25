@@ -44,7 +44,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-2">실제 서비스 사례</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
+      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-2">실제 서비스 사례</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -91,52 +91,12 @@
           <aside class="callout tip"><b>핵심</b> 바이브코딩의 실력은 코딩 지식보다 <b>무엇을 원하는지 정확히 말하는 힘</b>에서 나옴.</aside>
         </section>
 
-        <!-- 개념 2 -->
-        <section id="sec-2" class="block">
-          <span class="block-step">개념</span>
-          <h2>바이브코딩으로 만든 실제 서비스</h2>
-          <div class="cases">
-            <article class="case">
-              <span class="case-tag">행정안전부</span>
-              <h3>2.1 국정ON</h3>
-              <p>국회·국무회의에서 업무 키워드가 언급되면 알림을 주는 모니터링 서비스. 현업 담당자가 생성형 AI 대화형 코딩으로 직접 구현함.</p>
-              <a class="case-link" href="https://kjon.aigov.go.kr" target="_blank" rel="noopener noreferrer">서비스 바로가기 <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="case">
-              <span class="case-tag">서울 광진구청</span>
-              <h3>2.2 코닥(Kordoc)·한국법 MCP</h3>
-              <p>비전공 7년차 주무관이 HWP·PDF 공문서를 AI가 읽게 바꾸는 도구와 법령·판례 검색 도구를 직접 만들어 누구나 쓸 수 있게 공개함.</p>
-              <div class="case-links"><a class="case-link" href="https://github.com/chrisryugj/kordoc" target="_blank" rel="noopener noreferrer">코닥 바로가기 <span aria-hidden="true">↗</span></a>
-              <a class="case-link" href="https://github.com/chrisryugj/korean-law-mcp" target="_blank" rel="noopener noreferrer">한국법 MCP 바로가기 <span aria-hidden="true">↗</span></a></div>
-            </article>
-            <article class="case">
-              <span class="case-tag">비개발자 개인</span>
-              <h3>2.3 저 내려요</h3>
-              <p>코딩을 모르는 취업준비생이 ChatGPT로 기획하고 Claude로 만든 지하철 빈자리 공유 서비스. 서울시 실시간 지하철 도착 정보 API를 활용함.</p>
-              <a class="case-link" href="https://apps.apple.com/kr/app/%EC%A0%80-%EB%82%B4%EB%A0%A4%EC%9A%94/id6775585122" target="_blank" rel="noopener noreferrer">앱스토어 바로가기 <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <aside class="callout tip"><b>핵심</b> 좋은 서비스는 거창한 기술보다 <b>현장의 불편을 가장 잘 아는 사람</b>에게서 시작됨.</aside>
-        </section>
-
         <!-- 개념 3 -->
         <section id="sec-3" class="block">
           <span class="block-step">개념</span>
           <h2>바이브코딩을 위한 웹앱 기초</h2>
-          <h3 class="sub-title">3.1 웹앱은 어떻게 움직이나</h3>
-          <div class="kgrid three">
-            <article class="kcard"><span class="kcard-tag">뼈대</span><h4>HTML</h4><p class="kcard-role">화면에 무엇이 있는지 정함</p><dl><div><dt>예</dt><dd>제목, 입력칸, 버튼, 목록</dd></div><div><dt>AI 요청</dt><dd>"신청 폼에 이메일 입력칸을 추가해줘"</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">꾸밈</span><h4>CSS</h4><p class="kcard-role">어떻게 보이는지 정함</p><dl><div><dt>예</dt><dd>색, 글꼴, 크기, 여백, 배치</dd></div><div><dt>AI 요청</dt><dd>"버튼을 더 크게, 주황색으로 바꿔줘"</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">동작</span><h4>JavaScript</h4><p class="kcard-role">누르면 무엇을 할지 정함</p><dl><div><dt>예</dt><dd>저장, 계산, 검색, 알림 띄우기</dd></div><div><dt>AI 요청</dt><dd>"신청 버튼을 누르면 목록에 추가되게 해줘"</dd></div></dl></article>
-          </div>
-          <ol class="req-flow" aria-label="요청과 응답 흐름">
-            <li><em>화면</em><b>버튼 클릭</b><span>사용자가 '검색'을 누름</span></li>
-            <li><em>화면 → 서버</em><b>요청 Request</b><span>"이 조건의 사업 목록을 줘"</span></li>
-            <li><em>서버</em><b>처리</b><span>조건에 맞는지 계산·확인</span></li>
-            <li><em>서버 → 데이터</em><b>조회</b><span>저장된 목록에서 찾기</span></li>
-            <li><em>서버 → 화면</em><b>응답 Response</b><span>찾은 결과를 돌려줌</span></li>
-            <li><em>화면</em><b>표시</b><span>결과 목록이 보임</span></li>
-          </ol>
+          <h3 class="sub-title">2.1 웹앱은 어떻게 움직이나</h3>
+          <h4 class="mini-title">① 웹앱을 이루는 세 부분</h4>
           <div class="anatomy" aria-label="서비스 구조 예시">
             <div class="node"><b>화면</b><small>프론트엔드</small><span>창업 단계·업종을 고르는 입력창과 결과 목록</span></div>
             <i aria-hidden="true">→</i>
@@ -144,6 +104,25 @@
             <i aria-hidden="true">→</i>
             <div class="node"><b>데이터</b><small>DB·파일</small><span>지원사업 목록 엑셀·CSV</span></div>
           </div>
+          <h4 class="mini-title">② 버튼을 누르면 일어나는 일</h4>
+          <div class="lane-flow" aria-label="요청과 응답 흐름">
+            <div class="lane-label" style="grid-row:1">화면</div>
+            <div class="lane-label" style="grid-row:2">서버</div>
+            <div class="lane-label" style="grid-row:3">데이터</div>
+            <div class="lane-step s-front" style="grid-column:2;grid-row:1"><b>1. 버튼 클릭</b><span>사용자가 '검색'을 누름</span></div>
+            <div class="lane-step s-move" style="grid-column:3;grid-row:2"><em>화면 → 서버</em><b>2. 요청 Request</b><span>"이 조건의 사업 목록을 줘"</span></div>
+            <div class="lane-step s-back" style="grid-column:4;grid-row:2"><b>3. 처리</b><span>조건에 맞는지 계산·확인</span></div>
+            <div class="lane-step s-data" style="grid-column:5;grid-row:3"><em>서버 → 데이터</em><b>4. 조회</b><span>저장된 목록에서 찾기</span></div>
+            <div class="lane-step s-move" style="grid-column:6;grid-row:1"><em>서버 → 화면</em><b>5. 응답 Response</b><span>찾은 결과를 돌려줌</span></div>
+            <div class="lane-step s-front" style="grid-column:7;grid-row:1"><b>6. 표시</b><span>결과 목록이 보임</span></div>
+          </div>
+          <h4 class="mini-title">③ 화면을 만드는 세 가지 · HTML · CSS · JavaScript</h4>
+          <div class="kgrid three stack-demo">
+            <article class="kcard"><div class="kcard-head"><h4>HTML</h4><span class="kcard-tag">뼈대</span></div><div class="demo demo-html" aria-hidden="true"><i class="d-title"></i><i class="d-input"></i><i class="d-btn"></i></div><p class="kcard-role">화면에 무엇이 있는지 정함</p><dl><div><dt>예</dt><dd>제목, 입력칸, 버튼, 목록</dd></div><div><dt>AI 요청</dt><dd>"신청 폼에 이메일 입력칸을 추가해줘"</dd></div></dl></article>
+            <article class="kcard"><div class="kcard-head"><h4>CSS</h4><span class="kcard-tag">꾸밈</span></div><div class="demo demo-css" aria-hidden="true"><i class="d-title"></i><i class="d-input"></i><i class="d-btn"></i></div><p class="kcard-role">어떻게 보이는지 정함</p><dl><div><dt>예</dt><dd>색, 글꼴, 크기, 여백, 배치</dd></div><div><dt>AI 요청</dt><dd>"버튼을 더 크게, 주황색으로 바꿔줘"</dd></div></dl></article>
+            <article class="kcard"><div class="kcard-head"><h4>JavaScript</h4><span class="kcard-tag">동작</span></div><div class="demo demo-js" aria-hidden="true"><i class="d-btn"><b class="d-cursor"></b></i><i class="d-row r1"></i><i class="d-row r2"></i><i class="d-row r3"></i></div><p class="kcard-role">누르면 무엇을 할지 정함</p><dl><div><dt>예</dt><dd>저장, 계산, 검색, 알림 띄우기</dd></div><div><dt>AI 요청</dt><dd>"신청 버튼을 누르면 목록에 추가되게 해줘"</dd></div></dl></article>
+          </div>
+          <h4 class="mini-title">④ 용어 정리</h4>
           <div class="terms">
             <div><b>브라우저</b><span>크롬·엣지처럼 웹 화면을 열어 보여 주는 프로그램</span></div>
             <div><b>프론트엔드</b><span>사용자 눈에 보이는 화면 쪽 (HTML·CSS·JS)</span></div>
@@ -151,7 +130,7 @@
             <div><b>요청 · Request</b><span>화면이 서버에게 무언가를 달라고 보내는 것</span></div>
             <div><b>응답 · Response</b><span>서버가 처리 결과를 화면에 돌려주는 것</span></div>
           </div>
-          <h3 class="sub-title">3.2 데이터는 어디에 저장되나</h3>
+          <h3 class="sub-title">2.2 데이터는 어디에 저장되나</h3>
           <div class="kgrid three">
             <article class="kcard"><span class="kcard-tag">파일</span><h4>CSV · 엑셀</h4><p class="kcard-role">표 파일에 담아 두고 불러옴</p><dl><div><dt>이럴 때</dt><dd>이미 정리된 목록을 보여 줄 때</dd></div><div><dt>한계</dt><dd>화면에서 고친 내용은 파일에 저장되지 않음</dd></div><div><dt>AI 요청</dt><dd>"이 CSV 파일을 표로 보여줘"</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">내 브라우저</span><h4>브라우저 저장소</h4><p class="kcard-role">지금 쓰는 브라우저 안에 저장</p><dl><div><dt>이럴 때</dt><dd>혼자 쓰는 메모·설정을 남길 때</dd></div><div><dt>한계</dt><dd>다른 사람·다른 컴퓨터에서는 안 보임</dd></div><div><dt>AI 요청</dt><dd>"새로고침해도 입력한 내용이 남게 해줘"</dd></div></dl></article>
@@ -163,7 +142,7 @@
             <div><b>OpenAPI</b><span>누구나 쓰도록 공개한 API. 공공데이터포털이 대표적</span></div>
             <div><b>JSON</b><span>API가 데이터를 주고받는 형식. 예: 공공데이터 API 응답</span></div>
           </div>
-          <h3 class="sub-title">3.3 만들고, 고치고, 공개하기</h3>
+          <h3 class="sub-title">2.3 만들고, 고치고, 공개하기</h3>
           <div class="terms">
             <div><b>오류 메시지</b><span>실행이 안 될 때 뜨는 빨간 안내 글. 그대로 복사해 AI에게 전달</span></div>
             <div><b>개발자 도구 · 콘솔</b><span>브라우저에서 F12로 여는 점검 창. 숨은 오류가 여기 보임</span></div>
@@ -180,7 +159,7 @@
 4. 고친 뒤에 내가 화면에서 무엇을 눌러 보면 제대로 됐는지 확인할 수 있는지 알려줘.
 
 [여기에 오류 메시지를 그대로 붙여 넣기]</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-          <h3 class="sub-title">3.4 안전하게 만들기</h3>
+          <h3 class="sub-title">2.4 안전하게 만들기</h3>
           <div class="kgrid three">
             <article class="kcard"><span class="kcard-tag">열쇠 관리</span><h4>API 키</h4><p class="kcard-role">공공데이터·AI 서비스를 쓸 때 받는 비밀 열쇠</p><dl><div><dt>위험</dt><dd>화면 코드(HTML·JS)에 넣으면 누구나 볼 수 있음</dd></div><div><dt>지키기</dt><dd>서버 쪽 환경 변수에 보관, 화면 코드·공유 파일에 넣지 않음</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">누가, 무엇을</span><h4>로그인 · 인증 · 권한</h4><p class="kcard-role">인증은 누구인지 확인, 권한은 무엇을 할 수 있는지 정함</p><dl><div><dt>위험</dt><dd>아무나 신청 목록을 보거나 지울 수 있음</dd></div><div><dt>지키기</dt><dd>"관리자만 삭제할 수 있게 해줘"처럼 권한을 요청</dd></div></dl></article>
@@ -193,7 +172,7 @@
             <div><b>권한 · Authorization</b><span>확인된 사람이 무엇을 할 수 있는지 정하는 것</span></div>
             <div><b>개인정보</b><span>특정 사람을 알아볼 수 있는 정보</span></div>
           </div>
-          <h3 class="sub-title">3.5 기획 문서 용어</h3>
+          <h3 class="sub-title">2.5 기획 문서 용어</h3>
           <div class="plan-docs">
             <div class="plan-card"><span class="plan-tag">유저 플로우 · User Flow</span>
               <div class="flow"><span>홈</span><i>→</i><span>조건 선택</span><i>→</i><span>추천 결과</span><i>→</i><span>사업 상세</span><i>→</i><span class="end">신청</span></div>
@@ -212,7 +191,7 @@
           <div class="ui-group static">
             <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><b>PRD · 요구사항 정의서</b><small>Product Requirements Document</small></td><td>무엇을, 누구를 위해, 어떻게 만들지 정리한 기획 문서</td><td><q>이 아이디어로 1장짜리 PRD 초안을 써줘</q></td></tr><tr><td><b>MVP</b><small>Minimum Viable Product</small></td><td>핵심 기능만 담아 먼저 만드는 첫 버전</td><td><q>이 기능 중 MVP에 꼭 필요한 것만 골라줘</q></td></tr><tr><td><b>페르소나</b><small>Persona</small></td><td>서비스를 쓸 대표 사용자를 가상 인물로 설정한 것</td><td><q>이 서비스의 대표 사용자 페르소나 2명을 만들어줘</q></td></tr><tr><td><b>유저 플로우</b><small>User Flow</small></td><td>사용자가 목적을 이루기까지 화면을 거치는 순서</td><td><q>지원사업을 찾아 신청하기까지의 유저 플로우를 그려줘</q></td></tr><tr><td><b>IA · 정보 구조</b><small>Information Architecture</small></td><td>메뉴와 정보를 어떻게 나누고 묶을지 정한 설계</td><td><q>이 서비스의 IA를 정리해줘</q></td></tr><tr><td><b>메뉴 구조도 · 사이트맵</b><small>Menu Tree · Sitemap</small></td><td>IA를 나무 모양 그림으로 표현한 것</td><td><q>IA를 메뉴 구조도로 그려줘</q></td></tr><tr><td><b>와이어프레임</b><small>Wireframe</small></td><td>화면의 뼈대 배치만 그린 스케치</td><td><q>메인 화면 와이어프레임부터 잡아줘</q></td></tr><tr><td><b>화면 설계서 · 스토리보드</b><small>Storyboard</small></td><td>화면별 구성과 동작 설명을 정리한 문서</td><td><q>화면마다 구성과 동작을 화면 설계서로 정리해줘</q></td></tr><tr><td><b>기능 명세서</b><small>Functional Specification</small></td><td>기능마다 입력, 처리 규칙, 결과를 정리한 문서</td><td><q>추천 기능의 입력·처리·결과를 기능 명세서로 써줘</q></td></tr><tr><td><b>데이터 명세서</b><small>Data Specification</small></td><td>다루는 데이터의 항목, 형식, 필수 여부를 정리한 표</td><td><q>지원사업 데이터의 항목·형식·필수 여부를 데이터 명세서로 정리해줘</q></td></tr><tr><td><b>완료 조건</b><small>Acceptance Criteria</small></td><td>"이렇게 되면 완성"이라고 판단하는 기준</td><td><q>이 기능의 완료 조건을 3개로 정리해줘</q></td></tr></tbody></table>
           </div>
-          <div class="dict-head"><h3 class="sub-title dict-title">3.6 화면(UI) 용어</h3></div>
+          <div class="dict-head"><h3 class="sub-title dict-title">2.6 화면(UI) 용어</h3></div>
           <details class="ui-group" open>
             <summary><span>① 레이아웃·구조</span><em>8개</em></summary>
             <div class="grp-body">
@@ -295,7 +274,7 @@
               <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><i class="ref">1</i><b>반응형</b><span class="core">핵심</span><small>Responsive</small></td><td>화면 크기에 맞춰 배치가 바뀌는 것</td><td><q>모바일에서는 카드가 1열로 보이게 반응형으로 해줘</q></td></tr><tr><td><i class="ref">2</i><b>다크 모드</b><small>Dark Mode</small></td><td>어두운 배경 화면 테마</td><td><q>다크 모드 전환 버튼을 넣어줘</q></td></tr><tr><td><i class="ref">3</i><b>스플래시 · 온보딩</b><small>Splash · Onboarding</small></td><td>앱 첫 실행 로고 화면 / 처음 사용법 안내 화면</td><td><q>처음 들어오면 3장짜리 온보딩 화면을 보여줘</q></td></tr><tr><td><i class="ref">4</i><b>여백</b><small>Padding · Margin</small></td><td>요소 안쪽 여백(패딩)과 바깥 간격(마진)</td><td><q>카드 안쪽 여백을 더 넉넉하게 해줘</q></td></tr><tr><td><i class="ref">5</i><b>와이어프레임 · 목업 · 프로토타입</b><small>Wireframe · Mockup · Prototype</small></td><td>뼈대 스케치 / 실제와 같은 디자인 / 눌러볼 수 있는 시안</td><td><q>먼저 와이어프레임 수준으로 화면 구조만 잡아줘</q></td></tr><tr><td><i class="ref">6</i><b>컴포넌트 · 디자인 시스템</b><small>Component · Design System</small></td><td>재사용하는 화면 부품 / 색·글꼴·부품 규칙 모음</td><td><q>버튼은 하나의 컴포넌트로 만들어 모든 화면에서 같게 써줘</q></td></tr></tbody></table>
             </div>
           </details>
-          <h3 class="sub-title">3.7 실제 화면으로 서비스 뜯어보기</h3>
+          <h3 class="sub-title">2.7 실제 화면으로 서비스 뜯어보기</h3>
           <div class="screen-guide">
             <ol class="guide-steps">
               <li>
@@ -305,14 +284,14 @@
 표(이름 | 화면의 어디 | 하는 일)로 정리해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
               <li>
-                <h4>② 사용자가 거쳐 가는 순서 보기 · 유저 플로우</h4>
-                <div class="prompt"><pre>창업자가 이 사이트에 들어와서 지원사업 공고를 찾아 내용을 확인하기까지, 어떤 화면을 어떤 순서로 거치게 될지 알려줘.
-화면 → 화면 형식으로 한 줄로 보여주고, 이런 순서를 정리한 것을 뭐라고 부르는지도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-              </li>
-              <li>
-                <h4>③ 메뉴가 어떻게 나뉘었는지 보기 · 메뉴 구조도</h4>
+                <h4>② 메뉴가 어떻게 나뉘었는지 보기 · 메뉴 구조도</h4>
                 <div class="prompt"><pre>이 화면 맨 위의 메뉴를 보고, 이 사이트에 어떤 메뉴가 있고 각 메뉴 아래에 어떤 페이지가 들어 있을지 큰 것부터 작은 것 순서로 정리해줘.
 이렇게 정리한 것을 서비스 만드는 사람들은 뭐라고 부르는지도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+              </li>
+              <li>
+                <h4>③ 사용자가 거쳐 가는 순서 보기 · 유저 플로우</h4>
+                <div class="prompt"><pre>창업자가 이 사이트에 들어와서 지원사업 공고를 찾아 내용을 확인하기까지, 어떤 화면을 어떤 순서로 거치게 될지 알려줘.
+화면 → 화면 형식으로 한 줄로 보여주고, 이런 순서를 정리한 것을 뭐라고 부르는지도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
               <li>
                 <h4>④ 화면에 담긴 정보 정리하기 · 데이터 명세서</h4>
@@ -330,6 +309,34 @@
           <aside class="callout tip"><b>핵심</b> 용어를 아는 만큼 AI에게 정확히 요청할 수 있음. <b>이름을 알면 원하는 화면이 한 번에 나옴.</b></aside>
         </section>
 
+        <!-- 개념 2 -->
+        <section id="sec-2" class="block">
+          <span class="block-step">개념</span>
+          <h2>바이브코딩으로 만든 실제 서비스</h2>
+          <div class="cases">
+            <article class="case">
+              <span class="case-tag">행정안전부</span>
+              <h3>3.1 국정ON</h3>
+              <p>국회·국무회의에서 업무 키워드가 언급되면 알림을 주는 모니터링 서비스. 현업 담당자가 생성형 AI 대화형 코딩으로 직접 구현함.</p>
+              <a class="case-link" href="https://kjon.aigov.go.kr" target="_blank" rel="noopener noreferrer">서비스 바로가기 <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="case">
+              <span class="case-tag">서울 광진구청</span>
+              <h3>3.2 코닥(Kordoc)·한국법 MCP</h3>
+              <p>비전공 7년차 주무관이 HWP·PDF 공문서를 AI가 읽게 바꾸는 도구와 법령·판례 검색 도구를 직접 만들어 누구나 쓸 수 있게 공개함.</p>
+              <div class="case-links"><a class="case-link" href="https://github.com/chrisryugj/kordoc" target="_blank" rel="noopener noreferrer">코닥 바로가기 <span aria-hidden="true">↗</span></a>
+              <a class="case-link" href="https://github.com/chrisryugj/korean-law-mcp" target="_blank" rel="noopener noreferrer">한국법 MCP 바로가기 <span aria-hidden="true">↗</span></a></div>
+            </article>
+            <article class="case">
+              <span class="case-tag">비개발자 개인</span>
+              <h3>3.3 저 내려요</h3>
+              <p>코딩을 모르는 취업준비생이 ChatGPT로 기획하고 Claude로 만든 지하철 빈자리 공유 서비스. 서울시 실시간 지하철 도착 정보 API를 활용함.</p>
+              <a class="case-link" href="https://apps.apple.com/kr/app/%EC%A0%80-%EB%82%B4%EB%A0%A4%EC%9A%94/id6775585122" target="_blank" rel="noopener noreferrer">앱스토어 바로가기 <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <aside class="callout tip"><b>핵심</b> 좋은 서비스는 거창한 기술보다 <b>현장의 불편을 가장 잘 아는 사람</b>에게서 시작됨.</aside>
+        </section>
+
 
 
         <!-- 오늘의 핵심 + 스스로 점검 -->
@@ -341,7 +348,7 @@
             <li>서비스는 화면 · 서버 · 데이터로 이루어지고, API로 연결되고, 배포로 공유됨</li>
             <li>잘 만드는 비결은 <b>작게, 정확하게, 확인하며</b> 요청하는 것</li>
           </ul>
-            <h3>6.1 스스로 점검</h3>
+            <h3>4.1 스스로 점검</h3>
             <div class="selfcheck">
             <label><input type="checkbox"> 바이브코딩을 한 문장으로 설명할 수 있다</label>
             <label><input type="checkbox"> 화면·서버·데이터·API의 차이를 말할 수 있다</label>
