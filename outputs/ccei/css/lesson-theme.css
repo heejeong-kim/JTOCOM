@@ -689,3 +689,7 @@
 /* DESIGN.md 카드: 참고 박스를 왼쪽 아래 프롬프트 끝선까지 늘림 */
 .lesson-page #sec-4 .ds-ways .dw-2 .ref-box { flex: 1 1 auto; margin-bottom: 0; }
 .lesson-page #sec-4 .ds-ways .dw > :last-child { margin-bottom: 0; }
+/* 1600 기준 정렬: 본문·표지를 헤더와 같은 폭(좌우 48px 여백)으로 맞춤 — 목차·TOP 버튼은 오른쪽 아래에 떠 있음 */
+@media (min-width: 901px) {
+  .lesson-page .lesson-body, .lesson-page .hero-grid { padding-right: 48px; }
+}
