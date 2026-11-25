@@ -693,3 +693,9 @@
 @media (min-width: 901px) {
   .lesson-page .lesson-body, .lesson-page .hero-grid { padding-right: 48px; }
 }
+/* 교시 진행 표시줄: 열린 교시는 링크로 이동 */
+.hero-track a { display: flex; flex-direction: column; gap: 8px; color: inherit; text-decoration: none; padding: 6px 0; margin: -6px 0; }
+.hero-track a:hover i { background: var(--accent); }
+.hero-track a:hover span { color: var(--accent-dark); }
+.hero-track a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.hero-track .is-soon { cursor: default; }
