@@ -606,3 +606,13 @@
 @media (prefers-reduced-motion: reduce) { .lesson-page .motion-demo * { animation: none !important; } }
 @media (max-width: 1200px) { .lesson-page .kgrid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 700px) { .lesson-page .kgrid.four, .lesson-page .kgrid.two { grid-template-columns: 1fr; } }
+
+/* 3.2 모션 참고 사이트 */
+.lesson-page .site-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.lesson-page .site-card { display: flex; flex-direction: column; gap: 6px; padding: 16px 16px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.lesson-page .site-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.lesson-page .site-card b { color: var(--accent-dark); font-size: 16px; }
+.lesson-page .site-card span { font-size: 14px; line-height: 1.5; word-break: keep-all; }
+.lesson-page .site-card small { margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 12.5px; line-height: 1.45; word-break: keep-all; }
+@media (max-width: 1200px) { .lesson-page .site-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .lesson-page .site-grid { grid-template-columns: 1fr; } }
