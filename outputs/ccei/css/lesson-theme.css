@@ -642,3 +642,8 @@
 .lesson-page .block .ref-box p.ref-note { margin: 8px 0 0; padding-top: 8px; border-top: 1px dashed #d9d3ca; color: #8a847d; font-size: 12.5px; }
 .lesson-page #sec-4 .kgrid.two { align-items: start; }
 .lesson-page #sec-4 .kgrid.two .prompt { flex: none; }
+.lesson-page #sec-4 .ds-ways { align-items: start; }
+.lesson-page #sec-4 .ds-ways .mini-title { font-size: 16px; margin: 0 0 4px; }
+.lesson-page #sec-4 .ds-ways .prompt { flex: none; }
+.lesson-page .ref-box.ref-sm li { flex-direction: column; gap: 1px; }
+.lesson-page .ref-box.ref-sm li a { min-width: 0; }
