@@ -44,11 +44,11 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-2">실제 서비스 사례</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
+      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
-      <ol><li><a href="lesson-00.html"><em>사전 점검</em>실습 환경 확인</a></li><li><a href="lesson-01.html" aria-current="page"><em>1교시</em>바이브코딩과 웹앱 기초</a></li><li><span class="is-soon"><em>2교시</em>AI와 함께 만드는 첫 결과물<small>준비 중</small></span></li><li><span class="is-soon"><em>3교시</em>실무 문제 정의와 PRD<small>준비 중</small></span></li><li><span class="is-soon"><em>4교시</em>구현 ① 화면과 데이터<small>준비 중</small></span></li><li><span class="is-soon"><em>5교시</em>구현 ② 핵심 기능<small>준비 중</small></span></li><li><span class="is-soon"><em>6교시</em>구현 ③ 기능 보완·QA<small>준비 중</small></span></li><li><span class="is-soon"><em>7교시</em>시연·회고와 Q&amp;A<small>준비 중</small></span></li></ol>
+      <ol><li><a href="lesson-00.html"><em>사전 점검</em>실습 환경 확인</a></li><li><a href="lesson-01.html" aria-current="page"><em>1교시</em>바이브코딩과 웹앱 기초</a></li><li><a href="lesson-02.html"><em>2교시</em>서비스 뜯어보고 첫 결과물 만들기</a></li><li><span class="is-soon"><em>3교시</em>실무 문제 정의와 PRD<small>준비 중</small></span></li><li><span class="is-soon"><em>4교시</em>구현 ① 화면과 데이터<small>준비 중</small></span></li><li><span class="is-soon"><em>5교시</em>구현 ② 핵심 기능<small>준비 중</small></span></li><li><span class="is-soon"><em>6교시</em>구현 ③ 기능 보완·QA<small>준비 중</small></span></li><li><span class="is-soon"><em>7교시</em>시연·회고와 Q&amp;A<small>준비 중</small></span></li></ol>
       </div>
       <div class="dock-btns"><button type="button" class="toc-fab" aria-expanded="false" aria-controls="toc-panel" aria-label="목차 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg><span>목차</span></button><button type="button" class="toc-fab lesson-fab" aria-expanded="false" aria-controls="lesson-panel" aria-label="교시 이동 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M4 12h10M4 17h10"/><path d="m17 9 3 3-3 3"/></svg><span>교시</span></button></div>
       </nav>
@@ -310,33 +310,6 @@
           <aside class="callout tip"><b>핵심</b> 용어를 아는 만큼 AI에게 정확히 요청할 수 있음. <b>이름을 알면 원하는 화면이 한 번에 나옴.</b></aside>
         </section>
 
-        <!-- 개념 2 -->
-        <section id="sec-2" class="block">
-          <span class="block-step">개념</span>
-          <h2>바이브코딩으로 만든 실제 서비스</h2>
-          <div class="cases">
-            <article class="case">
-              <span class="case-tag">행정안전부</span>
-              <h3>3.1 국정ON</h3>
-              <p>국회·국무회의에서 업무 키워드가 언급되면 알림을 주는 모니터링 서비스. 현업 담당자가 생성형 AI 대화형 코딩으로 직접 구현함.</p>
-              <a class="case-link" href="https://kjon.aigov.go.kr" target="_blank" rel="noopener noreferrer">서비스 바로가기 <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="case">
-              <span class="case-tag">서울 광진구청</span>
-              <h3>3.2 코닥(Kordoc)·한국법 MCP</h3>
-              <p>비전공 7년차 주무관이 HWP·PDF 공문서를 AI가 읽게 바꾸는 도구와 법령·판례 검색 도구를 직접 만들어 누구나 쓸 수 있게 공개함.</p>
-              <div class="case-links"><a class="case-link" href="https://github.com/chrisryugj/kordoc" target="_blank" rel="noopener noreferrer">코닥 바로가기 <span aria-hidden="true">↗</span></a>
-              <a class="case-link" href="https://github.com/chrisryugj/korean-law-mcp" target="_blank" rel="noopener noreferrer">한국법 MCP 바로가기 <span aria-hidden="true">↗</span></a></div>
-            </article>
-            <article class="case">
-              <span class="case-tag">비개발자 개인</span>
-              <h3>3.3 저 내려요</h3>
-              <p>코딩을 모르는 취업준비생이 ChatGPT로 기획하고 Claude로 만든 지하철 빈자리 공유 서비스. 서울시 실시간 지하철 도착 정보 API를 활용함.</p>
-              <a class="case-link" href="https://apps.apple.com/kr/app/%EC%A0%80-%EB%82%B4%EB%A0%A4%EC%9A%94/id6775585122" target="_blank" rel="noopener noreferrer">앱스토어 바로가기 <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <aside class="callout tip"><b>핵심</b> 좋은 서비스는 거창한 기술보다 <b>현장의 불편을 가장 잘 아는 사람</b>에게서 시작됨.</aside>
-        </section>
 
 
 
@@ -359,8 +332,7 @@
             </div>
           </div>
         </section>
-
-        <p class="sources">사례 출처: <a href="https://eiec.kdi.re.kr/policy/materialView.do?num=288239" target="_blank" rel="noopener noreferrer">행정안전부 「국정ON」 자료(2026.10.19)</a> · <a href="https://zdnet.co.kr/view?no=20261118161643" target="_blank" rel="noopener noreferrer">ZDNet Korea(2026.11.18)</a> · <a href="https://www.ddaily.co.kr/page/view/2026043009342654399" target="_blank" rel="noopener noreferrer">디지털데일리(2026.04.30)</a><br>바이브코딩 개념·현황 출처: <a href="https://www.wral.com/vibe-coding-named-collins-dictionary-s-word-of-the-year/22235286/" target="_blank" rel="noopener noreferrer">CNN(2025.11)</a></p>
+        <p class="sources">바이브코딩 개념·현황 출처: <a href="https://www.wral.com/vibe-coding-named-collins-dictionary-s-word-of-the-year/22235286/" target="_blank" rel="noopener noreferrer">CNN(2025.11)</a></p>
       </div>
     </main>
 
