@@ -34,7 +34,7 @@
           </div>
           <div class="hero-goals">
             <h2>이 시간이 끝나면</h2>
-            <ol><li>바이브코딩(Vibe Coding)이 무엇이고 기존 개발과 어떻게 다른지 설명할 수 있다.</li><li>서비스 구조 용어, 화면(UI) 구성 요소 이름, 기획 문서 용어를 사례로 익힌다.</li></ol>
+            <ol><li>바이브코딩(Vibe Coding)이 무엇이고 기존 개발과 어떻게 다른지 설명할 수 있다.</li><li>서비스 구조 용어, 화면(UI) 구성 요소 이름, 기획 문서 용어를 사례로 익힌다.</li><li>디자인 시스템과 모션 규칙을 정해 AI에게 요청할 수 있다.</li></ol>
           </div>
         </div>
       </section>
@@ -44,7 +44,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
+      <ol><li><a href="#sec-1">바이브코딩이란</a></li><li><a href="#sec-3">웹앱 기초</a></li><li><a href="#sec-4">디자인 시스템·모션</a></li><li><a href="#sec-6">오늘의 핵심</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -265,6 +265,27 @@
 
 
 
+        <section id="sec-4" class="block">
+          <span class="block-step">개념</span>
+          <h2>디자인 시스템과 모션</h2>
+          <h3 class="sub-title">3.1 디자인 시스템</h3>
+          <p>색·글꼴·간격·부품 모양을 미리 정해 둔 <b>디자인 규칙 모음</b>임. 규칙 없이 화면마다 따로 요청하면 AI가 매번 다른 색과 크기를 써서 서비스가 조각조각 보임.</p>
+          <div class="kgrid four"><article class="kcard"><div class="kcard-head"><h4>Color</h4><span class="kcard-tag">색</span></div><div class="ds-demo ds-color"><i style="background:#c98269">주색</i><i style="background:#a9654e">보조</i><i style="background:#282725">글자</i><i style="background:#f7f6f3;color:#282725">배경</i><i style="background:#ffe266;color:#282725">강조</i></div><p class="kcard-role">주색 · 보조색 · 글자색 · 배경색을 정해 두고 계속 같은 색만 씀</p><dl><div><dt>AI 요청</dt><dd>"주색은 주황 하나만 쓰고, 버튼·링크에만 써줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Typography</h4><span class="kcard-tag">글꼴</span></div><div class="ds-demo ds-type"><b style="font-size:22px">제목</b><b style="font-size:16px">소제목</b><span style="font-size:13px">본문 글씨</span><small style="font-size:11px">작은 설명</small></div><p class="kcard-role">제목·소제목·본문·작은 글씨의 크기와 굵기를 단계로 정함</p><dl><div><dt>AI 요청</dt><dd>"글자 크기는 32·22·16·13px 네 단계만 써줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Spacing</h4><span class="kcard-tag">간격</span></div><div class="ds-demo ds-space"><span><i style="width:8px"></i>8</span><span><i style="width:16px"></i>16</span><span><i style="width:24px"></i>24</span><span><i style="width:40px"></i>40</span></div><p class="kcard-role">요소 사이 여백을 4·8·16·24처럼 정해진 값으로만 띄움</p><dl><div><dt>AI 요청</dt><dd>"여백은 8의 배수로만 맞춰줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Component</h4><span class="kcard-tag">부품</span></div><div class="ds-demo ds-comp"><span class="b1">저장</span><span class="b2">취소</span><span class="c">카드</span></div><p class="kcard-role">버튼·카드·입력칸 모양을 한 번 정해 모든 화면에 똑같이 씀</p><dl><div><dt>AI 요청</dt><dd>"버튼은 하나의 부품으로 만들어 모든 화면에서 같게 써줘"</dd></div></dl></article></div>
+          <h3 class="sub-title">3.2 모션</h3>
+          <p>화면 요소가 나타나고, 바뀌고, 사라질 때의 <b>움직임 규칙</b>임. 잘 쓰면 무엇이 바뀌었는지 알려 주고, 과하면 눈을 피곤하게 함.</p>
+          <div class="kgrid four motion-demo"><article class="kcard"><div class="kcard-head"><h4>Transition</h4><span class="kcard-tag">바뀔 때</span></div><div class="mo-demo mo-trans"><span>마우스 올림</span></div><p class="kcard-role">색·크기·위치가 갑자기 바뀌지 않고 부드럽게 바뀌게 함</p><dl><div><dt>AI 요청</dt><dd>"버튼에 마우스를 올리면 0.2초 동안 살짝 진해지게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Duration</h4><span class="kcard-tag">얼마나 빨리</span></div><div class="mo-demo mo-dur"><span><i class="f"></i><em>0.2초</em></span><span><i class="s"></i><em>1초</em></span></div><p class="kcard-role">움직임에 걸리는 시간. 버튼·메뉴는 0.2~0.3초가 적당함</p><dl><div><dt>AI 요청</dt><dd>"메뉴가 열릴 때 0.25초 안에 끝나게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Easing</h4><span class="kcard-tag">어떻게 움직이나</span></div><div class="mo-demo mo-ease"><span><i class="lin"></i><em>일정한 속도</em></span><span><i class="out"></i><em>천천히 멈춤</em></span></div><p class="kcard-role">처음과 끝의 속도 변화. 빨리 시작해 천천히 멈추면 자연스러움</p><dl><div><dt>AI 요청</dt><dd>"패널이 열릴 때 빨리 시작해서 천천히 멈추게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Feedback</h4><span class="kcard-tag">알려 주기</span></div><div class="mo-demo mo-feed"><span class="press">신청</span><span class="spin"></span></div><p class="kcard-role">누르거나 기다리는 동안 무슨 일이 일어나는지 움직임으로 알려 줌</p><dl><div><dt>AI 요청</dt><dd>"저장하는 동안 버튼 안에 로딩 표시를 보여줘"</dd></div></dl></article></div>
+          <h3 class="sub-title">3.3 AI에게 요청하기</h3>
+          <div class="kgrid two">
+            <div><h4 class="mini-title">① 디자인 규칙 먼저 정하기</h4><div class="prompt"><pre>이 서비스에 쓸 디자인 규칙(디자인 시스템)을 먼저 정해줘. 나는 디자인 용어를 잘 모르는 초보자야.
+주색 1개와 보조색, 글자 크기 4단계, 여백 규칙, 버튼과 카드 모양을 표로 정리하고 각각 쉬운 말로 설명해줘.
+앞으로 만드는 모든 화면은 이 규칙대로만 만들어줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></div>
+            <div><h4 class="mini-title">② 움직임 넣기</h4><div class="prompt"><pre>화면에 움직임(모션)을 넣어줘. 나는 모션 용어를 잘 모르는 초보자야.
+버튼에 마우스를 올리면 0.2초 동안 부드럽게 색이 바뀌고, 메뉴와 팝업은 빨리 열려서 천천히 멈추게 해줘.
+움직임은 과하지 않게 하고, 휴대폰이나 컴퓨터에서 '움직임 줄이기'를 켠 사람에게는 움직이지 않게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></div>
+          </div>
+          <aside class="callout tip"><b>핵심</b> 화면을 만들기 전에 <b>디자인 규칙부터 정해 두면</b> 몇 번을 고쳐도 같은 서비스처럼 보임.</aside>
+        </section>
+
         <!-- 오늘의 핵심 + 스스로 점검 -->
         <section id="sec-6" class="block">
           <div class="wrapup">
@@ -280,6 +301,7 @@
             <label><input type="checkbox"> 화면·서버·데이터·API의 차이를 말할 수 있다</label>
             <label><input type="checkbox"> 탭·드롭다운·모달 같은 UI 이름으로 화면을 요청할 수 있다</label>
             <label><input type="checkbox"> 유저 플로우·메뉴 구조도·데이터 명세서가 무엇인지 말할 수 있다</label>
+            <label><input type="checkbox"> 디자인 시스템과 모션이 왜 필요한지 말할 수 있다</label>
             </div>
           </div>
         </section>

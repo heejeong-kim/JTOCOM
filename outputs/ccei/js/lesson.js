@@ -60,3 +60,21 @@ document.querySelectorAll('.prompt .copy').forEach((btn) => {
   }, { threshold: 0.35 });
   io.observe(vs);
 })();
+
+// 3.1 HTML·CSS·JS 카드: 화면에 보이면 미니 모션 시작
+(() => {
+  const el = document.querySelector('.stack-demo');
+  if (!el) return;
+  if (!('IntersectionObserver' in window)) { el.classList.add('is-play'); return; }
+  const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { el.classList.add('is-play'); io.disconnect(); } }); }, { threshold: 0.3 });
+  io.observe(el);
+})();
+
+// 3. 모션 예시: 화면에 보이면 시작
+(() => {
+  const el = document.querySelector('.motion-demo');
+  if (!el) return;
+  if (!('IntersectionObserver' in window)) { el.classList.add('is-play'); return; }
+  const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { el.classList.add('is-play'); io.disconnect(); } }); }, { threshold: 0.3 });
+  io.observe(el);
+})();

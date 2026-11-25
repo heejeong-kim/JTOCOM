@@ -556,3 +556,53 @@
 .lesson-page .guide-steps { grid-template-columns: 1fr; gap: 16px; }
 @media (max-width: 1100px) { .lesson-page .screen-guide { grid-template-columns: 1fr; } .lesson-page .guide-all { position: static; } }
 .lesson-page .block .guide-all p.guide-note { margin: 12px 0 0; padding: 10px 14px; border-radius: 8px; background: var(--warm); color: var(--accent-dark); font-size: 14.5px; font-weight: 700; }
+
+/* 3. 디자인 시스템과 모션 */
+.lesson-page .kgrid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lesson-page .kgrid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+.lesson-page .kgrid.two > div { display: flex; flex-direction: column; }
+.lesson-page .kgrid.two .prompt { flex: 1; }
+.lesson-page .kgrid.two .mini-title { margin-top: 0; }
+.lesson-page #sec-4 .kcard-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.lesson-page #sec-4 .kcard-head h4 { margin: 0; font-size: 22px; }
+.lesson-page #sec-4 .kcard-tag { padding: 2px 9px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 12px; }
+.lesson-page .ds-demo, .lesson-page .mo-demo { height: 92px; margin-bottom: 12px; padding: 12px; border-radius: 10px; background: var(--warm); overflow: hidden; }
+.lesson-page .ds-color { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.lesson-page .ds-color i { display: flex; align-items: flex-end; padding: 4px; border-radius: 6px; color: #fff; font-style: normal; font-size: 10.5px; font-weight: 700; border: 1px solid rgba(40,39,37,.08); }
+.lesson-page .ds-type { display: flex; flex-direction: column; justify-content: center; gap: 2px; line-height: 1.15; }
+.lesson-page .ds-type small { color: var(--muted); }
+.lesson-page .ds-space { display: flex; flex-direction: column; justify-content: center; gap: 5px; }
+.lesson-page .ds-space span { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+.lesson-page .ds-space i { height: 10px; border-radius: 2px; background: var(--accent); }
+.lesson-page .ds-comp { display: flex; align-items: center; gap: 8px; }
+.lesson-page .ds-comp span { padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; }
+.lesson-page .ds-comp .b1 { background: var(--accent); color: #fff; }
+.lesson-page .ds-comp .b2 { border: 1.5px solid var(--accent); color: var(--accent-dark); background: #fff; }
+.lesson-page .ds-comp .c { flex: 1; height: 54px; display: flex; align-items: flex-end; border: 1px solid var(--line); background: #fff; font-weight: 600; color: var(--muted); }
+
+.lesson-page .mo-demo { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.lesson-page .mo-trans span { align-self: center; padding: 10px 18px; border-radius: 10px; background: #c7c0b6; color: #fff; font-size: 13px; font-weight: 700; }
+.lesson-page .mo-dur span, .lesson-page .mo-ease span { position: relative; display: block; height: 22px; border-radius: 999px; background: #fff; }
+.lesson-page .mo-dur i, .lesson-page .mo-ease i { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); }
+.lesson-page .mo-dur em, .lesson-page .mo-ease em { position: absolute; right: 10px; top: 3px; color: var(--muted); font-size: 11px; font-style: normal; }
+.lesson-page .mo-feed { flex-direction: row; align-items: center; justify-content: center; gap: 22px; }
+.lesson-page .mo-feed .press { padding: 9px 18px; border-radius: 10px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; }
+.lesson-page .mo-feed .spin { width: 28px; height: 28px; border: 3px solid #e5e0d9; border-top-color: var(--accent); border-radius: 50%; }
+
+@keyframes moTrans { 0%, 30% { background: #c7c0b6; transform: none; } 45%, 80% { background: var(--accent); transform: translateY(-3px); box-shadow: 0 6px 14px rgba(201,130,105,.35); } 95%, 100% { background: #c7c0b6; transform: none; } }
+@keyframes moMove { 0%, 15% { left: 3px; } 55%, 85% { left: calc(100% - 19px - 70px); } 100% { left: 3px; } }
+@keyframes moPress { 0%, 40%, 60%, 100% { transform: scale(1); } 50% { transform: scale(.9); } }
+@keyframes moSpin { to { transform: rotate(360deg); } }
+.lesson-page .motion-demo.is-play .mo-trans span { animation: moTrans 3s ease infinite; }
+.lesson-page .motion-demo.is-play .mo-dur .f { animation: moMove 3s infinite; animation-timing-function: steps(1, end); }
+.lesson-page .motion-demo.is-play .mo-dur .f { animation: moFast 3s ease-out infinite; }
+.lesson-page .motion-demo.is-play .mo-dur .s { animation: moSlow 3s ease-in-out infinite; }
+@keyframes moFast { 0%, 20% { left: 3px; } 27%, 70% { left: calc(100% - 19px - 52px); } 77%, 100% { left: 3px; } }
+@keyframes moSlow { 0%, 20% { left: 3px; } 53%, 70% { left: calc(100% - 19px - 52px); } 100% { left: 3px; } }
+.lesson-page .motion-demo.is-play .mo-ease .lin { animation: moMove 3s linear infinite; }
+.lesson-page .motion-demo.is-play .mo-ease .out { animation: moMove 3s cubic-bezier(.16, 1, .3, 1) infinite; }
+.lesson-page .motion-demo.is-play .mo-feed .press { animation: moPress 1.6s ease infinite; }
+.lesson-page .motion-demo.is-play .mo-feed .spin { animation: moSpin .9s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .lesson-page .motion-demo * { animation: none !important; } }
+@media (max-width: 1200px) { .lesson-page .kgrid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .lesson-page .kgrid.four, .lesson-page .kgrid.two { grid-template-columns: 1fr; } }
