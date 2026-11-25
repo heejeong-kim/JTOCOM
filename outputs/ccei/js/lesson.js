@@ -2,9 +2,9 @@
 document.querySelectorAll('.prompt .copy').forEach((btn) => {
   btn.addEventListener('click', async () => {
     const text = btn.parentElement.querySelector('pre').textContent;
-    try { await navigator.clipboard.writeText(text); btn.textContent = '복사됨'; }
-    catch (e) { btn.textContent = '복사 실패'; }
-    setTimeout(() => { btn.textContent = '복사'; }, 1500);
+    try { await navigator.clipboard.writeText(text); btn.classList.add('is-done'); btn.setAttribute('aria-label', '복사됨'); }
+    catch (e) { btn.setAttribute('aria-label', '복사 실패'); }
+    setTimeout(() => { btn.classList.remove('is-done'); btn.setAttribute('aria-label', '프롬프트 복사'); }, 1500);
   });
 });
 

@@ -379,3 +379,12 @@
 .lesson-page .guide-steps > li { display: flex; flex-direction: column; }
 .lesson-page .guide-steps .prompt { flex: 1; }
 @media (max-width: 1100px) { .lesson-page .guide-steps { grid-template-columns: 1fr; } }
+
+/* 프롬프트 복사 버튼: 아이콘 */
+.lesson-page .prompt .copy { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border-radius: 8px; }
+.lesson-page .prompt .copy svg { width: 16px; height: 16px; }
+.lesson-page .prompt .copy .ic-done { display: none; }
+.lesson-page .prompt .copy.is-done { background: var(--accent); border-color: var(--accent); color: #fff; }
+.lesson-page .prompt .copy.is-done .ic-copy { display: none; }
+.lesson-page .prompt .copy.is-done .ic-done { display: block; }
+.lesson-page .prompt pre { padding-right: 56px; }
