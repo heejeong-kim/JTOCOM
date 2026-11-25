@@ -555,3 +555,4 @@
 .lesson-page .prompt.prompt-all .copy.is-done { background: var(--accent); color: #fff; }
 .lesson-page .guide-steps { grid-template-columns: 1fr; gap: 16px; }
 @media (max-width: 1100px) { .lesson-page .screen-guide { grid-template-columns: 1fr; } .lesson-page .guide-all { position: static; } }
+.lesson-page .block .guide-all p.guide-note { margin: 12px 0 0; padding: 10px 14px; border-radius: 8px; background: var(--warm); color: var(--accent-dark); font-size: 14.5px; font-weight: 700; }
