@@ -420,3 +420,21 @@
 @media (max-width: 1200px) { .lesson-page .req-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); } .lesson-page .req-flow li:nth-child(4)::before { display: none; } }
 @media (max-width: 1100px) { .lesson-page .kgrid.three { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .lesson-page .req-flow { grid-template-columns: 1fr; } .lesson-page .req-flow li + li::before { display: none; } }
+
+/* 플로팅: 목차 · 교시 이동 · TOP (위에서 아래 순서) */
+.toc-float.dock { bottom: 92px; }
+.dock-btns { display: flex; flex-direction: column; gap: 10px; }
+.dock .toc-panel { bottom: 64px; }
+.dock .lesson-panel { bottom: 0; width: 300px; }
+.lesson-panel ol { counter-reset: none; }
+.lesson-panel li { counter-increment: none; }
+.lesson-panel a::before { content: none !important; }
+.lesson-panel a, .lesson-panel .is-soon { display: flex; align-items: baseline; gap: 10px; padding: 10px 12px; border-radius: 8px; font-size: 15px; line-height: 1.4; }
+.lesson-panel em { flex: none; min-width: 38px; color: var(--accent-dark); font-size: 13px; font-style: normal; font-weight: 700; }
+.lesson-panel a[aria-current="page"] { background: var(--warm); color: var(--accent); font-weight: 700; }
+.lesson-panel .is-soon { color: #a8a29a; cursor: default; }
+.lesson-panel .is-soon em { color: #b5aea5; }
+.lesson-panel .is-soon small { margin-left: auto; font-size: 11.5px; }
+@media (max-width: 600px) { .toc-float.dock { bottom: 72px; } .dock .toc-panel { bottom: 56px; } }
+.dock .lesson-panel { width: 360px; }
+.lesson-panel a, .lesson-panel .is-soon { white-space: nowrap; }

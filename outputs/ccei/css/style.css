@@ -498,3 +498,9 @@
 .agenda-link svg { width: 15px; height: 15px; color: var(--accent); flex: none; transition: transform .2s ease; }
 .agenda-link:hover { color: var(--accent-dark); }
 .agenda-link:hover svg { transform: translateX(3px); }
+
+/* 커리큘럼 교안 링크: 호버 시 색 변경 + 글자 크게 */
+.agenda-link { transform-origin: left center; transition: color .2s ease, transform .2s ease, border-color .2s ease; }
+.agenda-link:hover, .agenda-link:focus-visible { color: var(--accent); border-color: var(--accent-dark); transform: scale(1.08); }
+.agenda-link:hover strong, .agenda-link:focus-visible strong { color: var(--accent); }
+.agenda-link strong { transition: color .2s ease; }
