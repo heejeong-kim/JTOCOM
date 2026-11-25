@@ -371,3 +371,11 @@
 @media (max-width: 1100px) { .lesson-page .guide-left { position: static; } .lesson-page .guide-checks .apply-checks { grid-template-columns: 1fr 1fr; } }
 .lesson-page .apply .apply-checks { grid-template-columns: 1fr 1fr; }
 .lesson-page .screen-guide { margin-top: 28px; }
+
+/* 예시 화면 삭제 → 단계 목록 한 열 */
+.lesson-page .screen-guide { grid-template-columns: 1fr; }
+.lesson-page .guide-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; }
+.lesson-page .guide-steps > li + li { margin-top: 0; }
+.lesson-page .guide-steps > li { display: flex; flex-direction: column; }
+.lesson-page .guide-steps .prompt { flex: 1; }
+@media (max-width: 1100px) { .lesson-page .guide-steps { grid-template-columns: 1fr; } }
