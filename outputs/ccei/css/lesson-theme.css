@@ -249,3 +249,8 @@
 /* 따라 만들기: 원형 번호 대신 5.1 형식 제목 사용 */
 .lesson-page .prompts > li { padding-left: 0; }
 .lesson-page .prompts > li::before { display: none; }
+
+/* 섹션 제목(1. 바이브코딩이란 등) 아웃라인 박스 + 배경색 */
+.lesson-page .lesson-body > .block > h2 { padding: 18px 26px; border: 1.5px solid var(--accent); border-radius: 12px; background: #eaf1fb; }
+/* 사례 카드: 링크 버튼 2개일 때 나란히 */
+.lesson-page .case-link + .case-link { margin-top: 8px; }
