@@ -239,6 +239,43 @@
               <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><i class="ref">1</i><b>반응형</b><small>Responsive</small></td><td>화면 크기에 맞춰 배치가 바뀌는 것</td><td><q>모바일에서는 카드가 1열로 보이게 반응형으로 해줘</q></td></tr><tr><td><i class="ref">2</i><b>다크 모드</b><small>Dark Mode</small></td><td>어두운 배경 화면 테마</td><td><q>다크 모드 전환 버튼을 넣어줘</q></td></tr><tr><td><i class="ref">3</i><b>스플래시 · 온보딩</b><small>Splash · Onboarding</small></td><td>앱 첫 실행 로고 화면 / 처음 사용법 안내 화면</td><td><q>처음 들어오면 3장짜리 온보딩 화면을 보여줘</q></td></tr><tr><td><i class="ref">4</i><b>여백</b><small>Padding · Margin</small></td><td>요소 안쪽 여백(패딩)과 바깥 간격(마진)</td><td><q>카드 안쪽 여백을 더 넉넉하게 해줘</q></td></tr><tr><td><i class="ref">5</i><b>와이어프레임 · 목업 · 프로토타입</b><small>Wireframe · Mockup · Prototype</small></td><td>뼈대 스케치 / 실제와 같은 디자인 / 눌러볼 수 있는 시안</td><td><q>먼저 와이어프레임 수준으로 화면 구조만 잡아줘</q></td></tr><tr><td><i class="ref">6</i><b>컴포넌트 · 디자인 시스템</b><small>Component · Design System</small></td><td>재사용하는 화면 부품 / 색·글꼴·부품 규칙 모음</td><td><q>버튼은 하나의 컴포넌트로 만들어 모든 화면에서 같게 써줘</q></td></tr></tbody></table>
             </div>
           </details>
+          <h3 class="sub-title">3.4 실제 서비스로 용어 익히기</h3>
+          <p>앞에서 배운 용어를 실제 서비스에 대입해 봄. '저 내려요'로 구조와 기획 문서를, 우리 센터 홈페이지로 화면(UI) 용어를 찾아봄.</p>
+          <div class="apply-grid">
+            <article class="apply">
+              <span class="apply-tag">서비스 구조 · 저 내려요</span>
+              <h4>어떻게 이루어져 있나</h4>
+              <dl class="apply-map">
+                <div><dt>화면</dt><dd>노선·하차역·호차를 입력하고, 곧 비는 자리를 확인하는 화면</dd></div>
+                <div><dt>데이터</dt><dd>이용자가 등록한 하차 정보 (노선·하차역·호차)</dd></div>
+                <div><dt>서버</dt><dd>등록된 하차 정보를 모아 같은 열차 이용자에게 보여 주는 처리</dd></div>
+                <div><dt>API</dt><dd>서울시 실시간 지하철 도착 정보 (열차 위치·도착 예정 시간)</dd></div>
+                <div><dt>배포</dt><dd>웹 주소와 앱스토어로 누구나 쓸 수 있게 공개</dd></div>
+              </dl>
+            </article>
+            <article class="apply">
+              <span class="apply-tag">기획 문서 · 저 내려요</span>
+              <h4>유저 플로우로 그려 보기</h4>
+              <p class="apply-sub">내릴 사람</p>
+              <ol class="apply-flow"><li>노선 선택</li><li>하차역 입력</li><li>호차 입력</li><li>등록</li></ol>
+              <p class="apply-sub">앉고 싶은 사람</p>
+              <ol class="apply-flow"><li>노선·방향 선택</li><li>내 열차 확인</li><li>곧 비는 칸 확인</li></ol>
+              <p class="apply-note">MVP는 '빈자리 정보 공유' 하나. 좌석 예약·선점 기능은 넣지 않음.</p>
+            </article>
+            <article class="apply">
+              <span class="apply-tag">화면(UI) 용어 · 우리 센터 홈페이지</span>
+              <h4>직접 찾아서 체크하기</h4>
+              <div class="apply-checks">
+                <label><input type="checkbox"> 헤더</label><label><input type="checkbox"> GNB</label>
+                <label><input type="checkbox"> 히어로·배너</label><label><input type="checkbox"> 버튼</label>
+                <label><input type="checkbox"> 카드</label><label><input type="checkbox"> 탭</label>
+                <label><input type="checkbox"> 게시판 목록</label><label><input type="checkbox"> 페이지네이션</label>
+                <label><input type="checkbox"> 검색바</label><label><input type="checkbox"> 푸터</label>
+              </div>
+              <a class="case-link" href="https://ccei.creativekorea.or.kr/daejeon/" target="_blank" rel="noopener noreferrer">센터 홈페이지 열기 <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <p class="apply-try"><b>해 보기</b> 찾은 용어로 AI에게 요청해 봄 — "센터 홈페이지처럼 GNB와 카드형 공지 목록이 있는 첫 화면을 만들어줘"</p>
           <aside class="callout tip"><b>핵심</b> 용어를 아는 만큼 AI에게 정확히 요청할 수 있음. <b>이름을 알면 원하는 화면이 한 번에 나옴.</b></aside>
         </section>
 

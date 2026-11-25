@@ -286,3 +286,69 @@
 
 /* 본문 안의 브랜드 블루 사용처(예시 화면·배지·링크 등)를 메인과 같은 테라코타로 — 헤더는 메인과 동일하게 유지 */
 .lesson-page .lesson-hero, .lesson-page .lesson-body, .lesson-page .toc-float { --brand-blue: #a9654e; }
+
+/* 3.4 실제 서비스로 용어 익히기 */
+.lesson-page .apply-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.lesson-page .apply { display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .apply-tag { color: var(--accent-dark); font-size: 13px; font-weight: 700; }
+.lesson-page .apply h4 { margin: 6px 0 14px; font-size: 18px; font-weight: 700; }
+.lesson-page .apply-map { margin: 0; }
+.lesson-page .apply-map div { display: grid; grid-template-columns: 56px 1fr; gap: 10px; padding: 9px 0; border-top: 1px dashed var(--line); }
+.lesson-page .apply-map dt { color: var(--accent-dark); font-weight: 700; font-size: 14.5px; }
+.lesson-page .apply-map dd { margin: 0; font-size: 14.5px; line-height: 1.55; word-break: keep-all; }
+.lesson-page .apply-sub { margin: 4px 0 8px; color: var(--muted); font-size: 13px; font-weight: 700; }
+.lesson-page .apply-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+.lesson-page .apply-flow li { padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--warm); font-size: 14px; }
+.lesson-page .apply-flow li + li::before { content: "→"; margin: 0 6px 0 -2px; color: var(--accent); }
+.lesson-page .apply-flow li + li { display: flex; align-items: center; }
+.lesson-page .apply-note { margin: auto 0 0; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 14px; line-height: 1.55; }
+.lesson-page .apply-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-bottom: 16px; }
+.lesson-page .apply-checks label { display: flex; align-items: center; gap: 8px; font-size: 14.5px; cursor: pointer; }
+.lesson-page .apply-checks input { width: 16px; height: 16px; accent-color: var(--accent); }
+.lesson-page .apply .case-link { margin-top: auto; }
+.lesson-page .apply-try { margin: 16px 0 0; padding: 14px 18px; border-radius: 10px; background: var(--warm); font-size: 15px; }
+.lesson-page .apply-try b { margin-right: 8px; color: var(--accent-dark); }
+@media (max-width: 1100px) { .lesson-page .apply-grid { grid-template-columns: 1fr; } }
+.lesson-page .apply-flow { gap: 6px 22px; }
+.lesson-page .apply-flow li { position: relative; }
+.lesson-page .apply-flow li + li { display: block; }
+.lesson-page .apply-flow li + li::before { position: absolute; left: -17px; top: 50%; transform: translateY(-50%); margin: 0; }
+.lesson-page .block .apply p.apply-sub { margin: 4px 0 8px; color: var(--muted); font-size: 13px; font-weight: 700; line-height: 1.4; }
+.lesson-page .block .apply p.apply-note { font-size: 14px; line-height: 1.55; }
+.lesson-page .block p.apply-try { font-size: 15px; }
+
+/* 1.2 기존 개발 vs 바이브코딩 모션
+   - 같은 시간 동안 기존 개발은 한 바퀴, 바이브코딩은 네 바퀴 반복 → 속도 차이를 보여 줌 */
+.lesson-page .vs:not(.is-play) .vs-bar i { width: 0 !important; }
+.lesson-page .vs .vs-flow li { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; }
+.lesson-page .vs.is-play .vs-flow li { opacity: 1; transform: none; }
+.lesson-page .vs.is-play .old .vs-flow li:nth-child(2) { transition-delay: .25s; }
+.lesson-page .vs.is-play .old .vs-flow li:nth-child(3) { transition-delay: .5s; }
+.lesson-page .vs.is-play .old .vs-flow li:nth-child(4) { transition-delay: .75s; }
+.lesson-page .vs.is-play .old .vs-flow li:nth-child(5) { transition-delay: 1s; }
+.lesson-page .vs.is-play .new .vs-flow li:nth-child(2) { transition-delay: .1s; }
+.lesson-page .vs.is-play .new .vs-flow li:nth-child(3) { transition-delay: .2s; }
+.lesson-page .vs.is-play .new .vs-flow li:nth-child(4) { transition-delay: .3s; }
+@keyframes vsFill { from { width: 0; } to { width: 100%; } }
+@keyframes vsGlowOld { 0%, 22%, 100% { box-shadow: 0 0 0 0 rgba(169,101,78,0); background: #f2efea; color: #77736e; } 6%, 16% { box-shadow: 0 0 0 4px rgba(168,162,154,.35); background: #e5e0d9; color: #45413c; } }
+@keyframes vsGlowNew { 0%, 30%, 100% { box-shadow: 0 0 0 2px rgba(201,130,105,.35); background: #fff; color: #a9654e; } 10%, 20% { box-shadow: 0 0 0 6px rgba(201,130,105,.28); background: #c98269; color: #fff; } }
+@keyframes vsPulse { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.12); } }
+.lesson-page .vs.is-play .old .vs-bar i { animation: vsFill 6s linear 1.2s infinite backwards; }
+.lesson-page .vs.is-play .new .vs-bar i { animation: vsFill 1.5s ease-out .6s infinite backwards; }
+.lesson-page .vs.is-play .old .vs-ic { animation: vsGlowOld 6s linear infinite; }
+.lesson-page .vs.is-play .old li:nth-child(1) .vs-ic { animation-delay: 1.2s; }
+.lesson-page .vs.is-play .old li:nth-child(2) .vs-ic { animation-delay: 2.4s; }
+.lesson-page .vs.is-play .old li:nth-child(3) .vs-ic { animation-delay: 3.6s; }
+.lesson-page .vs.is-play .old li:nth-child(4) .vs-ic { animation-delay: 4.8s; }
+.lesson-page .vs.is-play .old li:nth-child(5) .vs-ic { animation-delay: 6s; }
+.lesson-page .vs.is-play .new .vs-ic { animation: vsGlowNew 1.5s linear infinite; }
+.lesson-page .vs.is-play .new li:nth-child(1) .vs-ic { animation-delay: .6s; }
+.lesson-page .vs.is-play .new li:nth-child(2) .vs-ic { animation-delay: .975s; }
+.lesson-page .vs.is-play .new li:nth-child(3) .vs-ic { animation-delay: 1.35s; }
+.lesson-page .vs.is-play .new li:nth-child(4) .vs-ic { animation-delay: 1.725s; }
+.lesson-page .vs.is-play::before { animation: vsPulse 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .lesson-page .vs .vs-flow li { opacity: 1; transform: none; transition: none; }
+  .lesson-page .vs .vs-bar i, .lesson-page .vs .vs-ic, .lesson-page .vs::before { animation: none !important; }
+  .lesson-page .vs .old .vs-bar i, .lesson-page .vs .new .vs-bar i { width: 100% !important; }
+}

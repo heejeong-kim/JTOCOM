@@ -487,3 +487,8 @@
 
 /* 사전 안내 삭제 후 진행 흐름과 표 사이 간격 */
 .process + .agenda-wrap { margin-top: 36px; }
+
+/* 로고: 실제 센터 사이트와 같은 크기(193×41, 원본 249×53 비율 유지) */
+.brand { min-width: 0; }
+.brand img { width: 193px !important; height: auto !important; }
+@media (max-width: 600px) { .brand img { width: 150px !important; } }

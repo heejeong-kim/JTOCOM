@@ -39,3 +39,14 @@ document.querySelectorAll('.prompt .copy').forEach((btn) => {
 })();
 
 // 목차 버튼 시작 위치: '1 바이브코딩이란' 제목 줄 높이에서 보이다가, 스크롤하면 헤더 아래(108px)에 고정
+
+// 1.2 기존 개발 vs 바이브코딩: 화면에 보이면 모션 시작
+(() => {
+  const vs = document.querySelector('.vs');
+  if (!vs) return;
+  if (!('IntersectionObserver' in window)) { vs.classList.add('is-play'); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { vs.classList.add('is-play'); io.disconnect(); } });
+  }, { threshold: 0.35 });
+  io.observe(vs);
+})();
