@@ -699,3 +699,41 @@
 .hero-track a:hover span { color: var(--accent-dark); }
 .hero-track a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 .hero-track .is-soon { cursor: default; }
+
+/* ── 반응형 보강 (태블릿·모바일) ── */
+@media (max-width: 900px) {
+  .lesson-page .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-page .kgrid.three, .lesson-page .kgrid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .lesson-page .lesson-hero { padding: 36px 0 32px; }
+  .lesson-page .lesson-hero h1 { font-size: 32px; line-height: 1.2; }
+  .hero-track { margin-top: 22px; }
+  .hero-goals { padding: 22px 20px; }
+  .hero-goals li { font-size: 14.5px; }
+  .lesson-page .block { padding: 24px 18px; }
+  .lesson-page .block h2 { font-size: 24px !important; }
+  .lesson-page .sub-title { font-size: 19px !important; }
+  .lesson-page .terms, .lesson-page .kgrid.two, .lesson-page .kgrid.three, .lesson-page .kgrid.four { grid-template-columns: 1fr; }
+  .lesson-page .ds-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .lesson-page .ds-color { grid-template-columns: repeat(3, 1fr); }
+  .lesson-page .ds-color i:nth-child(n+4) { display: none; }
+  .lesson-page .prompt pre { font-size: 13.5px; padding-right: 36px; }
+  .lesson-page .case-links { flex-direction: column; align-items: flex-start; }
+  .lesson-page table { display: block; overflow-x: auto; }
+  .lesson-page .ref-box ul li { grid-template-columns: 1fr !important; }
+  .footer-inner .credit { text-align: center; }
+}
+@media (max-width: 600px) {
+  .lesson-page .ds-row { grid-template-columns: 1fr; }
+  .lesson-page .ds-color { grid-template-columns: repeat(5, 1fr); }
+  .lesson-page .ds-color i:nth-child(n+4) { display: flex; }
+  .toc-float.dock { right: 12px; bottom: 16px; }
+  .dock .toc-fab, .lesson-page .to-top.in-dock { width: 44px; height: 44px; }
+  .dock-btns { gap: 8px; }
+  .dock .toc-panel { right: 54px; width: min(280px, calc(100vw - 80px)); max-height: 70vh; overflow-y: auto; }
+}
+@media (max-width: 600px) {
+  .lesson-page .to-top { right: 12px; bottom: 16px; width: 44px; height: 44px; }
+  .toc-float.dock { right: 12px; bottom: 68px; }
+}
