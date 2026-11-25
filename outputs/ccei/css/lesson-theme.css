@@ -261,3 +261,7 @@
 .lesson-page .lesson-body > .block + .block { margin-top: 40px; border-top-width: 1.5px; }
 .lesson-page .lesson-body > .block:not(#sec-6) { border-top: 1.5px solid var(--line); }
 @media (max-width: 600px) { .lesson-page .lesson-body > .block:not(#sec-6) { padding: 28px 20px; } }
+
+/* 사례 카드: 링크 버튼 가로 배치 */
+.lesson-page .case-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.lesson-page .case-links .case-link { margin-top: 0; }
