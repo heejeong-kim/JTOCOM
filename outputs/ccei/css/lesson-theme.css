@@ -544,3 +544,14 @@
 .lesson-page .v-bsheet .grab::before { content: ""; display: block; width: 26px; height: 3px; margin: 0 auto 2px; border-radius: 3px; background: #c7c0b6; }
 .lesson-page .v-bsheet b { flex-basis: 100%; font-size: 12px; }
 .lesson-page .v-bsheet em { padding: 1px 8px; border: 1px solid var(--line); border-radius: 999px; font-style: normal; font-size: 11px; }
+
+/* 2.7 왼쪽: 한 번에 정리하는 전체 프롬프트 / 오른쪽: 단계별 프롬프트 */
+.lesson-page .screen-guide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+.lesson-page .guide-all { position: sticky; top: 104px; }
+.lesson-page .guide-all h4 { margin: 0 0 8px; font-size: 17px; font-weight: 700; color: var(--accent-dark); }
+.lesson-page .prompt.prompt-all { background: #fbefe8; border: 1.5px solid var(--accent); }
+.lesson-page .prompt.prompt-all pre { color: var(--ink); }
+.lesson-page .prompt.prompt-all .copy { border-color: var(--accent); color: var(--accent-dark); background: #fff; }
+.lesson-page .prompt.prompt-all .copy.is-done { background: var(--accent); color: #fff; }
+.lesson-page .guide-steps { grid-template-columns: 1fr; gap: 16px; }
+@media (max-width: 1100px) { .lesson-page .screen-guide { grid-template-columns: 1fr; } .lesson-page .guide-all { position: static; } }
