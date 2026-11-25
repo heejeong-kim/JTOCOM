@@ -272,3 +272,14 @@
 .lesson-page details.toggle[open] > summary { border-bottom: 1px solid #c9d8ef; }
 .lesson-page details.toggle > p { color: var(--ink); }
 .lesson-page details.toggle[open] > summary { padding-bottom: 12px; margin-bottom: 12px; }
+
+/* 1교시 교안 글꼴: IBM Plex Sans KR 로 통일 */
+.lesson-page {
+  --f-head: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+  font-family: var(--f-body);
+}
+.lesson-page h1, .lesson-page h2, .lesson-page h3, .lesson-page .sub-title, .lesson-page .nav, .lesson-page button, .lesson-page input, .lesson-page summary { font-family: var(--f-body); }
+.lesson-page .lesson-kicker, .lesson-page .timeline b, .lesson-page .lesson-card .no, .lesson-page .ui-mock .mk, .lesson-page .ui-terms em,
+.lesson-page .phone .mk, .lesson-page .ui-table .ref, .lesson-page .n, .lesson-page .h-when, .lesson-page .to-top span { font-family: var(--f-body) !important; }
+.lesson-page .block h2, .lesson-page .sub-title, .lesson-page .lesson-hero h1 { letter-spacing: -.02em; }
