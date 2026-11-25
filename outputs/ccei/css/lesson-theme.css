@@ -647,3 +647,11 @@
 .lesson-page #sec-4 .ds-ways .prompt { flex: none; }
 .lesson-page .ref-box.ref-sm li { flex-direction: column; gap: 1px; }
 .lesson-page .ref-box.ref-sm li a { min-width: 0; }
+
+/* 디자인 규칙 3가지 방법: 왼쪽 위아래(퓨샷·추천), 오른쪽(DESIGN.md) */
+.lesson-page #sec-4 .ds-ways { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "a b" "c b"; gap: 18px; align-items: start; }
+.lesson-page #sec-4 .ds-ways .dw { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.lesson-page #sec-4 .ds-ways .dw-1 { grid-area: a; }
+.lesson-page #sec-4 .ds-ways .dw-2 { grid-area: b; align-self: stretch; }
+.lesson-page #sec-4 .ds-ways .dw-3 { grid-area: c; }
+@media (max-width: 860px) { .lesson-page #sec-4 .ds-ways { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; } }
