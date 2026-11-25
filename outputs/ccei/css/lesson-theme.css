@@ -616,3 +616,23 @@
 .lesson-page .site-card small { margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 12.5px; line-height: 1.45; word-break: keep-all; }
 @media (max-width: 1200px) { .lesson-page .site-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 700px) { .lesson-page .site-grid { grid-template-columns: 1fr; } }
+
+/* 3.1 디자인 시스템: 개념 요약 4칸 + 직접 정하기 어려울 때 방법 */
+.lesson-page .ds-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 14px 0 4px; }
+.lesson-page .ds-mini { padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .ds-mini .ds-demo { height: 84px; margin-bottom: 8px; }
+.lesson-page .ds-mini b { font-size: 15px; }
+.lesson-page .ds-mini b small { margin-left: 4px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.lesson-page .block p.ds-how { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.lesson-page #sec-4 .kgrid.two .mini-title { font-size: 16px; margin-bottom: 4px; }
+@media (max-width: 900px) { .lesson-page .ds-row { grid-template-columns: 1fr 1fr; } }
+
+/* 참고 박스: 본문과 구분되는 보조 정보 */
+.lesson-page .ref-box { position: relative; margin: 20px 0; padding: 16px 20px 14px; border: 1px dashed #c7c0b6; border-radius: 12px; background: var(--warm); }
+.lesson-page .ref-label { position: absolute; top: -10px; left: 16px; padding: 1px 10px; border-radius: 999px; background: #6b665f; color: #fff; font-size: 12px; }
+.lesson-page .block .ref-box p.ref-title { margin: 2px 0 8px; color: #45413c; font-size: 14px; font-weight: 700; }
+.lesson-page .ref-box ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 28px; margin: 0; padding: 0; list-style: none; }
+.lesson-page .ref-box li { display: flex; gap: 10px; align-items: baseline; font-size: 13.5px; line-height: 1.5; color: #6b665f; }
+.lesson-page .ref-box li a { flex: none; min-width: 112px; color: #45413c; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #c7c0b6; }
+.lesson-page .ref-box li a:hover { color: var(--accent-dark); }
+@media (max-width: 900px) { .lesson-page .ref-box ul { grid-template-columns: 1fr; } }
