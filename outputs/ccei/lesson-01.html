@@ -120,8 +120,45 @@
         <section id="sec-3" class="block">
           <span class="block-step">개념</span>
           <h2>사례로 익히는 IT 기본 용어</h2>
-          <p>'지원사업 추천 페이지'를 예로 서비스가 어떻게 이루어지는지(서비스 구조 용어), 만들기 전에 무엇을 정리하는지(기획 문서 용어), 화면이 무엇으로 이루어지는지(UI 용어)를 순서대로 살펴봄.</p>
-          <h3 class="sub-title">3.1 서비스 구조 용어</h3>
+          <p>실제 서비스 화면에서 용어를 먼저 찾아본 뒤, 서비스 구조 용어 → 기획 문서 용어 → 화면(UI) 용어 순서로 자세히 익힘.</p>
+          <h3 class="sub-title">3.1 실제 화면으로 용어 찾기</h3>
+          <p>용어 설명보다 실제 서비스 화면을 먼저 봄. '저 내려요'로 서비스 구조와 기획 문서를, 우리 센터 홈페이지로 화면(UI) 용어를 찾아본 뒤 3.2~3.4에서 하나씩 자세히 익힘.</p>
+          <div class="apply-grid">
+            <article class="apply">
+              <span class="apply-tag">서비스 구조 · 저 내려요</span>
+              <h4>어떻게 이루어져 있나</h4>
+              <dl class="apply-map">
+                <div><dt>화면</dt><dd>노선·하차역·호차를 입력하고, 곧 비는 자리를 확인하는 화면</dd></div>
+                <div><dt>데이터</dt><dd>이용자가 등록한 하차 정보 (노선·하차역·호차)</dd></div>
+                <div><dt>서버</dt><dd>등록된 하차 정보를 모아 같은 열차 이용자에게 보여 주는 처리</dd></div>
+                <div><dt>API</dt><dd>서울시 실시간 지하철 도착 정보 (열차 위치·도착 예정 시간)</dd></div>
+                <div><dt>배포</dt><dd>웹 주소와 앱스토어로 누구나 쓸 수 있게 공개</dd></div>
+              </dl>
+            </article>
+            <article class="apply">
+              <span class="apply-tag">기획 문서 · 저 내려요</span>
+              <h4>유저 플로우로 그려 보기</h4>
+              <p class="apply-sub">내릴 사람</p>
+              <ol class="apply-flow"><li>노선 선택</li><li>하차역 입력</li><li>호차 입력</li><li>등록</li></ol>
+              <p class="apply-sub">앉고 싶은 사람</p>
+              <ol class="apply-flow"><li>노선·방향 선택</li><li>내 열차 확인</li><li>곧 비는 칸 확인</li></ol>
+              <p class="apply-note">MVP는 '빈자리 정보 공유' 하나. 좌석 예약·선점 기능은 넣지 않음.</p>
+            </article>
+            <article class="apply">
+              <span class="apply-tag">화면(UI) 용어 · 우리 센터 홈페이지</span>
+              <h4>직접 찾아서 체크하기</h4>
+              <div class="apply-checks">
+                <label><input type="checkbox"> 헤더</label><label><input type="checkbox"> GNB</label>
+                <label><input type="checkbox"> 히어로·배너</label><label><input type="checkbox"> 버튼</label>
+                <label><input type="checkbox"> 카드</label><label><input type="checkbox"> 탭</label>
+                <label><input type="checkbox"> 게시판 목록</label><label><input type="checkbox"> 페이지네이션</label>
+                <label><input type="checkbox"> 검색바</label><label><input type="checkbox"> 푸터</label>
+              </div>
+              <a class="case-link" href="https://ccei.creativekorea.or.kr/daejeon/" target="_blank" rel="noopener noreferrer">센터 홈페이지 열기 <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <p class="apply-try"><b>해 보기</b> 찾은 용어로 AI에게 요청해 봄 — "센터 홈페이지처럼 GNB와 카드형 공지 목록이 있는 첫 화면을 만들어줘"</p>
+          <h3 class="sub-title">3.2 서비스 구조 용어</h3>
           <div class="anatomy" aria-label="서비스 구조 예시">
             <div class="node"><b>화면</b><small>프론트엔드</small><span>창업 단계·업종을 고르는 입력창과 결과 목록</span></div>
             <i aria-hidden="true">→</i>
@@ -137,7 +174,7 @@
             <div><b>JSON</b><span>API가 데이터를 주고받는 형식. 예: 공공데이터 API 응답</span></div>
           </div>
           
-          <h3 class="sub-title">3.2 기획 문서 용어 — 만들기 전에 정리하는 문서들</h3>
+          <h3 class="sub-title">3.3 기획 문서 용어 — 만들기 전에 정리하는 문서들</h3>
           <div class="plan-docs">
             <div class="plan-card"><span class="plan-tag">유저 플로우 · User Flow</span>
               <div class="flow"><span>홈</span><i>→</i><span>조건 선택</span><i>→</i><span>추천 결과</span><i>→</i><span>사업 상세</span><i>→</i><span class="end">신청</span></div>
@@ -156,7 +193,7 @@
           <div class="ui-group static">
             <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><b>PRD · 요구사항 정의서</b><small>Product Requirements Document</small></td><td>무엇을, 누구를 위해, 어떻게 만들지 정리한 기획 문서</td><td><q>이 아이디어로 1장짜리 PRD 초안을 써줘</q></td></tr><tr><td><b>MVP</b><small>Minimum Viable Product</small></td><td>핵심 기능만 담아 먼저 만드는 첫 버전</td><td><q>이 기능 중 MVP에 꼭 필요한 것만 골라줘</q></td></tr><tr><td><b>페르소나</b><small>Persona</small></td><td>서비스를 쓸 대표 사용자를 가상 인물로 설정한 것</td><td><q>이 서비스의 대표 사용자 페르소나 2명을 만들어줘</q></td></tr><tr><td><b>유저 플로우</b><small>User Flow</small></td><td>사용자가 목적을 이루기까지 화면을 거치는 순서</td><td><q>지원사업을 찾아 신청하기까지의 유저 플로우를 그려줘</q></td></tr><tr><td><b>IA · 정보 구조</b><small>Information Architecture</small></td><td>메뉴와 정보를 어떻게 나누고 묶을지 정한 설계</td><td><q>이 서비스의 IA를 정리해줘</q></td></tr><tr><td><b>메뉴 구조도 · 사이트맵</b><small>Menu Tree · Sitemap</small></td><td>IA를 나무 모양 그림으로 표현한 것</td><td><q>IA를 메뉴 구조도로 그려줘</q></td></tr><tr><td><b>와이어프레임</b><small>Wireframe</small></td><td>화면의 뼈대 배치만 그린 스케치</td><td><q>메인 화면 와이어프레임부터 잡아줘</q></td></tr><tr><td><b>화면 설계서 · 스토리보드</b><small>Storyboard</small></td><td>화면별 구성과 동작 설명을 정리한 문서</td><td><q>화면마다 구성과 동작을 화면 설계서로 정리해줘</q></td></tr><tr><td><b>기능 명세서</b><small>Functional Specification</small></td><td>기능마다 입력, 처리 규칙, 결과를 정리한 문서</td><td><q>추천 기능의 입력·처리·결과를 기능 명세서로 써줘</q></td></tr><tr><td><b>데이터 명세서</b><small>Data Specification</small></td><td>다루는 데이터의 항목, 형식, 필수 여부를 정리한 표</td><td><q>지원사업 데이터의 항목·형식·필수 여부를 데이터 명세서로 정리해줘</q></td></tr><tr><td><b>완료 조건</b><small>Acceptance Criteria</small></td><td>"이렇게 되면 완성"이라고 판단하는 기준</td><td><q>이 기능의 완료 조건을 3개로 정리해줘</q></td></tr></tbody></table>
           </div>
-          <div class="dict-head"><h3 class="sub-title dict-title">3.3 화면(UI) 용어 <span>· 웹·모바일 앱 8개 분류 65개 용어 · 예시 화면 번호 = 표 번호</span></h3></div>
+          <div class="dict-head"><h3 class="sub-title dict-title">3.4 화면(UI) 용어 <span>· 웹·모바일 앱 8개 분류 65개 용어 · 예시 화면 번호 = 표 번호</span></h3></div>
           <details class="ui-group" open>
             <summary><span>① 레이아웃·구조</span><em>8개</em></summary>
             <div class="grp-body">
@@ -239,43 +276,6 @@
               <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><i class="ref">1</i><b>반응형</b><small>Responsive</small></td><td>화면 크기에 맞춰 배치가 바뀌는 것</td><td><q>모바일에서는 카드가 1열로 보이게 반응형으로 해줘</q></td></tr><tr><td><i class="ref">2</i><b>다크 모드</b><small>Dark Mode</small></td><td>어두운 배경 화면 테마</td><td><q>다크 모드 전환 버튼을 넣어줘</q></td></tr><tr><td><i class="ref">3</i><b>스플래시 · 온보딩</b><small>Splash · Onboarding</small></td><td>앱 첫 실행 로고 화면 / 처음 사용법 안내 화면</td><td><q>처음 들어오면 3장짜리 온보딩 화면을 보여줘</q></td></tr><tr><td><i class="ref">4</i><b>여백</b><small>Padding · Margin</small></td><td>요소 안쪽 여백(패딩)과 바깥 간격(마진)</td><td><q>카드 안쪽 여백을 더 넉넉하게 해줘</q></td></tr><tr><td><i class="ref">5</i><b>와이어프레임 · 목업 · 프로토타입</b><small>Wireframe · Mockup · Prototype</small></td><td>뼈대 스케치 / 실제와 같은 디자인 / 눌러볼 수 있는 시안</td><td><q>먼저 와이어프레임 수준으로 화면 구조만 잡아줘</q></td></tr><tr><td><i class="ref">6</i><b>컴포넌트 · 디자인 시스템</b><small>Component · Design System</small></td><td>재사용하는 화면 부품 / 색·글꼴·부품 규칙 모음</td><td><q>버튼은 하나의 컴포넌트로 만들어 모든 화면에서 같게 써줘</q></td></tr></tbody></table>
             </div>
           </details>
-          <h3 class="sub-title">3.4 실제 서비스로 용어 익히기</h3>
-          <p>앞에서 배운 용어를 실제 서비스에 대입해 봄. '저 내려요'로 구조와 기획 문서를, 우리 센터 홈페이지로 화면(UI) 용어를 찾아봄.</p>
-          <div class="apply-grid">
-            <article class="apply">
-              <span class="apply-tag">서비스 구조 · 저 내려요</span>
-              <h4>어떻게 이루어져 있나</h4>
-              <dl class="apply-map">
-                <div><dt>화면</dt><dd>노선·하차역·호차를 입력하고, 곧 비는 자리를 확인하는 화면</dd></div>
-                <div><dt>데이터</dt><dd>이용자가 등록한 하차 정보 (노선·하차역·호차)</dd></div>
-                <div><dt>서버</dt><dd>등록된 하차 정보를 모아 같은 열차 이용자에게 보여 주는 처리</dd></div>
-                <div><dt>API</dt><dd>서울시 실시간 지하철 도착 정보 (열차 위치·도착 예정 시간)</dd></div>
-                <div><dt>배포</dt><dd>웹 주소와 앱스토어로 누구나 쓸 수 있게 공개</dd></div>
-              </dl>
-            </article>
-            <article class="apply">
-              <span class="apply-tag">기획 문서 · 저 내려요</span>
-              <h4>유저 플로우로 그려 보기</h4>
-              <p class="apply-sub">내릴 사람</p>
-              <ol class="apply-flow"><li>노선 선택</li><li>하차역 입력</li><li>호차 입력</li><li>등록</li></ol>
-              <p class="apply-sub">앉고 싶은 사람</p>
-              <ol class="apply-flow"><li>노선·방향 선택</li><li>내 열차 확인</li><li>곧 비는 칸 확인</li></ol>
-              <p class="apply-note">MVP는 '빈자리 정보 공유' 하나. 좌석 예약·선점 기능은 넣지 않음.</p>
-            </article>
-            <article class="apply">
-              <span class="apply-tag">화면(UI) 용어 · 우리 센터 홈페이지</span>
-              <h4>직접 찾아서 체크하기</h4>
-              <div class="apply-checks">
-                <label><input type="checkbox"> 헤더</label><label><input type="checkbox"> GNB</label>
-                <label><input type="checkbox"> 히어로·배너</label><label><input type="checkbox"> 버튼</label>
-                <label><input type="checkbox"> 카드</label><label><input type="checkbox"> 탭</label>
-                <label><input type="checkbox"> 게시판 목록</label><label><input type="checkbox"> 페이지네이션</label>
-                <label><input type="checkbox"> 검색바</label><label><input type="checkbox"> 푸터</label>
-              </div>
-              <a class="case-link" href="https://ccei.creativekorea.or.kr/daejeon/" target="_blank" rel="noopener noreferrer">센터 홈페이지 열기 <span aria-hidden="true">↗</span></a>
-            </article>
-          </div>
-          <p class="apply-try"><b>해 보기</b> 찾은 용어로 AI에게 요청해 봄 — "센터 홈페이지처럼 GNB와 카드형 공지 목록이 있는 첫 화면을 만들어줘"</p>
           <aside class="callout tip"><b>핵심</b> 용어를 아는 만큼 AI에게 정확히 요청할 수 있음. <b>이름을 알면 원하는 화면이 한 번에 나옴.</b></aside>
         </section>
 
