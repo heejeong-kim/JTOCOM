@@ -1,19 +1,19 @@
 /* =========================================================
-   교안 페이지 테마 — '센터 블루 + 형광펜 교안 노트'
-   · 색: 센터 브랜드 블루를 주색으로, 핵심 문장만 형광펜(노랑)으로 표시
-   · 글꼴: 제목 SUIT, 본문 Pretendard (모노스페이스는 프롬프트에만)
+   교안 페이지 테마 — 메인 페이지 컬러(테라코타) + 형광펜 교안 노트
+   · 색: 메인과 같은 테라코타를 주색으로, 핵심 문장만 형광펜(노랑)으로 표시
+   · 글꼴: IBM Plex Sans KR (메인 페이지와 동일)
    · 구조: 왼쪽 고정 목차 + 오른쪽 본문(읽기 좋은 폭)
    ========================================================= */
 .lesson-page {
-  --accent: #24549c;          /* 센터 블루 */
-  --accent-dark: #1b3f78;     /* 진한 블루 */
-  --ink: #1b2330;             /* 본문 잉크 */
-  --muted: #5c6679;
-  --warm: #f3f6fb;            /* 옅은 블루 그레이 면 */
-  --line: #dde3ec;            /* 구분선 */
+  --accent: #c98269;          /* 테라코타(메인과 동일) */
+  --accent-dark: #a9654e;     /* 진한 테라코타 */
+  --ink: #282725;             /* 본문 잉크 */
+  --muted: #6b665f;
+  --warm: #f7f6f3;            /* 옅은 웜 그레이 면 */
+  --line: #e8e4df;            /* 구분선 */
   --marker: #ffe266;          /* 형광펜 */
-  --f-head: "SUIT Variable", "SUIT", "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", sans-serif;
-  --f-body: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "IBM Plex Sans KR", sans-serif;
+  --f-head: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --f-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
   background: #fff; color: var(--ink); font-family: var(--f-body);
   font-feature-settings: "tnum" 0;
 }
@@ -23,7 +23,7 @@
 /* 모노스페이스 라벨 제거 → 본문 글꼴 숫자 */
 .lesson-page .n, .lesson-page .ref, .lesson-page .h-when, .lesson-page .ui-mock .mk, .lesson-page .phone .mk,
 .lesson-page .ui-terms em, .lesson-page .vs::before, .lesson-page .v-step i, .lesson-page .lesson-kicker { font-family: var(--f-head) !important; letter-spacing: 0; }
-.lesson-page .prompt pre { font-family: "D2Coding", ui-monospace, SFMono-Regular, Menlo, monospace; }
+.lesson-page .prompt pre { font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif; }
 
 /* ---------- 표지 ---------- */
 .lesson-page .lesson-hero { padding: 64px 0 56px; background: #fff; border-bottom: 1px solid var(--line); }
@@ -47,7 +47,7 @@
 .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: t; border-left: 2px solid var(--line); }
 .toc li { counter-increment: t; }
 .toc a { display: flex; gap: 10px; margin-left: -2px; padding: 9px 0 9px 16px; border-left: 2px solid transparent; color: var(--muted); font-size: 15px; line-height: 1.4; transition: color .15s ease, border-color .15s ease; }
-.toc a::before { content: counter(t); color: #9aa5b5; font: 700 14px/1.4 var(--f-head); min-width: 12px; }
+.toc a::before { content: counter(t); color: #a8a29a; font: 700 14px/1.4 var(--f-head); min-width: 12px; }
 .toc a:hover { color: var(--ink); }
 .toc a.is-active { color: var(--accent); border-left-color: var(--accent); font-weight: 700; }
 .toc a.is-active::before { color: var(--accent); }
@@ -60,7 +60,7 @@
 .lesson-page .block > h2 { display: flex; align-items: baseline; gap: 16px; margin: 12px 0 20px; font-size: 34px; font-weight: 800; }
 .lesson-page .block > h2::before { content: counter(sec); flex: none; color: var(--accent); font: 800 34px/1 var(--f-head); }
 .lesson-page .sub-title { margin: 40px 0 14px !important; font-size: 21px !important; font-weight: 700; }
-.lesson-page .block p { color: #3f4859; font-size: 17px; line-height: 1.8; }
+.lesson-page .block p { color: #45413c; font-size: 17px; line-height: 1.8; }
 .lesson-page .block > p, .lesson-page .block > h3 + p { max-width: 46em; }
 
 /* ---------- 핵심: 상자 대신 형광펜 ---------- */
@@ -80,7 +80,7 @@
 .lesson-page .ui-group { border-radius: 12px; }
 .lesson-page .ui-group summary { background: #fff; border-bottom: 1px solid var(--line); font-family: var(--f-head); font-size: 17px; }
 .lesson-page .ui-group summary em { background: var(--warm); color: var(--accent); }
-.lesson-page .ui-table q { background: #f3f6fb; }
+.lesson-page .ui-table q { background: #f7f6f3; }
 
 /* 통계: 같은 색 카드 4개 → 흰 면 + 큰 숫자, 그림자 카드만 진하게 */
 .lesson-page .stats { gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
@@ -90,7 +90,7 @@
 .lesson-page .stat:last-child .st-src { color: rgba(255,255,255,.7); }
 .lesson-page .st-num { color: var(--accent); font: 800 40px/1.05 var(--f-head); letter-spacing: -.04em; }
 .lesson-page .stat:last-child .st-num { color: var(--marker); }
-.lesson-page .stat p { color: #3f4859 !important; font-size: 14.5px; }
+.lesson-page .stat p { color: #45413c !important; font-size: 14.5px; }
 .lesson-page .stat:last-child p { color: rgba(255,255,255,.85) !important; }
 .lesson-page .st-cite { border-top-color: var(--line); color: var(--muted); }
 .lesson-page .st-cite a { color: var(--accent); }
@@ -162,17 +162,17 @@
 .lesson-page .lesson-body { display: block; }
 .lesson-page .lesson-body > * { grid-column: auto; }
 .toc-float { position: fixed; right: 28px; bottom: 92px; z-index: 51; }
-.toc-fab { width: 54px; height: 54px; display: grid; place-content: center; justify-items: center; gap: 1px; border: 0; border-radius: 50%; background: var(--ink); color: #fff; box-shadow: 0 10px 24px rgba(27,35,48,.28); cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.toc-fab { width: 54px; height: 54px; display: grid; place-content: center; justify-items: center; gap: 1px; border: 0; border-radius: 50%; background: var(--ink); color: #fff; box-shadow: 0 10px 24px rgba(40,39,37,.28); cursor: pointer; transition: background .2s ease, transform .2s ease; }
 .toc-fab svg { width: 19px; height: 19px; }
 .toc-fab span { font: 700 10px/1 var(--f-head); letter-spacing: .02em; }
 .toc-fab:hover, .toc-fab.is-open { background: var(--accent); }
 .toc-fab:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; }
-.toc-panel { position: absolute; right: 0; bottom: 66px; width: 280px; padding: 18px 10px 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 18px 44px rgba(27,35,48,.18); }
+.toc-panel { position: absolute; right: 0; bottom: 66px; width: 280px; padding: 18px 10px 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 18px 44px rgba(40,39,37,.18); }
 .toc-panel p { margin: 0 0 8px 12px; color: var(--muted); font: 700 13px/1 var(--f-head); }
 .toc-panel ol { margin: 0; padding: 0; list-style: none; counter-reset: t; }
 .toc-panel li { counter-increment: t; }
-.toc-panel a { display: flex; gap: 12px; padding: 10px 12px; border-radius: 8px; color: #3f4859; font-size: 15px; line-height: 1.4; }
-.toc-panel a::before { content: counter(t); min-width: 14px; color: #9aa5b5; font: 800 14px/1.4 var(--f-head); }
+.toc-panel a { display: flex; gap: 12px; padding: 10px 12px; border-radius: 8px; color: #45413c; font-size: 15px; line-height: 1.4; }
+.toc-panel a::before { content: counter(t); min-width: 14px; color: #a8a29a; font: 800 14px/1.4 var(--f-head); }
 .toc-panel a:hover { background: var(--warm); color: var(--ink); }
 .toc-panel a.is-active { background: var(--warm); color: var(--accent); font-weight: 700; }
 .toc-panel a.is-active::before { color: var(--accent); }
@@ -197,7 +197,7 @@
   .dock .toc-fab, .lesson-page .to-top.in-dock { width: 46px; height: 46px; }
 }
 /* TOP 버튼: 형광펜 노랑 + 잉크 아이콘 (목차 버튼과 구분) */
-.lesson-page .to-top, .lesson-page .to-top.in-dock { background: var(--marker); color: var(--ink); box-shadow: 0 10px 24px rgba(27,35,48,.18); }
+.lesson-page .to-top, .lesson-page .to-top.in-dock { background: var(--marker); color: var(--ink); box-shadow: 0 10px 24px rgba(40,39,37,.18); }
 .lesson-page .to-top:hover { background: var(--accent); color: #fff; }
 
 /* 목차·TOP 버튼을 본문 오른쪽 여백(전용 칸)에 세로로 배치 — 교안 내용을 덮지 않음 */
@@ -251,7 +251,7 @@
 .lesson-page .prompts > li::before { display: none; }
 
 /* 섹션 제목(1. 바이브코딩이란 등) 아웃라인 박스 + 배경색 */
-.lesson-page .lesson-body > .block > h2 { padding: 18px 26px; border: 1.5px solid var(--accent); border-radius: 12px; background: #eaf1fb; }
+.lesson-page .lesson-body > .block > h2 { padding: 18px 26px; border: 1.5px solid var(--accent); border-radius: 12px; background: #f8eee8; }
 /* 사례 카드: 링크 버튼 2개일 때 나란히 */
 .lesson-page .case-link + .case-link { margin-top: 8px; }
 
@@ -267,9 +267,9 @@
 .lesson-page .case-links .case-link { margin-top: 0; }
 
 /* 토론 질문 토글: 컬러 배경 */
-.lesson-page details.toggle { border: 1.5px solid #c9d8ef; border-radius: 12px; background: #eaf1fb; }
+.lesson-page details.toggle { border: 1.5px solid #ead2c5; border-radius: 12px; background: #f8eee8; }
 .lesson-page details.toggle > summary { color: var(--accent-dark); }
-.lesson-page details.toggle[open] > summary { border-bottom: 1px solid #c9d8ef; }
+.lesson-page details.toggle[open] > summary { border-bottom: 1px solid #ead2c5; }
 .lesson-page details.toggle > p { color: var(--ink); }
 .lesson-page details.toggle[open] > summary { padding-bottom: 12px; margin-bottom: 12px; }
 
@@ -283,3 +283,6 @@
 .lesson-page .lesson-kicker, .lesson-page .timeline b, .lesson-page .lesson-card .no, .lesson-page .ui-mock .mk, .lesson-page .ui-terms em,
 .lesson-page .phone .mk, .lesson-page .ui-table .ref, .lesson-page .n, .lesson-page .h-when, .lesson-page .to-top span { font-family: var(--f-body) !important; }
 .lesson-page .block h2, .lesson-page .sub-title, .lesson-page .lesson-hero h1 { letter-spacing: -.02em; }
+
+/* 본문 안의 브랜드 블루 사용처(예시 화면·배지·링크 등)를 메인과 같은 테라코타로 — 헤더는 메인과 동일하게 유지 */
+.lesson-page .lesson-hero, .lesson-page .lesson-body, .lesson-page .toc-float { --brand-blue: #a9654e; }
