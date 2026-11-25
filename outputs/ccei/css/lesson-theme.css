@@ -235,3 +235,17 @@
 .dock-btns { margin-top: 0; }
 .dock .toc-panel { top: auto; bottom: 0; right: 66px; }
 @media (max-width: 600px) { .toc-float.dock { right: 16px; bottom: 72px; } .dock .toc-panel { right: 56px; } }
+
+/* 섹션 제목 번호: "1. 바이브코딩이란" 형태 */
+.lesson-page .block > h2 { gap: 10px; }
+.lesson-page .block > h2::before { content: counter(sec) "."; color: inherit; font: inherit; line-height: inherit; }
+.toc a::before, .toc-panel a::before { content: counter(t) "."; }
+
+/* 1.1 개념 아웃라인 박스 */
+.lesson-page .concept-box { padding: 26px 30px; border: 1.5px solid var(--accent); border-radius: 12px; background: #fff; }
+.lesson-page .concept-box p { margin: 0; max-width: none; }
+/* 마무리 섹션 제목 번호 */
+.lesson-page .block > .wrapup > h2::before { content: counter(sec) ". "; }
+/* 따라 만들기: 원형 번호 대신 5.1 형식 제목 사용 */
+.lesson-page .prompts > li { padding-left: 0; }
+.lesson-page .prompts > li::before { display: none; }
