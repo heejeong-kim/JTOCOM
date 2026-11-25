@@ -655,3 +655,37 @@
 .lesson-page #sec-4 .ds-ways .dw-2 { grid-area: b; align-self: stretch; }
 .lesson-page #sec-4 .ds-ways .dw-3 { grid-area: c; }
 @media (max-width: 860px) { .lesson-page #sec-4 .ds-ways { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; } }
+
+/* ── 교시 표지 디자인 요소 ── */
+.lesson-page .lesson-hero { position: relative; overflow: hidden; background: var(--warm);
+  background-image: radial-gradient(rgba(169,101,78,.16) 1.2px, transparent 1.4px); background-size: 22px 22px; }
+.lesson-page .lesson-hero::after { content: ""; position: absolute; right: -120px; top: -160px; width: 520px; height: 520px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,130,105,.22), rgba(201,130,105,0) 68%); pointer-events: none; }
+.lesson-page .lesson-hero .hero-grid { position: relative; z-index: 1; }
+.hero-main { position: relative; }
+.hero-num { position: absolute; left: -6px; top: -54px; z-index: -1; font: 800 190px/1 var(--f-head); letter-spacing: -.06em;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(169,101,78,.22); user-select: none; }
+.hero-step span:first-child { display: inline-block; padding: 7px 14px; border-radius: 999px; background: var(--accent); color: #fff !important; font-size: 14px; }
+.hero-track { display: flex; gap: 6px; margin: 34px 0 0; padding: 0; list-style: none; max-width: 520px; }
+.hero-track li { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.hero-track i { display: block; height: 6px; border-radius: 3px; background: #e3ddd6; }
+.hero-track span { font: 600 12px/1 var(--f-head); color: #a49d95; }
+.hero-track .is-done i { background: #d9b2a3; }
+.hero-track .is-done span { color: var(--accent-dark); }
+.hero-track .is-now i { background: var(--accent); box-shadow: 0 0 0 3px rgba(201,130,105,.2); }
+.hero-track .is-now span { color: var(--ink); font-weight: 800; }
+.hero-goals { position: relative; overflow: hidden; box-shadow: 0 18px 40px -22px rgba(40,39,37,.55); }
+.hero-goals::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--marker)); }
+.hero-goals h2 { display: flex; align-items: center; gap: 8px; }
+.hero-goals .goal-ic { width: 20px; height: 20px; color: var(--marker); flex: none; }
+@media (max-width: 860px) { .hero-num { font-size: 120px; top: -30px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-track .is-now i { animation: trackPulse 2.4s ease-in-out infinite; }
+  @keyframes trackPulse { 50% { box-shadow: 0 0 0 6px rgba(201,130,105,.08); } }
+}
+/* 숫자 장식: 제목과 겹치지 않게 왼쪽 영역 오른쪽 끝으로 */
+.hero-num { left: auto; right: 24px; top: -40px; font-size: 240px; -webkit-text-stroke: 1.5px rgba(169,101,78,.2); }
+@media (max-width: 1200px) { .hero-num { display: none; } }
+/* DESIGN.md 카드: 참고 박스를 왼쪽 아래 프롬프트 끝선까지 늘림 */
+.lesson-page #sec-4 .ds-ways .dw-2 .ref-box { flex: 1 1 auto; margin-bottom: 0; }
+.lesson-page #sec-4 .ds-ways .dw > :last-child { margin-bottom: 0; }
