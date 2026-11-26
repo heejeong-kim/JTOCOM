@@ -876,9 +876,9 @@
 .lesson-page .lesson-body > #sec-2.reference-block { counter-increment: sec; }
 .lesson-page #sec-2.reference-block > h2::before { content: counter(sec) "."; flex: none; color: #28645f; font: 800 34px/1 var(--f-head); }
 .lesson-page #sec-4 .build-flow { margin-top: 0; }
-/* 2.6 그룹 제목: 개수 배지 줄바꿈 방지 */
+/* 2.7 그룹 제목: 개수 배지 줄바꿈 방지 */
 .lesson-page details > summary em { flex: none; white-space: nowrap; }
-/* 2.6: 레이아웃·컴포넌트 구분 소제목 */
+/* 2.7: 레이아웃·컴포넌트 구분 소제목 */
 .lesson-page .ui-kind { margin: 22px 0 10px !important; color: var(--accent-dark); font-size: 16px; }
 .lesson-page .dict-head + .ui-kind { margin-top: 8px !important; }
 
@@ -894,3 +894,7 @@
 /* 2.1 예시(펫프렌즈) 버튼: 일반 링크와 구분되는 채움 버튼 */
 .lesson-page .screen-guide .guide-head .case-link { background: var(--marker); border-color: var(--marker); color: var(--ink); font-weight: 700; }
 .lesson-page .screen-guide .guide-head .case-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+/* 1교시 2.1: 오늘 만드는 '웹앱' 카드 강조 */
+.lesson-page .kcard.kcard-main { border: 1.5px solid var(--accent); box-shadow: 0 10px 24px -18px rgba(169,101,78,.7); }
+.lesson-page .kcard.kcard-main .kcard-tag { background: var(--accent); color: #fff; }
+.lesson-page .kcard.kcard-main .kcard-tag { display: inline-block; width: fit-content; padding: 4px 10px; border-radius: 999px; line-height: 1.2; }

@@ -94,7 +94,14 @@
         <section id="sec-3" class="block">
           <span class="block-step">개념</span>
           <h2>바이브코딩을 위한 웹앱 기초</h2>
-          <h3 class="sub-title">2.1 웹앱은 어떻게 움직이나</h3>
+          <h3 class="sub-title">2.1 웹사이트 · 웹앱 · 앱</h3>
+          <p>셋 다 화면으로 보지만 <b>보기만 하는지, 입력하고 처리하는지, 설치하는지</b>가 다름.</p>
+          <div class="kgrid three">
+            <article class="kcard"><span class="kcard-tag">보기</span><h4>웹사이트 · Website</h4><p class="kcard-role">정보를 읽고 보는 페이지 모음</p><dl><div><dt>예시</dt><dd>기관 홈페이지, 공지사항, 회사 소개</dd></div><div><dt>특징</dt><dd>누가 들어와도 같은 내용이 보임</dd></div><div><dt>AI 요청</dt><dd>"교육 안내 페이지를 만들어줘"</dd></div></dl></article>
+            <article class="kcard kcard-main"><span class="kcard-tag">입력·처리 · 오늘 만드는 것</span><h4>웹앱 · Web App</h4><p class="kcard-role">브라우저에서 입력하면 처리해서 결과를 보여 주는 프로그램</p><dl><div><dt>예시</dt><dd>지원사업 추천, 평가점수 집계, 예약·신청</dd></div><div><dt>특징</dt><dd>설치 없이 URL로 열고, 입력에 따라 결과가 바뀜</dd></div><div><dt>AI 요청</dt><dd>"조건을 고르면 맞는 지원사업을 보여 주는 웹앱을 만들어줘"</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">설치</span><h4>앱 · Native App</h4><p class="kcard-role">스마트폰에 내려받아 설치해서 쓰는 프로그램</p><dl><div><dt>예시</dt><dd>앱스토어·플레이스토어에서 받는 앱</dd></div><div><dt>특징</dt><dd>알림·카메라 등 휴대폰 기능을 쓰기 쉽지만, 심사·설치가 필요함</dd></div><div><dt>AI 요청</dt><dd>"먼저 웹앱으로 만들고 휴대폰 화면에도 맞춰줘"</dd></div></dl></article>
+          </div>
+          <h3 class="sub-title">2.2 웹앱은 어떻게 움직이나</h3>
           <h4 class="mini-title">① 웹앱을 이루는 세 부분</h4>
           <div class="anatomy" aria-label="서비스 구조 예시">
             <div class="node"><b>화면</b><small>프론트엔드</small><span>창업 단계·업종을 고르는 입력창과 결과 목록</span></div>
@@ -121,7 +128,7 @@
             <article class="kcard"><div class="kcard-head"><h4>CSS</h4><span class="kcard-tag">꾸밈</span></div><div class="demo demo-css" aria-hidden="true"><i class="d-title"></i><i class="d-input"></i><i class="d-btn"></i></div><p class="kcard-role">어떻게 보이는지 정함</p><dl><div><dt>예</dt><dd>색, 글꼴, 크기, 여백, 배치</dd></div><div><dt>AI 요청</dt><dd>"버튼을 더 크게, 주황색으로 바꿔줘"</dd></div></dl></article>
             <article class="kcard"><div class="kcard-head"><h4>JavaScript</h4><span class="kcard-tag">동작</span></div><div class="demo demo-js" aria-hidden="true"><i class="d-btn"><b class="d-cursor"></b></i><i class="d-row r1"></i><i class="d-row r2"></i><i class="d-row r3"></i></div><p class="kcard-role">누르면 무엇을 할지 정함</p><dl><div><dt>예</dt><dd>저장, 계산, 검색, 알림 띄우기</dd></div><div><dt>AI 요청</dt><dd>"신청 버튼을 누르면 목록에 추가되게 해줘"</dd></div></dl></article>
           </div>
-          <h3 class="sub-title">2.2 데이터는 어디에 저장되나</h3>
+          <h3 class="sub-title">2.3 데이터는 어디에 저장되나</h3>
           <div class="kgrid three">
             <article class="kcard"><span class="kcard-tag">파일</span><h4>CSV · 엑셀</h4><p class="kcard-role">표 파일에 담아 두고 불러옴</p><dl><div><dt>이럴 때</dt><dd>이미 정리된 목록을 보여 줄 때</dd></div><div><dt>한계</dt><dd>화면에서 고친 내용은 파일에 저장되지 않음</dd></div><div><dt>AI 요청</dt><dd>"이 CSV 파일을 표로 보여줘"</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">내 브라우저</span><h4>브라우저 저장소</h4><p class="kcard-role">지금 쓰는 브라우저 안에 저장</p><dl><div><dt>이럴 때</dt><dd>혼자 쓰는 메모·설정을 남길 때</dd></div><div><dt>한계</dt><dd>다른 사람·다른 컴퓨터에서는 안 보임</dd></div><div><dt>AI 요청</dt><dd>"새로고침해도 입력한 내용이 남게 해줘"</dd></div></dl></article>
@@ -133,7 +140,7 @@
             <div><b>OpenAPI</b><span>누구나 쓰도록 공개한 API. 공공데이터포털이 대표적</span></div>
             <div><b>JSON</b><span>API가 데이터를 주고받는 형식. 예: 공공데이터 API 응답</span></div>
           </div>
-          <h3 class="sub-title">2.3 만들고, 고치고, 공개하기</h3>
+          <h3 class="sub-title">2.4 만들고, 고치고, 공개하기</h3>
           <div class="terms">
             <div><b>오류 메시지</b><span>실행이 안 될 때 뜨는 빨간 안내 글. 그대로 복사해 AI에게 전달</span></div>
             <div><b>개발자 도구 · 콘솔</b><span>브라우저에서 F12로 여는 점검 창. 숨은 오류가 여기 보임</span></div>
@@ -150,7 +157,7 @@
 4. 고친 뒤에 내가 화면에서 무엇을 눌러 보면 제대로 됐는지 확인할 수 있는지 알려줘.
 
 [여기에 오류 메시지를 그대로 붙여 넣기]</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-          <h3 class="sub-title">2.4 안전하게 만들기</h3>
+          <h3 class="sub-title">2.5 안전하게 만들기</h3>
           <div class="kgrid three">
             <article class="kcard"><span class="kcard-tag">열쇠 관리</span><h4>API 키</h4><p class="kcard-role">공공데이터·AI 서비스를 쓸 때 받는 비밀 열쇠</p><dl><div><dt>위험</dt><dd>화면 코드(HTML·JS)에 넣으면 누구나 볼 수 있음</dd></div><div><dt>지키기</dt><dd>서버 쪽 환경 변수에 보관, 화면 코드·공유 파일에 넣지 않음</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">누가, 무엇을</span><h4>로그인 · 인증 · 권한</h4><p class="kcard-role">인증은 누구인지 확인, 권한은 무엇을 할 수 있는지 정함</p><dl><div><dt>위험</dt><dd>아무나 신청 목록을 보거나 지울 수 있음</dd></div><div><dt>지키기</dt><dd>"관리자만 삭제할 수 있게 해줘"처럼 권한을 요청</dd></div></dl></article>
@@ -163,7 +170,7 @@
             <div><b>권한 · Authorization</b><span>확인된 사람이 무엇을 할 수 있는지 정하는 것</span></div>
             <div><b>개인정보</b><span>특정 사람을 알아볼 수 있는 정보</span></div>
           </div>
-          <h3 class="sub-title">2.5 기획 문서 용어</h3>
+          <h3 class="sub-title">2.6 기획 문서 용어</h3>
           <div class="plan-docs">
             <div class="plan-card"><span class="plan-tag">유저 플로우 · User Flow</span>
               <div class="flow"><span>홈</span><i>→</i><span>조건 선택</span><i>→</i><span>추천 결과</span><i>→</i><span>사업 상세</span><i>→</i><span class="end">신청</span></div>
@@ -182,7 +189,7 @@
           <div class="ui-group static">
             <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr><td><b>PRD · 요구사항 정의서</b><small>Product Requirements Document</small></td><td>무엇을, 누구를 위해, 어떻게 만들지 정리한 기획 문서</td><td><q>이 아이디어로 1장짜리 PRD 초안을 써줘</q></td></tr><tr><td><b>MVP</b><small>Minimum Viable Product</small></td><td>핵심 기능만 담아 먼저 만드는 첫 버전</td><td><q>이 기능 중 MVP에 꼭 필요한 것만 골라줘</q></td></tr><tr><td><b>페르소나</b><small>Persona</small></td><td>서비스를 쓸 대표 사용자를 가상 인물로 설정한 것</td><td><q>이 서비스의 대표 사용자 페르소나 2명을 만들어줘</q></td></tr><tr><td><b>유저 플로우</b><small>User Flow</small></td><td>사용자가 목적을 이루기까지 화면을 거치는 순서</td><td><q>지원사업을 찾아 신청하기까지의 유저 플로우를 그려줘</q></td></tr><tr><td><b>IA · 정보 구조</b><small>Information Architecture</small></td><td>메뉴와 정보를 어떻게 나누고 묶을지 정한 설계</td><td><q>이 서비스의 IA를 정리해줘</q></td></tr><tr><td><b>메뉴 구조도</b><small>Menu Tree</small></td><td>메뉴를 큰 메뉴(1단계)와 하위 메뉴(2단계)로 펼쳐 나무 모양으로 그린 그림</td><td><q>이 서비스의 메뉴 구조도를 2단계까지 그려줘</q></td></tr><tr><td><b>사이트맵</b><small>Sitemap</small></td><td>메뉴에 없는 화면(로그인·결과 등)까지 서비스의 모든 화면을 한눈에 정리한 지도</td><td><q>모든 화면이 보이게 사이트맵을 만들어줘</q></td></tr><tr><td><b>와이어프레임</b><small>Wireframe</small></td><td>화면의 뼈대 배치만 그린 스케치</td><td><q>메인 화면 와이어프레임부터 잡아줘</q></td></tr><tr><td><b>화면 설계서 · 스토리보드</b><small>Storyboard</small></td><td>화면별 구성과 동작 설명을 정리한 문서</td><td><q>화면마다 구성과 동작을 화면 설계서로 정리해줘</q></td></tr><tr><td><b>기능 명세서</b><small>Functional Specification</small></td><td>기능마다 입력, 처리 규칙, 결과를 정리한 문서</td><td><q>추천 기능의 입력·처리·결과를 기능 명세서로 써줘</q></td></tr><tr><td><b>데이터 명세서</b><small>Data Specification</small></td><td>다루는 데이터의 항목, 형식, 필수 여부를 정리한 표</td><td><q>지원사업 데이터의 항목·형식·필수 여부를 데이터 명세서로 정리해줘</q></td></tr><tr><td><b>완료 조건</b><small>Acceptance Criteria</small></td><td>"이렇게 되면 완성"이라고 판단하는 기준</td><td><q>이 기능의 완료 조건을 3개로 정리해줘</q></td></tr></tbody></table>
           </div>
-          <div class="dict-head"><h3 class="sub-title dict-title">2.6 화면(UI) 용어</h3></div>
+          <div class="dict-head"><h3 class="sub-title dict-title">2.7 화면(UI) 용어</h3></div>
           <h4 class="mini-title ui-kind">레이아웃(Layout)</h4>
           <details class="ui-group" open>
             <summary><span>① 웹 화면 구조(Page Structure)</span><em>8개</em></summary>
