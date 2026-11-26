@@ -945,3 +945,22 @@
 .lesson-page .kgrid.three > div { display: flex; flex-direction: column; }
 .lesson-page .kgrid.three > div .prompt { flex: 1; }
 .lesson-page .kgrid.three .mini-title { margin-top: 0; }
+
+/* 프로젝트 폴더 구조 (2교시 3.2) */
+.lesson-page .folder-map { list-style: none; margin: 14px 0 16px; padding: 6px 0; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .folder-map li { display: grid; grid-template-columns: 210px 150px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px 20px; border-top: 1px solid var(--line); }
+.lesson-page .folder-map li:first-child { border-top: 0; }
+.lesson-page .folder-map code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 14px; font-weight: 600; color: var(--ink); }
+.lesson-page .folder-map .sub code { padding-left: 22px; position: relative; }
+.lesson-page .folder-map .sub code::before { content: ""; position: absolute; left: 6px; top: 50%; width: 10px; border-top: 1.5px solid var(--line); }
+.lesson-page .folder-map b { color: var(--accent); font-size: 13.5px; }
+.lesson-page .folder-map span { color: var(--ink); }
+.lesson-page .folder-map small { justify-self: end; padding: 3px 9px; border-radius: 999px; background: var(--soft, #f6efe8); color: var(--muted, #8a7f78); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.lesson-page .folder-map .today small { background: var(--ink); color: #fff; }
+@media (max-width: 760px) {
+  .lesson-page .folder-map li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 10px 14px; }
+  .lesson-page .folder-map b { grid-column: 1; }
+  .lesson-page .folder-map span { grid-column: 1 / -1; font-size: 14px; }
+  .lesson-page .folder-map small { grid-row: 1; grid-column: 2; }
+}
+.lesson-page .say-chips + p { margin-top: 12px; }
