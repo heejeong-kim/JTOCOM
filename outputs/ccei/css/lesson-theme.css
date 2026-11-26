@@ -856,3 +856,18 @@
 .lesson-page .prompt-reference > summary { color: var(--accent-dark); font-weight: 700; cursor: pointer; }
 .lesson-page .prompt-reference .guide-steps { margin-top: 14px; }
 @media (max-width: 1100px) { .lesson-page .screen-guide > .prompt-reference { grid-column: auto; } }
+
+/* ── 2교시 반응형 보강 ── */
+@media (max-width: 900px) {
+  .lesson-page .screen-guide { grid-template-columns: minmax(0, 1fr); }
+  .lesson-page .screen-guide > * { min-width: 0; grid-column: auto; }
+}
+@media (max-width: 600px) {
+  /* 배지는 위, 섹션 제목은 아래 한 줄 전체 폭 */
+  .lesson-page .lesson-body > .block > .block-step { display: inline-flex; margin: 0 0 10px; }
+  .lesson-page .lesson-body > .block > h2 { display: block; max-width: none; margin: 0 0 18px; font-size: 23px; }
+  .lesson-page .lesson-body > #sec-2.reference-block { padding: 24px 18px; }
+  .lesson-page .case-carousel .case { min-height: 0; }
+}
+/* 표지가 한 줄로 쌓이는 화면(1200 이하)에서는 최소 높이를 풀어 빈 공간 제거 */
+@media (max-width: 1200px) { .lesson-page .hero-main, .lesson-page .hero-goals { min-height: 0; } }
