@@ -479,7 +479,7 @@
 
     /* 7교시 기준: 흐름 바 7단계, 교안 목록 7칸, 좁을 때 배우는 것·실습 칸 줄바꿈 */
     .process { grid-template-columns: repeat(7, 1fr); }
-    .agenda.is-tight td:nth-child(4) { white-space: normal; }
+    .agenda.is-tight td:nth-child(4), .agenda.is-tight th:nth-child(4) { white-space: nowrap; } /* 함께 만드는 것은 항상 한 줄, 줄바꿈은 주요 내용 칸에서만 */
 
 /* 커리큘럼 표 하단 안내문 */
 .agenda-wrap + .agenda-note { margin: 14px 0 0; white-space: nowrap; }
