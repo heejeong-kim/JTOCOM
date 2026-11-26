@@ -881,3 +881,13 @@
 /* 2.6: 레이아웃·컴포넌트 구분 소제목 */
 .lesson-page .ui-kind { margin: 22px 0 10px !important; color: var(--accent-dark); font-size: 16px; }
 .lesson-page .dict-head + .ui-kind { margin-top: 8px !important; }
+
+/* 2.1: 두 프롬프트 제목 줄·끝 줄 맞춤, 1교시와 같은 어두운 프롬프트 */
+.lesson-page .screen-guide { align-items: stretch; }
+.lesson-page .screen-guide .guide-all, .lesson-page .screen-guide .basics-prompt { display: flex; flex-direction: column; min-width: 0; }
+.lesson-page .screen-guide .guide-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 36px; margin: 0 0 10px; }
+.lesson-page .screen-guide .guide-head h4 { margin: 0 !important; }
+.lesson-page .screen-guide .guide-head .case-link { margin: 0; flex: none; }
+.lesson-page .screen-guide .guide-all > .prompt, .lesson-page .screen-guide .basics-prompt > .prompt { flex: 1; margin: 0; }
+.lesson-page .prompt .prompt-placeholder { background: rgba(255,226,102,.16); color: var(--marker); }
+@media (max-width: 600px) { .lesson-page .screen-guide .guide-head { flex-wrap: wrap; } }
