@@ -891,3 +891,6 @@
 .lesson-page .screen-guide .guide-all > .prompt, .lesson-page .screen-guide .basics-prompt > .prompt { flex: 1; margin: 0; }
 .lesson-page .prompt .prompt-placeholder { background: rgba(255,226,102,.16); color: var(--marker); }
 @media (max-width: 600px) { .lesson-page .screen-guide .guide-head { flex-wrap: wrap; } }
+/* 2.1 예시(펫프렌즈) 버튼: 일반 링크와 구분되는 채움 버튼 */
+.lesson-page .screen-guide .guide-head .case-link { background: var(--marker); border-color: var(--marker); color: var(--ink); font-weight: 700; }
+.lesson-page .screen-guide .guide-head .case-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
