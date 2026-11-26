@@ -11,8 +11,9 @@ document.querySelectorAll('.prompt .copy').forEach((btn) => {
 // 플로팅 버튼(목차·교시 이동): 아이콘을 누르면 패널이 펼쳐지고, 바깥 클릭·Esc·항목 선택 시 닫힘
 (() => {
   const pairs = [
-    [document.querySelector('.toc-fab:not(.lesson-fab)'), document.getElementById('toc-panel'), '목차'],
+    [document.querySelector('.toc-fab:not(.lesson-fab):not(.help-fab)'), document.getElementById('toc-panel'), '목차'],
     [document.querySelector('.lesson-fab'), document.getElementById('lesson-panel'), '교시 이동'],
+    [document.querySelector('.help-fab'), document.getElementById('help-panel'), '막혔을 때'],
   ].filter(([f, p]) => f && p);
   const set = (fab, panel, name, v) => {
     panel.hidden = !v;
