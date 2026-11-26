@@ -898,3 +898,6 @@
 .lesson-page .kcard.kcard-main { border: 1.5px solid var(--accent); box-shadow: 0 10px 24px -18px rgba(169,101,78,.7); }
 .lesson-page .kcard.kcard-main .kcard-tag { background: var(--accent); color: #fff; }
 .lesson-page .kcard.kcard-main .kcard-tag { display: inline-block; width: fit-content; padding: 4px 10px; border-radius: 999px; line-height: 1.2; }
+/* 2교시 3.2: 채운 예시 프롬프트 토글 */
+.lesson-page .prompt-example { margin-top: 14px; padding: 14px 18px; }
+.lesson-page .prompt-example > .prompt { margin-top: 14px; }
