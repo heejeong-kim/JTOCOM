@@ -58,6 +58,7 @@
 표로 보여 줘: 완료 조건 / 됨·안 됨·일부 / 남은 일
 코드는 고치지 말고 결과만 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <p>"안 됨"이 있으면 5교시의 기능 요청 4줄로 하나씩 마무리함.</p>
+          <aside class="callout tip"><b>핵심</b> <b>PRD 완료 조건</b>이 모두 되면 기능 만들기는 멈추고 점검으로 넘어감.</aside>
 
         </section>
 
@@ -76,6 +77,7 @@
 표로 보여 줘: 번호 / 이렇게 해 보기 / 이렇게 보이면 정상</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <h3 class="sub-title">2.3 짝 테스트</h3>
           <ul class="checks"><li>옆 사람에게 설명 없이 화면만 보여 주고 핵심 행동을 해 보게 함</li><li>막히거나 머뭇거린 곳을 그대로 메모함</li><li>메모를 3번 섹션의 오류 알리기 형식으로 정리함</li></ul>
+          <aside class="callout tip"><b>핵심</b> 만든 사람이 아니라 <b>처음 쓰는 사람의 눈</b>으로 써 봐야 문제가 보임.</aside>
 
         </section>
 
@@ -87,18 +89,16 @@
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">채우는 칸</span><h4>오류 알리기 4줄</h4><dl><div><dt>한 일</dt><dd>무엇을 했더니</dd></div><div><dt>기대</dt><dd>이렇게 될 줄 알았는데</dd></div><div><dt>실제</dt><dd>이렇게 됨</dd></div><div><dt>오류 메시지</dt><dd>화면이나 콘솔에 나온 글</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">예시</span><h4>검색이 안 될 때</h4><dl><div><dt>한 일</dt><dd>검색창에 "창업"을 입력함</dd></div><div><dt>기대</dt><dd>창업 관련 카드만 보임</dd></div><div><dt>실제</dt><dd>카드가 모두 사라짐</dd></div><div><dt>오류 메시지</dt><dd>Uncaught TypeError …</dd></div></dl></article>
           </div>
-          <h3 class="sub-title">3.2 오류 메시지 찾기</h3>
-          <p>개발자 도구(Developer Tools)의 콘솔(Console) 탭에 빨간 글씨로 오류가 나옴.</p>
-          <div class="terms terms-3"><div><b>Windows</b><span><kbd>F12</kbd> 또는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span></div><div><b>Mac</b><span><kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd></span></div><div><b>복사</b><span>빨간 글씨를 그대로 복사해 붙여 넣음</span></div></div>
-          <h3 class="sub-title">3.3 고쳐 달라고 하기</h3>
-          <div class="prompt"><pre>아래 문제를 고쳐줘.
+          <h3 class="sub-title">3.2 오류 찾아 고치기</h3>
+          <ol class="guide-steps build-steps"><li><h4>① 오류 메시지 찾기</h4><p>개발자 도구(Developer Tools)의 콘솔(Console) 탭에 빨간 글씨로 오류가 나옴.</p><div class="terms terms-3"><div><b>Windows</b><span><kbd>F12</kbd> 또는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span></div><div><b>Mac</b><span><kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd></span></div><div><b>복사</b><span>빨간 글씨를 그대로 복사해 붙여 넣음</span></div></div></li><li><h4>② 고쳐 달라고 하기</h4><div class="prompt"><pre>아래 문제를 고쳐줘.
 
 한 일: <span class="prompt-placeholder">{무엇을 했더니}</span>
 기대: <span class="prompt-placeholder">{이렇게 될 줄 알았는데}</span>
 실제: <span class="prompt-placeholder">{이렇게 됨}</span>
 오류 메시지: <span class="prompt-placeholder">{콘솔에 나온 글, 없으면 없음}</span>
 
-원인을 쉬운 말로 한 줄 설명하고, 이 문제만 고쳐줘. 고친 뒤 내가 확인할 방법도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+원인을 쉬운 말로 한 줄 설명하고, 이 문제만 고쳐줘. 고친 뒤 내가 확인할 방법도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
+          <aside class="callout tip"><b>핵심</b> "안 돼요" 대신 <b>오류 알리기 4줄</b>로 말하면 한 번에 고쳐짐.</aside>
 
         </section>
 
@@ -113,7 +113,7 @@
 2. 인증키·비밀번호처럼 보이는 값
 3. 외부 주소로 데이터를 보내는 코드
 찾은 것을 파일 이름과 함께 표로 보여 주고, 고치기 전에 나에게 먼저 물어봐줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-          <aside class="callout tip"><b>핵심</b> 사용자처럼 <b>직접 써 보고</b>, 오류는 <b>4줄로 알리고</b>, 공유 전에는 <b>보안부터 확인</b>함.</aside>
+          <aside class="callout tip"><b>핵심</b> 다른 사람에게 보여 주기 전에 <b>보안부터 확인</b>함.</aside>
 
         </section>
 
