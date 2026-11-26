@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원사업 한눈에 · 용어 실습용 예시</title>
+<style>
+  /* 용어 실습용 예시 화면: 헤더 · 히어로 · 사이드바 + 콘텐츠 2단 레이아웃 · 탭 · 카드 그리드 · 푸터 */
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color: #2b2b2b; background: #f6f5f2; }
+  a { color: inherit; text-decoration: none; }
+  /* 헤더(Header) + 글로벌 내비게이션(GNB) */
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: #fff; border-bottom: 1px solid #e4e1dc; }
+  .logo { font-size: 20px; font-weight: 800; }
+  .gnb { display: flex; gap: 24px; font-size: 15px; }
+  .gnb a:hover { color: #c0623f; }
+  /* 히어로(Hero) */
+  .hero { padding: 48px 32px; background: #2f3b4c; color: #fff; }
+  .hero h1 { margin: 0 0 8px; font-size: 30px; }
+  .hero p { margin: 0; opacity: .8; }
+  /* 본문 2단 레이아웃(Layout): 사이드바(Sidebar) + 콘텐츠 */
+  .layout { display: grid; grid-template-columns: 240px 1fr; gap: 24px; max-width: 1200px; margin: 32px auto; padding: 0 32px; }
+  .sidebar { padding: 20px; background: #fff; border: 1px solid #e4e1dc; border-radius: 10px; align-self: start; }
+  .sidebar h2 { margin: 0 0 12px; font-size: 16px; }
+  .sidebar label { display: block; margin: 8px 0; font-size: 14px; }
+  /* 탭 내비게이션(Tab) */
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 2px solid #e4e1dc; }
+  .tabs button { padding: 10px 18px; border: 0; background: none; font-size: 15px; cursor: pointer; color: #777; }
+  .tabs button.is-active { color: #2b2b2b; font-weight: 700; border-bottom: 3px solid #c0623f; margin-bottom: -2px; }
+  /* 카드(Card) 그리드(Grid) */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { padding: 20px; background: #fff; border: 1px solid #e4e1dc; border-radius: 10px; }
+  .card .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; background: #f3e4dc; color: #a24f31; font-size: 12px; font-weight: 700; }
+  .card h3 { margin: 10px 0 6px; font-size: 17px; }
+  .card p { margin: 0 0 12px; color: #666; font-size: 14px; line-height: 1.5; }
+  .card .due { font-size: 13px; color: #999; }
+  /* 푸터(Footer) */
+  .footer { padding: 24px 32px; text-align: center; color: #999; font-size: 13px; border-top: 1px solid #e4e1dc; }
+</style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">지원사업 한눈에</a>
+    <nav class="gnb"><a href="#">사업 찾기</a><a href="#">관심 사업</a><a href="#">이용 안내</a></nav>
+  </header>
+
+  <section class="hero">
+    <h1>내게 맞는 지원사업을 찾아보세요</h1>
+    <p>창업 단계와 업종을 고르면 맞는 사업을 보여 드려요. (가상 데이터)</p>
+  </section>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>업종</h2>
+      <label><input type="checkbox" checked> 전체</label>
+      <label><input type="checkbox"> 제조</label>
+      <label><input type="checkbox"> IT·SW</label>
+      <label><input type="checkbox"> 콘텐츠</label>
+      <label><input type="checkbox"> 식품</label>
+    </aside>
+
+    <section>
+      <div class="tabs">
+        <button class="is-active">전체</button><button>예비</button><button>초기</button><button>도약</button>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="badge">예비</span><h3>아이디어 검증 지원</h3><p>멘토링과 시제품 제작비를 지원해요.</p><span class="due">마감 12/19</span></article>
+        <article class="card"><span class="badge">초기</span><h3>사업화 자금 지원</h3><p>사업화 자금과 창업 교육을 지원해요.</p><span class="due">마감 01/15</span></article>
+        <article class="card"><span class="badge">초기</span><h3>서비스 고도화 지원</h3><p>개발비와 클라우드 사용료를 지원해요.</p><span class="due">마감 02/05</span></article>
+        <article class="card"><span class="badge">도약</span><h3>스케일업 지원</h3><p>해외 진출 컨설팅과 마케팅비를 지원해요.</p><span class="due">마감 03/05</span></article>
+        <article class="card"><span class="badge">예비</span><h3>창업 교육 캠프</h3><p>창업 기초 교육과 팀 빌딩 프로그램이에요.</p><span class="due">마감 12/12</span></article>
+        <article class="card"><span class="badge">도약</span><h3>판로 개척 지원</h3><p>박람회 참가와 온라인 입점을 지원해요.</p><span class="due">마감 02/19</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">용어 실습용 예시 화면 · 실제 사업 정보가 아님</footer>
+
+  <script>
+    // 탭은 지금은 모양만 바뀌고, 카드는 거르지 않음 (실습에서 고쳐 볼 부분)
+    document.querySelectorAll('.tabs button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tabs button').forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>

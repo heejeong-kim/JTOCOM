@@ -986,3 +986,13 @@
 .help-fab { background: var(--accent); }
 .help-fab:hover, .help-fab.is-open { background: var(--ink); }
 @media (max-width: 600px) { .dock .help-panel { width: calc(100vw - 96px); max-height: 64vh; } }
+
+/* 1교시 2.8 막연한 요청 vs 용어 요청 비교 */
+.lesson-page .vs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lesson-page .vs-card { display: flex; flex-direction: column; gap: 8px; }
+.lesson-page .vs-card .prompt { flex: 1; margin: 0; }
+.lesson-page .vs-tag { align-self: flex-start; padding: 3px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 700; }
+.lesson-page .vs-vague .vs-tag { background: #ece9e4; color: #7a746d; }
+.lesson-page .vs-term .vs-tag { background: var(--accent); color: #fff; }
+@media (max-width: 760px) { .lesson-page .vs-grid { grid-template-columns: 1fr; } }
+.lesson-page .build-steps .vs-grid + p { margin-top: 10px; }
