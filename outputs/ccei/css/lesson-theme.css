@@ -965,3 +965,9 @@
 }
 .lesson-page .say-chips + p { margin-top: 12px; }
 .lesson-page .build-steps .prompt + p { margin-top: 12px; }
+.lesson-page .log-table { overflow-x: auto; margin: 10px 0 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.lesson-page .log-table table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; }
+.lesson-page .log-table th { padding: 11px 18px; background: var(--soft, #f6efe8); color: var(--accent); font-size: 13.5px; font-weight: 700; text-align: left; }
+.lesson-page .log-table td { padding: 11px 18px; border-top: 1px solid var(--line); color: var(--ink); }
+.lesson-page .log-table tbody tr:first-child td { background: #fffaf3; }
+.lesson-page .log-table code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 600; }

@@ -248,10 +248,13 @@ PRD, MVP, 페르소나, 와이어프레임, 기능 명세서, 완료 조건이 �
           <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, 입력창 위 <b>이 컴퓨터</b>를 고른 뒤 <b>프로젝트 선택</b>에서 실습 폴더(예: <b>support-guide</b>)를 고름</li></ul>
           <h3 class="sub-title">3.2 프로젝트 폴더 구조</h3>
           <p>파일을 <b>역할별로 나눠 두면</b> "버튼 색만 바꿔줘"라고 할 때 css/style.css만 바뀌어 다른 곳이 덜 망가짐.</p>
-          <ul class="folder-map"><li class="today"><code>support-guide/</code><b>프로젝트 폴더</b><span>모든 파일을 이 안에 둠</span><small>오늘</small></li><li class="sub today"><code>index.html</code><b>HTML · 뼈대</b><span>화면에 무엇이 있는지 (제목, 버튼, 카드)</span><small>오늘</small></li><li class="sub today"><code>css/style.css</code><b>CSS · 꾸밈</b><span>어떻게 보이는지 (색, 글자, 배치)</span><small>오늘</small></li><li class="sub today"><code>js/script.js</code><b>JavaScript · 동작</b><span>누르면 무엇이 일어나는지 (거르기, 정렬)</span><small>오늘</small></li><li class="sub today"><code>data/</code><b>데이터</b><span>화면에 보여 줄 내용 (CSV, JSON, data.js)</span><small>오늘</small></li><li class="sub"><code>assets/</code><b>에셋 · Asset</b><span>이미지, 아이콘, 폰트 같은 재료 파일</span><small>필요할 때</small></li><li class="sub"><code>PRD.md</code><b>설계 문서</b><span>무엇을 만들지 적은 한 장</span><small>3교시</small></li><li class="sub"><code>.env</code><b>비밀 설정</b><span>인증키 보관, 다른 사람과 공유하지 않음</span><small>4교시</small></li><li class="sub"><code>DESIGN.md</code><b>디자인 규칙</b><span>색, 글자, 여백, 컴포넌트 모양 규칙</span><small>6교시</small></li><li class="sub today"><code>versions/</code><b>저장본</b><span>잘 될 때마다 복사해 둔 파일</span><small>오늘</small></li></ul>
-          <h3 class="sub-title">3.3 저장하고 되돌리기</h3>
-          <p>잘 될 때마다 <b>versions 폴더에 복사해 두면</b>, AI가 화면을 망가뜨려도 바로 그때로 돌아갈 수 있음.</p>
-          <div class="kgrid two dt-wide"><article class="kcard kcard-main"><span class="kcard-tag">잘 되면</span><h4>저장하기</h4><dl><div><dt>언제</dt><dd>확인해 보고 마음에 들 때마다</dd></div><div><dt>이렇게 말하기</dt><dd>"지금 상태를 versions 폴더에 01-맛보기 이름으로 저장해줘"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">안 되면</span><h4>되돌리기</h4><dl><div><dt>언제</dt><dd>고친 뒤 더 나빠졌을 때</dd></div><div><dt>이렇게 말하기</dt><dd>"versions/01-맛보기 상태로 되돌려줘"</dd></div></dl></article></div>
+          <ul class="folder-map"><li class="today"><code>support-guide/</code><b>프로젝트 폴더</b><span>모든 파일을 이 안에 둠</span><small>오늘</small></li><li class="sub today"><code>index.html</code><b>HTML · 뼈대</b><span>화면에 무엇이 있는지 (제목, 버튼, 카드)</span><small>오늘</small></li><li class="sub today"><code>css/style.css</code><b>CSS · 꾸밈</b><span>어떻게 보이는지 (색, 글자, 배치)</span><small>오늘</small></li><li class="sub today"><code>js/script.js</code><b>JavaScript · 동작</b><span>누르면 무엇이 일어나는지 (거르기, 정렬)</span><small>오늘</small></li><li class="sub today"><code>data/</code><b>데이터</b><span>화면에 보여 줄 내용 (CSV, JSON, data.js)</span><small>오늘</small></li><li class="sub"><code>assets/</code><b>에셋 · Asset</b><span>이미지, 아이콘, 폰트 같은 재료 파일</span><small>필요할 때</small></li><li class="sub"><code>PRD.md</code><b>설계 문서</b><span>무엇을 만들지 적은 한 장</span><small>3교시</small></li><li class="sub"><code>.env</code><b>비밀 설정</b><span>인증키 보관, 다른 사람과 공유하지 않음</span><small>4교시</small></li><li class="sub"><code>DESIGN.md</code><b>디자인 규칙</b><span>색, 글자, 여백, 컴포넌트 모양 규칙</span><small>6교시</small></li><li class="sub today"><code>versions/</code><b>버전 · Version</b><span>버전마다 복사해 둔 파일 (v01, v02 …)</span><small>오늘</small></li><li class="sub today"><code>CHANGELOG.md</code><b>변경 이력 · Change Log</b><span>언제·무엇을·왜 바꿨는지 한 줄씩 쌓는 기록</span><small>오늘</small></li></ul>
+          <h3 class="sub-title">3.3 변경 이력 관리하기</h3>
+          <p>파일을 복사해 두는 것만으로는 부족함. <b>언제·무엇을·왜 바꿨는지</b> 기록해 두어야 어디로 돌아갈지 고를 수 있음.</p>
+          <div class="kgrid three"><article class="kcard"><span class="kcard-tag">Version</span><h4>버전</h4><p class="kcard-role">그때의 파일을 통째로 복사해 둔 것</p><dl><div><dt>위치</dt><dd>versions/v01-맛보기</dd></div><div><dt>이름</dt><dd>v01, v02처럼 번호 + 짧은 이름</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">Change Log</span><h4>변경 이력</h4><p class="kcard-role">바뀔 때마다 한 줄씩 쌓는 기록</p><dl><div><dt>위치</dt><dd>CHANGELOG.md</dd></div><div><dt>한 줄</dt><dd>버전 · 날짜·시간 · 바꾼 내용 · 이유</dd></div></dl></article><article class="kcard"><span class="kcard-tag">Rollback</span><h4>되돌리기</h4><p class="kcard-role">이력을 보고 돌아갈 버전을 고름</p><dl><div><dt>말하기</dt><dd>"v01로 되돌려줘"</dd></div><div><dt>기록</dt><dd>되돌린 것도 이력에 한 줄 남김</dd></div></dl></article></div>
+          <h4 class="mini-title">CHANGELOG.md 예시 · 최신 기록이 맨 위</h4>
+          <div class="log-table"><table><thead><tr><th>버전</th><th>날짜·시간</th><th>바꾼 내용</th><th>이유</th></tr></thead><tbody><tr><td><code>v03</code></td><td>12/10 11:40</td><td>v01로 되돌림</td><td>초록 버튼이 글자와 잘 안 보임</td></tr><tr><td><code>v02</code></td><td>12/10 11:30</td><td>추천 받기 버튼을 초록색으로</td><td>눈에 잘 띄게</td></tr><tr><td><code>v01</code></td><td>12/10 11:20</td><td>첫 화면 완성 (조건 선택 + 카드)</td><td>맛보기 첫 결과물</td></tr></tbody></table></div>
+          <aside class="callout tip"><b>핵심</b> 업데이트할 때마다 <b>버전을 저장하고 이력을 한 줄 남기면</b>, 실무에서 "언제 왜 바뀌었지?"에 바로 답할 수 있음.</aside>
           <h3 class="sub-title">3.4 함께 만들 서비스 · 지원사업 추천 길잡이</h3>
           <article class="kcard kcard-main build-target"><span class="kcard-tag">강사 제안 · 모두 같이 만듦</span><h4>지원사업 추천 길잡이</h4><dl><div><dt>누가</dt><dd>지원사업을 찾는 예비·초기 창업자</dd></div><div><dt>무엇을</dt><dd>창업 단계와 업종을 고르면 맞는 지원사업만 보여 줌</dd></div></dl></article>
           <h3 class="sub-title">3.5 바이브코딩 맛보기</h3>
@@ -278,17 +281,18 @@ PRD, MVP, 페르소나, 와이어프레임, 기능 명세서, 완료 조건이 �
                 <p>고칠 때마다 AI 답변에서 <b>어떤 파일이 바뀌었는지</b> 확인함. 색·배치는 CSS, 동작은 JavaScript, 내용은 HTML이나 data가 바뀜.</p>
               </li>
           <li>
-                <h4>③ 저장하고 되돌려 보기</h4>
-                <div class="prompt"><pre>지금 상태를 저장해줘.
-versions 폴더 안에 01-맛보기 이름의 폴더를 만들고, 지금 파일들을 복사해줘.
-versions 폴더 자체는 복사하지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-                <p>그다음 일부러 하나를 고쳐 보고, 아래처럼 되돌려 봄.</p>
-                <div class="prompt"><pre>방금 바꾼 내용이 마음에 들지 않아.
-versions/01-맛보기 상태로 되돌려줘.
-되돌리기 전에 무엇이 바뀌는지 먼저 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+                <h4>③ 변경 이력 남기며 저장하고 되돌려 보기</h4>
+                <div class="prompt"><pre>지금 상태를 첫 버전으로 저장하고 변경 이력을 남겨줘.
+1. versions 폴더 안에 v01-맛보기 폴더를 만들고 지금 파일을 복사해줘. versions 폴더 자체는 빼줘.
+2. CHANGELOG.md 파일을 만들고 맨 위에 한 줄을 추가해줘: 버전 / 날짜·시간 / 바꾼 내용 / 이유
+바꾼 내용과 이유는 지금까지 한 작업을 보고 짧게 정리해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+                <p>②에서 하나를 더 고친 뒤 같은 방법으로 <b>v02</b>를 남기고, 아래처럼 되돌려 봄.</p>
+                <div class="prompt"><pre>CHANGELOG.md를 표로 보여 줘.
+그다음 v01-맛보기 상태로 되돌려줘. 되돌리기 전에 무엇이 바뀌는지 먼저 알려줘.
+되돌린 것도 CHANGELOG.md에 새 버전으로 한 줄 남겨줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
           </ol>
-          <aside class="callout tip"><b>핵심</b> <b>요청하고 → 확인하고 → 고쳐 달라고 말하고</b>, 잘 되면 <b>저장</b>하는 것이 바이브코딩의 전부임.</aside>
+          <aside class="callout tip"><b>핵심</b> <b>요청하고 → 확인하고 → 고쳐 달라고 말하고</b>, 잘 되면 <b>이력을 남기며 저장</b>하는 것이 바이브코딩의 전부임.</aside>
 </section>
 
       </div>
