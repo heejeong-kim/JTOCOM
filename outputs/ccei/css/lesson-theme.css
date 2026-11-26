@@ -876,3 +876,5 @@
 .lesson-page .lesson-body > #sec-2.reference-block { counter-increment: sec; }
 .lesson-page #sec-2.reference-block > h2::before { content: counter(sec) "."; flex: none; color: #28645f; font: 800 34px/1 var(--f-head); }
 .lesson-page #sec-4 .build-flow { margin-top: 0; }
+/* 2.6 그룹 제목: 개수 배지 줄바꿈 방지 */
+.lesson-page details > summary em { flex: none; white-space: nowrap; }
