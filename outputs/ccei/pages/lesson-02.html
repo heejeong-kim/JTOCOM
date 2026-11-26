@@ -41,7 +41,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-2">실제 서비스 사례</a></li><li><a href="#sec-3">서비스 뜯어보기</a></li></ol>
+      <ol><li><a href="#sec-2">바이브코딩으로 만든 서비스</a></li><li><a href="#sec-3">서비스 뜯어보며 이해하기</a></li><li><a href="#sec-4">비슷한 서비스 만들기</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -119,8 +119,8 @@
 
         <section id="sec-3" class="block">
           <span class="block-step">실습</span>
-          <h2>실제 화면으로 서비스 뜯어보기</h2>
-          <h3 class="sub-title">1.1 한 번에 정리하기</h3>
+          <h2>서비스 뜯어보며 이해하기</h2>
+          <h3 class="sub-title">2.1 한 번에 뜯어보기</h3>
           <p class="prompt-choice-note">두 프롬프트 중 하나를 골라 씀. ①은 화면·흐름 정리, ②는 웹앱 기초까지 연결한 분석.</p>
           <div class="screen-guide">
             <div class="guide-all">
@@ -138,7 +138,7 @@
 
 화면만 보고 확실히 알 수 없는 내용은 반드시 '추측'이라고 표시해줘.
 마지막에 1~5에서 나온 이름(용어)만 모아서 한 줄 뜻과 함께 정리해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-              <a class="case-link" href="pet-friends-service-guide.html" target="_blank" rel="noopener noreferrer">결과 예시 <span aria-hidden="true">↗</span></a>
+              <a class="case-link" href="pet-friends-service-guide.html" target="_blank" rel="noopener noreferrer">예시 · 펫프렌즈 뜯어보기 결과 <span aria-hidden="true">↗</span></a>
             </div>
           <div class="basics-prompt">
             <h4>② 웹앱 기초까지 연결한 상세 분석 프롬프트</h4>
@@ -177,34 +177,38 @@
               </li>
               <li>
                 <h4>③ 사용자가 거쳐 가는 순서 보기 · 유저 플로우</h4>
-                <div class="prompt"><pre>창업자가 이 사이트에 들어와서 지원사업 공고를 찾아 내용을 확인하기까지, 어떤 화면을 어떤 순서로 거치게 될지 알려줘.
+                <div class="prompt"><pre>사용자가 이 서비스에 들어와서 가장 중요한 일을 끝내기까지, 어떤 화면을 어떤 순서로 거치게 될지 알려줘.
 화면 → 화면 형식으로 한 줄로 보여주고, 이런 순서를 정리한 것을 뭐라고 부르는지도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
               <li>
                 <h4>④ 화면에 담긴 정보 정리하기 · 데이터 명세서</h4>
-                <div class="prompt"><pre>이 화면의 공지사항이나 사업공고 하나에는 어떤 정보들(예: 제목, 날짜)이 들어 있을지 정리해줘.
+                <div class="prompt"><pre>이 화면에 보이는 목록 항목 하나(예: 상품, 게시글, 공고)에는 어떤 정보들(예: 제목, 날짜, 가격)이 들어 있을지 정리해줘.
 각 정보가 글자인지·날짜인지·숫자인지, 꼭 있어야 하는지도 표로 알려줘. 화면에서 안 보이는 건 '추측'이라고 표시해줘.
 이런 표를 뭐라고 부르는지도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
               <li>
                 <h4>⑤ 화면 뒤에서 일어나는 일 알기 · 서비스 구조</h4>
-                <div class="prompt"><pre>내가 이 사이트에서 공지사항 하나를 누르면, 눈에 안 보이는 뒤쪽에서는 어떤 일이 순서대로 일어나는지 아주 쉽게 설명해줘.
+                <div class="prompt"><pre>내가 이 서비스에서 버튼이나 목록 하나를 누르면, 눈에 안 보이는 뒤쪽에서는 어떤 일이 순서대로 일어나는지 아주 쉽게 설명해줘.
 설명에 꼭 필요한 기본 용어는 내가 하나도 모른다고 생각하고 한 줄씩 뜻을 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               </li>
               </ol>
             </details>
           </div>
 
-          <div class="build-followup">
-            <h3 class="sub-title">1.2 뜯어본 결과로 유사 서비스 만들기</h3>
+          </section>
+
+        <section id="sec-4" class="block">
+          <span class="block-step">실습</span>
+          <h2>뜯어본 서비스로 비슷한 서비스 만들기</h2>
             <p class="screen-case-note">화면은 복제하지 않고 <b>사용자와 문제 해결 흐름</b>만 참고해 작은 서비스를 만듦.</p>
+            <h3 class="sub-title">3.1 만드는 순서</h3>
             <ol class="build-flow">
-              <li><b>① 분석 결과 고르기</b><span>화면 구성·사용자 흐름·필요한 정보 중 만들 서비스에 필요한 내용만 가져옵니다.</span></li>
-              <li><b>② 내 과제로 바꾸기</b><span>누가 어떤 불편을 겪고, 화면에서 무엇을 끝내야 하는지 정합니다.</span></li>
-              <li><b>③ 핵심 화면 구현</b><span>분석 메모를 Codex에 전달해 핵심 행동 하나가 가능한 첫 화면을 만듭니다.</span></li>
-              <li><b>④ 직접 눌러 확인</b><span>입력·버튼·화면 이동을 사용해 보고, 어색한 점을 이어서 수정합니다.</span></li>
+              <li><b>① 분석 결과 고르기</b><span>분석 결과 중 내 서비스에 필요한 것만 고름.</span></li>
+              <li><b>② 내 과제로 바꾸기</b><span>누가, 어떤 불편을, 무엇으로 해결할지 정함.</span></li>
+              <li><b>③ 핵심 화면 구현</b><span>핵심 행동 하나가 되는 첫 화면을 Codex로 만듦.</span></li>
+              <li><b>④ 직접 눌러 확인</b><span>직접 눌러 보고 어색한 점을 고쳐 달라고 요청함.</span></li>
             </ol>
-            <h4>프롬프트</h4>
+            <h3 class="sub-title">3.2 첫 결과물 만들기 프롬프트</h3>
             <div class="prompt prompt-all"><pre>앞에서 정리한 서비스 분석 내용을 참고해, 비슷한 문제를 해결하는 나만의 웹앱 첫 화면을 만들어줘.
 참고 서비스의 이름·문구·브랜드 디자인을 그대로 복제하지 말고, 사용자에게 필요한 기능과 이용 흐름만 참고해줘.
 
@@ -227,8 +231,7 @@
 - 주요 버튼과 입력 기능을 직접 눌러 확인하고, 작동하지 않거나 어색한 부분을 수정해줘.
 - 실행 방법과 구현한 기능을 마지막에 짧게 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
             <p class="guide-note">첫 결과물은 핵심 기능을 확인하는 시제품으로, 직접 눌러 보고 고칠 점을 요청함.</p>
-          </div>
-        </section>
+</section>
 
       </div>
     </main>

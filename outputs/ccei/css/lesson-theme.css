@@ -871,3 +871,8 @@
 }
 /* 표지가 한 줄로 쌓이는 화면(1200 이하)에서는 최소 높이를 풀어 빈 공간 제거 */
 @media (max-width: 1200px) { .lesson-page .hero-main, .lesson-page .hero-goals { min-height: 0; } }
+
+/* 2교시: 사례를 1번 섹션으로 번호 매김 (1 사례 → 2 뜯어보기 → 3 만들기) */
+.lesson-page .lesson-body > #sec-2.reference-block { counter-increment: sec; }
+.lesson-page #sec-2.reference-block > h2::before { content: counter(sec) "."; flex: none; color: #28645f; font: 800 34px/1 var(--f-head); }
+.lesson-page #sec-4 .build-flow { margin-top: 0; }
