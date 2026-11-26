@@ -754,7 +754,7 @@
 .lesson-page .case-carousel-shell .case-carousel-arrow { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--accent-dark); font: 400 27px/1 "IBM Plex Sans KR", sans-serif; cursor: pointer; }
 .lesson-page .case-carousel-shell .case-carousel-arrow:hover { border-color: var(--accent); background: #fbefe8; }
 .lesson-page .case-carousel-shell .case-carousel-arrow:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.lesson-page .case-carousel .case > p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.lesson-page .case-carousel .case > p { display: -webkit-box; flex: 0 0 auto; height: 3em; min-height: 3em; margin: 8px 0 10px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 13.5px; line-height: 1.5; }
 @media (max-width: 600px) { .lesson-page .case-carousel-shell { grid-template-columns: 32px minmax(0, 1fr) 32px; gap: 6px; } .lesson-page .case-carousel-shell .case-carousel-arrow { width: 32px; height: 32px; font-size: 23px; } }
 @media (max-width: 600px) { .lesson-page .case-carousel .case { flex-basis: 100%; } }
 
@@ -826,3 +826,33 @@
 @media (max-width: 1200px) { .lesson-page .hero-grid { grid-template-columns: minmax(0, 1fr); } }
 /* 모바일: 표지 최소 높이를 풀어 빈 공간 제거 */
 @media (max-width: 600px) { .lesson-page .hero-main, .lesson-page .hero-goals { min-height: 0; } }
+
+
+/* 참고 사례 블록의 아웃라인과 옅은 배경 */
+.lesson-page .lesson-body > #sec-2.reference-block { padding: 32px 34px; border: 1.5px solid #d4e3df; border-radius: 16px; background: #f7fbfa; }
+
+
+/* 1·2교시 공통: 개념·실습·참고 배지와 섹션 타이틀을 한 줄로 배치 */
+.lesson-page .lesson-body > .block > .block-step { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; margin: 12px 10px 20px 0; padding: 6px 12px; border: 1px solid #ead2c5; border-radius: 999px; background: #f8eee8; color: var(--accent-dark); font: 700 14px/1.2 "IBM Plex Sans KR", sans-serif; white-space: nowrap; }
+.lesson-page .lesson-body > .block > h2 { display: inline-flex; align-items: baseline; vertical-align: middle; max-width: calc(100% - 110px); margin: 12px 0 20px; }
+.lesson-page .lesson-body > #sec-2.reference-block > .block-step { border-color: #c7dfdc; background: #e8f3f1; color: #28645f; }
+.lesson-page .build-followup > .sub-title { margin: 0 0 14px !important; }
+@media (max-width: 600px) { .lesson-page .lesson-body > .block > .block-step { margin-right: 7px; padding: 5px 9px; font-size: 13px; } .lesson-page .lesson-body > .block > h2 { max-width: calc(100% - 92px); font-size: 23px; } }
+
+
+/* 1.1의 두 종합 프롬프트를 같은 행에 배치하고 별도 테두리 제거 */
+.lesson-page .screen-guide { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.lesson-page .screen-guide .guide-all { position: static; }
+.lesson-page .screen-guide .basics-prompt { margin: 0; padding: 0; border: 0; border-radius: 0; background: none; }
+.lesson-page .screen-guide .guide-all h4, .lesson-page .screen-guide .basics-prompt h4 { margin: 0 0 8px; color: var(--accent-dark); font-size: 17px; font-weight: 700; }
+.lesson-page .screen-guide .basics-prompt > p { margin: 0 0 14px; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+.lesson-page .screen-guide > .guide-steps { grid-column: 1 / -1; }
+@media (max-width: 1100px) { .lesson-page .screen-guide .guide-steps { grid-column: auto; } }
+
+
+/* 1.1: 두 분석 방식은 선택형, 세부 프롬프트는 참고 토글 */
+.lesson-page .prompt-choice-note { margin: 0 0 16px; color: var(--muted); font-size: 14.5px; line-height: 1.65; }
+.lesson-page .screen-guide > .prompt-reference { grid-column: 1 / -1; margin-top: 4px; padding: 14px 18px; }
+.lesson-page .prompt-reference > summary { color: var(--accent-dark); font-weight: 700; cursor: pointer; }
+.lesson-page .prompt-reference .guide-steps { margin-top: 14px; }
+@media (max-width: 1100px) { .lesson-page .screen-guide > .prompt-reference { grid-column: auto; } }
