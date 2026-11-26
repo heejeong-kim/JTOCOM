@@ -964,3 +964,4 @@
   .lesson-page .folder-map small { grid-row: 1; grid-column: 2; }
 }
 .lesson-page .say-chips + p { margin-top: 12px; }
+.lesson-page .build-steps .prompt + p { margin-top: 12px; }
