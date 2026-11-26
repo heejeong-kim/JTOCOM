@@ -915,3 +915,6 @@
 .lesson-page .build-target dl > div { grid-template-columns: 110px 1fr; }
 .lesson-page .build-target dt { white-space: nowrap; }
 @media (max-width: 600px) { .lesson-page .build-target dl > div { grid-template-columns: 88px 1fr; } }
+/* 2교시 3.3 ② 말로 고쳐 보기: 예시 요청 칩 */
+.lesson-page .say-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.lesson-page .say-chips span { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font-size: 14.5px; }
