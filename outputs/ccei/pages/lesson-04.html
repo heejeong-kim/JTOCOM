@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c98269">
+  <title>4교시 · 구현 ① 화면과 데이터 | 실무 중심 바이브코딩 교육</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/lesson.css">
+  <link rel="stylesheet" href="../css/lesson-theme.css">
+</head>
+<body class="lesson-page">
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="../index.html" aria-label="교육 메인으로">
+          <img src="https://ccei.creativekorea.or.kr/daejeon/resources/images/common/logo_daejeon.png" alt="대전창조경제혁신센터 로고">
+          <span class="nav-title">실무 중심 바이브코딩 교육</span>
+        </a>
+        <a class="nav-cta" href="../index.html#curriculum">커리큘럼<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </header>
+
+    <main class="lesson">
+      <section class="lesson-hero">
+        <div class="lesson-inner hero-grid">
+          <div class="hero-main">
+            <h1>구현 ① 화면과 데이터</h1><nav class="hero-nav" aria-label="교시 이동"><ol class="hero-track"><li class="is-done"><a href="lesson-01.html" aria-label="1교시로 이동"><span>1교시</span></a></li><li class="is-done"><a href="lesson-02.html" aria-label="2교시로 이동"><span>2교시</span></a></li><li class="is-done"><a href="lesson-03.html" aria-label="3교시로 이동"><span>3교시</span></a></li><li class="is-now" aria-current="step"><a href="lesson-04.html" aria-label="4교시로 이동"><span>4교시</span></a></li><li><a href="lesson-05.html" aria-label="5교시로 이동"><span>5교시</span></a></li><li><a href="lesson-06.html" aria-label="6교시로 이동"><span>6교시</span></a></li><li><a href="lesson-07.html" aria-label="7교시로 이동"><span>7교시</span></a></li></ol></nav>
+          </div>
+          <div class="hero-goals">
+            <h2><svg class="goal-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>이 시간이 끝나면</h2>
+            <ol><li>3교시 PRD를 바탕으로 첫 화면을 만들고 컴포넌트 이름으로 고칠 수 있다.</li><li>CSV·엑셀 데이터를 불러와 화면에 보여 줄 수 있다.</li><li>공공데이터 파일을 정리해 현황 화면을 만들어 본다.</li></ol>
+          </div>
+        </div>
+      </section>
+
+      <div class="lesson-inner lesson-body">
+      <nav class="toc-float dock" aria-label="교안 목차">
+      <div class="toc-panel" id="toc-panel" hidden>
+      <p>목차</p>
+      <ol><li><a href="#sec-1">기본 프로젝트 만들기</a></li><li><a href="#sec-2">내 데이터 불러오기</a></li><li><a href="#sec-3">공공데이터 활용</a></li></ol>
+      </div>
+      <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
+      <p>교시 이동</p>
+      <ol><li><a href="lesson-01.html"><em>1교시</em>바이브코딩과 서비스 기초</a></li><li><a href="lesson-02.html"><em>2교시</em>뜯어보고 말로 만드는 첫 웹</a></li><li><a href="lesson-03.html"><em>3교시</em>실무 문제 정의와 PRD</a></li><li><a href="lesson-04.html" aria-current="page"><em>4교시</em>구현 ① 화면과 데이터</a></li><li><a href="lesson-05.html"><em>5교시</em>구현 ② 핵심 기능</a></li><li><a href="lesson-06.html"><em>6교시</em>구현 ③ 기능 보완·QA</a></li><li><a href="lesson-07.html"><em>7교시</em>시연·회고와 Q&amp;A</a></li></ol>
+      </div>
+      <div class="dock-btns"><button type="button" class="toc-fab" aria-expanded="false" aria-controls="toc-panel" aria-label="목차 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg><span>목차</span></button><button type="button" class="toc-fab lesson-fab" aria-expanded="false" aria-controls="lesson-panel" aria-label="교시 이동 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M4 12h10M4 17h10"/><path d="m17 9 3 3-3 3"/></svg><span>교시</span></button></div>
+      </nav>
+
+        <section id="sec-1" class="block">
+          <span class="block-step">실습</span>
+          <h2>기본 프로젝트 만들기</h2>
+          <h3 class="sub-title">1.1 PRD로 첫 화면 만들기</h3>
+          <p>3교시에 만든 <b>PRD.md</b>를 프로젝트 폴더에 두고, 이 문서를 기준으로 첫 화면을 만들게 함.</p>
+          <div class="prompt"><pre>프로젝트 폴더에 있는 PRD.md를 먼저 읽어줘.
+나는 코딩을 모르는 초보자라서, 설명은 쉬운 말로 짧게 해줘.
+
+PRD에 적힌 화면 중 첫 화면 하나만 먼저 만들어줘.
+- index.html, style.css, script.js 세 파일로 만들어줘.
+- 인터넷 연결이나 설치 없이, index.html을 더블클릭하면 바로 열리게 해줘.
+- 아직 진짜 데이터가 없으니 예시 데이터 5개를 넣어줘.
+- 휴대폰 화면에서도 깨지지 않게 해줘.
+
+다 만들면 어떤 파일을 만들었는지, 어떻게 열어 보는지 3줄로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+          <h3 class="sub-title">1.2 컴포넌트 이름으로 고쳐 달라고 하기</h3>
+          <p>1교시에 배운 <b>컴포넌트(Component)</b> 이름으로 말하면 원하는 곳을 정확히 고칠 수 있음.</p>
+          <div class="say-chips"><span>"헤더(Header)에 서비스 이름을 크게 넣어줘"</span><span>"카드(Card)를 한 줄에 3개씩 보여 줘"</span><span>"버튼(Button) 색을 진한 초록으로 바꿔줘"</span><span>"검색창(Search Bar)을 목록 위에 넣어줘"</span><span>"빈 목록일 때 안내 문구를 보여 줘"</span></div>
+          <div class="prompt"><pre>지금 화면에서 <span class="prompt-placeholder">{고칠 곳의 컴포넌트 이름}</span>을(를) 고쳐줘.
+바꾸고 싶은 점: <span class="prompt-placeholder">{어떻게 바뀌면 좋을지}</span>
+다른 부분은 그대로 두고, 고친 곳만 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+
+        </section>
+
+        <section id="sec-2" class="block">
+          <span class="block-step">실습</span>
+          <h2>내 데이터 불러오기</h2>
+          <h3 class="sub-title">2.1 데이터 파일 준비 규칙</h3>
+          <p>표 모양이 깔끔할수록 AI가 데이터를 정확히 읽음.</p>
+          <div class="kgrid four">
+            <article class="kcard"><span class="kcard-tag">규칙 1</span><h4>첫 줄은 열 이름</h4><dl><div><dt>좋은 예</dt><dd>사업명 · 대상 · 마감일</dd></div><div><dt>피할 것</dt><dd>제목 줄이 2~3줄로 합쳐진 표</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 2</span><h4>한 칸에 값 하나</h4><dl><div><dt>좋은 예</dt><dd>마감일 칸에 날짜만</dd></div><div><dt>피할 것</dt><dd>"12/31 (연장 가능)"처럼 섞기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 3</span><h4>개인정보는 지우기</h4><dl><div><dt>지울 것</dt><dd>이름, 연락처, 주소, 주민번호</dd></div><div><dt>대신</dt><dd>가짜 이름이나 번호로 바꾸기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 4</span><h4>파일 이름은 짧게</h4><dl><div><dt>좋은 예</dt><dd>programs.csv</dd></div><div><dt>피할 것</dt><dd>띄어쓰기·괄호가 많은 이름</dd></div></dl></article>
+          </div>
+          <h3 class="sub-title">2.2 CSV · 엑셀 불러오기</h3>
+          <p>CSV(Comma-Separated Values)는 쉼표로 칸을 나눈 표 파일이고, 엑셀(.xlsx)도 같은 방법으로 쓸 수 있음.</p>
+          <div class="prompt"><pre>프로젝트 폴더에 <span class="prompt-placeholder">{파일 이름.csv 또는 .xlsx}</span> 파일을 넣었어.
+이 파일의 데이터를 지금 화면의 예시 데이터 대신 보여 주고 싶어.
+
+1. 먼저 파일을 열어서 어떤 열이 있는지, 몇 줄인지 알려줘.
+2. 한글이 깨지거나 제목 줄이 여러 줄이면 고쳐서 읽어줘.
+3. index.html을 더블클릭해도 보이도록, 데이터를 data.js 파일로 바꿔서 연결해줘.
+4. 원본 파일은 바꾸지 말아줘.
+
+화면에 보여 줄 열: <span class="prompt-placeholder">{보여 줄 열 이름들}</span></pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+
+        </section>
+
+        <section id="sec-3" class="block">
+          <span class="block-step">실습</span>
+          <h2>공공데이터 활용</h2>
+          <h3 class="sub-title">3.1 파일데이터와 오픈API</h3>
+          <p>공공데이터포털(data.go.kr)에는 내려받는 <b>파일데이터</b>와, 프로그램이 직접 받아 오는 <b>오픈API(Open API)</b>가 있음.</p>
+          <div class="kgrid two dt-wide">
+            <article class="kcard kcard-main"><span class="kcard-tag">추천 · 오늘 실습</span><h4>파일데이터 (CSV · 엑셀)</h4><p class="kcard-role">내려받아 폴더에 넣으면 바로 씀</p><dl><div><dt>장점</dt><dd>신청 없이 바로 쓰고, 인터넷이 없어도 열림</dd></div><div><dt>단점</dt><dd>최신 값으로 바꾸려면 다시 내려받아야 함</dd></div></dl></article><article class="kcard"><span class="kcard-tag">심화</span><h4>오픈API</h4><p class="kcard-role">주소로 요청하면 최신 데이터를 보내 줌</p><dl><div><dt>장점</dt><dd>항상 최신 데이터를 보여 줌</dd></div><div><dt>단점</dt><dd>활용 신청과 인증키(API Key)가 필요하고 승인까지 시간이 걸림</dd></div></dl></article>
+          </div>
+          <h3 class="sub-title">3.2 연습용 공공데이터로 해 보기</h3>
+          <p>내 데이터가 아직 없다면 아래 파일로 연습함. 두 파일 모두 일부러 손볼 곳이 있는 실제 공공데이터임.</p>
+          <ul class="file-links"><li><a href="../data/대전광역시_행정구역 현황_20211130.csv" download>행정구역 현황.csv <small>한글 깨짐 · 숫자에 쉼표</small></a></li><li><a href="../data/대전광역시_경로당 현황_20201231.xlsx" download>경로당 현황.xlsx <small>제목 줄이 여러 줄</small></a></li></ul>
+          <div class="prompt"><pre>프로젝트 폴더에 공공데이터 파일 <span class="prompt-placeholder">{파일 이름}</span>을(를) 넣었어.
+이 데이터로 한눈에 보는 현황 화면을 만들고 싶어.
+
+1. 파일에서 손봐야 할 점(한글 깨짐, 여러 줄 제목, 숫자 속 쉼표 등)을 먼저 알려줘.
+2. 정리한 데이터를 data.js로 만들어줘. 원본 파일은 그대로 둬.
+3. 위에는 핵심 숫자 카드 3개, 아래에는 표를 보여 줘.
+4. 표 제목을 누르면 정렬되게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+          <h3 class="sub-title">3.3 오픈API를 쓸 때 지킬 것</h3>
+          <ul class="checks"><li>인증키(API Key)는 비밀번호처럼 다루고 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인증키가 들어간 파일은 공개 저장소에 올리지 않음</li><li>처음에는 파일데이터로 화면을 완성하고, API는 다음 단계로 바꿔 끼움</li></ul>
+          <aside class="callout tip"><b>핵심</b> 먼저 <b>예시 데이터로 화면</b>을 만들고, 그다음 <b>진짜 데이터로 바꿔 끼움</b>.</aside>
+
+        </section>
+
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p class="credit">COPYRIGHT (C) 2026 KIM HEE JEONG  ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/lesson.js" defer></script>
+  <script src="../js/top.js" defer></script>
+</body>
+</html>

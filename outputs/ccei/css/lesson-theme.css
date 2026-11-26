@@ -928,3 +928,20 @@
 .lesson-page .dt-wide .kcard dl > div { grid-template-columns: 100px 1fr; }
 .lesson-page .dt-wide .kcard dt { white-space: nowrap; }
 @media (max-width: 900px) { .lesson-page .terms.terms-3 { grid-template-columns: 1fr; } }
+
+/* 5열 카드 (3교시 1.1 등) */
+.lesson-page .kgrid.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.lesson-page .kgrid.five .kcard dl > div { display: block; }
+.lesson-page .kgrid.five .kcard dt { margin-bottom: 2px; }
+@media (max-width: 1200px) { .lesson-page .kgrid.five { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .lesson-page .kgrid.five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .lesson-page .kgrid.five { grid-template-columns: 1fr; } }
+/* 데이터 파일 내려받기 링크 */
+.lesson-page .file-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; padding: 0; list-style: none; }
+.lesson-page .file-links a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font-weight: 600; text-decoration: none; }
+.lesson-page .file-links a:hover { border-color: var(--accent); }
+.lesson-page .file-links small { color: var(--muted, #8a7f78); font-weight: 500; }
+.lesson-page .say-chips + .prompt { margin-top: 14px; }
+.lesson-page .kgrid.three > div { display: flex; flex-direction: column; }
+.lesson-page .kgrid.three > div .prompt { flex: 1; }
+.lesson-page .kgrid.three .mini-title { margin-top: 0; }
