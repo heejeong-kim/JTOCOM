@@ -1046,3 +1046,10 @@
 .lesson-page .lesson-body > #sec-2.reference-block > h2::before { content: none; }
 .toc-panel li.no-num, .toc li.no-num { counter-increment: none; }
 .toc-panel li.no-num a::before, .toc li.no-num a::before { content: none; }
+/* 준비 · 함께 만들 서비스 좌우 배치 */
+.lesson-page .sub-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.lesson-page .sub-pair .sub-title { margin-top: 0 !important; }
+.lesson-page .sub-pair .sub-col > * + * { margin-top: 12px; }
+.lesson-page .sub-pair figure.shot { max-width: none; }
+.lesson-page .sub-pair .build-target { margin: 12px 0 0; }
+@media (max-width: 760px) { .lesson-page .sub-pair { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
