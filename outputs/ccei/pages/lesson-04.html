@@ -63,7 +63,7 @@
           <h2>PRD로 첫 화면 만들기</h2>
           <article class="kcard kcard-main build-target"><span class="kcard-tag">진행 방식</span><h4>함께 만들고, 각자 연결하기</h4><dl><div><dt>함께 실습</dt><dd>강사와 같은 프롬프트로 <b>업무 인수인계 보드</b>를 만듭니다</dd></div><div><dt>각자 실습</dt><dd>함께 해 본 방법을 <b>내 과제</b>에 그대로 연결합니다</dd></div></dl></article>
           <h3 class="sub-title"><span class="sub-num">1.1</span>준비</h3>
-          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>support-guide</b> 폴더를 고릅니다 (PRD.md가 들어 있습니다)</li><li>폴더에 3교시에 만든 <b>AGENTS.md</b>가 있는지 확인합니다. 설명 방식·파일 구조·저장 규칙은 AGENTS.md가 맡아서, 오늘부터 프롬프트가 짧아집니다</li></ul>
+          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 <b>support-guide</b> 폴더를 고릅니다</li><li>폴더에 <b>AGENTS.md</b>가 있는지 확인합니다</li></ul>
           <h3 class="sub-title"><span class="sub-num">1.2</span>PRD로 첫 화면 만들기</h3>
           <ol class="guide-steps build-steps"><li><h4>① 첫 화면 만들기</h4><div class="prompt"><pre>이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면(업무 목록) 하나만 먼저 만들어줘.
 - 아직 진짜 데이터가 없으니 가상의 업무 5개를 넣어줘.
@@ -101,7 +101,7 @@
 2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/holidays.js로 저장하는 방법으로 해줘.
 3. 받아 온 공휴일을 holidays.csv 대신 써서 D-day를 계산해줘.
 4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않습니다</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li></ul></details></li></ol>
-          <ul class="checks"><li>단계(①~④)가 끝날 때마다 <b>"지금 상태를 다음 번호의 새 버전으로 저장해줘"</b>라고 요청합니다 (예: v02-CSV, v03-체크리스트)</li></ul>
+          <ul class="checks"><li>단계(①~④)가 끝날 때마다 <b>"지금 상태를 다음 번호의 새 버전으로 저장해줘"</b>라고 요청합니다</li></ul>
           <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, 로컬 스토리지에 남기고, JSON으로 넘기고, 공휴일 파일로 D-day를 계산합니다.</b></aside>
 
         </section>
@@ -153,7 +153,7 @@ CSV, JSON, 로컬 스토리지, 공공데이터 API 중 무엇이 필요한지 �
 - 마지막에 파일을 여는 방법, 만든 기능, 다음에 추가하면 좋을 기능 1가지를 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           </details>
           <h3 class="sub-title"><span class="sub-num">3.3</span>내 데이터가 없다면 · 보드에 내 업무 넣어 보기</h3>
-          <p class="desc">실제 이름·연락처·내부 자료는 빼고 내 업무 3개의 흐름만 보드에 넣어 보고, 7교시 시연에 그대로 씁니다.</p>
+          <p class="desc">실제 이름·연락처·내부 자료는 빼고 내 업무 3개의 흐름만 보드에 넣어 봅니다.</p>
           <div class="prompt"><pre>보드에 내 업무 3개를 추가해줘.
 업무 1: <span class="prompt-placeholder">{업무명 / 직무 / 주기 / 다음 마감일 / 절차(단계를 > 로 구분)}</span>
 업무 2: <span class="prompt-placeholder">{업무명 / 직무 / 주기 / 다음 마감일 / 절차}</span>
