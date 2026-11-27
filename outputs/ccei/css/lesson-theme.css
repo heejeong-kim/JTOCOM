@@ -999,3 +999,14 @@
 .lesson-page .screen-guide.is-single { grid-template-columns: minmax(0, 1fr); }
 .lesson-page .screen-guide.is-single .guide-all { position: static; }
 .lesson-page .prompt-reference .basics-prompt { margin-top: 12px; }
+
+/* 2교시 2.1 뜯어볼 서비스 후보: 사이트 로고 + 새 창 열림 표시 */
+.lesson-page .site-links a.site-link { gap: 10px; padding: 10px 14px 10px 10px; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.lesson-page .site-links a.site-link:hover, .lesson-page .site-links a.site-link:focus-visible { border-color: var(--accent); box-shadow: 0 4px 14px rgba(0,0,0,.06); transform: translateY(-1px); }
+.lesson-page .site-links a.site-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lesson-page .site-logo { position: relative; display: inline-grid; place-items: center; width: 28px; height: 28px; flex: none; border-radius: 7px; background: #f3eee8; overflow: hidden; }
+.lesson-page .site-logo::before { content: attr(data-initial); font-size: 13px; font-weight: 700; color: var(--accent); }
+.lesson-page .site-logo img { position: absolute; inset: 4px; width: 20px; height: 20px; background: #fff; border-radius: 4px; object-fit: contain; }
+.lesson-page .site-links .ext-ic { width: 15px; height: 15px; flex: none; color: #9a918a; transition: color .15s, transform .15s; }
+.lesson-page .site-links a.site-link:hover .ext-ic { color: var(--accent); transform: translate(1px, -1px); }
+@media (prefers-reduced-motion: reduce) { .lesson-page .site-links a.site-link, .lesson-page .site-links .ext-ic { transition: none; } .lesson-page .site-links a.site-link:hover { transform: none; } }
