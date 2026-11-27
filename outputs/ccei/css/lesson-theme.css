@@ -1010,3 +1010,4 @@
 .lesson-page .site-links .ext-ic { width: 15px; height: 15px; flex: none; color: #9a918a; transition: color .15s, transform .15s; }
 .lesson-page .site-links a.site-link:hover .ext-ic { color: var(--accent); transform: translate(1px, -1px); }
 @media (prefers-reduced-motion: reduce) { .lesson-page .site-links a.site-link, .lesson-page .site-links .ext-ic { transition: none; } .lesson-page .site-links a.site-link:hover { transform: none; } }
+.lesson-page .site-links-label { margin: 18px 0 -6px; color: #8a7f78; font-size: 13px; font-weight: 700; }
