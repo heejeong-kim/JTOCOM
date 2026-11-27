@@ -1079,3 +1079,12 @@
 .lesson-page .pager-link strong em { margin-right: 8px; font-style: normal; color: var(--accent); }
 @media (max-width: 600px) { .lesson-page .lesson-pager { grid-template-columns: 1fr; margin-top: 48px; } .lesson-page .pager-link strong { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .lesson-page .pager-link { transition: none; } .lesson-page .pager-link:hover { transform: none; } }
+/* 카드 유형 배지: 모든 교안의 kcard-tag를 같은 모양·색으로 통일 (다른 배지와 겹치지 않는 플럼 계열) */
+.lesson-page .kcard .kcard-tag,
+.lesson-page .kcard.kcard-main .kcard-tag,
+.lesson-page .stack-demo .kcard-tag,
+.lesson-page #sec-4 .kcard-tag,
+.lesson-page .kcard-head .kcard-tag {
+  display: inline-flex; align-items: center; width: fit-content; padding: 4px 10px; border: 1px solid #e3d3ea; border-radius: 999px;
+  background: #f4ecf7; color: #6b3f7a; font-size: 12.5px; font-weight: 700; line-height: 1.2; letter-spacing: 0;
+}
