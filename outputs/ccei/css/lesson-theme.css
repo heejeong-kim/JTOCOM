@@ -1028,3 +1028,5 @@
 @media (max-width: 760px) {
   .lesson-page .lesson-body > .block > .sub-title ~ :not(.sub-title):not(script) { margin-left: 0; }
 }
+.lesson-page .say-chips + p.desc { margin-top: 18px; }
+.lesson-page p.desc + .say-chips { margin-top: 12px; }
