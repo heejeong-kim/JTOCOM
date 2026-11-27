@@ -873,7 +873,6 @@
 @media (max-width: 1200px) { .lesson-page .hero-main, .lesson-page .hero-goals { min-height: 0; } }
 
 /* 2교시: 사례를 1번 섹션으로 번호 매김 (1 사례 → 2 뜯어보기 → 3 만들기) */
-.lesson-page .lesson-body > #sec-2.reference-block { counter-increment: sec; }
 .lesson-page #sec-2.reference-block > h2::before { content: counter(sec) "."; flex: none; color: #28645f; font: 800 34px/1 var(--f-head); }
 .lesson-page #sec-4 .build-flow { margin-top: 0; }
 /* 2.7 그룹 제목: 개수 배지 줄바꿈 방지 */
@@ -1042,3 +1041,8 @@
 .lesson-page .map-head + .folder-map { margin-top: 0; }
 .lesson-page figure.shot { margin: 14px 0 0; max-width: 560px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
 .lesson-page figure.shot img { display: block; width: 100%; height: auto; }
+/* 참고 섹션은 번호 없이, 이후 섹션부터 1번 */
+.lesson-page .lesson-body > .block.reference-block { counter-increment: none; }
+.lesson-page .lesson-body > #sec-2.reference-block > h2::before { content: none; }
+.toc-panel li.no-num, .toc li.no-num { counter-increment: none; }
+.toc-panel li.no-num a::before, .toc li.no-num a::before { content: none; }
