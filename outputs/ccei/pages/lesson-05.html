@@ -62,7 +62,7 @@
           <span class="block-step">개념</span>
           <h2>기능 단위로 나누기</h2>
           <h3 class="sub-title">1.1 큰 요청 대신 작은 요청</h3>
-          <p>AI는 한 번에 하나씩 요청할 때 더 정확하게 만드는 경우가 많음.</p>
+          <p>AI는 한 번에 하나씩 요청할 때 더 정확하게 만드는 경우가 많습니다.</p>
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">아쉬운 예</span><h4>한 번에 다 요청</h4><dl><div><dt>요청</dt><dd>"검색, 정렬, 인수인계서, 엑셀 저장 다 넣어줘"</dd></div><div><dt>결과</dt><dd>어디가 고장 났는지 찾기 어려움</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">좋은 예</span><h4>기능 하나씩 요청</h4><dl><div><dt>요청</dt><dd>"먼저 검색 기능만 만들어줘"</dd></div><div><dt>결과</dt><dd>확인하고 저장한 뒤 다음 기능으로 넘어감</dd></div></dl></article>
           </div>
@@ -78,7 +78,7 @@
           <span class="block-step">함께 실습</span>
           <h2>버전과 변경 이력</h2>
           <h3 class="sub-title">2.1 기능마다 버전과 이력 남기기</h3>
-          <p>2교시에 해 본 변경 이력 관리를 <b>기능마다</b> 반복함. 기능 하나가 완성될 때마다 버전을 저장하고 이력을 한 줄 남김.</p>
+          <p>2교시에 해 본 변경 이력 관리를 <b>기능마다</b> 반복해, 기능 하나가 완성될 때마다 버전을 저장하고 이력을 한 줄 남깁니다.</p>
           <ol class="guide-steps build-steps"><li><h4>① 버전 저장하고 이력 남기기</h4><div class="prompt"><pre>지금 상태를 다음 번호의 새 버전으로 저장해줘. (예: v06-검색)
 이유: <span class="prompt-placeholder">{왜 바꿨는지}</span></pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 이력 보고 되돌리기</h4><div class="prompt"><pre>CHANGELOG.md를 표로 보여 줘.
 내가 고른 버전으로 되돌려줘: <span class="prompt-placeholder">{예: v05-공휴일}</span>
@@ -107,7 +107,7 @@
 확인 방법: 인쇄 미리보기에서 직무별로 나뉘고, 표가 페이지 중간에 잘리지 않음</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
           <ul class="checks"><li>기능 하나가 끝날 때마다 새로고침해서 확인 방법대로 눌러 봄</li><li>잘 되면 2.1 ①로 버전을 저장하고 이력을 남긴 뒤 다음 기능으로 넘어감</li></ul>
           <h3 class="sub-title">3.2 강사 시연 · 반복 작업을 스킬로 묶기</h3>
-          <p>기능을 더할 때마다 같은 순서를 반복했음. 이렇게 매번 같은 순서로 하는 일은 <b>스킬(Skill)</b>로 묶어 두면 한 줄로 부를 수 있음. 강사가 '새 업무 추가' 스킬을 시연함.</p>
+          <p>매번 같은 순서로 하는 일은 <b>스킬(Skill)</b>로 묶어 두면 한 줄로 부를 수 있으며, 강사가 '새 업무 추가' 스킬을 시연합니다.</p>
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">AGENTS.md</span><h4>늘 지키는 규칙</h4><p class="kcard-role">Codex가 작업 전에 항상 읽음</p><dl><div><dt>예시</dt><dd>쉬운 말로 설명, 파일 구조, 요청한 것만 고치기</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">Skill</span><h4>필요할 때 꺼내 쓰는 절차</h4><p class="kcard-role">부르거나 필요할 때만 불러와 그대로 따라 함</p><dl><div><dt>예시</dt><dd>"새 업무:" 한 줄 → CSV 추가 → 화면 갱신 → 버전 저장</dd></div></dl></article>
           </div>
@@ -122,9 +122,9 @@
 3. 화면에서 새 업무를 확인하는 방법을 알려 줌
 4. 새 버전으로 저장하고 CHANGELOG.md에 기록함
 다 만들면 이 스킬을 어떻게 부르는지 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-              <p>직접 만들기 어렵다면 완성된 스킬 파일을 내려받아 프로젝트 폴더의 <b>.agents/skills/new-task/</b> 폴더에 넣어도 됨.</p>
+              <p>직접 만들기 어렵다면 완성된 스킬 파일을 내려받아 프로젝트 폴더의 <b>.agents/skills/new-task/</b> 폴더에 넣어도 됩니다.</p>
               <ul class="file-links"><li><a href="../samples/skills/new-task/SKILL.md" download>SKILL.md <small>새 업무 추가 스킬</small></a></li></ul>
-              <p>만든 뒤에는 이렇게 한 줄로 씀: <b>"새 업무: 분기 보안 점검 / 공통 행정 / 분기 / 2027-03-15 / 점검표 출력 &gt; 항목 점검 &gt; 결과 보고"</b></p>
+              <p>만든 뒤에는 <b>"새 업무: 분기 보안 점검 / 공통 행정 / 분기 / 2027-03-15 / 점검표 출력 &gt; 항목 점검 &gt; 결과 보고"</b>처럼 한 줄로 씁니다.</p>
           </details>
           <aside class="callout tip"><b>핵심</b> <b>요청 → 확인 → 버전 저장·이력 기록</b>을 기능마다 반복함.</aside>
 
