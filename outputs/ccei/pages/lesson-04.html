@@ -78,7 +78,7 @@
           <h2>데이터 4가지 함께 다루기</h2>
           <h3 class="sub-title">2.1 데이터를 다루는 4가지 방법</h3>
           <div class="kgrid four">
-            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>여기서는</dt><dd>가상 업무 30개 목록 넣기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>여기서는</dt><dd>체크한 절차와 메모 남기기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>여기서는</dt><dd>인수인계 파일로 내보내고 불러오기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 API</span><h4>바뀌는 정보 받아 오기</h4><p class="kcard-role">Open API. 주소로 요청하면 데이터를 보내 줌</p><dl><div><dt>여기서는</dt><dd>공휴일을 받아 마감 D-day 계산</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>여기서는</dt><dd>가상 업무 30개 목록 넣기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>여기서는</dt><dd>체크한 절차 남기기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>여기서는</dt><dd>인수인계 파일로 내보내고 불러오기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 API</span><h4>바뀌는 정보 받아 오기</h4><p class="kcard-role">Open API. 주소로 요청하면 데이터를 보내 줌</p><dl><div><dt>여기서는</dt><dd>공휴일을 받아 마감 D-day 계산</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.2 함께 해 보기</h3>
           <ol class="guide-steps build-steps"><li><h4>① CSV로 업무 목록 넣기</h4><ul class="file-links"><li><a href="../data/handover-tasks.csv" download>handover-tasks.csv <small>가상 업무 30개</small></a></li></ul><p>내려받은 파일을 프로젝트의 <b>data 폴더</b>에 넣고 요청함.</p><div class="prompt"><pre>data 폴더에 handover-tasks.csv 파일을 넣었어.
@@ -86,11 +86,10 @@
 1. 먼저 파일에 어떤 열이 있는지, 몇 줄인지 알려줘.
 2. 데이터를 data/data.js 파일로 바꿔서 연결해줘.
 3. 직무와 주기를 고르면 맞는 업무만 보이게 해줘.
-4. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 로컬 스토리지에 진행 상태 남기기</h4><div class="prompt"><pre>업무 카드를 누르면 업무 상세를 보여 주고, '절차' 칸의 단계(> 로 나뉨)를 체크리스트로 보여 줘.
-- 체크한 단계와 메모 칸에 쓴 내용은 새로고침하거나 창을 닫았다 열어도 남게 로컬 스토리지(LocalStorage)에 저장해줘.
-- 카드에는 '3/5'처럼 진행 정도를 보여 줘.
+4. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 로컬 스토리지에 체크 상태 남기기</h4><div class="prompt"><pre>업무 카드를 누르면 업무 상세를 보여 주고, '절차' 칸의 단계(> 로 나뉨)를 체크리스트로 보여 줘.
+- 체크한 단계는 새로고침하거나 창을 닫았다 열어도 남게 로컬 스토리지(LocalStorage)에 저장해줘.
 - 저장된 값을 개발자 도구 어디에서 볼 수 있는지 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ JSON으로 인수인계 파일 만들기</h4><div class="prompt"><pre>다음 담당자에게 넘길 수 있게 '인수인계 파일 내보내기'와 '인수인계 파일 불러오기' 버튼을 만들어줘.
-- 내보내기를 누르면 업무 목록과 체크 진행 상태, 메모를 handover.json 파일로 내려받게 해줘.
+- 내보내기를 누르면 업무 목록과 체크한 단계를 handover.json 파일로 내려받게 해줘.
 - 불러오기로 그 파일을 고르면 같은 내용이 화면에 보이게 해줘.
 - JSON이 무엇인지 3줄로, 업무 하나가 JSON에서 어떻게 생겼는지 예를 들어 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공공데이터 API로 공휴일 반영하기</h4><div class="prompt"><pre>공공데이터포털의 '한국천문연구원_특일 정보'로 올해와 내년 공휴일을 받아 와서 업무 마감일 계산에 쓰고 싶어.
 인증키는 내가 .env 파일에 직접 넣을게.
@@ -98,7 +97,8 @@
 1. 시작하기 전에 필요한 파일과 내가 직접 할 일을 먼저 알려줘.
 2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/holidays.js로 저장하는 방법으로 해줘.
 3. 카드마다 마감일까지 남은 근무일을 'D-3'처럼 보여 주고, 마감일이 주말이나 공휴일이면 '휴일 마감' 표시를 해줘.
-4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li></ul></li></ol>
+4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li><li>인증키가 아직 동작하지 않으면 강사 시연을 보고, 3번(D-day)만 <b>주말 기준</b>으로 먼저 만들어 둠</li></ul></li></ol>
+          <ul class="checks"><li>단계(①~④)가 끝날 때마다 <b>"지금 상태를 다음 번호의 새 버전으로 저장해줘"</b>라고 요청함 (예: v02-CSV, v03-체크리스트)</li></ul>
           <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, 로컬 스토리지에 남기고, JSON으로 넘기고, API로 바뀌는 정보를 받아 옴.</b></aside>
 
         </section>
@@ -122,7 +122,7 @@ CSV, JSON, 로컬 스토리지, 공공데이터 API 중 무엇이 필요한지 �
 원본 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <details class="toggle prompt-reference">
               <summary>다른 방법 · 2교시에 뜯어본 서비스를 참고해 시작하고 싶을 때 열기</summary>
-              <div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내가 참고한 서비스를 바탕으로, 비슷한 문제를 해결하는 나만의 웹 서비스 첫 화면을 만들고 싶어.
+              <div class="prompt"><pre>내가 참고한 서비스를 바탕으로, 비슷한 문제를 해결하는 나만의 웹 서비스 첫 화면을 만들고 싶어.
 참고 서비스의 이름·문구·로고·브랜드 디자인은 그대로 베끼지 말고, 사용자에게 필요한 기능과 유저 플로우만 참고해줘.
 
 [참고한 서비스]
@@ -145,17 +145,26 @@ CSV, JSON, 로컬 스토리지, 공공데이터 API 중 무엇이 필요한지 �
 - 브라우저에서 바로 열리는 웹(HTML·CSS·JavaScript)으로 만들고, PC와 휴대폰 화면에서 모두 잘 보이게 해줘.
 - 핵심 행동 하나가 작동하는 첫 결과물에 집중해줘.
 - 실제 개인정보 대신 가상의 예시 데이터 5~10개를 넣어줘.
-- 로그인, 실제 데이터 저장, 외부 API 연결은 하지 말고 화면 안의 예시 데이터로 동작하게 해줘.
+- 로그인과 실제 데이터 저장은 하지 말고, 우선 화면 안의 예시 데이터로 동작하게 해줘.
 - 버튼과 입력 기능을 직접 확인하고, 작동하지 않는 부분은 고쳐줘.
 - 마지막에 파일을 여는 방법, 만든 기능, 다음에 추가하면 좋을 기능 1가지를 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           </details>
-          <h3 class="sub-title">3.3 공공데이터로 연습하기</h3>
-          <p>내 데이터가 아직 없다면 아래 파일로 연습함. 내려받은 뒤 이름을 <b>district.csv</b>, <b>senior-center.xlsx</b>처럼 짧은 영문으로 바꿔 data 폴더에 넣음.</p>
-          <ul class="file-links"><li><a href="../data/대전광역시_행정구역 현황_20211130.csv" download>행정구역 현황.csv <small>한글 깨짐 · 숫자에 쉼표</small></a></li><li><a href="../data/대전광역시_경로당 현황_20201231.xlsx" download>경로당 현황.xlsx <small>제목 줄이 여러 줄</small></a></li></ul>
-          <div class="prompt"><pre>data 폴더에 공공데이터 파일 <span class="prompt-placeholder">{파일 이름}</span>을(를) 넣었어.
+          <h3 class="sub-title">3.3 내 데이터가 없다면 · 보드에 내 업무 넣어 보기</h3>
+          <p>내 업무 3개를 인수인계 보드에 넣어 봄. 실제 이름·연락처·내부 자료는 빼고 업무 흐름만 적음. 7교시 시연에 그대로 씀.</p>
+          <div class="prompt"><pre>보드에 내 업무 3개를 추가해줘.
+업무 1: <span class="prompt-placeholder">{업무명 / 직무 / 주기 / 다음 마감일 / 절차(단계를 > 로 구분)}</span>
+업무 2: <span class="prompt-placeholder">{업무명 / 직무 / 주기 / 다음 마감일 / 절차}</span>
+업무 3: <span class="prompt-placeholder">{업무명 / 직무 / 주기 / 다음 마감일 / 절차}</span>
+data/handover-tasks.csv와 data/data.js에 함께 넣고, 추가한 업무가 맨 위에 보이게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+          <details class="toggle prompt-reference">
+              <summary>참고 · 공공데이터 파일로 연습하기</summary>
+              <p>내려받은 뒤 이름을 <b>district.csv</b>, <b>senior-center.xlsx</b>처럼 짧은 영문으로 바꿔 data 폴더에 넣음.</p>
+              <ul class="file-links"><li><a href="../data/대전광역시_행정구역 현황_20211130.csv" download>행정구역 현황.csv <small>한글 깨짐 · 숫자에 쉼표</small></a></li><li><a href="../data/대전광역시_경로당 현황_20201231.xlsx" download>경로당 현황.xlsx <small>제목 줄이 여러 줄</small></a></li></ul>
+              <div class="prompt"><pre>data 폴더에 공공데이터 파일 <span class="prompt-placeholder">{파일 이름}</span>을(를) 넣었어.
 1. 파일에서 손봐야 할 점(한글 깨짐, 여러 줄 제목, 숫자 속 쉼표 등)을 먼저 알려줘.
 2. 정리한 데이터를 data/data.js로 만들어줘. 원본 파일은 그대로 둬.
 3. 위에는 핵심 숫자 카드 3개, 아래에는 표를 보여 줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+          </details>
           <aside class="callout tip"><b>핵심</b> 함께 해 본 <b>네 가지 방법 중 내 과제에 필요한 것만</b> 골라 연결함.</aside>
 
         </section>
