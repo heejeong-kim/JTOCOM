@@ -1055,3 +1055,8 @@
 @media (max-width: 760px) { .lesson-page .sub-pair { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
 .lesson-page .sub-pair .sub-col > .sub-title-in { margin-top: 28px !important; }
 .lesson-page .sub-pair .sub-col .prompt { margin-top: 12px; }
+/* 설명 문장 + 다운로드 버튼 한 줄 */
+.lesson-page .desc-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.lesson-page .desc-row > p.desc { margin: 0; flex: 1 1 360px; }
+.lesson-page .desc-row > .map-head { margin: 0; flex: none; }
+.lesson-page .desc-row + .folder-map { margin-top: 0; }
