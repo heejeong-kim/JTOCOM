@@ -1030,3 +1030,8 @@
 }
 .lesson-page .say-chips + p.desc { margin-top: 18px; }
 .lesson-page p.desc + .say-chips { margin-top: 12px; }
+/* 섹션 머리: 배지(위) + 제목(아래) 두 줄 */
+.lesson-page .lesson-body > .block > .block-step { display: inline-flex; margin: 0 0 12px; }
+.lesson-page .lesson-body > .block > h2 { display: block; max-width: none; margin: 0 0 24px; }
+@media (max-width: 600px) { .lesson-page .lesson-body > .block > h2 { margin-bottom: 18px; } }
+.lesson-page .lesson-body > .block > h2::before { margin-right: .3em; }
