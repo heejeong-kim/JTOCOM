@@ -996,3 +996,6 @@
 .lesson-page .vs-term .vs-tag { background: var(--accent); color: #fff; }
 @media (max-width: 760px) { .lesson-page .vs-grid { grid-template-columns: 1fr; } }
 .lesson-page .build-steps .vs-grid + p { margin-top: 10px; }
+.lesson-page .screen-guide.is-single { grid-template-columns: minmax(0, 1fr); }
+.lesson-page .screen-guide.is-single .guide-all { position: static; }
+.lesson-page .prompt-reference .basics-prompt { margin-top: 12px; }
