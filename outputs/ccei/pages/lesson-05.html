@@ -32,7 +32,7 @@
           </div>
           <div class="hero-goals">
             <h2><svg class="goal-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>이 시간이 끝나면</h2>
-            <ol><li>함께 만드는 인수인계 보드에 검색·정렬·인수인계서 기능을 하나씩 더한다.</li><li>기능마다 버전을 저장하고 변경 이력을 남겨, 필요할 때 되돌릴 수 있다.</li><li>기능 요청 4줄로 내 과제에 필요한 기능을 만들어 본다.</li></ol>
+            <ol><li>함께 만드는 인수인계 보드에 검색·정렬·인수인계서 기능을 하나씩 더한다.</li><li>기능마다 변경 이력을 남겨, 필요할 때 되돌릴 수 있다.</li><li>기능 요청 4줄로 내 과제에 필요한 기능을 만들어 본다.</li></ol>
           </div>
         </div>
       </section>
@@ -41,7 +41,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">기능 단위로 나누기</a></li><li><a href="#sec-2">버전과 변경 이력</a></li><li><a href="#sec-3">함께 기능 더하기</a></li><li><a href="#sec-4">내 과제에 기능 더하기</a></li></ol>
+      <ol><li><a href="#sec-1">기능 단위로 나누기</a></li><li><a href="#sec-2">변경 이력</a></li><li><a href="#sec-3">함께 기능 더하기</a></li><li><a href="#sec-4">내 과제에 기능 더하기</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -53,7 +53,7 @@
 한 일: <span class="prompt-placeholder">{무엇을 했더니}</span>
 기대: <span class="prompt-placeholder">{이렇게 될 줄 알았는데}</span>
 실제: <span class="prompt-placeholder">{이렇게 됨}</span>
-원인을 쉬운 말로 한 줄 설명하고, 이 문제만 고쳐줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><b>그래도 안 되면 되돌리기</b><span>"CHANGELOG.md를 보고 마지막 버전으로 되돌려줘"</span></li><li><b>손 들기</b><span>강사나 옆 사람에게 화면을 보여 주고 도움을 요청함</span></li></ol>
+원인을 쉬운 말로 한 줄 설명하고, 이 문제만 고쳐줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><b>그래도 안 되면 되돌리기</b><span>"CHANGELOG.md를 보고 마지막 변경을 되돌려줘"</span></li><li><b>손 들기</b><span>강사나 옆 사람에게 화면을 보여 주고 도움을 요청함</span></li></ol>
       </div>
       <div class="dock-btns"><button type="button" class="toc-fab help-fab" aria-expanded="false" aria-controls="help-panel" aria-label="막혔을 때 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><circle cx="12" cy="17" r=".9" fill="currentColor"/></svg><span>막힘</span></button><button type="button" class="toc-fab" aria-expanded="false" aria-controls="toc-panel" aria-label="목차 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg><span>목차</span></button><button type="button" class="toc-fab lesson-fab" aria-expanded="false" aria-controls="lesson-panel" aria-label="교시 이동 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M4 12h10M4 17h10"/><path d="m17 9 3 3-3 3"/></svg><span>교시</span></button></div>
       </nav>
@@ -76,15 +76,15 @@
 
         <section id="sec-2" class="block">
           <span class="block-step">함께 실습</span>
-          <h2>버전과 변경 이력</h2>
-          <h3 class="sub-title"><span class="sub-num">2.1</span>기능마다 버전과 이력 남기기</h3>
-          <p class="desc"><b>기능 하나</b>가 완성될 때마다 버전을 저장하고 이력을 한 줄 남깁니다.</p>
-          <ol class="guide-steps build-steps"><li><h4>① 버전 저장하고 이력 남기기</h4><div class="prompt"><pre>지금 상태를 다음 번호의 새 버전으로 저장해줘. (예: v06-검색)
+          <h2>변경 이력</h2>
+          <h3 class="sub-title"><span class="sub-num">2.1</span>기능마다 이력 남기기</h3>
+          <p class="desc"><b>기능 하나</b>가 완성될 때마다 CHANGELOG.md에 이력을 한 줄 남깁니다.</p>
+          <ol class="guide-steps build-steps"><li><h4>① 이력 남기기</h4><div class="prompt"><pre>방금 만든 기능을 CHANGELOG.md 맨 위에 다음 번호로 한 줄 남겨줘.
 이유: <span class="prompt-placeholder">{왜 바꿨는지}</span></pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 이력 보고 되돌리기</h4><div class="prompt"><pre>CHANGELOG.md를 표로 보여 줘.
-내가 고른 버전으로 되돌려줘: <span class="prompt-placeholder">{예: v05-공휴일}</span>
-되돌리기 전에 무엇이 바뀌는지 먼저 알려 주고, 되돌린 것도 CHANGELOG.md에 새 버전으로 한 줄 남겨줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
-          <details class="toggle"><summary>심화 · Git으로 이력 관리하기</summary><p>깃(Git)은 버전과 변경 이력을 자동으로 남기는 도구입니다. 저장 하나가 커밋(Commit)이고, 커밋 메시지가 CHANGELOG 한 줄과 같은 역할을 합니다. "이 폴더에서 Git을 시작하고 지금 상태를 커밋해줘. Git이 없으면 설치 방법부터 알려줘."라고 요청하면 됩니다. 설치에 관리자 권한이 필요할 수 있습니다.</p></details>
-          <aside class="callout tip"><b>핵심</b> <b>기능 하나 = 버전 하나 = 이력 한 줄</b>로 쌓아 두면 실패했을 때 돌아갈 곳을 고르기 쉽습니다.</aside>
+내가 고른 번호의 변경을 되돌려줘: <span class="prompt-placeholder">{번호}</span>
+되돌리기 전에 무엇이 바뀌는지 먼저 알려 주고, 되돌린 것도 CHANGELOG.md에 한 줄 남겨줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
+          <details class="toggle"><summary>심화 · Git으로 이력 관리하기</summary><p>깃(Git)은 변경 이력과 그때의 파일을 자동으로 남기는 도구입니다. 저장 하나가 커밋(Commit)이고, 커밋 메시지가 CHANGELOG 한 줄과 같은 역할을 합니다. "이 폴더에서 Git을 시작하고 지금 상태를 커밋해줘. Git이 없으면 설치 방법부터 알려줘."라고 요청하면 됩니다. 설치에 관리자 권한이 필요할 수 있습니다.</p></details>
+          <aside class="callout tip"><b>핵심</b> <b>기능 하나 = 이력 한 줄</b>로 쌓아 두면 실패했을 때 돌아갈 곳을 고르기 쉽습니다.</aside>
 
         </section>
 
@@ -105,7 +105,7 @@
 사용자 행동: '인수인계서' 버튼을 누름
 기대 결과: 모든 업무를 직무·주기별로 묶어 업무명, 다음 마감일, 절차, 주의할 점을 한 장으로 보여 주고, 인쇄 버튼으로 출력할 수 있음
 확인 방법: 인쇄 미리보기에서 직무별로 나뉘고, 표가 페이지 중간에 잘리지 않음</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
-          <ul class="checks"><li>기능 하나가 끝날 때마다 새로고침해서 확인 방법대로 눌러 봅니다</li><li>잘 되면 2.1 ①로 버전을 저장하고 이력을 남긴 뒤 다음 기능으로 넘어갑니다</li></ul>
+          <ul class="checks"><li>기능 하나가 끝날 때마다 새로고침해서 확인 방법대로 눌러 봅니다</li><li>잘 되면 2.1 ①로 이력을 남긴 뒤 다음 기능으로 넘어갑니다</li></ul>
           <h3 class="sub-title"><span class="sub-num">3.2</span>강사 시연 · 반복 작업을 스킬로 묶기</h3>
           <p class="desc">매번 같은 순서로 하는 일은 <b>스킬(Skill)</b>로 묶어 두면 한 줄로 부를 수 있으며, 강사가 '새 업무 추가' 스킬을 시연합니다.</p>
           <div class="kgrid two dt-wide">
@@ -120,13 +120,13 @@
 1. data/handover-tasks.csv에 한 줄을 추가함
 2. data/data.js를 다시 만듦
 3. 화면에서 새 업무를 확인하는 방법을 알려 줌
-4. 새 버전으로 저장하고 CHANGELOG.md에 기록함
+4. CHANGELOG.md에 한 줄 기록함
 다 만들면 이 스킬을 어떻게 부르는지 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
               <p class="desc">직접 만들기 어렵다면 완성된 스킬 파일을 내려받아 프로젝트 폴더의 <b>.agents/skills/new-task/</b> 폴더에 넣어도 됩니다.</p>
               <ul class="file-links"><li><a href="../samples/skills/new-task/SKILL.md" download>SKILL.md <small>새 업무 추가 스킬</small></a></li></ul>
               <p class="desc">만든 뒤에는 <b>"새 업무: 분기 보안 점검 / 공통 행정 / 분기 / 2027-03-15 / 점검표 출력 &gt; 항목 점검 &gt; 결과 보고"</b>처럼 한 줄로 씁니다.</p>
           </details>
-          <aside class="callout tip"><b>핵심</b> <b>요청 → 확인 → 버전 저장·이력 기록</b>을 기능마다 반복합니다.</aside>
+          <aside class="callout tip"><b>핵심</b> <b>요청 → 확인 → 이력 기록</b>을 기능마다 반복합니다.</aside>
 
         </section>
 
