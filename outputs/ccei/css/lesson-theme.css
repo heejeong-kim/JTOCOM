@@ -1161,3 +1161,20 @@
   @keyframes heroGlowB { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(90px, -40px) scale(1.1); } 100% { transform: translate(180px, -10px) scale(.92); } }
   @keyframes heroNowGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,130,105,0); } 50% { box-shadow: 0 0 0 7px rgba(201,130,105,.18); } }
 }
+
+/* 교시 이동(강의 커리큘럼) 상시 모션: 1교시→7교시로 빛이 차례로 지나감 (li::before 사용, 화살표·'보는 중' 표시는 그대로) */
+.lesson-page .hero-track li { position: relative; }
+.lesson-page .hero-track li::before { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 999px; pointer-events: none; opacity: 0;
+  background: linear-gradient(100deg, transparent 25%, rgba(201,130,105,.28) 50%, transparent 75%); background-size: 250% 100%; background-position: 120% 0; }
+.lesson-page .hero-track li.is-now::before { background-image: linear-gradient(100deg, transparent 25%, rgba(255,226,102,.45) 50%, transparent 75%); }
+@media (prefers-reduced-motion: no-preference) {
+  .lesson-page .hero-track li::before { animation: trackSweep 7s ease-in-out infinite; }
+  .lesson-page .hero-track li:nth-child(1)::before { animation-delay: 1.60s; }
+  .lesson-page .hero-track li:nth-child(2)::before { animation-delay: 1.95s; }
+  .lesson-page .hero-track li:nth-child(3)::before { animation-delay: 2.30s; }
+  .lesson-page .hero-track li:nth-child(4)::before { animation-delay: 2.65s; }
+  .lesson-page .hero-track li:nth-child(5)::before { animation-delay: 3.00s; }
+  .lesson-page .hero-track li:nth-child(6)::before { animation-delay: 3.35s; }
+  .lesson-page .hero-track li:nth-child(7)::before { animation-delay: 3.70s; }
+  @keyframes trackSweep { 0% { opacity: 0; background-position: 120% 0; } 3% { opacity: 1; } 13% { opacity: 1; background-position: -20% 0; } 15%, 100% { opacity: 0; background-position: -20% 0; } }
+}
