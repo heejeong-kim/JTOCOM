@@ -32,7 +32,7 @@
           </div>
           <div class="hero-goals">
             <h2><svg class="goal-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>이 시간이 끝나면</h2>
-            <ol><li>강사와 함께 PRD.md로 업무 인수인계 보드의 첫 화면을 만든다.</li><li>CSV·로컬 스토리지·JSON·공공데이터 API로 데이터를 다뤄 본다.</li><li>함께 해 본 방법을 내 과제와 내 데이터에 연결해 본다.</li></ol>
+            <ol><li>강사와 함께 PRD.md로 업무 인수인계 보드의 첫 화면을 만든다.</li><li>CSV·로컬 스토리지·JSON·공휴일 파일로 데이터를 다뤄 본다.</li><li>함께 해 본 방법을 내 과제와 내 데이터에 연결해 본다.</li></ol>
           </div>
         </div>
       </section>
@@ -63,7 +63,7 @@
           <h2>PRD로 첫 화면 만들기</h2>
           <article class="kcard kcard-main build-target"><span class="kcard-tag">진행 방식</span><h4>함께 만들고, 각자 연결하기</h4><dl><div><dt>함께 실습</dt><dd>강사와 같은 프롬프트로 <b>업무 인수인계 보드</b>를 만듦</dd></div><div><dt>각자 실습</dt><dd>함께 해 본 방법을 <b>내 과제</b>에 그대로 연결함</dd></div></dl></article>
           <h3 class="sub-title">1.1 준비</h3>
-          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>handover-board</b> 폴더를 고름 (PRD.md가 들어 있음)</li><li>폴더에 3교시에 만든 <b>AGENTS.md</b>가 있는지 확인함. 설명 방식·파일 구조·저장 규칙은 AGENTS.md가 맡아서, 오늘부터 프롬프트가 짧아짐</li><li>공공데이터포털(data.go.kr)에 회원가입하고 <b>한국천문연구원 특일 정보</b>를 활용신청해 둠 (인증키가 동작하기까지 시간이 걸릴 수 있음)</li></ul>
+          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>handover-board</b> 폴더를 고름 (PRD.md가 들어 있음)</li><li>폴더에 3교시에 만든 <b>AGENTS.md</b>가 있는지 확인함. 설명 방식·파일 구조·저장 규칙은 AGENTS.md가 맡아서, 오늘부터 프롬프트가 짧아짐</li></ul>
           <h3 class="sub-title">1.2 PRD로 첫 화면 만들기</h3>
           <ol class="guide-steps build-steps"><li><h4>① 첫 화면 만들기</h4><div class="prompt"><pre>이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면(업무 목록) 하나만 먼저 만들어줘.
 - 아직 진짜 데이터가 없으니 가상의 업무 5개를 넣어줘.
@@ -78,7 +78,7 @@
           <h2>데이터 4가지 함께 다루기</h2>
           <h3 class="sub-title">2.1 데이터를 다루는 4가지 방법</h3>
           <div class="kgrid four">
-            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>여기서는</dt><dd>가상 업무 30개 목록 넣기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>여기서는</dt><dd>체크한 절차 남기기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>여기서는</dt><dd>인수인계 파일로 내보내고 불러오기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 API</span><h4>바뀌는 정보 받아 오기</h4><p class="kcard-role">Open API. 주소로 요청하면 데이터를 보내 줌</p><dl><div><dt>여기서는</dt><dd>공휴일을 받아 마감 D-day 계산</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>여기서는</dt><dd>가상 업무 30개 목록 넣기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>여기서는</dt><dd>체크한 절차 남기기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>여기서는</dt><dd>인수인계 파일로 내보내고 불러오기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 · 파일과 API</span><h4>공휴일 정보 쓰기</h4><p class="kcard-role">파일로 받거나, Open API로 직접 받아 옴</p><dl><div><dt>여기서는</dt><dd>공휴일 파일로 마감 D-day 계산 (API는 옵션)</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.2 함께 해 보기</h3>
           <ol class="guide-steps build-steps"><li><h4>① CSV로 업무 목록 넣기</h4><ul class="file-links"><li><a href="../data/handover-tasks.csv" download>handover-tasks.csv <small>가상 업무 30개</small></a></li></ul><p>내려받은 파일을 프로젝트의 <b>data 폴더</b>에 넣고 요청함.</p><div class="prompt"><pre>data 폴더에 handover-tasks.csv 파일을 넣었어.
@@ -91,15 +91,18 @@
 - 저장된 값을 개발자 도구 어디에서 볼 수 있는지 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ JSON으로 인수인계 파일 만들기</h4><div class="prompt"><pre>다음 담당자에게 넘길 수 있게 '인수인계 파일 내보내기'와 '인수인계 파일 불러오기' 버튼을 만들어줘.
 - 내보내기를 누르면 업무 목록과 체크한 단계를 handover.json 파일로 내려받게 해줘.
 - 불러오기로 그 파일을 고르면 같은 내용이 화면에 보이게 해줘.
-- JSON이 무엇인지 3줄로, 업무 하나가 JSON에서 어떻게 생겼는지 예를 들어 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공공데이터 API로 공휴일 반영하기</h4><div class="prompt"><pre>공공데이터포털의 '한국천문연구원_특일 정보'로 올해와 내년 공휴일을 받아 와서 업무 마감일 계산에 쓰고 싶어.
+- JSON이 무엇인지 3줄로, 업무 하나가 JSON에서 어떻게 생겼는지 예를 들어 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공휴일 파일로 마감 D-day 계산하기</h4><ul class="file-links"><li><a href="../data/holidays.csv" download>holidays.csv <small>공휴일 2026.12~2027.3</small></a></li></ul><p>내려받은 파일을 <b>data 폴더</b>에 넣고 요청함. 우주항공청 월력요항 기준 공휴일임.</p><div class="prompt"><pre>data 폴더에 holidays.csv(공휴일 목록)를 넣었어.
+1. 카드마다 마감일까지 남은 근무일을 'D-3'처럼 보여 줘. 주말과 이 파일의 공휴일은 근무일에서 빼 줘.
+2. 마감일이 주말이나 공휴일이면 '휴일 마감' 표시를 해줘.
+3. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><details class="toggle prompt-reference"><summary>옵션 · 공공데이터 API로 공휴일 직접 받아 오기</summary><div class="prompt"><pre>공공데이터포털의 '한국천문연구원_특일 정보'로 올해와 내년 공휴일을 받아 와서 업무 마감일 계산에 쓰고 싶어.
 인증키는 내가 .env 파일에 직접 넣을게.
 
 1. 시작하기 전에 필요한 파일과 내가 직접 할 일을 먼저 알려줘.
 2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/holidays.js로 저장하는 방법으로 해줘.
-3. 카드마다 마감일까지 남은 근무일을 'D-3'처럼 보여 주고, 마감일이 주말이나 공휴일이면 '휴일 마감' 표시를 해줘.
-4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li><li>인증키가 아직 동작하지 않으면 강사 시연을 보고, 3번(D-day)만 <b>주말 기준</b>으로 먼저 만들어 둠</li></ul></li></ol>
+3. 받아 온 공휴일을 holidays.csv 대신 써서 D-day를 계산해줘.
+4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li></ul></details></li></ol>
           <ul class="checks"><li>단계(①~④)가 끝날 때마다 <b>"지금 상태를 다음 번호의 새 버전으로 저장해줘"</b>라고 요청함 (예: v02-CSV, v03-체크리스트)</li></ul>
-          <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, 로컬 스토리지에 남기고, JSON으로 넘기고, API로 바뀌는 정보를 받아 옴.</b></aside>
+          <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, 로컬 스토리지에 남기고, JSON으로 넘기고, 공휴일 파일로 D-day를 계산함.</b></aside>
 
         </section>
 
