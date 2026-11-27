@@ -1088,3 +1088,30 @@
   display: inline-flex; align-items: center; width: fit-content; padding: 4px 10px; border: 1px solid #e3d3ea; border-radius: 999px;
   background: #f4ecf7; color: #6b3f7a; font-size: 12.5px; font-weight: 700; line-height: 1.2; letter-spacing: 0;
 }
+/* 히어로 등장 모션: 제목 → 교시 진행 표시줄(차례로 채워짐) → 학습 목표 카드 */
+@media (prefers-reduced-motion: no-preference) {
+  .lesson-page .lesson-hero h1 { animation: heroTitleIn .7s cubic-bezier(.2,.7,.2,1) both; }
+  .lesson-page .hero-track li { animation: heroFadeUp .45s cubic-bezier(.2,.7,.2,1) both; }
+  .lesson-page .hero-track li i { transform-origin: left center; animation: trackFill .5s cubic-bezier(.2,.7,.2,1) both; }
+  .lesson-page .hero-track li:nth-child(1), .lesson-page .hero-track li:nth-child(1) i { animation-delay: .30s; }
+  .lesson-page .hero-track li:nth-child(2), .lesson-page .hero-track li:nth-child(2) i { animation-delay: .36s; }
+  .lesson-page .hero-track li:nth-child(3), .lesson-page .hero-track li:nth-child(3) i { animation-delay: .42s; }
+  .lesson-page .hero-track li:nth-child(4), .lesson-page .hero-track li:nth-child(4) i { animation-delay: .48s; }
+  .lesson-page .hero-track li:nth-child(5), .lesson-page .hero-track li:nth-child(5) i { animation-delay: .54s; }
+  .lesson-page .hero-track li:nth-child(6), .lesson-page .hero-track li:nth-child(6) i { animation-delay: .60s; }
+  .lesson-page .hero-track li:nth-child(7), .lesson-page .hero-track li:nth-child(7) i { animation-delay: .66s; }
+  /* 지금 교시: 채워진 뒤 은은하게 깜빡임 */
+  .lesson-page .hero-track li.is-now i { animation: trackFill .5s cubic-bezier(.2,.7,.2,1) .66s both, trackPulse 2.4s ease-in-out 1.3s infinite; }
+  .lesson-page .hero-goals { animation: heroFadeUp .6s cubic-bezier(.2,.7,.2,1) .2s both; }
+  .lesson-page .hero-track a i, .lesson-page .hero-track a span { transition: background-color .2s, color .2s; }
+  @keyframes heroTitleIn { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+  @keyframes heroFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes trackFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* 지금 교시 표시: 차례로 나타난 뒤 한 번 살짝 커졌다 돌아옴 */
+  .lesson-page .hero-track li.is-now a { animation: heroNowPop .55s cubic-bezier(.3,1.4,.5,1) .85s both; }
+  .lesson-page .hero-track a { transition: transform .18s, box-shadow .18s, background-color .18s, color .18s; }
+  .lesson-page .hero-track li:not(.is-now) a:hover { transform: translateY(-2px); }
+  @keyframes heroNowPop { 0% { transform: scale(.9); } 60% { transform: scale(1.06); } 100% { transform: scale(1); } }
+}
