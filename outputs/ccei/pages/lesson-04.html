@@ -63,18 +63,12 @@
           <h2>PRD로 첫 화면 만들기</h2>
           <article class="kcard kcard-main build-target"><span class="kcard-tag">진행 방식</span><h4>함께 만들고, 각자 연결하기</h4><dl><div><dt>함께 실습</dt><dd>강사와 같은 프롬프트로 <b>업무 인수인계 보드</b>를 만듦</dd></div><div><dt>각자 실습</dt><dd>함께 해 본 방법을 <b>내 과제</b>에 그대로 연결함</dd></div></dl></article>
           <h3 class="sub-title">1.1 준비</h3>
-          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>handover-board</b> 폴더를 고름 (PRD.md가 들어 있음)</li><li>공공데이터포털(data.go.kr)에 회원가입하고 <b>한국천문연구원 특일 정보</b>를 활용신청해 둠 (인증키가 동작하기까지 시간이 걸릴 수 있음)</li></ul>
+          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>handover-board</b> 폴더를 고름 (PRD.md가 들어 있음)</li><li>폴더에 3교시에 만든 <b>AGENTS.md</b>가 있는지 확인함. 설명 방식·파일 구조·저장 규칙은 AGENTS.md가 맡아서, 오늘부터 프롬프트가 짧아짐</li><li>공공데이터포털(data.go.kr)에 회원가입하고 <b>한국천문연구원 특일 정보</b>를 활용신청해 둠 (인증키가 동작하기까지 시간이 걸릴 수 있음)</li></ul>
           <h3 class="sub-title">1.2 PRD로 첫 화면 만들기</h3>
-          <ol class="guide-steps build-steps"><li><h4>① 첫 화면 만들기</h4><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면(업무 목록) 하나만 먼저 만들어줘.
-- 파일은 역할별로 나눠줘: index.html(뼈대), css/style.css(꾸밈), js/script.js(동작), data/(데이터).
-- 인터넷 연결이나 설치 없이, index.html을 더블클릭하면 바로 열리게 해줘.
+          <ol class="guide-steps build-steps"><li><h4>① 첫 화면 만들기</h4><div class="prompt"><pre>이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면(업무 목록) 하나만 먼저 만들어줘.
 - 아직 진짜 데이터가 없으니 가상의 업무 5개를 넣어줘.
-- 휴대폰 화면에서도 깨지지 않게 해줘.
-다 만들면 어떤 파일을 만들었는지, 어떻게 열어 보는지 3줄로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 컴포넌트 이름으로 고쳐 보기</h4><div class="say-chips"><span>"헤더(Header)에 보드 이름과 오늘 날짜를 넣어줘"</span><span>"카드(Card)를 한 줄에 3개씩 보여 줘"</span><span>"직무를 고르는 탭(Tab)을 목록 위에 넣어줘"</span><span>"카드에 주기를 배지(Badge)로 보여 줘"</span></div><div class="prompt"><pre>지금 화면에서 <span class="prompt-placeholder">{고칠 곳의 컴포넌트 이름}</span>을(를) 고쳐줘.
-바꾸고 싶은 점: <span class="prompt-placeholder">{어떻게 바뀌면 좋을지}</span>
-다른 부분은 그대로 두고, 고친 곳만 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ 첫 버전 남기기</h4><div class="prompt"><pre>지금 상태를 첫 버전으로 저장하고 변경 이력을 남겨줘.
-1. versions 폴더 안에 v01-첫화면 폴더를 만들고 지금 파일을 복사해줘. versions 폴더와 .env 파일은 빼줘.
-2. CHANGELOG.md 파일을 만들고 맨 위에 한 줄을 추가해줘: 버전 / 날짜·시간 / 바꾼 내용 / 이유</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
+- 휴대폰 화면에서도 깨지지 않게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 컴포넌트 이름으로 고쳐 보기</h4><div class="say-chips"><span>"헤더(Header)에 보드 이름과 오늘 날짜를 넣어줘"</span><span>"카드(Card)를 한 줄에 3개씩 보여 줘"</span><span>"직무를 고르는 탭(Tab)을 목록 위에 넣어줘"</span><span>"카드에 주기를 배지(Badge)로 보여 줘"</span></div><div class="prompt"><pre>지금 화면에서 <span class="prompt-placeholder">{고칠 곳의 컴포넌트 이름}</span>을(를) 고쳐줘.
+바꾸고 싶은 점: <span class="prompt-placeholder">{어떻게 바뀌면 좋을지}</span></pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ 첫 버전 남기기</h4><div class="prompt"><pre>지금 상태를 v01-첫화면 버전으로 저장해줘. CHANGELOG.md가 없으면 새로 만들어줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
           <aside class="callout tip"><b>핵심</b> <b>PRD를 기준으로</b> 첫 화면을 만들고, 세부는 <b>컴포넌트 이름</b>으로 고쳐 달라고 말함.</aside>
 
         </section>
@@ -90,7 +84,7 @@
           <ol class="guide-steps build-steps"><li><h4>① CSV로 업무 목록 넣기</h4><ul class="file-links"><li><a href="../data/handover-tasks.csv" download>handover-tasks.csv <small>가상 업무 30개</small></a></li></ul><p>내려받은 파일을 프로젝트의 <b>data 폴더</b>에 넣고 요청함.</p><div class="prompt"><pre>data 폴더에 handover-tasks.csv 파일을 넣었어.
 이 파일의 업무 30개를 지금 화면의 예시 데이터 대신 보여 줘.
 1. 먼저 파일에 어떤 열이 있는지, 몇 줄인지 알려줘.
-2. index.html을 더블클릭해도 보이도록, 데이터를 data/data.js 파일로 바꿔서 연결해줘.
+2. 데이터를 data/data.js 파일로 바꿔서 연결해줘.
 3. 직무와 주기를 고르면 맞는 업무만 보이게 해줘.
 4. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 로컬 스토리지에 진행 상태 남기기</h4><div class="prompt"><pre>업무 카드를 누르면 업무 상세를 보여 주고, '절차' 칸의 단계(> 로 나뉨)를 체크리스트로 보여 줘.
 - 체크한 단계와 메모 칸에 쓴 내용은 새로고침하거나 창을 닫았다 열어도 남게 로컬 스토리지(LocalStorage)에 저장해줘.
@@ -99,7 +93,7 @@
 - 내보내기를 누르면 업무 목록과 체크 진행 상태, 메모를 handover.json 파일로 내려받게 해줘.
 - 불러오기로 그 파일을 고르면 같은 내용이 화면에 보이게 해줘.
 - JSON이 무엇인지 3줄로, 업무 하나가 JSON에서 어떻게 생겼는지 예를 들어 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공공데이터 API로 공휴일 반영하기</h4><div class="prompt"><pre>공공데이터포털의 '한국천문연구원_특일 정보'로 올해와 내년 공휴일을 받아 와서 업무 마감일 계산에 쓰고 싶어.
-인증키는 내가 .env 파일에 직접 넣을게. 인증키를 코드나 채팅에 쓰지 말아줘.
+인증키는 내가 .env 파일에 직접 넣을게.
 
 1. 시작하기 전에 필요한 파일과 내가 직접 할 일을 먼저 알려줘.
 2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/holidays.js로 저장하는 방법으로 해줘.
@@ -125,7 +119,7 @@
 필요한 것: <span class="prompt-placeholder">{예: 표로 보기, 즐겨찾기 저장, 최신 데이터 받아 오기}</span>
 
 CSV, JSON, 로컬 스토리지, 공공데이터 API 중 무엇이 필요한지 먼저 추천해 주고, 내가 고르면 하나씩 연결해줘.
-파일은 index.html, css/, js/, data/로 나눠 두고, 원본 파일은 바꾸지 말고, 인증키는 .env 파일에만 두게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+원본 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <details class="toggle prompt-reference">
               <summary>다른 방법 · 2교시에 뜯어본 서비스를 참고해 시작하고 싶을 때 열기</summary>
               <div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내가 참고한 서비스를 바탕으로, 비슷한 문제를 해결하는 나만의 웹 서비스 첫 화면을 만들고 싶어.
