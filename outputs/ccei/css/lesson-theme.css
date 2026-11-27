@@ -1115,3 +1115,18 @@
   .lesson-page .hero-track li:not(.is-now) a:hover { transform: translateY(-2px); }
   @keyframes heroNowPop { 0% { transform: scale(.9); } 60% { transform: scale(1.06); } 100% { transform: scale(1); } }
 }
+/* 카드 그리드: 카드끼리 같은 항목(배지·제목·설명·예시 줄)의 높이를 맞춤 */
+@supports (grid-template-rows: subgrid) {
+
+  .lesson-page .kgrid.rows-align > .kcard { display: grid; grid-template-rows: subgrid; grid-row: span var(--r); row-gap: 0; align-content: start; }
+  .lesson-page .kgrid.rows-align > .kcard > dl { display: contents; }
+  .lesson-page .kgrid.rows-align > .kcard > * { align-self: start; }
+  .lesson-page .kgrid.rows-align > .kcard > dl > div { align-self: stretch; }
+  .lesson-page .kgrid.rows-align > .kcard > .kcard-role { align-self: stretch; }
+}
+.lesson-page .kgrid.five .kcard h4 { font-size: 19px; }
+/* 직무별 과제 예시: 6개 한 줄 */
+.lesson-page .terms.terms-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.lesson-page .terms.terms-6 b { font-size: 15.5px; }
+@media (max-width: 1100px) { .lesson-page .terms.terms-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .lesson-page .terms.terms-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
