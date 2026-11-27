@@ -1035,3 +1035,8 @@
 .lesson-page .lesson-body > .block > h2 { display: block; max-width: none; margin: 0 0 24px; }
 @media (max-width: 600px) { .lesson-page .lesson-body > .block > h2 { margin-bottom: 18px; } }
 .lesson-page .lesson-body > .block > h2::before { margin-right: .3em; }
+.lesson-page .map-head { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+.lesson-page .dl-sample { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 999px; background: #fff; color: var(--accent-dark, var(--accent)); font-size: 14px; font-weight: 700; text-decoration: none; transition: background .15s, color .15s; }
+.lesson-page .dl-sample svg { width: 16px; height: 16px; flex: none; }
+.lesson-page .dl-sample:hover, .lesson-page .dl-sample:focus-visible { background: var(--accent); color: #fff; }
+.lesson-page .map-head + .folder-map { margin-top: 0; }
