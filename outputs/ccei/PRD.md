@@ -55,6 +55,7 @@ index.html                      메인
 │   └─ pages/gukjeongon_lessonplan.html       예시(국정ON) — ② 서비스 기초 연결 상세 분석 결과
 ├─ pages/lesson-03.html         3교시 실무 문제 정의와 PRD
 ├─ samples/ui-practice.html      1교시 2.8 용어 실습용 예시 화면
+├─ samples/skills/new-task/SKILL.md  5교시 강사 시연용 '새 업무 추가' 스킬
 ├─ data/handover-tasks.csv       4교시 함께 실습용 가상 업무 30개(인수인계 보드)
 ├─ data/holidays.csv            4교시 공휴일 파일(2026.12~2027.3)
 ├─ pages/lesson-04.html         4교시 구현 ① 화면과 데이터
@@ -205,7 +206,8 @@ _backup/  1일 1회 백업 + README(변경 이력)
 - [x] 2교시에서 뺀 실습 배치: 상세 보기 모달 → 5교시 2.2, 휴대폰 화면 확인 → 6교시 2.1
 - [x] 부록 범용 프롬프트를 4교시 1.1 "다른 방법" 토글로 배치
 - [x] 3~7교시 시간 배분 정리(7. 교안 구성 하단 표)
-- [ ] Codex 앱에서 스킬 만들기·부르기 방식 확인(CLI·IDE는 /skills 또는 $), 5교시 시연용 '새 업무 추가' 스킬 미리 만들어 두기
+- [ ] Codex 앱에서 스킬 만들기·부르기 방식 확인(CLI·IDE는 /skills 또는 $)
+- [x] 5교시 시연용 '새 업무 추가' 스킬 초안: samples/skills/new-task/SKILL.md (시연 폴더의 .agents/skills/new-task/에 복사해 사용)
 - [ ] 4교시 분량 조정(강사 직접 조정 예정)
 - [x] 교육 전 사전 안내 문서 작성(Codex 설치·로그인 12/3, 최종 점검 12/8, API 신청 단락은 제외)
 - [ ] 사전 안내 문서를 교육 담당자에게 전달, 담당자 확인 사항(계정·요금제, PC·설치 권한, 보안·네트워크, 내부 자료 범위) 회신 받기
