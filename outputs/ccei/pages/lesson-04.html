@@ -32,7 +32,7 @@
           </div>
           <div class="hero-goals">
             <h2><svg class="goal-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>이 시간이 끝나면</h2>
-            <ol><li>2교시에 만든 길잡이 화면을 PRD 기준으로 함께 다듬는다.</li><li>CSV·JSON·로컬 스토리지·공공데이터 API로 데이터를 다뤄 본다.</li><li>함께 해 본 방법을 내 과제와 내 데이터에 연결해 본다.</li></ol>
+            <ol><li>강사와 함께 PRD.md로 업무 인수인계 보드의 첫 화면을 만든다.</li><li>CSV·로컬 스토리지·JSON·공공데이터 API로 데이터를 다뤄 본다.</li><li>함께 해 본 방법을 내 과제와 내 데이터에 연결해 본다.</li></ol>
           </div>
         </div>
       </section>
@@ -41,7 +41,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">PRD로 화면 다듬기</a></li><li><a href="#sec-2">데이터 4가지 함께 다루기</a></li><li><a href="#sec-3">내 과제로 연결하기</a></li></ol>
+      <ol><li><a href="#sec-1">PRD로 첫 화면 만들기</a></li><li><a href="#sec-2">데이터 4가지 함께 다루기</a></li><li><a href="#sec-3">내 과제로 연결하기</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -60,30 +60,22 @@
 
         <section id="sec-1" class="block">
           <span class="block-step">함께 실습</span>
-          <h2>PRD로 화면 다듬기</h2>
-          <article class="kcard kcard-main build-target"><span class="kcard-tag">진행 방식</span><h4>함께 만들고, 각자 연결하기</h4><dl><div><dt>함께 실습</dt><dd>강사와 같은 프롬프트로 <b>지원사업 추천 길잡이</b>를 만듦</dd></div><div><dt>각자 실습</dt><dd>함께 해 본 방법을 <b>내 과제</b>에 그대로 연결함</dd></div></dl></article>
+          <h2>PRD로 첫 화면 만들기</h2>
+          <article class="kcard kcard-main build-target"><span class="kcard-tag">진행 방식</span><h4>함께 만들고, 각자 연결하기</h4><dl><div><dt>함께 실습</dt><dd>강사와 같은 프롬프트로 <b>업무 인수인계 보드</b>를 만듦</dd></div><div><dt>각자 실습</dt><dd>함께 해 본 방법을 <b>내 과제</b>에 그대로 연결함</dd></div></dl></article>
           <h3 class="sub-title">1.1 준비</h3>
-          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 2교시에 만든 <b>support-guide</b> 폴더를 고름 (3교시 PRD.md도 이 폴더에 있음)</li><li>고치기 전에 지금 상태를 새 버전으로 저장하고 <b>CHANGELOG.md</b>에 한 줄 남김 (예: v04-PRD전)</li><li>공공데이터포털(data.go.kr)에 회원가입하고 <b>창업진흥원 K-Startup 조회서비스</b>를 활용신청해 둠 (인증키가 동작하기까지 시간이 걸릴 수 있음)</li></ul>
-          <h3 class="sub-title">1.2 PRD 기준으로 화면 다듬기</h3>
-          <p>2교시에 말로 만든 화면을 버리지 않고, 3교시 PRD에 맞춰 고쳐 나감.</p>
-          <ol class="guide-steps build-steps"><li><h4>① PRD와 지금 화면 비교하기</h4><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 이 폴더의 PRD.md와 지금 만들어진 화면을 비교해줘.
-표로 보여 줘: PRD 항목 / 지금 화면 / 고칠 점
-아직 코드는 고치지 말고, 고칠 점을 중요한 순서로 정리만 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② PRD에 맞게 고치기</h4><div class="prompt"><pre>방금 정리한 고칠 점을 PRD 기준으로 고쳐줘.
-- 파일은 지금처럼 index.html, css/style.css, js/script.js, data/로 나눠 둬.
-- 지금 잘 되는 기능은 그대로 둬.
-- 고친 곳을 파일별로 짧게 알려 주고, 내가 확인할 순서도 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ 컴포넌트 이름으로 고쳐 보기</h4><div class="say-chips"><span>"헤더(Header)에 서비스 이름을 크게 넣어줘"</span><span>"카드(Card)를 한 줄에 3개씩 보여 줘"</span><span>"버튼(Button) 색을 진한 초록으로 바꿔줘"</span><span>"빈 목록일 때 안내 문구를 보여 줘"</span></div><div class="prompt"><pre>지금 화면에서 <span class="prompt-placeholder">{고칠 곳의 컴포넌트 이름}</span>을(를) 고쳐줘.
-바꾸고 싶은 점: <span class="prompt-placeholder">{어떻게 바뀌면 좋을지}</span>
-다른 부분은 그대로 두고, 고친 곳만 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
-          <details class="toggle prompt-reference">
-              <summary>2교시 화면이 없다면 · PRD로 첫 화면부터 만들기</summary>
-              <div class="prompt"><pre>나는 코딩을 모르는 초보자야. 이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면 하나만 먼저 만들어줘.
+          <ul class="checks"><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 3교시에 만든 <b>handover-board</b> 폴더를 고름 (PRD.md가 들어 있음)</li><li>공공데이터포털(data.go.kr)에 회원가입하고 <b>한국천문연구원 특일 정보</b>를 활용신청해 둠 (인증키가 동작하기까지 시간이 걸릴 수 있음)</li></ul>
+          <h3 class="sub-title">1.2 PRD로 첫 화면 만들기</h3>
+          <ol class="guide-steps build-steps"><li><h4>① 첫 화면 만들기</h4><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 이 폴더의 PRD.md를 읽고, PRD에 적힌 화면 중 첫 화면(업무 목록) 하나만 먼저 만들어줘.
 - 파일은 역할별로 나눠줘: index.html(뼈대), css/style.css(꾸밈), js/script.js(동작), data/(데이터).
 - 인터넷 연결이나 설치 없이, index.html을 더블클릭하면 바로 열리게 해줘.
-- 아직 진짜 데이터가 없으니 가상의 예시 데이터 5개를 넣어줘.
+- 아직 진짜 데이터가 없으니 가상의 업무 5개를 넣어줘.
 - 휴대폰 화면에서도 깨지지 않게 해줘.
-다 만들면 어떤 파일을 만들었는지, 어떻게 열어 보는지 3줄로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-          </details>
-          <aside class="callout tip"><b>핵심</b> <b>있는 화면을 PRD 기준으로 다듬고</b>, 세부는 <b>컴포넌트 이름</b>으로 고쳐 달라고 말함.</aside>
+다 만들면 어떤 파일을 만들었는지, 어떻게 열어 보는지 3줄로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 컴포넌트 이름으로 고쳐 보기</h4><div class="say-chips"><span>"헤더(Header)에 보드 이름과 오늘 날짜를 넣어줘"</span><span>"카드(Card)를 한 줄에 3개씩 보여 줘"</span><span>"직무를 고르는 탭(Tab)을 목록 위에 넣어줘"</span><span>"카드에 주기를 배지(Badge)로 보여 줘"</span></div><div class="prompt"><pre>지금 화면에서 <span class="prompt-placeholder">{고칠 곳의 컴포넌트 이름}</span>을(를) 고쳐줘.
+바꾸고 싶은 점: <span class="prompt-placeholder">{어떻게 바뀌면 좋을지}</span>
+다른 부분은 그대로 두고, 고친 곳만 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ 첫 버전 남기기</h4><div class="prompt"><pre>지금 상태를 첫 버전으로 저장하고 변경 이력을 남겨줘.
+1. versions 폴더 안에 v01-첫화면 폴더를 만들고 지금 파일을 복사해줘. versions 폴더와 .env 파일은 빼줘.
+2. CHANGELOG.md 파일을 만들고 맨 위에 한 줄을 추가해줘: 버전 / 날짜·시간 / 바꾼 내용 / 이유</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
+          <aside class="callout tip"><b>핵심</b> <b>PRD를 기준으로</b> 첫 화면을 만들고, 세부는 <b>컴포넌트 이름</b>으로 고쳐 달라고 말함.</aside>
 
         </section>
 
@@ -92,31 +84,28 @@
           <h2>데이터 4가지 함께 다루기</h2>
           <h3 class="sub-title">2.1 데이터를 다루는 4가지 방법</h3>
           <div class="kgrid four">
-            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>언제</dt><dd>가진 자료를 한 번에 넣을 때</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>언제</dt><dd>프로그램끼리 데이터를 주고받을 때</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>언제</dt><dd>즐겨찾기·메모처럼 새로고침해도 남겨야 할 때</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 API</span><h4>최신 데이터 받아 오기</h4><p class="kcard-role">Open API. 주소로 요청하면 최신 데이터를 보내 줌</p><dl><div><dt>언제</dt><dd>공고처럼 계속 바뀌는 정보를 보여 줄 때</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">CSV</span><h4>표 파일</h4><p class="kcard-role">쉼표로 칸을 나눈 표. 엑셀로 열림</p><dl><div><dt>여기서는</dt><dd>가상 업무 30개 목록 넣기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">로컬 스토리지</span><h4>브라우저 저장 공간</h4><p class="kcard-role">LocalStorage. 내 브라우저에만 남는 작은 저장소</p><dl><div><dt>여기서는</dt><dd>체크한 절차와 메모 남기기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">JSON</span><h4>프로그램용 데이터</h4><p class="kcard-role">JavaScript Object Notation. 항목마다 이름: 값으로 적음</p><dl><div><dt>여기서는</dt><dd>인수인계 파일로 내보내고 불러오기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">공공데이터 API</span><h4>바뀌는 정보 받아 오기</h4><p class="kcard-role">Open API. 주소로 요청하면 데이터를 보내 줌</p><dl><div><dt>여기서는</dt><dd>공휴일을 받아 마감 D-day 계산</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.2 함께 해 보기</h3>
-          <ol class="guide-steps build-steps"><li><h4>① CSV 불러오기</h4><ul class="file-links"><li><a href="../data/support-programs.csv" download>support-programs.csv <small>가상 지원사업 200개</small></a></li></ul><p>내려받은 파일을 프로젝트의 <b>data 폴더</b>에 넣고 요청함.</p><div class="prompt"><pre>data 폴더에 support-programs.csv 파일을 넣었어.
-이 파일의 지원사업 200개를 지금 화면의 예시 데이터 대신 보여 줘.
+          <ol class="guide-steps build-steps"><li><h4>① CSV로 업무 목록 넣기</h4><ul class="file-links"><li><a href="../data/handover-tasks.csv" download>handover-tasks.csv <small>가상 업무 30개</small></a></li></ul><p>내려받은 파일을 프로젝트의 <b>data 폴더</b>에 넣고 요청함.</p><div class="prompt"><pre>data 폴더에 handover-tasks.csv 파일을 넣었어.
+이 파일의 업무 30개를 지금 화면의 예시 데이터 대신 보여 줘.
 1. 먼저 파일에 어떤 열이 있는지, 몇 줄인지 알려줘.
 2. index.html을 더블클릭해도 보이도록, 데이터를 data/data.js 파일로 바꿔서 연결해줘.
-3. 창업 단계와 업종을 고르면 맞는 사업만 보이게 해줘.
-4. 카드가 많으니 한 번에 12개씩 보여 주고, 아래에 '더 보기' 버튼을 넣어줘.
-5. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② JSON 들여다보기</h4><div class="prompt"><pre>data/data.js에 들어간 데이터를 data/programs.json 파일로도 저장해줘.
-그리고 나에게 쉬운 말로 알려줘.
-1. JSON이 무엇인지 3줄로
-2. CSV의 한 줄이 JSON에서는 어떻게 생겼는지, 사업 하나를 예로 들어서
-3. 공공데이터 API가 왜 JSON으로 데이터를 보내 주는지
-화면은 지금처럼 그대로 동작하게 해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ 로컬 스토리지에 저장하기</h4><div class="prompt"><pre>카드마다 별표(☆) 버튼을 넣어서 관심 사업을 저장하게 해줘.
-- 별표를 누르면 ★로 바뀌고, 새로고침하거나 창을 닫았다 열어도 그대로 남게 로컬 스토리지(LocalStorage)에 저장해줘.
-- 화면 위에 '관심 사업만 보기' 버튼을 넣어줘.
-- 저장된 값을 개발자 도구 어디에서 볼 수 있는지 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공공데이터 API 연결하기</h4><div class="prompt"><pre>공공데이터포털의 '창업진흥원_K-Startup(사업소개,사업공고,콘텐츠 등)_조회서비스'로 실제 지원사업 공고를 받아 와서 화면에 '최신 공고' 탭으로 보여 주고 싶어.
+3. 직무와 주기를 고르면 맞는 업무만 보이게 해줘.
+4. 원본 CSV 파일은 바꾸지 말아줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>② 로컬 스토리지에 진행 상태 남기기</h4><div class="prompt"><pre>업무 카드를 누르면 업무 상세를 보여 주고, '절차' 칸의 단계(> 로 나뉨)를 체크리스트로 보여 줘.
+- 체크한 단계와 메모 칸에 쓴 내용은 새로고침하거나 창을 닫았다 열어도 남게 로컬 스토리지(LocalStorage)에 저장해줘.
+- 카드에는 '3/5'처럼 진행 정도를 보여 줘.
+- 저장된 값을 개발자 도구 어디에서 볼 수 있는지 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>③ JSON으로 인수인계 파일 만들기</h4><div class="prompt"><pre>다음 담당자에게 넘길 수 있게 '인수인계 파일 내보내기'와 '인수인계 파일 불러오기' 버튼을 만들어줘.
+- 내보내기를 누르면 업무 목록과 체크 진행 상태, 메모를 handover.json 파일로 내려받게 해줘.
+- 불러오기로 그 파일을 고르면 같은 내용이 화면에 보이게 해줘.
+- JSON이 무엇인지 3줄로, 업무 하나가 JSON에서 어떻게 생겼는지 예를 들어 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li><li><h4>④ 공공데이터 API로 공휴일 반영하기</h4><div class="prompt"><pre>공공데이터포털의 '한국천문연구원_특일 정보'로 올해와 내년 공휴일을 받아 와서 업무 마감일 계산에 쓰고 싶어.
 인증키는 내가 .env 파일에 직접 넣을게. 인증키를 코드나 채팅에 쓰지 말아줘.
 
 1. 시작하기 전에 필요한 파일과 내가 직접 할 일을 먼저 알려줘.
-2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/api-data.js로 저장하는 방법으로 해줘.
-3. 받아 온 공고에서 사업명, 접수 기간, 신청 대상만 골라 카드로 보여 줘.
-4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>다른 사람에게 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li></ul></li></ol>
-          <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, JSON으로 이해하고, 로컬 스토리지에 남기고, API로 최신 데이터를 받아 옴.</b></aside>
+2. 브라우저에서 바로 부를 수 없으면, 이 컴퓨터에서 한 번 받아 와서 data/holidays.js로 저장하는 방법으로 해줘.
+3. 카드마다 마감일까지 남은 근무일을 'D-3'처럼 보여 주고, 마감일이 주말이나 공휴일이면 '휴일 마감' 표시를 해줘.
+4. 실패하면 오류 내용을 쉬운 말로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div><ul class="checks"><li>인증키는 <b>.env</b> 파일에만 두고, 화면·채팅·공유 파일에 붙여 넣지 않음</li><li>인수인계 파일이나 폴더를 줄 때는 <b>.env 파일을 빼고</b> 줌</li></ul></li></ol>
+          <aside class="callout tip"><b>핵심</b> <b>CSV로 넣고, 로컬 스토리지에 남기고, JSON으로 넘기고, API로 바뀌는 정보를 받아 옴.</b></aside>
 
         </section>
 
@@ -126,7 +115,7 @@
           <h3 class="sub-title">3.1 내 데이터 준비 규칙</h3>
           <p>표 모양이 깔끔할수록 AI가 데이터를 더 정확히 읽음.</p>
           <div class="kgrid four">
-            <article class="kcard"><span class="kcard-tag">규칙 1</span><h4>첫 줄은 열 이름</h4><dl><div><dt>좋은 예</dt><dd>사업명 · 대상 · 마감일</dd></div><div><dt>피할 것</dt><dd>제목 줄이 2~3줄로 합쳐진 표</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 2</span><h4>한 칸에 값 하나</h4><dl><div><dt>좋은 예</dt><dd>마감일 칸에 날짜만</dd></div><div><dt>피할 것</dt><dd>"12/31 (연장 가능)"처럼 섞기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 3</span><h4>개인정보는 지우기</h4><dl><div><dt>지울 것</dt><dd>이름, 연락처, 주소, 주민번호</dd></div><div><dt>대신</dt><dd>가짜 이름이나 번호로 바꾸기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 4</span><h4>파일 이름은 짧게</h4><dl><div><dt>좋은 예</dt><dd>programs.csv</dd></div><div><dt>피할 것</dt><dd>띄어쓰기·괄호가 많은 이름</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">규칙 1</span><h4>첫 줄은 열 이름</h4><dl><div><dt>좋은 예</dt><dd>업무명 · 주기 · 마감일</dd></div><div><dt>피할 것</dt><dd>제목 줄이 2~3줄로 합쳐진 표</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 2</span><h4>한 칸에 값 하나</h4><dl><div><dt>좋은 예</dt><dd>마감일 칸에 날짜만</dd></div><div><dt>피할 것</dt><dd>"12/31 (연장 가능)"처럼 섞기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 3</span><h4>개인정보는 지우기</h4><dl><div><dt>지울 것</dt><dd>이름, 연락처, 주소, 주민번호</dd></div><div><dt>대신</dt><dd>가짜 이름이나 번호로 바꾸기</dd></div></dl></article><article class="kcard"><span class="kcard-tag">규칙 4</span><h4>파일 이름은 짧게</h4><dl><div><dt>좋은 예</dt><dd>tasks.csv</dd></div><div><dt>피할 것</dt><dd>띄어쓰기·괄호가 많은 이름</dd></div></dl></article>
           </div>
           <h3 class="sub-title">3.2 내 과제에 연결하기</h3>
           <div class="prompt"><pre>이 폴더의 PRD.md를 읽고, 내 과제의 첫 화면을 만들어줘. (PRD.md가 없다면 먼저 알려줘)
