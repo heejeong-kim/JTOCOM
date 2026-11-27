@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>업무 인수인계 보드</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 헤더: 서비스 이름 + 화면 이동 -->
+  <header class="header">
+    <div class="inner header-inner">
+      <h1 class="logo">업무 인수인계 보드</h1>
+      <nav class="tabs" aria-label="화면 이동">
+        <button class="tab is-on" data-view="list" type="button">업무 목록</button>
+        <button class="tab" data-view="handover" type="button">인수인계서</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="inner">
+    <!-- 화면 1: 업무 목록 -->
+    <section id="view-list" class="view">
+      <div class="summary" id="summary"></div>
+
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="업무명이나 절차로 검색" aria-label="검색">
+        <select id="role" aria-label="직무">
+          <option value="">모든 직무</option>
+        </select>
+        <select id="sort" aria-label="정렬">
+          <option value="due">마감 임박 순</option>
+          <option value="name">이름 순</option>
+          <option value="minutes">오래 걸리는 순</option>
+        </select>
+      </div>
+
+      <p class="count"><b id="count">0</b>개 업무</p>
+      <ul id="list" class="task-list"></ul>
+    </section>
+
+    <!-- 화면 2: 업무 상세 (절차 체크) -->
+    <section id="view-detail" class="view" hidden>
+      <button class="back" type="button" id="back">← 목록으로</button>
+      <div id="detail"></div>
+    </section>
+
+    <!-- 화면 3: 인수인계서 (보기·인쇄·파일로 넘기기) -->
+    <section id="view-handover" class="view" hidden>
+      <div class="handover-head">
+        <div>
+          <h2>인수인계서</h2>
+          <p class="muted">직무별로 업무·주기·마감·절차·주의할 점을 한 번에 봅니다.</p>
+        </div>
+        <div class="actions">
+          <button type="button" id="print">인쇄하기</button>
+          <button type="button" id="export">JSON으로 내보내기</button>
+          <label class="file-btn">JSON 불러오기<input type="file" id="import" accept="application/json"></label>
+        </div>
+      </div>
+      <div id="handover"></div>
+    </section>
+  </main>
+
+  <footer class="footer">가상의 업무로 만든 연습용 화면입니다. 실제 이름·연락처·내부 자료는 넣지 않습니다.</footer>
+
+  <script src="data/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -58,6 +58,7 @@ index.html                      메인
 ├─ samples/ui-practice.html      1교시 2.8 용어 실습용 예시 화면
 ├─ samples/skills/new-task/SKILL.md  5교시 강사 시연용 '새 업무 추가' 스킬
 ├─ data/handover-tasks.csv       4교시 함께 실습용 가상 업무 30개(인수인계 보드)
+├─ samples/handover-board/       업무 인수인계 보드 예시 프로토타입(목록·상세 체크·인수인계서, 로컬 스토리지·JSON·공휴일 근무일 계산)
 ├─ data/holidays.csv            4교시 공휴일 파일(2026.12~2027.3)
 ├─ pages/lesson-04.html         4교시 구현 ① 화면과 데이터
 ├─ pages/lesson-05.html         5교시 구현 ② 핵심 기능
