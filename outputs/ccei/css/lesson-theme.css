@@ -1060,3 +1060,10 @@
 .lesson-page .desc-row > p.desc { margin: 0; flex: 1 1 360px; }
 .lesson-page .desc-row > .map-head { margin: 0; flex: none; }
 .lesson-page .desc-row + .folder-map { margin-top: 0; }
+/* 폴더 구조 토글: 교시별 색 */
+.lesson-page .folder-map small.k2 { background: #f6e2d8; color: #9a4f35; }
+.lesson-page .folder-map small.k3 { background: #e5ecd8; color: #4d6a2c; }
+.lesson-page .folder-map small.k4 { background: #f6e8c6; color: #8a5a10; }
+.lesson-page .folder-map small.k5 { background: #f3dfe6; color: #94405e; }
+.lesson-page .folder-map small.k6 { background: #ebe1f1; color: #6b3f7a; }
+.lesson-page .folder-map small.kx { background: #efedea; color: #7a726b; }
