@@ -96,12 +96,13 @@
           <p>MVP(Minimum Viable Product)는 <b>핵심 행동 하나가 되는 가장 작은 첫 버전</b>임.</p>
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">채우는 칸</span><h4>과제 정의 4줄</h4><dl><div><dt>누가</dt><dd>이 도구를 쓰는 사람</dd></div><div><dt>어떤 불편</dt><dd>지금 무엇이 오래 걸리거나 틀리는지</dd></div><div><dt>핵심 행동</dt><dd>사용자가 끝내려는 일 하나</dd></div><div><dt>이번에 안 할 것</dt><dd>로그인, 실제 저장, 결재 연동 등</dd></div></dl></article>
-            <article class="kcard kcard-main"><span class="kcard-tag">예시</span><h4>지원사업 추천 길잡이</h4><dl><div><dt>누가</dt><dd>지원사업을 찾는 예비·초기 창업자</dd></div><div><dt>어떤 불편</dt><dd>공고가 많아 내 조건에 맞는 사업을 찾기 어려움</dd></div><div><dt>핵심 행동</dt><dd>창업 단계와 업종을 고르면 맞는 사업을 봄</dd></div><div><dt>이번에 안 할 것</dt><dd>신청 접수, 회원가입, 실제 공고 연동</dd></div></dl></article>
+            <article class="kcard kcard-main"><span class="kcard-tag">예시</span><h4>지원사업 추천 길잡이</h4><dl><div><dt>누가</dt><dd>지원사업을 찾는 예비·초기 창업자</dd></div><div><dt>어떤 불편</dt><dd>공고가 많아 내 조건에 맞는 사업을 찾기 어려움</dd></div><div><dt>핵심 행동</dt><dd>창업 단계와 업종을 고르면 맞는 사업을 봄</dd></div><div><dt>이번에 안 할 것</dt><dd>신청 접수, 회원가입, 실제 저장</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.2 유저 플로우 · 데이터 정리</h3>
+          <p>2교시에 뜯어본 서비스에서 받은 <b>유저 플로우와 데이터 표</b>처럼 내 과제도 같은 모양으로 정리함.</p>
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">유저 플로우 · User Flow</span><h4>화면이 넘어가는 순서</h4><dl><div><dt>예시</dt><dd>홈 → 조건 선택 → 추천 결과 → 사업 상세</dd></div><div><dt>기준</dt><dd>화면 3개 이하, 화살표 3번 이하</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">데이터 항목 · Data</span><h4>화면에 보여 줄 정보</h4><dl><div><dt>예시</dt><dd>사업명, 지원 대상, 창업 단계, 업종, 지원 내용, 마감일</dd></div><div><dt>기준</dt><dd>항목 6개 안팎, 개인정보 없음</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">데이터 항목 · Data</span><h4>화면에 보여 줄 정보</h4><dl><div><dt>예시</dt><dd>사업명, 창업 단계, 업종, 지원 내용, 최대 지원금, 접수 마감일, 접수 방법</dd></div><div><dt>기준</dt><dd>항목 7개 안팎, 개인정보 없음</dd></div></dl></article>
           </div>
           <h3 class="sub-title">2.3 AI가 질문하며 정리하게 하기</h3>
           <div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내가 만들고 싶은 작은 웹 도구를 함께 정리하고 싶어.
@@ -123,6 +124,7 @@
           <h2>PRD 1장 만들기</h2>
           <h3 class="sub-title">3.1 PRD 1장의 구성</h3>
           <p>PRD(Product Requirements Document)는 <b>무엇을, 누구를 위해, 어디까지 만들지</b> 적은 한 장짜리 약속임.</p>
+          <p>2교시에 맛보기로 만든 길잡이를 <b>제대로 된 서비스로 키우기 위한 설계도</b>로 씀. 관심 사업 저장, 최신 공고 보기처럼 맛보기에 없던 기능도 여기서 정함.</p>
           <article class="kcard kcard-main prd-card"><span class="kcard-tag">함께 만들 PRD 1장</span><h4>지원사업 추천 길잡이</h4><dl><div><dt>서비스 이름</dt><dd>지원사업 추천 길잡이</dd></div><div><dt>목적</dt><dd>내 조건에 맞는 지원사업을 1분 안에 찾게 함</dd></div><div><dt>사용자</dt><dd>지원사업을 찾는 예비·초기 창업자</dd></div><div><dt>문제</dt><dd>공고가 많고 흩어져 있어 맞는 사업을 찾기 어려움</dd></div><div><dt>핵심 기능</dt><dd>창업 단계·업종 선택 → 맞는 사업 카드 목록 → 상세 보기 · 관심 사업 저장 · 최신 공고 보기</dd></div><div><dt>MVP 범위</dt><dd>예시 CSV 200개 + 공공데이터 API 최신 공고 (로그인·회원가입·신청 접수 제외)</dd></div><div><dt>유저 플로우</dt><dd>홈 → 조건 선택 → 추천 결과 → 사업 상세</dd></div><div><dt>데이터</dt><dd>사업명, 창업 단계, 업종, 지원 내용, 최대 지원금, 접수 마감일, 접수 방법</dd></div><div><dt>완료 조건</dt><dd>조건을 고르면 맞는 사업만 보이고, 없으면 안내 문구가 나옴</dd></div><div><dt>폴더 구조</dt><dd>index.html · css/ · js/ · data/ · assets/</dd></div></dl></article>
           <h3 class="sub-title">3.2 함께 PRD 만들기</h3>
           <p>Codex에서 2교시에 만든 <b>support-guide</b> 폴더를 고르고 요청함. 4교시에 이 PRD로 2교시 화면을 다듬음.</p>
@@ -141,7 +143,8 @@ MVP 범위: 예시 CSV 200개 + 공공데이터 API 최신 공고 (로그인·�
 
 표로 정리하고, 빠졌거나 애매한 점이 있으면 저장한 뒤 따로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <h3 class="sub-title">3.3 내 과제 PRD 만들기 <small class="lv lv-adv">각자</small></h3>
-          <p>2.3에서 정리한 내 과제로 같은 PRD를 만듦. 내 과제는 <b>새 폴더</b>를 만들어 따로 저장함.</p>
+          <p>2.3에서 정리한 내 과제로 같은 PRD를 만듦. 내 과제는 <b>새 폴더</b>에 따로 저장함.</p>
+          <ul class="checks"><li>바탕화면에 내 과제 이름으로 <b>새 폴더</b>를 만듦 (예: <b>my-task</b>, 영문·짧게)</li><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 그 폴더를 고름</li><li>2.3에서 받은 정리 표를 복사해 아래 프롬프트에 붙여 넣음</li></ul>
           <div class="prompt"><pre>앞에서 정리한 내용을 바탕으로 PRD(제품 요구사항 문서) 1장을 만들어줘. 나는 코딩을 모르는 초보자라서 쉬운 말로 써줘.
 정리한 내용: <span class="prompt-placeholder">{2.3에서 받은 정리 표를 그대로 붙여 넣기}</span>
 
@@ -169,7 +172,8 @@ MVP 범위: 예시 CSV 200개 + 공공데이터 API 최신 공고 (로그인·�
 2. MVP를 만들기 위한 작업 순서(3~5단계, 단계마다 확인할 것 포함)
 3. PRD에서 빠졌거나 애매해서 내가 정해야 할 것
 
-내가 확인하고 '1단계 시작'이라고 말하면, 그때부터 한 단계씩 만들어줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
+이 폴더에 이미 만든 화면이 있으면 그 화면을 기준으로 작업 순서를 짜줘.
+아직 만들지는 말아줘. 다음 시간에 이 순서대로 한 단계씩 진행할 거야.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <aside class="callout tip"><b>핵심</b> <b>PRD 1장은 AI에게 주는 설계도 역할</b>을 하고, 프롬프트는 그 설계도를 한 조각씩 꺼내 쓰는 방식으로 쓰면 좋음.</aside>
         </section>
 
