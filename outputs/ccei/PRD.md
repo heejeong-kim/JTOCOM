@@ -161,7 +161,7 @@ _backup/  1일 1회 백업 + README(변경 이력)
 - 버전 관리: versions/ 폴더 복사 없이 CHANGELOG.md 이력만 남김(2~6교시 공통)
 - 콘텐츠 위계: 섹션 제목 > 소단원(번호 배지) > 소제목(왼쪽 막대) > 설명(블릿), 소단원 내용은 들여쓰기
 
-- 프로젝트 폴더 구조(2교시 2.2에서 정의, 3~7교시 프롬프트 공통): index.html(뼈대) · css/style.css(꾸밈) · js/script.js(동작) · data/(CSV·JSON·data.js) · assets/ · PRD.md · AGENTS.md(AI 작업 규칙, 3교시) · DESIGN.md(디자인 규칙) · .env(인증키) · versions/(버전) · CHANGELOG.md(변경 이력: 버전 · 날짜·시간 · 바꾼 내용 · 이유, 최신이 맨 위)
+- 프로젝트 폴더 구조(2교시 2.2에서 정의, 3~7교시 프롬프트 공통): index.html(뼈대) · css/style.css(꾸밈) · js/script.js(동작) · data/(CSV·JSON·data.js) · assets/ · PRD.md · AGENTS.md(AI 작업 규칙, 3교시) · DESIGN.md(디자인 규칙) · .env(인증키) · CHANGELOG.md(변경 이력: 번호 · 날짜·시간 · 바꾼 내용 · 이유, 최신이 맨 위)
 
 - 진행 방식: 1·2교시는 공통, 3교시부터 실무 문제 정의는 각자 하고 PRD부터는 강사와 함께 '업무 인수인계 보드'(업무 정리·자동화 + 다음 담당자에게 넘기기 + 공휴일 데이터, 파일 실습 + API 옵션)를 만든 뒤(함께 실습). 2교시 맛보기는 '지원사업 추천 길잡이'로 함, 같은 방법을 내 과제에 연결함(각자 실습). 데이터도 CSV·로컬 스토리지·JSON·공공데이터 API를 함께 해 본 뒤 각자 연결함
 
