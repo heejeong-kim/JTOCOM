@@ -1011,3 +1011,20 @@
 .lesson-page .site-links a.site-link:hover .ext-ic { color: var(--accent); transform: translate(1px, -1px); }
 @media (prefers-reduced-motion: reduce) { .lesson-page .site-links a.site-link, .lesson-page .site-links .ext-ic { transition: none; } .lesson-page .site-links a.site-link:hover { transform: none; } }
 .lesson-page .site-links-label { margin: 18px 0 -6px; color: #8a7f78; font-size: 13px; font-weight: 700; }
+
+/* ── 콘텐츠 위계: 섹션(h2) > 소단원(h3, 번호 배지) > 소제목(h4) > 설명(블릿) ── */
+.lesson-page .sub-title { display: flex; align-items: center; gap: 10px; }
+.lesson-page .sub-title .sub-num { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 26px; padding: 0 8px; border-radius: 8px; background: var(--accent); color: #fff; font-size: 13.5px; font-weight: 700; letter-spacing: 0; }
+.lesson-page .lesson-body > .block > .sub-title ~ :not(.sub-title):not(script) { margin-left: 44px; }
+.lesson-page .lesson-body > .block > .sub-title + * { margin-top: 10px; }
+.lesson-page .mini-title { display: flex; align-items: center; gap: 8px; font-size: 17px; }
+.lesson-page .mini-title::before { content: ""; flex: none; width: 4px; height: 16px; border-radius: 2px; background: var(--accent); }
+.lesson-page .kgrid .mini-title::before, .lesson-page .ds-ways .mini-title::before, .lesson-page .dw .mini-title::before { display: none; }
+.lesson-page p.desc { position: relative; padding-left: 18px; }
+.lesson-page p.desc::before { content: ""; position: absolute; left: 3px; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.lesson-page .site-links-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; }
+.lesson-page .site-links-row .site-links-label { margin: 0 !important; }
+.lesson-page .site-links-row .site-links { margin: 0 !important; }
+@media (max-width: 760px) {
+  .lesson-page .lesson-body > .block > .sub-title ~ :not(.sub-title):not(script) { margin-left: 0; }
+}
