@@ -62,7 +62,7 @@
           <span class="block-step">개념</span>
           <h2>기능 단위로 나누기</h2>
           <h3 class="sub-title">1.1 큰 요청 대신 작은 요청</h3>
-          <p>AI는 한 번에 하나를 요청할 때 가장 정확하게 만듦.</p>
+          <p>AI는 한 번에 하나씩 요청할 때 더 정확하게 만드는 경우가 많음.</p>
           <div class="kgrid two dt-wide">
             <article class="kcard"><span class="kcard-tag">아쉬운 예</span><h4>한 번에 다 요청</h4><dl><div><dt>요청</dt><dd>"검색, 정렬, 상세 보기, 엑셀 저장 다 넣어줘"</dd></div><div><dt>결과</dt><dd>어디가 고장 났는지 찾기 어려움</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">좋은 예</span><h4>기능 하나씩 요청</h4><dl><div><dt>요청</dt><dd>"먼저 검색 기능만 만들어줘"</dd></div><div><dt>결과</dt><dd>확인하고 저장한 뒤 다음 기능으로 넘어감</dd></div></dl></article>
           </div>
@@ -86,7 +86,7 @@
 내가 고른 버전으로 되돌려줘: <span class="prompt-placeholder">{예: v04-PRD전}</span>
 되돌리기 전에 무엇이 바뀌는지 먼저 알려 주고, 되돌린 것도 CHANGELOG.md에 새 버전으로 한 줄 남겨줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></li></ol>
           <details class="toggle"><summary>심화 · Git으로 이력 관리하기</summary><p>깃(Git)은 버전과 변경 이력을 자동으로 남기는 도구임. 저장 하나가 커밋(Commit)이고, 커밋 메시지가 CHANGELOG 한 줄과 같은 역할을 함. "이 폴더에서 Git을 시작하고 지금 상태를 커밋해줘. Git이 없으면 설치 방법부터 알려줘."라고 요청하면 됨. 설치에 관리자 권한이 필요할 수 있음.</p></details>
-          <aside class="callout tip"><b>핵심</b> <b>기능 하나 = 버전 하나 = 이력 한 줄</b>. 그래야 실패해도 어디로 돌아갈지 바로 고를 수 있음.</aside>
+          <aside class="callout tip"><b>핵심</b> <b>기능 하나 = 버전 하나 = 이력 한 줄</b>. 이렇게 쌓아 두면 실패했을 때 돌아갈 곳을 고르기 쉬움.</aside>
 
         </section>
 
