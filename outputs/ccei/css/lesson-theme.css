@@ -1067,3 +1067,15 @@
 .lesson-page .folder-map small.k5 { background: #f3dfe6; color: #94405e; }
 .lesson-page .folder-map small.k6 { background: #ebe1f1; color: #6b3f7a; }
 .lesson-page .folder-map small.kx { background: #efedea; color: #7a726b; }
+/* 하단 이전·다음 교시 이동 */
+.lesson-page .lesson-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--line); }
+.lesson-page .pager-link { display: flex; flex-direction: column; gap: 8px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; color: var(--ink); text-decoration: none; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.lesson-page .pager-link.next { align-items: flex-end; text-align: right; }
+.lesson-page .pager-link:hover, .lesson-page .pager-link:focus-visible { border-color: var(--accent); box-shadow: 0 8px 20px -14px rgba(169,101,78,.6); transform: translateY(-2px); }
+.lesson-page .pager-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lesson-page .pager-label { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13.5px; font-weight: 600; }
+.lesson-page .pager-label svg { width: 16px; height: 16px; flex: none; }
+.lesson-page .pager-link strong { font-size: 18px; font-weight: 700; line-height: 1.4; }
+.lesson-page .pager-link strong em { margin-right: 8px; font-style: normal; color: var(--accent); }
+@media (max-width: 600px) { .lesson-page .lesson-pager { grid-template-columns: 1fr; margin-top: 48px; } .lesson-page .pager-link strong { font-size: 16px; } }
+@media (prefers-reduced-motion: reduce) { .lesson-page .pager-link { transition: none; } .lesson-page .pager-link:hover { transform: none; } }
