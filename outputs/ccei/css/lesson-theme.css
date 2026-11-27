@@ -1040,3 +1040,5 @@
 .lesson-page .dl-sample svg { width: 16px; height: 16px; flex: none; }
 .lesson-page .dl-sample:hover, .lesson-page .dl-sample:focus-visible { background: var(--accent); color: #fff; }
 .lesson-page .map-head + .folder-map { margin-top: 0; }
+.lesson-page figure.shot { margin: 14px 0 0; max-width: 560px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+.lesson-page figure.shot img { display: block; width: 100%; height: auto; }
