@@ -108,29 +108,7 @@
         <section id="sec-3" class="block">
           <span class="block-step bs-together">함께 실습</span>
           <h2>과제 정의하기</h2>
-          <h3 class="sub-title"><span class="sub-num">3.1</span>사용자 · 문제 · MVP 범위</h3>
-          <p class="desc">MVP(Minimum Viable Product)는 <b>핵심 행동 하나가 되는 가장 작은 첫 버전</b>입니다.</p>
-          <section class="service-feature" aria-label="이번 수업에서 함께 만들 웹 서비스">
-            <div class="sf-head">
-              <span class="sf-tag">공통 과제 · 이번 수업에서 함께 만들 웹 서비스</span>
-              <h4>창업 지원사업 레이더</h4>
-              <p>관심 키워드를 등록하면 맞는 지원사업 공고를 알려 주고, 입주기업별 안내와 주간 브리핑까지 만드는 웹 서비스입니다.</p>
-              <p class="sf-note">※ 공통 과제이지만, 맡은 업무에 맞게 사용자·데이터·기능을 바꿔서 만들어도 됩니다.</p>
-            </div>
-            <dl class="sf-grid">
-              <div><dt>누가</dt><dd>입주기업에 지원사업을 안내하는 센터 담당자</dd></div>
-              <div><dt>어떤 불편</dt><dd>공고가 여러 사이트에 흩어져 있어 매주 손으로 찾고, 어느 기업에 무엇을 보냈는지 정리가 안 됩니다</dd></div>
-              <div><dt>핵심 행동</dt><dd>관심 키워드를 등록하면 맞는 공고를 마감 순으로 보고, 맞는 입주기업에 안내합니다</dd></div>
-              <div><dt>이번에 안 할 것</dt><dd>로그인, 자동 메일 발송, 실제 기업 정보 올리기</dd></div>
-            </dl>
-          </section>
-          <h3 class="sub-title"><span class="sub-num">3.2</span>유저 플로우 · 데이터 정리</h3>
-          <p class="desc">화면이 넘어가는 순서와 화면에 보여 줄 데이터를 정리합니다.</p>
-          <div class="kgrid two dt-wide rows-align" style="--r:4">
-            <article class="kcard"><span class="kcard-tag">유저 플로우 · User Flow</span><h4>화면이 넘어가는 순서</h4><dl><div><dt>예시</dt><dd>레이더(키워드 등록) → 공고 선택 → 입주기업 안내 → 주간 브리핑</dd></div><div><dt>기준</dt><dd>화면 3개 이하, 화살표 3번 이하</dd></div></dl></article>
-            <article class="kcard"><span class="kcard-tag">데이터 항목 · Data</span><h4>화면에 보여 줄 정보</h4><dl><div><dt>예시</dt><dd>공고명, 지원 분야, 지역, 창업 단계, 접수 마감일, 주관기관, 키워드, 지원 내용</dd></div><div><dt>기준</dt><dd>항목 8개 안팎, 개인정보 없습니다</dd></div></dl></article>
-          </div>
-          <h3 class="sub-title"><span class="sub-num">3.3</span>AI가 질문하며 정리하게 하기 <small class="lv lv-adv">선택 · 내 과제로 할 때</small></h3>
+          <h3 class="sub-title"><span class="sub-num">3.1</span>AI가 질문하며 정리하기</h3>
           <p class="desc">AI가 묻는 질문에 답하며 내 과제를 정리합니다.</p>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전후"><li>프롬프트의 <b>{도구 이름과 한 줄 설명}</b>을 채워 보냅니다</li><li>AI가 하나씩 묻는 질문마다 <b>묻는 내용에 맞게 구체적으로</b> 답합니다</li><li>마지막에 받은 정리 표로 4.3 PRD 프롬프트의 각 줄을 바꿔 씁니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내가 만들고 싶은 작은 웹 도구를 함께 정리하고 싶어.
 만들고 싶은 것: <span class="prompt-placeholder">{도구 이름과 한 줄 설명}</span>
@@ -155,6 +133,28 @@
 
 다 정해지면 '이번에 안 할 것'까지 포함해 표 하나로 정리해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></details>
           <details class="toggle answer-example"><summary>[답변 예시] AI와 정리한 결과</summary><div class="answer-body"><p class="answer-lead">이번 도구의 방향을 아래처럼 정리했어요.</p><div class="answer-scroll"><table class="answer-table"><thead><tr><th scope="col">구분</th><th scope="col">이번에 만들 내용</th></tr></thead><tbody><tr><th scope="row">도구 이름</th><td>창업 지원사업 레이더</td></tr><tr><th scope="row">1. 누가 쓰는지</th><td>입주기업에 지원사업을 안내하는 <b>센터 담당자</b></td></tr><tr><th scope="row">2. 지금 겪는 불편</th><td>여러 사이트에 흩어진 공고를 매주 손으로 찾아야 하고, 기업별 안내 기록을 정리하기 어려움</td></tr><tr><th scope="row">3. 핵심 행동 하나</th><td><b>관심 공고를 확인하고, 맞는 입주기업에 보낼 안내를 준비하기</b></td></tr><tr><th scope="row">4. 화면 순서 — ① 관심 설정</th><td>관심 키워드 등록 → 알림 설정</td></tr><tr><th scope="row">4. 화면 순서 — ② 공고 모아보기</th><td>키워드에 맞는 공고와 마감 D-day 확인 → 스크랩하거나 주간 브리핑 확인</td></tr><tr><th scope="row">4. 화면 순서 — ③ 공고별 안내 준비</th><td>공고 선택 → 맞는 입주기업과 매칭 이유 확인 → 안내 문구 복사 → 안내 여부·날짜 저장</td></tr><tr><th scope="row">5. 공고 데이터</th><td>제목, 주관기관, 지원대상, 지원내용, 마감일·시간, D-day, 원문 링크, 일치한 키워드</td></tr><tr><th scope="row">5. 입주기업 데이터</th><td>기업명, 업종, 사업 분야, 창업 연차, 매칭 이유</td></tr><tr><th scope="row">5. 안내·관리 데이터</th><td>안내 문구, 스크랩 여부, 안내 여부·날짜, 주간 주요 공고</td></tr><tr><th scope="row">마감일 표시 원칙</th><td>공고에 명시된 마감일·시간을 기준으로 D-day 표시. 공휴일에 따른 연장은 <b>공고에 근거가 있을 때만 반영</b></td></tr><tr><th scope="row">이번에 안 할 것</th><td>개인정보 수집·저장, 기업에 이메일·문자 자동 발송, 지원사업 자동 신청, 선정 가능성 예측, 모든 공고 사이트 연동. 처음에는 선정한 일부 사이트로 시작</td></tr></tbody></table></div></div></details>
+          <h3 class="sub-title"><span class="sub-num">3.2</span>사용자 · 문제 · MVP 범위</h3>
+          <p class="desc">MVP(Minimum Viable Product)는 <b>핵심 행동 하나가 되는 가장 작은 첫 버전</b>입니다.</p>
+          <section class="service-feature" aria-label="이번 수업에서 함께 만들 웹 서비스">
+            <div class="sf-head">
+              <span class="sf-tag">공통 과제 · 이번 수업에서 함께 만들 웹 서비스</span>
+              <h4>창업 지원사업 레이더</h4>
+              <p>관심 키워드를 등록하면 맞는 지원사업 공고를 알려 주고, 입주기업별 안내와 주간 브리핑까지 만드는 웹 서비스입니다.</p>
+              <p class="sf-note">※ 공통 과제이지만, 맡은 업무에 맞게 사용자·데이터·기능을 바꿔서 만들어도 됩니다.</p>
+            </div>
+            <dl class="sf-grid">
+              <div><dt>누가</dt><dd>입주기업에 지원사업을 안내하는 센터 담당자</dd></div>
+              <div><dt>어떤 불편</dt><dd>공고가 여러 사이트에 흩어져 있어 매주 손으로 찾고, 어느 기업에 무엇을 보냈는지 정리가 안 됩니다</dd></div>
+              <div><dt>핵심 행동</dt><dd>관심 키워드를 등록하면 맞는 공고를 마감 순으로 보고, 맞는 입주기업에 안내합니다</dd></div>
+              <div><dt>이번에 안 할 것</dt><dd>로그인, 자동 메일 발송, 실제 기업 정보 올리기</dd></div>
+            </dl>
+          </section>
+          <h3 class="sub-title"><span class="sub-num">3.3</span>유저 플로우 · 데이터 정리</h3>
+          <p class="desc">화면이 넘어가는 순서와 화면에 보여 줄 데이터를 정리합니다.</p>
+          <div class="kgrid two dt-wide rows-align" style="--r:4">
+            <article class="kcard"><span class="kcard-tag">유저 플로우 · User Flow</span><h4>화면이 넘어가는 순서</h4><dl><div><dt>예시</dt><dd>레이더(키워드 등록) → 공고 선택 → 입주기업 안내 → 주간 브리핑</dd></div><div><dt>기준</dt><dd>화면 3개 이하, 화살표 3번 이하</dd></div></dl></article>
+            <article class="kcard"><span class="kcard-tag">데이터 항목 · Data</span><h4>화면에 보여 줄 정보</h4><dl><div><dt>예시</dt><dd>공고명, 지원 분야, 지역, 창업 단계, 접수 마감일, 주관기관, 키워드, 지원 내용</dd></div><div><dt>기준</dt><dd>항목 8개 안팎, 개인정보 없습니다</dd></div></dl></article>
+          </div>
           <aside class="callout tip"><b>핵심</b> <b>핵심 행동 하나</b>와 <b>이번에 안 할 것</b>을 정해 두면 MVP를 작게 유지하기 쉽습니다.</aside>
         </section>
 
