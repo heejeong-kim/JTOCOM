@@ -1192,3 +1192,7 @@
   .lesson-page .sub-pair.sub-pair-rows > .sub-col > p.desc { margin-bottom: 8px; }
   .lesson-page .sub-pair.sub-pair-rows > .sub-col > :nth-child(4) { margin-top: 10px !important; align-self: start; }
 }
+/* 좌우 배치 안에서도 소단원 내용 들여쓰기(제목 아래 블릿·박스) */
+@media (min-width: 761px) {
+  .lesson-page .sub-pair > .sub-col > :not(.sub-title) { margin-left: 44px; }
+}

@@ -59,7 +59,7 @@
 /* 체크 리스트 */
 .checks, .summary { margin: 10px 0 0; padding: 0; list-style: none; }
 .checks li, .summary li { position: relative; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--line); line-height: 1.6; word-break: keep-all; }
-.checks li::before { content: "✓"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+.checks li::before { content: ""; position: absolute; left: 3px; top: calc(8px + .62em); width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .summary li::before { content: ""; position: absolute; left: 8px; top: 18px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
 /* 실습 프롬프트 */
