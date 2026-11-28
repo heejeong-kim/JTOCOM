@@ -1196,3 +1196,16 @@
 @media (min-width: 761px) {
   .lesson-page .sub-pair > .sub-col > :not(.sub-title) { margin-left: 44px; }
 }
+/* 프롬프트 안내 + 프롬프트 창: 왼쪽 준비 체크, 오른쪽 프롬프트를 한 덩어리로 연결 */
+.lesson-page .prompt-flow { display: grid; grid-template-columns: minmax(240px, 4fr) minmax(0, 8fr); align-items: stretch; margin: 14px 0; }
+.lesson-page .prompt-steps { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 4px; margin: 0; padding: 20px 26px 20px 22px; list-style: none; border: 1px solid #ead8cf; border-right: 0; border-radius: 16px 0 0 16px; background: #fbf3ee; }
+.lesson-page .prompt-steps::after { content: ""; position: absolute; right: -9px; top: 50%; width: 16px; height: 16px; background: #fbf3ee; border-top: 1px solid #ead8cf; border-right: 1px solid #ead8cf; transform: translateY(-50%) rotate(45deg); z-index: 1; }
+.lesson-page .prompt-steps li { position: relative; padding: 7px 0 7px 30px; line-height: 1.55; word-break: keep-all; }
+.lesson-page .prompt-steps li::before { content: ""; position: absolute; left: 0; top: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.lesson-page .prompt-flow > .prompt { margin: 0; border-radius: 0 16px 16px 0; }
+@media (max-width: 760px) {
+  .lesson-page .prompt-flow { grid-template-columns: 1fr; }
+  .lesson-page .prompt-steps { border-right: 1px solid #ead8cf; border-bottom: 0; border-radius: 16px 16px 0 0; }
+  .lesson-page .prompt-steps::after { right: auto; left: 32px; top: auto; bottom: -9px; transform: rotate(135deg); }
+  .lesson-page .prompt-flow > .prompt { border-radius: 0 0 16px 16px; }
+}
