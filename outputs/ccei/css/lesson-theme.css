@@ -1281,3 +1281,12 @@
 .lesson-page .option-toggle .opt-list dd { margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.55; word-break: keep-all; }
 .lesson-page .option-toggle .opt-note { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #ead2c5; color: #6f6a64; font-size: 13.5px; }
 @media (max-width: 600px) { .lesson-page .option-toggle .opt-list > div { grid-template-columns: 1fr; gap: 2px; } }
+/* 4.3 PRD.md 결과 예시(답변 예시와 같은 세이지 그린) */
+.lesson-page div.answer-example.prd-result { padding: 16px 18px; border: 1px solid #cdd8c9; border-left: 4px solid #6f8668; border-radius: 12px; background: #f4f7f2; }
+.lesson-page .prd-result .prd-result-head { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; color: #3f3c38; font-size: 16px; }
+.lesson-page .prd-result .prd-result-head .kcard-tag { margin: 0; }
+.lesson-page .prd-result .answer-table tbody th { width: 22%; }
+.lesson-page .prd-result .prd-result-note { margin: 10px 0 0; color: #6f6a64; font-size: 13px; }
+.lesson-page .ai-tag { display: inline-flex; margin-left: 4px; padding: 1px 7px; border-radius: 999px; background: #f8eee8; color: #9a4f35; font-size: 11px; font-weight: 700; vertical-align: 1px; }
+.lesson-page .prd-result .prd-result-note .ai-tag { margin: 0 2px 0 0; }
+@media (max-width: 640px) { .lesson-page .prd-result .answer-table tbody th { width: 34%; } .lesson-page .prd-result .prd-result-head { flex-wrap: wrap; } }
