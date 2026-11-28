@@ -1246,3 +1246,18 @@
 .lesson-page .lesson-body > .block > .block-step.bs-solo { border-color: #ecd9a8; background: #fbf3dc; color: #8a5a10; }
 .lesson-page .lesson-body > .block > .block-step.bs-ref { border-color: #c7dfdc; background: #e8f3f1; color: #28645f; }
 .lesson-page .lesson-body > .block > .block-step.bs-wrap { border-color: #dcd5cc; background: #f2efea; color: #5f5b56; }
+/* 답변 예시 토글: AI가 돌려준 결과(세이지 그린, 프롬프트 참고 토글과 구분) */
+.lesson-page details.answer-example { margin-top: 12px; padding: 14px 18px; border: 1px solid #cdd8c9; border-left: 4px solid #6f8668; border-radius: 12px; background: #f4f7f2; }
+.lesson-page details.answer-example > summary { color: #4c6046; font-weight: 700; cursor: pointer; }
+.lesson-page .answer-example .answer-body { margin-top: 12px; }
+.lesson-page .answer-example .answer-lead { margin: 0 0 10px; color: #3f3c38; font-size: 14.5px; }
+.lesson-page .answer-example .answer-scroll { overflow-x: auto; border: 1px solid #dde4da; border-radius: 10px; background: #fff; }
+.lesson-page .answer-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.55; }
+.lesson-page .answer-table thead th { padding: 9px 14px; background: #e9efe6; color: #4c6046; font-size: 13px; text-align: left; }
+.lesson-page .answer-table tbody th { width: 30%; padding: 9px 14px; border-top: 1px solid #edf1ea; color: #4c6046; font-weight: 700; text-align: left; vertical-align: top; word-break: keep-all; }
+.lesson-page .answer-table tbody td { padding: 9px 14px; border-top: 1px solid #edf1ea; color: #3f3c38; vertical-align: top; word-break: keep-all; }
+@media (max-width: 640px) { .lesson-page .answer-table tbody th { width: 38%; } .lesson-page .answer-table { font-size: 13px; } }
+/* [참고] 토글: 전 교안 회색으로 통일 */
+.lesson-page details.toggle.ref-toggle { border: 1.5px solid #dcd8d2; background: #f3f2ef; }
+.lesson-page details.toggle.ref-toggle > summary { color: #5f5b56; }
+.lesson-page details.toggle.ref-toggle[open] > summary { border-bottom-color: #dcd8d2; }

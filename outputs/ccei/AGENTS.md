@@ -77,6 +77,8 @@ _backup/                 날짜별 백업 + README.md 변경 이력(로컬에만
 | 섹션 유형 배지(block-step) | 개념 테라코타 · 실습/함께 실습 초록 · 각자 실습 황토 · 참고 청록 · 정리 회갈색 |
 | 카드 유형 라벨(kcard-tag) | 플럼 #f4ecf7 / #6b3f7a |
 | 공통 과제 블록(service-feature) | 와인색 #8a2f4f, 다른 곳에는 쓰지 않음 |
+| [참고] 토글(ref-toggle) | 회색 #f3f2ef / #5f5b56, 제목은 "[참고] …"로 통일 |
+| 답변 예시 토글(answer-example) | 세이지 그린 #f4f7f2 / #4c6046, AI가 돌려준 결과 예시 |
 | 기준 화면 | 1600px, 좌우 여백 48px |
 | 로고 | 실제 센터 사이트와 같은 비율(가로 193px) |
 | 푸터 | COPYRIGHT (C) 2026 KIM HEE JEONG  ALL RIGHTS RESERVED. |
