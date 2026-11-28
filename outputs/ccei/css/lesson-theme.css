@@ -1310,3 +1310,11 @@
 .lesson-page .prd-doc .sec-row th { padding: 10px 14px; background: #eeece8; color: var(--ink); font-size: 14px; font-weight: 800; border-top: 1px solid #e3dfd9; }
 .lesson-page .prd-doc tbody:first-child .sec-row th { border-top: 0; }
 .lesson-page .prd-doc .sec-row .add-tag { margin-left: 6px; }
+/* 5.1 [참고] 답변 예시 안 소제목·표 */
+.lesson-page .prd-practice .ans-h { margin: 18px 0 8px; color: var(--ink); font-size: 15px; font-weight: 800; }
+.lesson-page .prd-practice .ans-h:first-child { margin-top: 2px; }
+.lesson-page .prd-practice .step-table tbody th { width: 8%; text-align: center; }
+.lesson-page .prd-practice .step-table td:nth-child(2) { width: 42%; }
+.lesson-page .prd-practice .ans-tail { margin-top: 12px; }
+.lesson-page .prd-practice .answer-lead:last-child { margin-bottom: 0; }
+.lesson-page .prd-practice code { padding: 1px 5px; border-radius: 4px; background: #eeece8; font-size: 13px; }
