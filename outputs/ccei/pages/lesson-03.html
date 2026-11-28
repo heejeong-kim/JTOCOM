@@ -133,19 +133,12 @@
         <section id="sec-3" class="block">
           <span class="block-step">함께 실습</span>
           <h2>PRD 1장 만들기</h2>
-          <div class="sub-pair sub-pair-rows">
-            <div class="sub-col">
-            <h3 class="sub-title"><span class="sub-num">3.1</span>PRD 1장의 구성</h3>
+          <h3 class="sub-title"><span class="sub-num">3.1</span>PRD 1장의 구성</h3>
           <p class="desc">PRD는 <b>무엇을, 누구를 위해, 어디까지</b> 만들지 적은 약속입니다.</p>
           <p class="desc"><b>창업 지원사업 레이더</b>는 설계도(PRD)부터 쓰고 시작합니다.</p>
           <article class="kcard kcard-main prd-card"><span class="kcard-tag">함께 만들 PRD 1장</span><h4>창업 지원사업 레이더</h4><dl><div><dt>서비스 이름</dt><dd>창업 지원사업 레이더</dd></div><div><dt>목적</dt><dd>관심 키워드에 맞는 지원사업 공고를 놓치지 않고 입주기업에 알맞게 안내</dd></div><div><dt>사용자</dt><dd>입주기업에 지원사업을 안내하는 센터 담당자</dd></div><div><dt>문제</dt><dd>여러 사이트에 흩어진 공고를 매주 손으로 찾고, 기업별 안내 기록 정리가 어려움</dd></div><div><dt>핵심 기능</dt><dd>관심 키워드 등록 → 키워드에 걸린 공고 알림 · 공휴일 반영 마감 D-day · 맞는 입주기업과 안내 문구 · 스크랩 · 주간 브리핑</dd></div><div><dt>MVP 범위</dt><dd>가상 공고 30건·가상 입주기업 10곳(CSV) + 공휴일 파일, K-Startup API는 옵션 (로그인·자동 메일 발송·실제 기업 정보 제외)</dd></div><div><dt>유저 플로우</dt><dd>레이더(키워드 등록) → 공고 선택 → 입주기업 안내 → 주간 브리핑</dd></div><div><dt>데이터</dt><dd>공고명, 지원 분야, 지역, 창업 단계, 신청 대상, 접수 기간, 주관기관, 키워드, 지원 내용 / 입주기업: 기업명, 분야, 창업 단계, 지역, 관심 키워드</dd></div><div><dt>완료 조건</dt><dd>관심 키워드 등록 시 맞는 공고만 마감 순으로 표시, 새로고침 후에도 키워드 유지</dd></div><div><dt>폴더 구조</dt><dd>index.html · css/ · js/ · data/ · assets/</dd></div></dl></article>
-            </div>
-            <div class="sub-col">
-            <h3 class="sub-title"><span class="sub-num">3.2</span>PRD 파일 만들어 두기</h3>
-          <p class="desc">본인 PC에 <b>startup-radar</b> 폴더를 만들고 Codex 프로젝트로 선택합니다.</p>
-            <p class="desc">프롬프트를 보내고, 폴더에 <b>PRD.md</b>가 생겼는지 확인합니다.</p>
-            <p class="desc">내 과제로 할 때는 프롬프트의 각 줄을 내 내용으로 바꿔 보냅니다.</p>
-          <div class="prompt"><pre>나는 코딩을 모르는 초보자야. 아래 내용으로 PRD(제품 요구사항 문서) 1장을 만들어서 이 폴더에 PRD.md로 저장해줘.
+          <h3 class="sub-title"><span class="sub-num">3.2</span>PRD 파일 만들어 두기</h3>
+          <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전에"><li>본인 PC에 <b>startup-radar</b> 폴더를 만들고 Codex 프로젝트로 선택합니다</li><li>프롬프트를 보내고, 폴더에 <b>PRD.md</b>가 생겼는지 확인합니다</li><li>내 과제로 할 때는 프롬프트의 각 줄을 내 내용으로 바꿔 보냅니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 아래 내용으로 PRD(제품 요구사항 문서) 1장을 만들어서 이 폴더에 PRD.md로 저장해줘.
 
 서비스 이름: 창업 지원사업 레이더
 목적: 관심 키워드에 맞는 지원사업 공고를 놓치지 않고 입주기업에 알맞게 안내함
@@ -158,10 +151,8 @@ MVP 범위: 가상 공고 30건·가상 입주기업 10곳(CSV) + 공휴일 파�
 완료 조건: 관심 키워드를 등록하면 맞는 공고만 마감 순으로 보이고, 등록한 키워드가 새로고침해도 남음
 폴더 구조: index.html(뼈대), css/(꾸밈), js/(동작), data/(데이터), assets/(이미지·아이콘)로 나눔
 
-표로 정리하고, 빠졌거나 애매한 점이 있으면 저장한 뒤 따로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
-            </div>
-          </div>
-          <ul class="checks"><li>프로젝트 폴더에 <b>PRD.md</b> 파일이 생겼는지 확인합니다</li><li>완료 조건을 읽고 <b>직접 눌러 확인할 수 있는 문장</b>인지 확인합니다</li></ul>
+표로 정리하고, 빠졌거나 애매한 점이 있으면 저장한 뒤 따로 알려줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></div>
+          <ul class="checks"><li>완료 조건을 읽고 <b>직접 눌러 확인할 수 있는 문장</b>인지 확인합니다</li></ul>
           <aside class="callout tip"><b>핵심</b> PRD를 <b>PRD.md 파일 하나</b>로 저장해 두면 만드는 내내 AI가 계속 참고하게 할 수 있습니다.</aside>
         </section>
 
