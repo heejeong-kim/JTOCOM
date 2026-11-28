@@ -1209,3 +1209,7 @@
   .lesson-page .prompt-steps::after { right: auto; left: 32px; top: auto; bottom: -9px; transform: rotate(135deg); }
   .lesson-page .prompt-flow > .prompt { border-radius: 0 0 16px 16px; }
 }
+.lesson-page details.toggle .prompt-flow { margin: 14px 0 4px; }
+@media (min-width: 761px) {
+  .lesson-page .lesson-body > .block > .sub-pair ~ :not(.sub-title):not(.sub-pair):not(script) { margin-left: 44px; }
+}
