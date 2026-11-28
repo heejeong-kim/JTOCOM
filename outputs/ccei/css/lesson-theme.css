@@ -1213,3 +1213,13 @@
 @media (min-width: 761px) {
   .lesson-page .lesson-body > .block > .sub-pair ~ :not(.sub-title):not(.sub-pair):not(script) { margin-left: 44px; }
 }
+/* 공통 과제 블록: 프롬프트(검정)와 구분되게 밝은 테라코타 톤으로 */
+.lesson-page .service-feature { background: linear-gradient(135deg, #fdf1ea 0%, #fbe6da 100%); color: var(--ink); border: 1px solid #efcfbf; box-shadow: 0 18px 36px -26px rgba(169,101,78,.55); }
+.lesson-page .service-feature::before { height: 5px; background: linear-gradient(90deg, var(--accent), #e7a07f); }
+.lesson-page .service-feature .sf-tag { background: var(--accent); color: #fff; }
+.lesson-page .service-feature h4 { color: var(--ink); }
+.lesson-page .service-feature .sf-head p { color: #5d534d; }
+.lesson-page .service-feature .sf-head p.sf-note { color: #9a4f35; font-weight: 600; border-top-color: #efcfbf; }
+.lesson-page .sf-grid div { background: #fff; border-color: #f0d8cb; box-shadow: 0 1px 0 rgba(169,101,78,.06); }
+.lesson-page .sf-grid dt { color: var(--accent); }
+.lesson-page .sf-grid dd { color: var(--ink); }
