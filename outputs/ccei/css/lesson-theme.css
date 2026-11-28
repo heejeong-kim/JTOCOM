@@ -1239,3 +1239,10 @@
 .lesson-page .sf-grid dt { color: var(--wine); }
 /* 카드 폭: 다른 박스(프롬프트·블록)와 같은 폭으로 */
 .lesson-page .prd-card, .lesson-page .build-target { max-width: none; }
+/* 섹션 배지: 유형별 색 (개념 테라코타 · 실습/함께 실습 초록 · 각자 실습 황토 · 참고 청록 · 정리 회갈색) */
+.lesson-page .lesson-body > .block > .block-step.bs-concept { border-color: #ead2c5; background: #f8eee8; color: #9a4f35; }
+.lesson-page .lesson-body > .block > .block-step.bs-practice,
+.lesson-page .lesson-body > .block > .block-step.bs-together { border-color: #cfe0c8; background: #eef5ea; color: #3f6b36; }
+.lesson-page .lesson-body > .block > .block-step.bs-solo { border-color: #ecd9a8; background: #fbf3dc; color: #8a5a10; }
+.lesson-page .lesson-body > .block > .block-step.bs-ref { border-color: #c7dfdc; background: #e8f3f1; color: #28645f; }
+.lesson-page .lesson-body > .block > .block-step.bs-wrap { border-color: #dcd5cc; background: #f2efea; color: #5f5b56; }
