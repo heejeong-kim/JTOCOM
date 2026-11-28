@@ -32,7 +32,7 @@
           </div>
           <div class="hero-goals">
             <h2><svg class="goal-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>이 시간이 끝나면</h2>
-            <ol><li>내 업무에서 바이브코딩으로 풀어 볼 개선 과제 하나를 고를 수 있다.</li><li>내 과제의 사용자·문제·MVP 범위를 정리하고, 강사와 함께 PRD 1장을 만든다.</li><li>프롬프트 작성 원칙에 맞춰 PRD를 Codex에 전달하고, AGENTS.md로 작업 규칙을 정해 둘 수 있다.</li></ol>
+            <ol><li>내 업무에서 바이브코딩으로 풀어 볼 개선 과제 하나를 고를 수 있다.</li><li>내 과제의 사용자·문제·MVP 범위를 정리하고, 강사와 함께 PRD 1장을 만든다.</li><li>AGENTS.md로 작업 규칙을 정해 두고, 프롬프트 작성 원칙에 맞춰 PRD를 Codex에 전달할 수 있다.</li></ol>
           </div>
         </div>
       </section>
@@ -41,7 +41,7 @@
       <nav class="toc-float dock" aria-label="교안 목차">
       <div class="toc-panel" id="toc-panel" hidden>
       <p>목차</p>
-      <ol><li><a href="#sec-1">개선 과제 고르기</a></li><li><a href="#sec-2">과제 정의하기</a></li><li><a href="#sec-3">PRD 1장 만들기</a></li><li><a href="#sec-4">프롬프트 작성 원칙</a></li></ol>
+      <ol><li><a href="#sec-1">개선 과제 고르기</a></li><li><a href="#sec-2">과제 정의하기</a></li><li><a href="#sec-3">PRD 1장 만들기</a></li><li><a href="#sec-4">AGENTS.md와 PRD 전달하기</a></li></ol>
       </div>
       <div class="toc-panel lesson-panel" id="lesson-panel" hidden>
       <p>교시 이동</p>
@@ -66,7 +66,11 @@
           <div class="kgrid five rows-align" style="--r:4">
             <article class="kcard"><span class="kcard-tag">반복</span><h4>자주 반복되는 일</h4><p class="kcard-role">매주·매달 같은 일을 손으로 반복합니다</p><dl><div><dt>예시</dt><dd>평가점수 집계·순위 도구, 참가자 명찰 출력</dd></div></dl></article><article class="kcard"><span class="kcard-tag">범위</span><h4>내 선에서 바꿀 수 있는 일</h4><p class="kcard-role">결재·시스템 변경 없이 혼자 써 볼 수 있습니다</p><dl><div><dt>예시</dt><dd>입주기업 현황판</dd></div></dl></article><article class="kcard"><span class="kcard-tag">크기</span><h4>화면 3개 이하</h4><p class="kcard-role">핵심 행동 하나로 끝나는 작은 도구</p><dl><div><dt>예시</dt><dd>지원사업 추천 길잡이</dd></div></dl></article><article class="kcard"><span class="kcard-tag">데이터</span><h4>공개해도 되는 데이터</h4><p class="kcard-role">개인정보·내부 비공개 자료 없이 만들 수 있습니다</p><dl><div><dt>예시</dt><dd>수요-기술 매칭 보드</dd></div></dl></article><article class="kcard"><span class="kcard-tag">효과</span><h4>바로 보이는 효과</h4><p class="kcard-role">줄어드는 시간이나 실수가 분명합니다</p><dl><div><dt>예시</dt><dd>보육기업 성과 대시보드</dd></div></dl></article>
           </div>
-          <h3 class="sub-title"><span class="sub-num">1.2</span>AI와 함께 과제 찾기</h3>
+          <h3 class="sub-title"><span class="sub-num">1.2</span>좋은 프롬프트의 5가지</h3>
+          <div class="kgrid three rows-align" style="--r:4">
+            <article class="kcard"><span class="kcard-tag">① 맥락</span><h4>누구인지·무엇을 하는지</h4><dl><div><dt>아쉬운 예</dt><dd>"웹 만들어줘"</dd></div><div><dt>좋은 예</dt><dd>"나는 초보자야. 입주기업에 맞는 지원사업 공고를 찾아 주는 레이더를 만들고 싶어"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">② 목표 하나</span><h4>한 번에 하나만 요청</h4><dl><div><dt>아쉬운 예</dt><dd>"화면, 데이터, 로그인, 디자인 다 해줘"</dd></div><div><dt>좋은 예</dt><dd>"먼저 공고 목록 화면만 만들어줘"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">③ 조건</span><h4>지킬 것과 하지 말 것</h4><dl><div><dt>아쉬운 예</dt><dd>조건 없이 요청</dd></div><div><dt>좋은 예</dt><dd>"로그인·실제 저장은 하지 말고, 개인정보는 쓰지 마"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">④ 예시</span><h4>원하는 모습을 보여 주기</h4><dl><div><dt>아쉬운 예</dt><dd>"예쁘게 해줘"</dd></div><div><dt>좋은 예</dt><dd>"카드처럼, 마감이 3일 안 남은 공고는 빨간 글씨로"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">⑤ 확인 방법</span><h4>끝났는지 아는 기준</h4><dl><div><dt>아쉬운 예</dt><dd>"잘 되게 해줘"</dd></div><div><dt>좋은 예</dt><dd>"키워드를 넣으면 맞는 공고만 마감 순으로 보이면 완성이야"</dd></div></dl></article>
+          </div>
+          <h3 class="sub-title"><span class="sub-num">1.3</span>AI와 함께 과제 찾기</h3>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전후"><li><b>{내 업무}</b>에 맡은 일·반복하는 일·불편한 점을 채웁니다</li><li>실제 이름·연락처·내부 자료는 빼고 보냅니다</li><li>추천받은 3개 중 첫 과제로 할 하나에 표시해 둡니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내 업무를 설명할 테니, 바이브코딩으로 만들어 볼 작은 웹 도구 아이디어 3개를 추천해줘.
 내 업무: <span class="prompt-placeholder">{내가 맡은 일, 자주 반복하는 일, 불편한 점}</span>
 
@@ -91,7 +95,7 @@
         </section>
 
         <section id="sec-2" class="block">
-          <span class="block-step">각자 실습</span>
+          <span class="block-step">함께 실습</span>
           <h2>과제 정의하기</h2>
           <h3 class="sub-title"><span class="sub-num">2.1</span>사용자 · 문제 · MVP 범위</h3>
           <p class="desc">MVP(Minimum Viable Product)는 <b>핵심 행동 하나가 되는 가장 작은 첫 버전</b>입니다.</p>
@@ -115,7 +119,7 @@
             <article class="kcard"><span class="kcard-tag">유저 플로우 · User Flow</span><h4>화면이 넘어가는 순서</h4><dl><div><dt>예시</dt><dd>레이더(키워드 등록) → 공고 선택 → 입주기업 안내 → 주간 브리핑</dd></div><div><dt>기준</dt><dd>화면 3개 이하, 화살표 3번 이하</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">데이터 항목 · Data</span><h4>화면에 보여 줄 정보</h4><dl><div><dt>예시</dt><dd>공고명, 지원 분야, 지역, 창업 단계, 접수 마감일, 주관기관, 키워드, 지원 내용</dd></div><div><dt>기준</dt><dd>항목 8개 안팎, 개인정보 없습니다</dd></div></dl></article>
           </div>
-          <h3 class="sub-title"><span class="sub-num">2.3</span>AI가 질문하며 정리하게 하기</h3>
+          <h3 class="sub-title"><span class="sub-num">2.3</span>AI가 질문하며 정리하게 하기 <small class="lv lv-adv">선택 · 내 과제로 할 때</small></h3>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전후"><li>프롬프트의 <b>{도구 이름과 한 줄 설명}</b>을 채워 보냅니다</li><li>AI가 하나씩 묻는 질문에 답합니다</li><li>마지막에 받은 정리 표로 3.2 PRD 프롬프트의 각 줄을 바꿔 씁니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 내가 만들고 싶은 작은 웹 도구를 함께 정리하고 싶어.
 만들고 싶은 것: <span class="prompt-placeholder">{도구 이름과 한 줄 설명}</span>
 
@@ -134,8 +138,7 @@
           <span class="block-step">함께 실습</span>
           <h2>PRD 1장 만들기</h2>
           <h3 class="sub-title"><span class="sub-num">3.1</span>PRD 1장의 구성</h3>
-          <p class="desc">PRD는 <b>무엇을, 누구를 위해, 어디까지</b> 만들지 적은 약속입니다. <a class="inline-ref" href="lesson-01.html#term-prd">1교시 PRD 용어 다시 보기</a></p>
-          <p class="desc"><b>창업 지원사업 레이더</b>는 설계도(PRD)부터 쓰고 시작합니다.</p>
+          <p class="desc">PRD는 <b>무엇을, 누구를 위해, 어디까지</b> 만들지 적은 약속입니다.</p>
           <article class="kcard kcard-main prd-card"><span class="kcard-tag">함께 만들 PRD 1장</span><h4>창업 지원사업 레이더</h4><dl><div><dt>서비스 이름</dt><dd>창업 지원사업 레이더</dd></div><div><dt>목적</dt><dd>관심 키워드에 맞는 지원사업 공고를 놓치지 않고 입주기업에 알맞게 안내</dd></div><div><dt>사용자</dt><dd>입주기업에 지원사업을 안내하는 센터 담당자</dd></div><div><dt>문제</dt><dd>여러 사이트에 흩어진 공고를 매주 손으로 찾고, 기업별 안내 기록 정리가 어려움</dd></div><div><dt>핵심 기능</dt><dd>관심 키워드 등록 → 키워드에 걸린 공고 알림 · 공휴일 반영 마감 D-day · 맞는 입주기업과 안내 문구 · 스크랩 · 주간 브리핑</dd></div><div><dt>MVP 범위</dt><dd>가상 공고 30건·가상 입주기업 10곳(CSV) + 공휴일 파일, K-Startup API는 옵션 (로그인·자동 메일 발송·실제 기업 정보 제외)</dd></div><div><dt>유저 플로우</dt><dd>레이더(키워드 등록) → 공고 선택 → 입주기업 안내 → 주간 브리핑</dd></div><div><dt>데이터</dt><dd>공고명, 지원 분야, 지역, 창업 단계, 신청 대상, 접수 기간, 주관기관, 키워드, 지원 내용 / 입주기업: 기업명, 분야, 창업 단계, 지역, 관심 키워드</dd></div><div><dt>완료 조건</dt><dd>관심 키워드 등록 시 맞는 공고만 마감 순으로 표시, 새로고침 후에도 키워드 유지</dd></div><div><dt>폴더 구조</dt><dd>index.html · css/ · js/ · data/ · assets/</dd></div></dl></article>
           <h3 class="sub-title"><span class="sub-num">3.2</span>PRD 파일 만들어 두기</h3>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전에"><li>본인 PC에 <b>startup-radar</b> 폴더를 만들고 Codex 프로젝트로 선택합니다</li><li>프롬프트를 보내고, 폴더에 <b>PRD.md</b>가 생겼는지 확인합니다</li><li>내 과제로 할 때는 프롬프트의 각 줄을 내 내용으로 바꿔 보냅니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 아래 내용으로 PRD(제품 요구사항 문서) 1장을 만들어서 이 폴더에 PRD.md로 저장해줘.
@@ -157,13 +160,9 @@ MVP 범위: 가상 공고 30건·가상 입주기업 10곳(CSV) + 공휴일 파�
         </section>
 
         <section id="sec-4" class="block">
-          <span class="block-step">개념</span>
-          <h2>프롬프트 작성 원칙</h2>
-          <h3 class="sub-title"><span class="sub-num">4.1</span>좋은 프롬프트의 5가지</h3>
-          <div class="kgrid three rows-align" style="--r:4">
-            <article class="kcard"><span class="kcard-tag">① 맥락</span><h4>누구인지·무엇을 하는지</h4><dl><div><dt>아쉬운 예</dt><dd>"웹 만들어줘"</dd></div><div><dt>좋은 예</dt><dd>"나는 초보자야. 입주기업에 맞는 지원사업 공고를 찾아 주는 레이더를 만들고 싶어"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">② 목표 하나</span><h4>한 번에 하나만 요청</h4><dl><div><dt>아쉬운 예</dt><dd>"화면, 데이터, 로그인, 디자인 다 해줘"</dd></div><div><dt>좋은 예</dt><dd>"먼저 공고 목록 화면만 만들어줘"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">③ 조건</span><h4>지킬 것과 하지 말 것</h4><dl><div><dt>아쉬운 예</dt><dd>조건 없이 요청</dd></div><div><dt>좋은 예</dt><dd>"로그인·실제 저장은 하지 말고, 개인정보는 쓰지 마"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">④ 예시</span><h4>원하는 모습을 보여 주기</h4><dl><div><dt>아쉬운 예</dt><dd>"예쁘게 해줘"</dd></div><div><dt>좋은 예</dt><dd>"카드처럼, 마감이 3일 안 남은 공고는 빨간 글씨로"</dd></div></dl></article><article class="kcard"><span class="kcard-tag">⑤ 확인 방법</span><h4>끝났는지 아는 기준</h4><dl><div><dt>아쉬운 예</dt><dd>"잘 되게 해줘"</dd></div><div><dt>좋은 예</dt><dd>"키워드를 넣으면 맞는 공고만 마감 순으로 보이면 완성이야"</dd></div></dl></article>
-          </div>
-          <h3 class="sub-title"><span class="sub-num">4.2</span>AGENTS.md로 매번 하는 말 줄이기</h3>
+          <span class="block-step">함께 실습</span>
+          <h2>AGENTS.md와 PRD 전달하기</h2>
+          <h3 class="sub-title"><span class="sub-num">4.1</span>AGENTS.md로 매번 하는 말 줄이기</h3>
           <p class="desc">프롬프트마다 반복하는 조건은 Codex가 작업 전에 먼저 읽는 지침서 <b>AGENTS.md</b>에 한 번 적어 둡니다.</p>
           <div class="kgrid two dt-wide rows-align" style="--r:5"><article class="kcard"><span class="kcard-tag">PRD.md</span><h4>무엇을 만들지</h4><p class="kcard-role">서비스의 설계도</p><dl><div><dt>담는 것</dt><dd>사용자, 핵심 기능, 완료 조건</dd></div><div><dt>바뀔 때</dt><dd>만들 내용이 바뀔 때</dd></div></dl></article><article class="kcard kcard-main"><span class="kcard-tag">AGENTS.md</span><h4>어떻게 일할지</h4><p class="kcard-role">AI에게 주는 작업 규칙</p><dl><div><dt>담는 것</dt><dd>설명 방식, 파일 구조, 지킬 것과 하지 말 것</dd></div><div><dt>바뀔 때</dt><dd>일하는 방식이 바뀔 때</dd></div></dl></article></div>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전후"><li><b>startup-radar</b> 프로젝트에서 프롬프트를 보냅니다</li><li>폴더에 <b>AGENTS.md</b>가 생겼는지 확인합니다</li><li>새 채팅에서 <b>"이 폴더에서 지킬 규칙을 요약해줘"</b>라고 물어 Codex가 AGENTS.md를 읽는지 확인합니다</li></ul><div class="prompt"><pre>이 폴더에 AGENTS.md 파일을 만들어줘. 앞으로 이 폴더에서 일할 때 매번 지킬 규칙이야.
@@ -179,7 +178,7 @@ MVP 범위: 가상 공고 30건·가상 입주기업 10곳(CSV) + 공휴일 파�
 
 저장한 뒤 AGENTS.md 내용을 보여 줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></div>
           <p class="desc">채팅으로 직접 요청한 내용이 AGENTS.md보다 우선하므로, 규칙과 다르게 하고 싶을 때는 그때그때 말하면 됩니다.</p>
-          <h3 class="sub-title"><span class="sub-num">4.3</span>PRD를 Codex에 전달하기</h3>
+          <h3 class="sub-title"><span class="sub-num">4.2</span>PRD를 Codex에 전달하기</h3>
           <div class="prompt-flow"><ul class="prompt-steps" aria-label="프롬프트 보내기 전후"><li>폴더에 <b>PRD.md</b>와 <b>AGENTS.md</b>가 있는지 확인합니다</li><li>프롬프트를 보내고, 받은 요약과 작업 순서를 읽어 봅니다</li><li>AI가 물어본 <b>정해야 할 것</b>에 답해 PRD.md에 반영해 둡니다</li></ul><div class="prompt"><pre>나는 코딩을 모르는 초보자야. 이 폴더의 PRD.md를 먼저 읽어줘.
 아직 코드는 만들지 말고, 아래 3가지만 쉬운 말로 알려줘.
 1. PRD를 읽고 이해한 내용을 3줄로 요약
