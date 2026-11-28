@@ -57,8 +57,9 @@
           <span class="block-step">개념</span>
           <h2>바이브코딩이란</h2>
           <h3 class="sub-title"><span class="sub-num">1.1</span>개념</h3>
-          <p class="desc"><b>만들고 싶은 것을 말로 설명하면 AI가 코드를 작성</b>하는 개발 방식으로, 사람은 원하는 것을 말하고 결과를 확인해 고쳐 달라고 요청합니다.</p>
+          <p class="desc">말로 설명하면 AI가 코드를 만들어 주는 개발 방식입니다.</p>
           <h3 class="sub-title"><span class="sub-num">1.2</span>기존 개발과의 차이</h3>
+          <p class="desc">기존 개발은 요청하고 기다리지만, 바이브코딩은 직접 말로 요청하고 바로 확인합니다.</p>
           <div class="vs">
             <div class="vs-lane old">
               <div class="vs-head"><span class="vs-tag">기존 개발</span><span class="vs-time">완성까지 <b>며칠 ~ 몇 주</b></span></div>
@@ -79,6 +80,7 @@
           </div>
 
           <h3 class="sub-title"><span class="sub-num">1.3</span>발전 히스토리</h3>
+          <p class="desc">AI 코딩 도구는 자동완성에서 대화로 만드는 방식으로 발전해 왔습니다.</p>
           <ol class="history">
             <li><span class="h-when">2021~</span><b>코드 자동완성</b><p>개발자가 코드를 쓰면 AI가 다음 줄을 제안. 여전히 개발자 중심</p></li>
             <li><span class="h-when">2022 말~</span><b>대화형 코드 생성</b><p>ChatGPT 같은 챗봇에 말로 물어 코드를 받아 복사해 붙여 씁니다</p></li>
@@ -95,12 +97,13 @@
           <span class="block-step">개념</span>
           <h2>바이브코딩을 위한 서비스 기초</h2>
           <h3 class="sub-title"><span class="sub-num">2.1</span>웹과 앱</h3>
-          <p class="desc">웹은 <b>브라우저에서 주소(URL)로 여는 서비스</b>, 앱은 <b>휴대폰에 설치해서 쓰는 서비스</b>입니다.</p>
+          <p class="desc">웹은 <b>주소(URL)로 여는 서비스</b>, 앱은 <b>휴대폰에 설치해서 쓰는 서비스</b>입니다.</p>
           <div class="kgrid two rows-align" style="--r:6">
             <article class="kcard kcard-main"><span class="kcard-tag">브라우저 · 오늘 만드는 것</span><h4>웹 · Web</h4><p class="kcard-role">크롬·엣지 같은 브라우저에서 주소로 바로 여는 서비스</p><dl><div><dt>예시</dt><dd>기관 홈페이지, 지원사업 신청, 평가점수 집계 도구</dd></div><div><dt>특징</dt><dd>설치 없이 링크만 보내면 PC·휴대폰 어디서나 열립니다</dd></div><div><dt>AI 요청</dt><dd>"PC와 휴대폰 브라우저에서 모두 잘 보이는 웹으로 만들어줘"</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">설치</span><h4>앱 · App</h4><p class="kcard-role">앱스토어·플레이스토어에서 내려받아 설치하는 서비스</p><dl><div><dt>예시</dt><dd>은행 앱, 메신저 앱, 저 내려요</dd></div><div><dt>특징</dt><dd>알림·카메라 등 휴대폰 기능을 쓰기 쉽지만, 스토어 심사와 설치가 필요합니다</dd></div><div><dt>AI 요청</dt><dd>"앱처럼 휴대폰 화면에 맞춘 웹으로 먼저 만들어줘"</dd></div></dl></article>
           </div>
           <h3 class="sub-title"><span class="sub-num">2.2</span>서비스는 어떻게 움직이나</h3>
+          <p class="desc">서비스는 <b>화면·서버·데이터</b>가 주고받으며 움직입니다.</p>
           <h4 class="mini-title">① 서비스를 이루는 세 부분</h4>
           <div class="anatomy" aria-label="서비스 구조 예시">
             <div class="node"><b>화면</b><small>프론트엔드</small><span>창업 단계·업종을 고르는 입력창과 결과 목록</span></div>
@@ -128,6 +131,7 @@
             <article class="kcard"><div class="kcard-head"><h4>JavaScript</h4><span class="kcard-tag">동작</span></div><div class="demo demo-js" aria-hidden="true"><i class="d-btn"><b class="d-cursor"></b></i><i class="d-row r1"></i><i class="d-row r2"></i><i class="d-row r3"></i></div><p class="kcard-role">누르면 무엇을 할지 정합니다</p><dl><div><dt>예</dt><dd>저장, 계산, 검색, 알림 띄우기</dd></div><div><dt>AI 요청</dt><dd>"신청 버튼을 누르면 목록에 추가되게 해줘"</dd></div></dl></article>
           </div>
           <h3 class="sub-title"><span class="sub-num">2.3</span>데이터는 어디에 저장되나</h3>
+          <p class="desc">데이터는 파일, 내 브라우저, 서버 중 알맞은 곳에 저장합니다.</p>
           <div class="kgrid three rows-align" style="--r:6">
             <article class="kcard"><span class="kcard-tag">파일</span><h4>CSV · 엑셀</h4><p class="kcard-role">표 파일에 담아 두고 불러옵니다</p><dl><div><dt>이럴 때</dt><dd>이미 정리된 목록을 보여 줄 때</dd></div><div><dt>한계</dt><dd>화면에서 고친 내용은 파일에 저장되지 않습니다</dd></div><div><dt>AI 요청</dt><dd>"이 CSV 파일을 표로 보여줘"</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">내 브라우저</span><h4>브라우저 저장소</h4><p class="kcard-role">지금 쓰는 브라우저 안에 저장</p><dl><div><dt>이럴 때</dt><dd>혼자 쓰는 메모·설정을 남길 때</dd></div><div><dt>한계</dt><dd>다른 사람·다른 컴퓨터에서는 안 보입니다</dd></div><div><dt>AI 요청</dt><dd>"새로고침해도 입력한 내용이 남게 해줘"</dd></div></dl></article>
@@ -140,6 +144,7 @@
             <div><b>JSON</b><span>API가 데이터를 주고받는 형식. 예: 공공데이터 API 응답</span></div>
           </div>
           <h3 class="sub-title"><span class="sub-num">2.4</span>만들고, 고치고, 공개하기</h3>
+          <p class="desc">오류를 확인하며 고치고, 준비되면 공개합니다.</p>
           <div class="terms">
             <div><b>오류 메시지</b><span>실행이 안 될 때 뜨는 빨간 안내 글. 그대로 복사해 AI에게 전달</span></div>
             <div><b>개발자 도구 · 콘솔</b><span>브라우저에서 F12로 여는 점검 창. 숨은 오류가 여기 보입니다</span></div>
@@ -157,6 +162,7 @@
 
 [여기에 오류 메시지를 그대로 붙여 넣기]</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div>
           <h3 class="sub-title"><span class="sub-num">2.5</span>안전하게 만들기</h3>
+          <p class="desc">인증키와 개인정보는 화면 코드에 넣지 않고 따로 지킵니다.</p>
           <div class="kgrid three rows-align" style="--r:5">
             <article class="kcard"><span class="kcard-tag">열쇠 관리</span><h4>API 키</h4><p class="kcard-role">공공데이터·AI 서비스를 쓸 때 받는 비밀 열쇠</p><dl><div><dt>위험</dt><dd>화면 코드(HTML·JS)에 넣으면 누구나 볼 수 있습니다</dd></div><div><dt>지키기</dt><dd>서버 쪽 환경 변수에 보관, 화면 코드·공유 파일에 넣지 않습니다</dd></div></dl></article>
             <article class="kcard"><span class="kcard-tag">누가, 무엇을</span><h4>로그인 · 인증 · 권한</h4><p class="kcard-role">인증은 누구인지 확인, 권한은 무엇을 할 수 있는지 정합니다</p><dl><div><dt>위험</dt><dd>아무나 신청 목록을 보거나 지울 수 있습니다</dd></div><div><dt>지키기</dt><dd>"관리자만 삭제할 수 있게 해줘"처럼 권한을 요청</dd></div></dl></article>
@@ -170,6 +176,7 @@
             <div><b>개인정보</b><span>특정 사람을 알아볼 수 있는 정보</span></div>
           </div>
           <h3 class="sub-title"><span class="sub-num">2.6</span>기획 문서 용어</h3>
+          <p class="desc">기획 문서 용어를 알면 만들 것을 AI에게 정확히 전달하기 쉽습니다.</p>
           <div class="plan-docs">
             <div class="plan-card"><span class="plan-tag">유저 플로우 · User Flow</span>
               <div class="flow"><span>홈</span><i>→</i><span>조건 선택</span><i>→</i><span>추천 결과</span><i>→</i><span>사업 상세</span><i>→</i><span class="end">신청</span></div>
@@ -189,6 +196,7 @@
             <table class="ui-table"><thead><tr><th>용어</th><th>뜻</th><th>AI 요청 예시</th></tr></thead><tbody><tr id="term-prd"><td><b>PRD · 요구사항 정의서</b><small>Product Requirements Document</small></td><td>무엇을, 누구를 위해, 어떻게 만들지 정리한 기획 문서</td><td><q>이 아이디어로 1장짜리 PRD 초안을 써줘</q></td></tr><tr><td><b>MVP</b><small>Minimum Viable Product</small></td><td>핵심 기능만 담아 먼저 만드는 첫 버전</td><td><q>이 기능 중 MVP에 꼭 필요한 것만 골라줘</q></td></tr><tr><td><b>페르소나</b><small>Persona</small></td><td>서비스를 쓸 대표 사용자를 가상 인물로 설정한 것</td><td><q>이 서비스의 대표 사용자 페르소나 2명을 만들어줘</q></td></tr><tr><td><b>유저 플로우</b><small>User Flow</small></td><td>사용자가 목적을 이루기까지 화면을 거치는 순서</td><td><q>지원사업을 찾아 신청하기까지의 유저 플로우를 그려줘</q></td></tr><tr><td><b>IA · 정보 구조</b><small>Information Architecture</small></td><td>메뉴와 정보를 어떻게 나누고 묶을지 정한 설계</td><td><q>이 서비스의 IA를 정리해줘</q></td></tr><tr><td><b>메뉴 구조도</b><small>Menu Tree</small></td><td>메뉴를 큰 메뉴(1단계)와 하위 메뉴(2단계)로 펼쳐 나무 모양으로 그린 그림</td><td><q>이 서비스의 메뉴 구조도를 2단계까지 그려줘</q></td></tr><tr><td><b>사이트맵</b><small>Sitemap</small></td><td>메뉴에 없는 화면(로그인·결과 등)까지 서비스의 모든 화면을 한눈에 정리한 지도</td><td><q>모든 화면이 보이게 사이트맵을 만들어줘</q></td></tr><tr><td><b>와이어프레임</b><small>Wireframe</small></td><td>화면의 뼈대 배치만 그린 스케치</td><td><q>메인 화면 와이어프레임부터 잡아줘</q></td></tr><tr><td><b>화면 설계서 · 스토리보드</b><small>Storyboard</small></td><td>화면별 구성과 동작 설명을 정리한 문서</td><td><q>화면마다 구성과 동작을 화면 설계서로 정리해줘</q></td></tr><tr><td><b>기능 명세서</b><small>Functional Specification</small></td><td>기능마다 입력, 처리 규칙, 결과를 정리한 문서</td><td><q>추천 기능의 입력·처리·결과를 기능 명세서로 써줘</q></td></tr><tr><td><b>데이터 명세서</b><small>Data Specification</small></td><td>다루는 데이터의 항목, 형식, 필수 여부를 정리한 표</td><td><q>지원사업 데이터의 항목·형식·필수 여부를 데이터 명세서로 정리해줘</q></td></tr><tr><td><b>완료 조건</b><small>Acceptance Criteria</small></td><td>"이렇게 되면 완성"이라고 판단하는 기준</td><td><q>이 기능의 완료 조건을 3개로 정리해줘</q></td></tr></tbody></table>
           </div>
           <div class="dict-head"><h3 class="sub-title dict-title">2.7 화면(UI) 용어</h3></div>
+          <p class="desc">화면 요소의 이름을 알면 고칠 곳을 정확히 짚어 요청할 수 있습니다.</p>
           <h4 class="mini-title ui-kind">레이아웃(Layout)</h4>
           <details class="ui-group" open>
             <summary><span>① 웹 화면 구조(Page Structure)</span><em>8개</em></summary>
@@ -267,7 +275,7 @@
             </div>
           </details>
           <h3 class="sub-title"><span class="sub-num">2.8</span>용어로 고쳐 보기</h3>
-          <p class="desc">같은 화면을 <b>"이거 바꿔줘"</b>와 <b>용어를 넣은 요청</b>으로 한 번씩 고쳐 보고 결과를 비교합니다.</p>
+          <p class="desc">같은 화면을 막연한 말과 <b>용어</b>로 한 번씩 고쳐 보고 비교합니다.</p>
           <ul class="file-links"><li><a href="../samples/ui-practice.html" download>ui-practice.html <small>헤더 · 히어로 · 사이드바 · 탭 · 카드 그리드</small></a></li></ul>
           <ul class="checks"><li>본인 PC에 <b>ui-practice</b> 폴더를 만들고 내려받은 파일을 넣습니다</li><li>Codex에서 <b>새 채팅</b>을 열고, <b>프로젝트 선택</b>에서 ui-practice 폴더를 고릅니다</li><li>파일을 더블클릭해 브라우저로 열어 두고, 고칠 때마다 새로고침해 비교합니다</li></ul>
           <ol class="guide-steps build-steps">
@@ -301,7 +309,7 @@
           <span class="block-step">개념</span>
           <h2>디자인 시스템과 모션</h2>
           <h3 class="sub-title"><span class="sub-num">3.1</span>디자인 시스템</h3>
-          <p class="desc">색·글꼴·간격·컴포넌트(Component) 모양을 미리 정해 둔 <b>디자인 규칙 모음</b>으로, 없으면 화면마다 색과 크기가 달라지기 쉽습니다.</p>
+          <p class="desc">색·글꼴·간격·모양을 미리 정해 둔 <b>디자인 규칙 모음</b>입니다.</p>
           <div class="ds-row"><div class="ds-mini"><div class="ds-demo ds-color"><i style="background:#c98269">주색</i><i style="background:#a9654e">보조</i><i style="background:#282725">글자</i><i style="background:#f7f6f3;color:#282725">배경</i><i style="background:#ffe266;color:#282725">강조</i></div><b>색 <small>Color</small></b></div><div class="ds-mini"><div class="ds-demo ds-type"><b style="font-size:22px">제목</b><b style="font-size:16px">소제목</b><span style="font-size:13px">본문 글씨</span><small style="font-size:11px">작은 설명</small></div><b>글꼴 <small>Typography</small></b></div><div class="ds-mini"><div class="ds-demo ds-space"><span><i style="width:8px"></i>8</span><span><i style="width:16px"></i>16</span><span><i style="width:24px"></i>24</span><span><i style="width:40px"></i>40</span></div><b>간격 <small>Spacing</small></b></div><div class="ds-mini"><div class="ds-demo ds-comp"><span class="b1">저장</span><span class="b2">취소</span><span class="c">카드</span></div><b>컴포넌트 <small>Component</small></b></div></div>
           <h4 class="mini-title">디자인 규칙을 직접 정하기 어렵다면</h4>
           <div class="ds-ways">
@@ -317,7 +325,7 @@
 그중 가장 추천하는 하나를 골라 색, 글자 크기, 여백, 컴포넌트(버튼·카드 등) 모양을 표로 정리해줘.</pre><button type="button" class="copy" aria-label="프롬프트 복사" title="복사"><svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><svg class="ic-done" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></div></div>
           </div>
           <h3 class="sub-title"><span class="sub-num">3.2</span>모션</h3>
-          <p class="desc">화면 요소가 나타나고 바뀌고 사라질 때의 <b>움직임 규칙</b>으로, 과하면 오히려 눈이 피곤해지기 쉽습니다.</p>
+          <p class="desc">화면 요소가 나타나고 바뀌고 사라질 때의 <b>움직임 규칙</b>입니다.</p>
           <div class="kgrid four motion-demo rows-align" style="--r:4"><article class="kcard"><div class="kcard-head"><h4>Transition</h4><span class="kcard-tag">바뀔 때</span></div><div class="mo-demo mo-trans"><span>마우스 올림</span></div><p class="kcard-role">색·크기·위치가 갑자기 바뀌지 않고 부드럽게 바뀌게 합니다</p><dl><div><dt>AI 요청</dt><dd>"버튼에 마우스를 올리면 0.2초 동안 살짝 진해지게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Duration</h4><span class="kcard-tag">얼마나 빨리</span></div><div class="mo-demo mo-dur"><span><i class="f"></i><em>0.2초</em></span><span><i class="s"></i><em>1초</em></span></div><p class="kcard-role">움직임에 걸리는 시간. 버튼·메뉴는 0.2~0.3초가 적당합니다</p><dl><div><dt>AI 요청</dt><dd>"메뉴가 열릴 때 0.25초 안에 끝나게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Easing</h4><span class="kcard-tag">어떻게 움직이나</span></div><div class="mo-demo mo-ease"><span><i class="lin"></i><em>일정한 속도</em></span><span><i class="out"></i><em>천천히 멈춤</em></span></div><p class="kcard-role">처음과 끝의 속도 변화. 빨리 시작해 천천히 멈추면 자연스럽습니다</p><dl><div><dt>AI 요청</dt><dd>"패널이 열릴 때 빨리 시작해서 천천히 멈추게 해줘"</dd></div></dl></article><article class="kcard"><div class="kcard-head"><h4>Feedback</h4><span class="kcard-tag">알려 주기</span></div><div class="mo-demo mo-feed"><span class="press">신청</span><span class="spin"></span></div><p class="kcard-role">누르거나 기다리는 동안 무슨 일이 일어나는지 움직임으로 알려 줍니다</p><dl><div><dt>AI 요청</dt><dd>"저장하는 동안 버튼 안에 로딩 표시를 보여줘"</dd></div></dl></article></div>
           <aside class="ref-box"><b class="ref-label">참고</b><p class="ref-title">모션 참고 사이트</p><ul><li><a href="https://uiverse.io/elements" target="_blank" rel="noopener noreferrer">Uiverse <span aria-hidden="true">↗</span></a><span>버튼·로더·토글처럼 움직임이 들어간 UI 컴포넌트(Component) 모음</span></li><li><a href="https://animista.net/" target="_blank" rel="noopener noreferrer">Animista <span aria-hidden="true">↗</span></a><span>나타나기·흔들기·회전 등 CSS 애니메이션을 눌러 보며 고르는 곳</span></li><li><a href="https://gsap.com/showcase/" target="_blank" rel="noopener noreferrer">GSAP 쇼케이스 <span aria-hidden="true">↗</span></a><span>스크롤하면 나타나고 움직이는 화면 등 GSAP으로 만든 실제 사이트 모음</span></li><li><a href="https://motion.dev/examples" target="_blank" rel="noopener noreferrer">Motion 예제 <span aria-hidden="true">↗</span></a><span>스크롤·드래그·레이아웃 전환 등 웹 모션 예제 모음</span></li><li><a href="https://lottiefiles.com/" target="_blank" rel="noopener noreferrer">LottieFiles <span aria-hidden="true">↗</span></a><span>로딩·완료 표시 같은 가벼운 애니메이션 파일 모음</span></li><li><a href="https://www.awwwards.com/" target="_blank" rel="noopener noreferrer">Awwwards <span aria-hidden="true">↗</span></a><span>모션·인터랙션이 뛰어난 웹사이트를 모아 놓은 수상작 갤러리</span></li></ul></aside>
           <h4 class="mini-title">움직임 넣기</h4>
