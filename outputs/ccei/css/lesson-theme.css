@@ -1185,12 +1185,12 @@
 .lesson-page .checks li::before { content: ""; left: 3px; top: calc(6px + .62em); width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 /* 좌우 배치에서 제목·안내·박스 줄 맞춤 */
 @supports (grid-template-rows: subgrid) {
-  .lesson-page .sub-pair.sub-pair-rows { grid-template-rows: auto auto auto 1fr; row-gap: 0; }
-  .lesson-page .sub-pair.sub-pair-rows > .sub-col { display: grid; grid-template-rows: subgrid; grid-row: span 4; align-content: start; }
+  .lesson-page .sub-pair.sub-pair-rows { grid-template-rows: auto auto auto auto 1fr; row-gap: 0; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col { display: grid; grid-template-rows: subgrid; grid-row: span 5; align-content: start; }
   .lesson-page .sub-pair.sub-pair-rows > .sub-col > * { margin-top: 0 !important; margin-bottom: 0; }
   .lesson-page .sub-pair.sub-pair-rows > .sub-col > .sub-title { margin-bottom: 14px; }
   .lesson-page .sub-pair.sub-pair-rows > .sub-col > p.desc { margin-bottom: 8px; }
-  .lesson-page .sub-pair.sub-pair-rows > .sub-col > :nth-child(4) { margin-top: 10px !important; align-self: start; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col > :last-child { margin-top: 10px !important; align-self: start; grid-row: 5; }
 }
 /* 좌우 배치 안에서도 소단원 내용 들여쓰기(제목 아래 블릿·박스) */
 @media (min-width: 761px) {
