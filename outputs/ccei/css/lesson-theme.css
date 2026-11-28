@@ -1179,3 +1179,4 @@
   @keyframes trackSweep { 0% { opacity: 0; background-position: 120% 0; } 3% { opacity: 1; } 13% { opacity: 1; background-position: -20% 0; } 15%, 100% { opacity: 0; background-position: -20% 0; } }
 }
 .lesson-page .service-feature, .lesson-page .service-feature dd { word-break: keep-all; }
+.lesson-page .service-feature .sf-head p.sf-note { margin: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.14); color: var(--marker); font-size: 14.5px; }
