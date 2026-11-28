@@ -1180,3 +1180,15 @@
 }
 .lesson-page .service-feature, .lesson-page .service-feature dd { word-break: keep-all; }
 .lesson-page .service-feature .sf-head p.sf-note { margin: 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.14); color: var(--marker); font-size: 14.5px; }
+/* 블릿 통일: 체크 목록도 설명 문장과 같은 동그라미 블릿 */
+.lesson-page .checks li { padding: 6px 0 6px 18px; border-bottom: 0; }
+.lesson-page .checks li::before { content: ""; left: 3px; top: calc(6px + .62em); width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+/* 좌우 배치에서 제목·안내·박스 줄 맞춤 */
+@supports (grid-template-rows: subgrid) {
+  .lesson-page .sub-pair.sub-pair-rows { grid-template-rows: auto auto auto 1fr; row-gap: 0; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col { display: grid; grid-template-rows: subgrid; grid-row: span 4; align-content: start; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col > * { margin-top: 0 !important; margin-bottom: 0; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col > .sub-title { margin-bottom: 14px; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col > p.desc { margin-bottom: 8px; }
+  .lesson-page .sub-pair.sub-pair-rows > .sub-col > :nth-child(4) { margin-top: 10px !important; align-self: start; }
+}
