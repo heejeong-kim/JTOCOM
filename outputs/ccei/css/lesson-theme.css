@@ -1267,3 +1267,8 @@
 .lesson-page .prd-card .prd-src { display: inline-flex; padding: 2px 8px; border-radius: 999px; background: #eef5ea; color: #3f6b36; font-size: 12px; }
 .lesson-page .prd-card .prd-group-new { margin-top: 18px; }
 .lesson-page .prd-card .prd-group-new .prd-src { background: #f8eee8; color: #9a4f35; }
+.lesson-page .answer-example .answer-scroll + .answer-lead { margin-top: 14px; }
+.lesson-page .answer-example .answer-lead:last-child { margin-bottom: 0; }
+.lesson-page .answer-table-4 { min-width: 760px; }
+.lesson-page .answer-table-4 tbody th { width: 20%; }
+.lesson-page .answer-table-4 thead th:nth-child(2) { width: 22%; }
